@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{width:100%;font-family:'Noto Sans JP','Hiragino Sans',sans-serif;overflow-x:hidden}
+body{color:#333}
+button,input,select,textarea{font-family:inherit}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+:target,[id]{scroll-margin-top:65px}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.hd{position:sticky;top:0;z-index:100;background:#fff;border-bottom:3px solid #06C167}
+.hd-inner{display:flex;align-items:center;gap:12px;width:100%;padding:0 24px;height:64px;max-width:1200px;margin:0 auto}
+.hd-logo img{height:30px;width:auto}
+.hd-nav{display:none;list-style:none;gap:24px;flex:1;padding-left:16px}
+@media(min-width:900px){.hd-nav{display:flex}}
+.hd-nav a{font-size:15px;font-weight:500;color:#333;transition:color .2s}
+.hd-nav a:hover{color:#06C167}
+.hd-tel{display:none;flex-direction:column;align-items:flex-end;line-height:1.4;flex-shrink:0}
+@media(min-width:900px){.hd-tel{display:flex}}
+.hd-tel span{font-size:10px;color:#666;white-space:nowrap}
+.hd-tel a{font-size:22px;font-weight:700;color:#111;letter-spacing:.02em;white-space:nowrap}
+.hd-tel a::before{content:'☎ ';font-size:18px}
+.hd-btns{display:none;gap:6px;align-items:center;flex-shrink:0}
+@media(min-width:900px){.hd-btns{display:flex;margin-left:16px}}
+.hd-btn{display:inline-flex;align-items:center;gap:4px;padding:8px 14px;border-radius:4px;border:none;cursor:pointer;background:#06C167;color:#fff;font-size:14px;font-weight:700;font-family:inherit;white-space:nowrap}
+.hd-line-icon{width:16px;height:16px;flex-shrink:0;object-fit:contain}
+.hd-sp-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+@media(min-width:900px){.hd-sp-right{display:none}}
+.hd-sp-btn{display:inline-flex;align-items:center;gap:4px;padding:8px 12px;border-radius:4px;background:#06C167;color:#fff;font-size:13px;font-weight:700;font-family:inherit}
+.hd-burger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;padding:0}
+.hd-burger span{display:block;width:24px;height:2px;background:#111;border-radius:1px}
+
+/* MOBILE OVERLAY */
+.hd-scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:199}
+.hd-scrim.is-open{display:block}
+.hd-overlay{display:none;position:fixed;top:0;left:0;right:0;height:70vh;background:#fff;z-index:200;flex-direction:column;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.28);border-radius:0 0 16px 16px;}
+.hd-overlay.is-open{display:flex}
+.hd-ov-top{display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px;flex-shrink:0;border-bottom:1px solid #e8e8e8}
+.hd-ov-logo img{height:30px;width:auto}
+.hd-close{font-size:24px;color:#111;cursor:pointer;background:none;border:none;font-family:inherit;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.hd-ov-nav{list-style:none;padding:0;margin:0;flex:1}
+.hd-ov-nav li{border-bottom:1px solid #e0e0e0}
+.hd-ov-nav a{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;font-size:18px;font-weight:400;color:#111}
+.hd-ov-nav a::after{content:'→';font-size:18px;flex-shrink:0}
+
+/* ============================================================
+   HERO V2
+   ============================================================ */
+.hv2{
+  display:grid;
+  background:#1a0a00;
+  overflow:hidden;
+}
+
+/* 背景画像 — gridで同セルに積む（iOS Safariでも確実に表示） */
+.hv2-bg{
+  grid-area:1/1;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  max-width:none;
+  display:block;
+}
+
+/* 暗いオーバーレイ */
+.hv2-overlay{
+  grid-area:1/1;
+  background:linear-gradient(160deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.62) 60%,rgba(0,0,0,.70) 100%);
+}
+
+/* コンテンツ */
+.hv2-inner{
+  grid-area:1/1;
+  position:relative;z-index:2;
+  padding:40px 22px 36px;
+  color:#fff;
+}
+
+/* ── 初期費用無料 ── */
+.hv2-tag{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:16px;
+}
+.hv2-tag-line{flex:0 0 28px;height:2px;background:rgba(255,255,255,.55);border-radius:1px}
+.hv2-tag-text{font-size:14px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
+
+/* Uber Eats ロゴ */
+.hv2-ue-logo{
+  display:block;
+  margin-bottom:18px;
+  height:clamp(28px,8vw,40px);
+  width:auto;
+  max-width:none;
+}
+
+/* H1 */
+.hv2-h1{
+  font-size:clamp(30px,9vw,44px);
+  font-weight:900;
+  line-height:1.15;
+  letter-spacing:.01em;
+  margin-bottom:16px;
+  text-shadow:0 2px 14px rgba(0,0,0,.8);
+}
+
+/* キャッチコピー */
+.hv2-callout{
+  font-size:clamp(11px,3.3vw,13px);
+  font-weight:700;
+  line-height:1.75;
+  margin-bottom:14px;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+.hv2-callout em{
+  font-style:normal;
+  font-size:clamp(14px,3.8vw,16px);
+  color:#FFD600;
+  border-bottom:2px solid #FFD600;
+  padding-bottom:1px;
+}
+
+
+/* サークル下テキスト */
+.hv2-sub{
+  text-align:center;
+  margin-bottom:20px;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+.hv2-sub-main{
+  font-size:clamp(12px,3.5vw,14px);
+  font-weight:700;
+  color:#fff;
+  line-height:1.7;
+  margin-bottom:2px;
+}
+.hv2-sub-note{
+  font-size:clamp(10px,3vw,12px);
+  font-weight:500;
+  color:rgba(255,255,255,.9);
+  line-height:1.7;
+}
+
+/* 3つのサークル */
+.hv2-circles{
+  display:flex;
+  gap:clamp(4px,1.5vw,8px);
+  justify-content:center;
+  margin-bottom:22px;
+}
+.hv2-circle{
+  position:relative;
+  background:rgba(255,214,0,0.90);
+  border-radius:50%;
+  width:clamp(84px,27vw,108px);
+  height:clamp(84px,27vw,108px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:clamp(8px,2.5vw,12px);
+  flex-shrink:0;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+  overflow:hidden;
+}
+.hv2-circle-icon{
+  width:clamp(58px,18vw,74px);
+  height:auto;
+  max-width:88%;
+  object-fit:contain;
+  flex-shrink:0;
+}
+.hv2-circle-label{
+  position:absolute;
+  bottom:clamp(26px,8vw,32px);
+  width:90%;
+  text-align:center;
+  font-size:clamp(9px,2.7vw,11px);
+  font-weight:700;
+  color:#222;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.hv2-circle-num{
+  position:absolute;
+  bottom:clamp(8px,2.5vw,13px);
+  width:90%;
+  text-align:center;
+  font-size:clamp(11px,3.4vw,14px);
+  font-weight:900;
+  color:#111;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.hv2-circle-num--sm{
+  font-size:clamp(9px,2.8vw,11px);
+}
+
+/* キャンペーンボックス */
+.hv2-box{
+  background:rgba(255,255,255,.95);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 12px;
+}
+.hv2-box-item{
+  display:flex;align-items:flex-start;gap:5px;
+  font-size:clamp(11px,3vw,13px);
+  font-weight:500;
+  color:#111;
+  line-height:1.4;
+}
+.hv2-box-check{
+  color:#06C167;
+  font-weight:700;
+  font-size:13px;
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+/* 注釈 */
+.hv2-note{
+  font-size:clamp(9px,2.6vw,11px);
+  color:rgba(255,255,255,.65);
+  line-height:1.7;
+  text-align:left;
+  margin-bottom:24px;
+}
+
+/* LINE CTAボタン */
+.hv2-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:#06C167;
+  color:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  font-size:clamp(17px,4.8vw,20px);
+  font-weight:700;
+  letter-spacing:.04em;
+  width:100%;
+  box-shadow:0 4px 20px rgba(6,193,103,.45);
+  cursor:pointer;
+  transition:opacity .2s;
+}
+.hv2-cta:active{opacity:.85}
+.hv2-line-icon{width:26px;height:26px;object-fit:contain;flex-shrink:0}
+.hv2-cta-arrow{font-size:22px;margin-left:4px;font-weight:400}
+
+/* ============================================================
+   WORRIES
+   ============================================================ */
+.ws{padding:64px 20px 72px;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_942c9a71-113d-4c88-bef5-afe780965d4e.png') center/cover no-repeat,#fff}
+.ws-title{text-align:center;font-size:clamp(20px,3vw,26px);font-weight:700;line-height:1.6;margin-bottom:48px;color:#111}
+.ws-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:860px;margin:0 auto}
+@media(min-width:769px){.ws-grid{grid-template-columns:repeat(3,1fr);column-gap:24px;row-gap:0}}
+.ws-wrap{display:flex;flex-direction:column}
+@media(min-width:769px){.ws-wrap{display:grid;grid-row:span 2;grid-template-rows:subgrid;gap:0}}
+@media(min-width:769px){.ws-top{min-height:260px}}
+.ws-card{position:relative;z-index:0;border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.1);display:flex;flex-direction:column;flex:1}
+.ws-head{background:#06C167;color:#111;text-align:center;padding:14px 16px;font-size:15px;font-weight:700;letter-spacing:.15em;flex-shrink:0}
+.ws-top{position:relative;z-index:2;background:#fff;padding:20px 16px 14px;text-align:center;flex:none;margin-bottom:-2px}
+.ws-top::after{content:'';position:absolute;top:100%;left:0;right:0;height:50px;background:#fff;clip-path:polygon(0 0,100% 0,50% 100%)}
+.ws-badge{position:absolute;top:calc(100% + 21px);left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;background:#FFD600;color:#333;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.2);z-index:3}
+.ws-illust{width:90px;height:90px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ws-illust img{width:100%;height:100%;object-fit:contain}
+.ws-text{font-size:16px;line-height:1.8;color:#333;font-weight:400}
+.ws-bottom{position:relative;z-index:1;background:#06C167;padding:92px 16px 20px;text-align:center;flex:1 0 auto;display:flex;flex-direction:column;align-items:center}
+.ws-chevron{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:8px;flex-shrink:0;height:32px}
+.ws-chevron i{display:block;width:14px;height:14px;border-right:3px solid rgba(255,255,255,.55);border-bottom:3px solid rgba(255,255,255,.55);transform:rotate(45deg)}
+.ws-sol-illust{width:72px;height:72px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.ws-sol-illust img{width:100%;height:100%;object-fit:contain}
+.ws-sol-text{font-size:15px;color:#fff;line-height:1.8;font-weight:700;width:100%}
+.ws-card-note{font-size:11px;color:#555;line-height:1.7;padding:8px 4px 0;padding-left:1.5em;text-indent:-1.5em}
+.ws-card-note-ghost{visibility:hidden;pointer-events:none}
+@media(max-width:768px){.ws-card-note-ghost{display:none}}
+@media(max-width:768px){
+  .ws{background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_05331cb2-1133-4dd4-94cd-0463508cf7ea.png') center/cover no-repeat,#fff}
+}
+@media(max-width:768px){
+  .ws-grid{display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;gap:14px;padding:0 20px 8px;margin:0 -20px}
+  .ws-grid::-webkit-scrollbar{display:none}
+  .ws-wrap{flex:0 0 82%;scroll-snap-align:center;flex-shrink:0}
+  .ws-card-note{display:none}
+  .ws-top{padding:14px 16px 10px}
+  .ws-illust{width:68px;height:68px}
+  .ws-sol-illust{width:56px;height:56px}
+  .ws-bottom{padding:74px 16px 16px}
+  .ws-badge{top:calc(100% + 16px);width:50px;height:50px;font-size:13px}
+  .ws-top::after{height:42px}
+  .ws-slider-ctrl{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:16px}
+  .ws-arrow{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.14);color:#333;transition:opacity .2s;flex-shrink:0;padding:0;line-height:1}
+  .ws-arrow:disabled{opacity:.25;cursor:default}
+  .ws-dots{display:flex;gap:8px;align-items:center}
+  .ws-dot{width:9px;height:9px;border-radius:50%;background:#ccc;border:none;padding:0;cursor:pointer;transition:background .25s}
+  .ws-dot.active{background:#06C167}
+}
+
+/* ============================================================
+   REASONS
+   ============================================================ */
+.rs{background:#F0FAF4;padding:64px 20px 72px}
+.rs-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.rs-list{display:flex;flex-direction:column;gap:24px;max-width:780px;margin:0 auto;list-style:none}
+.rs-card{background:#fff;border:1px solid #e4e4e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(0,0,0,.07)}
+@media(min-width:769px){.rs-card{flex-direction:row;min-height:200px}}
+.rs-img{flex:0 0 38%;background:#dde8e0;min-height:180px;position:relative;overflow:hidden}
+@media(min-width:769px){.rs-img{min-height:unset}}
+.rs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rs-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.rs-badge{display:inline-block;background:none;color:#06C167;font-size:13px;font-weight:700;letter-spacing:.1em;padding:3px 0;margin-bottom:12px}
+.rs-heading{font-size:clamp(19px,2.2vw,23px);font-weight:700;line-height:1.55;color:#111;margin-bottom:12px}
+.rs-desc{font-size:15px;line-height:1.9;color:#444}
+.rs-desc small{font-size:11px;color:#666}
+.rs-note-item{list-style:none;font-size:11px;color:#666;line-height:1.7;padding-left:1.5em;text-indent:-1.5em;margin-top:-8px}
+
+/* ============================================================
+   STATS + CTA
+   ============================================================ */
+.cs{background:#06C167;padding:64px 24px 72px}
+.cs-inner{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+@media(min-width:769px){.cs-inner{flex-direction:row;align-items:stretch;gap:32px}}
+.cs-stats{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
+.cs-card{background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.5);border-radius:8px;padding:18px 20px;display:flex;align-items:center}
+.cs-card-left{flex:0 0 auto;text-align:center;color:#111;padding-right:20px;border-right:1px solid rgba(0,0,0,.15);min-width:110px}
+.cs-card-icon{line-height:1;margin-bottom:6px;display:flex;align-items:center;justify-content:center}
+.cs-card-icon img{width:64px;height:64px;object-fit:contain}
+.cs-card-label{font-size:11px;font-weight:700;letter-spacing:.04em;color:#333;display:block;margin-bottom:3px}
+.cs-card-num{font-size:24px;font-weight:700;white-space:nowrap;line-height:1.2;color:#111}
+.cs-card-right{flex:1;min-width:0;color:#111;padding-left:20px}
+.cs-card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.4;color:#111}
+.cs-card-desc{font-size:15px;line-height:1.85;color:#333}
+.cs-cta{background:#fff;border-radius:12px;padding:32px 24px 28px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){
+  .cs-cta{flex:none}
+  .cs-card{display:grid;grid-template-columns:auto auto auto 1fr;grid-template-areas:"icon label num ." "icon title title title" "desc desc desc desc";column-gap:6px;row-gap:0;padding:14px 16px;align-items:start}
+  .cs-card-left{display:contents}
+  .cs-card-icon{grid-area:icon;align-self:center;margin-bottom:0}
+  .cs-card-icon img{width:52px;height:52px}
+  .cs-card-label{grid-area:label;font-size:10px;display:block;align-self:end;padding-bottom:2px;margin-bottom:0}
+  .cs-card-num{grid-area:num;font-size:10px;font-weight:700;color:#333;white-space:nowrap;line-height:inherit;display:block;align-self:end;padding-bottom:2px}
+  .cs-card-right{display:contents}
+  .cs-card-title{grid-area:title;margin-bottom:0;font-size:19px;padding-top:8px;border-top:1px solid rgba(0,0,0,.15)}
+  .cs-card-desc{grid-area:desc;border-top:1px solid rgba(0,0,0,.2);padding-top:10px;margin-top:10px}
+}
+.cs-cta-title{font-size:clamp(18px,2.5vw,22px);font-weight:700;color:#111;margin-bottom:10px;line-height:1.5}
+.cs-cta-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:22px}
+.cs-tel-wrap{margin-bottom:22px}
+.cs-tel-label{display:inline-block;font-size:11px;color:#555;background:#f0f0f0;border-radius:4px;padding:3px 10px;margin-bottom:8px}
+.cs-tel-num{display:block;font-size:26px;font-weight:700;color:#111;letter-spacing:.01em;line-height:1.2;white-space:nowrap}
+.cs-tel-num::before{content:'☎ ';font-size:22px;vertical-align:middle}
+.cs-btns{display:flex;flex-direction:column;gap:10px}
+.cs-btn{display:flex;align-items:stretch;background:#111;color:#fff;border-radius:6px;overflow:hidden;transition:background .2s}
+.cs-btn:hover{background:#2a2a2a}
+.cs-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;letter-spacing:.04em;padding:0 12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;min-width:46px}
+.cs-btn-text{flex:1;padding:14px 8px;font-size:16px;font-weight:700;text-align:center;letter-spacing:.04em}
+.cs-btn-arrow{padding:14px 14px 14px 0;font-size:16px;opacity:.6;display:flex;align-items:center}
+
+/* ============================================================
+   SUPPORT
+   ============================================================ */
+.sp{
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+    url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1448x1086_v-fms_webp_6400ba9f-4809-4cc8-994b-6a385acddc74.png') center/cover no-repeat,
+    #fff;
+  padding:64px 24px 72px;
+}
+.sp-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.sp-grid{display:grid;grid-template-columns:1fr;column-gap:20px;row-gap:20px;max-width:1020px;margin:0 auto}
+@media(min-width:769px){.sp-grid{grid-template-columns:repeat(3,1fr)}}
+.sp-col{border:2px solid #06C167;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.sp-col-head{text-align:center;padding:18px 16px 16px;font-size:17px;font-weight:700;color:#222;border-bottom:2px solid #06C167;line-height:1.4;letter-spacing:.02em}
+.sp-items{display:flex;flex-direction:column;gap:12px;padding:16px;flex:1}
+.sp-item{background:#f7f7f7;border:1px solid #e8e8e8;border-radius:8px;padding:14px 16px}
+.sp-item-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.sp-item-icon{flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.sp-item-icon img{width:36px;height:36px;object-fit:contain}
+.sp-item-title{font-size:16px;font-weight:700;color:#06C167;line-height:1.4}
+.sp-item-desc{font-size:15px;line-height:1.9;color:#444}
+.sp-note{font-size:11px;color:#888;line-height:1.7;padding-left:1.5em;text-indent:-1.5em;max-width:1020px;margin:8px auto 0}
+@media(max-width:768px){
+  .sp{background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_9ee0210b-1139-4473-82a0-3b204afbdca5.png') center/cover no-repeat,#fff}
+  .sp-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px;gap:16px;margin:0 -24px;padding-left:24px;padding-right:24px}
+  .sp-grid::-webkit-scrollbar{display:none}
+  .sp-col{flex:0 0 calc(100% - 24px);scroll-snap-align:center}
+  .sp-note{display:block;margin:12px 0 0;padding-left:0;text-indent:0}
+  .sp-slider-ctrl{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:16px}
+  .sp-arrow{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.14);color:#333;transition:opacity .2s;flex-shrink:0;padding:0;line-height:1}
+  .sp-arrow:disabled{opacity:.25;cursor:default}
+  .sp-dots{display:flex;gap:8px;align-items:center}
+  .sp-dot{width:9px;height:9px;border-radius:50%;background:#ccc;border:none;padding:0;cursor:pointer;transition:background .25s}
+  .sp-dot.active{background:#06C167}
+}
+
+/* ============================================================
+   RESOURCE
+   ============================================================ */
+.rm{
+  background:
+    linear-gradient(rgba(234,245,238,.80),rgba(234,245,238,.80)),
+    url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_cb8e8382-0306-4ed3-856c-c4033002d715.png') center/cover no-repeat;
+  padding:64px 24px 72px;text-align:center;
+}
+@media(max-width:768px){
+  .rm{background:linear-gradient(rgba(234,245,238,.80),rgba(234,245,238,.80)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_ebffdf74-4741-4f6a-bb4d-aa88576a5585.png') center/cover no-repeat}
+}
+.rm-title-wrap{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px}
+.rm-badge{background:#06C167;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:4px;flex-shrink:0}
+.rm-title{font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#111;letter-spacing:.04em;line-height:1}
+.rm-sub{font-size:16px;color:#444;line-height:1.9;margin-bottom:40px}
+.rm-scene{position:relative;display:inline-block;margin-bottom:40px}
+.rm-scene::before{
+  content:'';position:absolute;inset:0;
+  background:#06C167;border-radius:12px;transform:rotate(-4deg) translate(-6px,6px);z-index:0;
+}
+.rm-card{
+  position:relative;z-index:1;
+  background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.82)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_ede07b04-6b4a-4d8c-b4a5-032d4693e691.png') center/contain no-repeat,#fff;
+  border-radius:12px;padding:28px 32px 22px;
+  box-shadow:0 6px 24px rgba(0,0,0,.14);width:320px;max-width:90vw;
+  transform:rotate(-1.5deg);text-align:left;
+}
+.rm-card-title{font-size:24px;font-weight:700;color:#111;margin-bottom:10px;line-height:1.3}
+.rm-card-desc{font-size:15px;font-weight:700;color:#06C167;line-height:1.7;margin-bottom:16px}
+.rm-card-logo{text-align:right;font-size:16px;font-weight:700;letter-spacing:.02em;color:#333}
+.rm-btn{
+  display:inline-flex;align-items:stretch;background:#111;color:#fff;
+  border-radius:6px;overflow:hidden;min-width:260px;transition:background .2s;
+}
+.rm-btn:hover{background:#2a2a2a}
+.rm-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;padding:0 14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rm-btn-text{flex:1;padding:15px 16px;font-size:17px;font-weight:700;text-align:center;letter-spacing:.04em}
+.rm-btn-arrow{padding:15px 16px 15px 0;opacity:.6;display:flex;align-items:center;font-size:17px}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.fq{
+  background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_5da5dcb3-183f-4088-a7da-747cc52f5834.png') center/cover no-repeat #fff;
+  padding:64px 24px 72px;
+}
+@media(max-width:768px){
+  .fq{background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_f3f1b416-4de8-41dd-bd6f-ce3a63f1f81c.png') center/cover no-repeat #fff}
+}
+.fq-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.fq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px;list-style:none}
+.fq-item{border:2px solid #06C167;border-radius:8px;overflow:hidden}
+.fq-item summary{
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:#06C167;padding:16px 22px;cursor:pointer;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.fq-item summary::-webkit-details-marker{display:none}
+.fq-item summary:hover{background:#05b35e}
+.fq-q{font-size:17px;font-weight:700;color:#111;flex:1;line-height:1.6}
+.fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#111;line-height:1}
+.fq-icon::before{content:'+'}
+.fq-item[open] .fq-icon::before{content:'−'}
+.fq-a{background:#fff;padding:20px 24px 22px}
+.fq-a p{font-size:16px;line-height:1.95;color:#333}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.cf{
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+    url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1448x1086_v-fms_webp_f3134ad4-8f42-4e27-99f7-9c8dada53932.png') center/cover no-repeat,
+    #f0f0f0;
+  padding:64px 24px 72px;
+}
+@media(max-width:768px){
+  .cf{background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_548428e1-f804-43b0-84bf-5e0a49ab98bd.png') center/cover no-repeat,#f0f0f0}
+}
+.cf-panel{background:#fff;border-radius:12px;max-width:580px;margin:0 auto;padding:36px 40px 40px;box-shadow:0 4px 28px rgba(0,0,0,.14)}
+.cf-title-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}
+.cf-badge{background:#06C167;color:#fff;font-size:14px;font-weight:700;padding:4px 11px;border-radius:4px;flex-shrink:0}
+.cf-title{font-size:clamp(24px,4vw,30px);font-weight:700;color:#111;letter-spacing:.04em}
+.cf-hr{border:none;border-top:1px solid #ddd;margin:0 0 12px}
+.cf-sub{font-size:15px;color:#555;text-align:center;line-height:1.85;margin-bottom:12px}
+.cf-form{margin-top:20px}
+.cf-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.cf-lbl{
+  flex:0 0 155px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  font-size:14px;font-weight:700;color:#333;padding-top:10px;line-height:1.4;
+}
+.cf-tag{display:inline-block;font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px}
+.cf-req{background:#06C167;color:#fff}
+.cf-opt{background:#aaa;color:#fff}
+.cf-inp-wrap{flex:1;min-width:0}
+@media(max-width:600px){
+  .cf-panel{padding:24px 16px 28px}
+  .cf-row{flex-direction:column;gap:4px}
+  .cf-lbl{flex:none;flex-direction:row;align-items:center;gap:6px;padding-top:0;font-size:15px}
+}
+.cf-input,.cf-select,.cf-textarea{
+  width:100%;border:1px solid #ddd;border-radius:4px;padding:9px 11px;
+  font-size:15px;color:#333;background:#fafafa;font-family:inherit;
+  outline:none;transition:border-color .2s,background .2s;appearance:none;
+}
+.cf-input:focus,.cf-select:focus,.cf-textarea:focus{border-color:#06C167;background:#fff}
+.cf-input::placeholder,.cf-textarea::placeholder{color:#ccc}
+.cf-textarea{min-height:72px;resize:vertical;line-height:1.6}
+.cf-name-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cf-sel-wrap{position:relative}
+.cf-sel-wrap::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);color:#888;pointer-events:none;font-size:11px}
+.cf-select{padding-right:30px;cursor:pointer}
+.cf-privacy{display:flex;align-items:flex-start;gap:8px;justify-content:center;margin-bottom:22px}
+.cf-privacy input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:#06C167;cursor:pointer}
+.cf-privacy-text{font-size:12px;color:#555;line-height:1.75}
+.cf-privacy-text a{color:#06C167;text-decoration:underline}
+.cf-submit-wrap{text-align:center}
+.cf-submit{
+  background:#111;color:#fff;border:none;padding:14px 52px;border-radius:4px;
+  font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
+  letter-spacing:.06em;transition:background .2s;
+}
+.cf-submit:hover{background:#2a2a2a}
+
+/* ============================================================
+   LINE CTA
+   ============================================================ */
+.lc{background:#f5f5f5;padding:64px 24px 72px;text-align:center}
+.lc-catch{font-size:17px;font-weight:700;color:#333;letter-spacing:.06em;margin-bottom:10px}
+.lc-sub{font-size:16px;color:#444;line-height:1.9;margin-bottom:24px}
+.lc-qr{display:inline-flex;align-items:center;justify-content:center;width:120px;height:120px;margin-bottom:20px}
+.lc-qr img{width:100%;height:100%;border-radius:4px}
+.lc-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#06C755;color:#fff;padding:11px 24px;border-radius:6px;
+  font-size:16px;font-weight:700;letter-spacing:.04em;transition:background .2s;
+}
+.lc-btn:hover{background:#05b34c}
+.lc-line-icon{width:20px;height:20px;flex-shrink:0}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.ft{background:#06C167;padding:14px 24px}
+.ft-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ft-nav{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.ft-link{display:inline-flex;align-items:center;gap:4px;color:#fff;font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.ft-link:hover{opacity:.8}
+.ft-link-icon{width:12px;height:12px;flex-shrink:0;opacity:.85}
+.ft-sep{color:rgba(255,255,255,.7);font-size:13px;padding:0 10px}
+.ft-copy{color:#fff;font-size:12px;opacity:.85;white-space:nowrap}
+
+/* ============================================================
+   MOBILE FIXED BOTTOM BAR
+   ============================================================ */
+.mb-bar{display:none}
+@media(max-width:768px){
+  .mb-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:998;background:#FFD600;align-items:stretch;box-shadow:0 -2px 14px rgba(0,0,0,.2);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .mb-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 6px;color:#111;text-decoration:none;gap:2px;text-align:center}
+  .mb-col+.mb-col{border-left:1px solid rgba(0,0,0,.12)}
+  .mb-hours{font-size:9px;color:#444;white-space:nowrap;line-height:1.3}
+  .mb-num{font-size:14px;font-weight:700;color:#111;white-space:nowrap;letter-spacing:.01em}
+  .mb-mail-icon{width:20px;height:20px;flex-shrink:0}
+  .mb-mail-lbl{font-size:11px;font-weight:700;color:#111}
+  .mb-line-badge{font-size:9px;font-weight:700;color:#fff;background:#06C167;border-radius:3px;padding:1px 6px;letter-spacing:.04em}
+  .mb-line-inner{display:flex;align-items:center;gap:4px;background:#06C167;color:#fff;border-radius:5px;padding:5px 10px;font-size:12px;font-weight:700}
+  .mb-line-icon{width:18px;height:18px;object-fit:contain}
+  .ft{padding-bottom:calc(14px + 68px + env(safe-area-inset-bottom,0px))!important}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd" id="top">
+  <div class="hd-inner">
+    <div class="hd-logo">
+      <img src="LOGO-05.png" alt="FlagK Co., Ltd.">
+    </div>
+    <ul class="hd-nav">
+      <li><a href="#worry">Uber Eats について</a></li>
+      <li><a href="#reasons">選ばれる理由</a></li>
+      <li><a href="#support">サポート機能</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ul>
+    <div class="hd-tel">
+      <span>電話相談 9:30〜18:00（平日のみ）</span>
+      <a href="tel:0800-805-2440">0800-805-2440</a>
+    </div>
+    <div class="hd-btns">
+      <a href="mailto:ubereats-support@flagk-co.jp" class="hd-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        メールで相談
+      </a>
+      <a href="https://lin.ee/RhSAYu3" class="hd-btn" target="_blank" rel="noopener">
+        <img class="hd-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+        簡単申し込み
+      </a>
+    </div>
+    <div class="hd-sp-right">
+      <a href="https://lin.ee/RhSAYu3" class="hd-sp-btn" target="_blank" rel="noopener">
+        <img class="hd-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+        無料相談
+      </a>
+      <button class="hd-burger" id="hd-open" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- スクリム（半透明背景） -->
+<div class="hd-scrim" id="hd-scrim"></div>
+
+<!-- モバイルオーバーレイ -->
+<div class="hd-overlay" id="hd-overlay">
+  <div class="hd-ov-top">
+    <div class="hd-ov-logo"><img src="LOGO-05.png" alt="FlagK Co., Ltd."></div>
+    <button class="hd-close" id="hd-close" aria-label="メニューを閉じる">✕</button>
+  </div>
+  <ul class="hd-ov-nav">
+    <li><a href="#worry">Uber Eats について</a></li>
+    <li><a href="#reasons">選ばれる理由</a></li>
+    <li><a href="#support">サポート機能</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ul>
+</div>
+
+<section class="hv2">
+  <img class="hv2-bg"
+       src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1448x1086_v-fms_webp_08a3ed59-acf1-4f2c-91ab-59c116b80619.png"
+       alt="">
+  <div class="hv2-overlay"></div>
+  <div class="hv2-inner">
+
+    <!-- ── 初期費用無料 ── -->
+    <div class="hv2-tag">
+      <span class="hv2-tag-line"></span>
+      <span class="hv2-tag-text">初期費用無料</span>
+      <span class="hv2-tag-line"></span>
+    </div>
+
+    <!-- Uber Eats ロゴ -->
+    <img class="hv2-ue-logo"
+         src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-300x108_c9670033-6b8f-40f0-9cb4-1583ddd598cb.svg"
+         alt="Uber Eats">
+
+    <!-- H1 -->
+    <h1 class="hv2-h1">出店登録<br>無料サポート</h1>
+
+    <!-- キャッチコピー -->
+    <p class="hv2-callout">
+      フードデリバリーで店舗様の<em>集客UP</em>・<em>売上UP</em>！<br>
+      公式キャンペーンを使ってお得にスタートしましょう！
+    </p>
+
+    <!-- 3つのサークル -->
+    <div class="hv2-circles">
+      <div class="hv2-circle">
+        <img class="hv2-circle-icon"
+             src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_3421320a-7dfc-4f1c-a1c3-e3181163d89d.png"
+             alt="">
+        <span class="hv2-circle-label">初期費用</span>
+        <span class="hv2-circle-num">0円</span>
+      </div>
+      <div class="hv2-circle">
+        <img class="hv2-circle-icon"
+             src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f89178d7-abb3-49a8-8ab5-1d78850fe4da.png"
+             alt="">
+        <span class="hv2-circle-label">月額費用</span>
+        <span class="hv2-circle-num">0円</span>
+      </div>
+      <div class="hv2-circle">
+        <img class="hv2-circle-icon"
+             src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png"
+             alt="">
+        <span class="hv2-circle-label">面倒な設定</span>
+        <span class="hv2-circle-num hv2-circle-num--sm">無料サポート</span>
+      </div>
+    </div>
+
+    <!-- サークル下テキスト -->
+    <div class="hv2-sub">
+      <p class="hv2-sub-main">デリバリーに必要な諸々の環境構築は必要ありません！</p>
+      <p class="hv2-sub-note">＼　簡単でスピーディーに導入することが可能です！　／</p>
+    </div>
+
+    <!-- キャンペーンボックス -->
+    <div class="hv2-box">
+      <div class="hv2-box-item">
+        <span class="hv2-box-check">✓</span>タブレット無料レンタル
+      </div>
+      <div class="hv2-box-item">
+        <span class="hv2-box-check">✓</span>掲載用料理写真の無料撮影
+      </div>
+      <div class="hv2-box-item">
+        <span class="hv2-box-check">✓</span>アプリ内広告クレジット付与
+      </div>
+      <div class="hv2-box-item">
+        <span class="hv2-box-check">✓</span>割引クーポン施策など
+      </div>
+    </div>
+
+    <!-- 注釈 -->
+    <p class="hv2-note">※&emsp;適用キャンペーンは地域・時期により異なります。<br>&emsp;詳しくはお問い合わせ時にご案内いたします。</p>
+
+    <!-- LINE CTA ボタン -->
+    <a href="https://lin.ee/RhSAYu3" class="hv2-cta" target="_blank" rel="noopener">
+      <img class="hv2-line-icon"
+           src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png"
+           alt="LINE">
+      適用キャンペーンを確認
+      <span class="hv2-cta-arrow">›</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- WORRIES -->
+<section class="ws" id="worry">
+  <h2 class="ws-title">こんなお悩みありませんか？<br>そのお悩み「Uber Eats」で<br class="sp-br">解決できます！</h2>
+  <div class="ws-grid">
+
+    <div class="ws-wrap">
+      <div class="ws-card">
+        <div class="ws-head">WORRIES 1</div>
+        <div class="ws-top">
+          <div class="ws-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_5688162a-46a1-4c96-8520-c8e0daab95ff.png" alt=""></div>
+          <p class="ws-text">お店の集客に困っており<br>売上が安定しない...</p>
+          <div class="ws-badge">解決</div>
+        </div>
+        <div class="ws-bottom">
+          <div class="ws-chevron"><i></i><i></i></div>
+          <div class="ws-sol-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_b39d0072-783e-48fb-bb3b-974d2930d9d2.png" alt=""></div>
+          <p class="ws-sol-text">ユーザー数は500万人以上！<br>お店の認知を拡大し、売上UPを実現！</p>
+        </div>
+      </div>
+      <p class="ws-card-note ws-card-note-ghost" aria-hidden="true">&nbsp;</p>
+    </div>
+
+    <div class="ws-wrap">
+      <div class="ws-card">
+        <div class="ws-head">WORRIES 2</div>
+        <div class="ws-top">
+          <div class="ws-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_aa090942-0802-4639-892a-cb053c907793.png" alt=""></div>
+          <p class="ws-text">デリバリーを始めたいが<br>あまりコストをかけたくない...</p>
+          <div class="ws-badge">解決</div>
+        </div>
+        <div class="ws-bottom">
+          <div class="ws-chevron"><i></i><i></i></div>
+          <div class="ws-sol-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_d44466a1-33df-4370-a7e9-528e864eed31.png" alt=""></div>
+          <p class="ws-sol-text">初期費用・月額費用は不要！<br>手数料は売れた分だけ！</p>
+        </div>
+      </div>
+      <p class="ws-card-note">※プラン・エリア・時期により条件が変わる場合があります</p>
+    </div>
+
+    <div class="ws-wrap">
+      <div class="ws-card">
+        <div class="ws-head">WORRIES 3</div>
+        <div class="ws-top">
+          <div class="ws-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_057654cb-468c-47c0-b9e1-38ff3b630955.png" alt=""></div>
+          <p class="ws-text">デリバリーの仕組みが分からず<br>何をしたらいいか分からない...</p>
+          <div class="ws-badge">解決</div>
+        </div>
+        <div class="ws-bottom">
+          <div class="ws-chevron"><i></i><i></i></div>
+          <div class="ws-sol-illust"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_31dd4367-3cd0-4586-bc0b-7ebae119b0b9.png" alt=""></div>
+          <p class="ws-sol-text">必要なのはタブレット1台だけ！<br>簡単でシンプルな導入ステップ！</p>
+        </div>
+      </div>
+      <p class="ws-card-note">※無料タブレットはキャンペーン対象エリアのみ</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     REASONS
+     ============================================================ -->
+<section class="rs" id="reasons">
+  <h2 class="rs-title">選ばれる3つの理由</h2>
+  <ul class="rs-list">
+
+    <li class="rs-card">
+      <div class="rs-img">
+        <img src="https://storage.stock.studio.design/optimized/mHrqbsfPkr97nDvJkYUIv.webp" alt="REASON 1">
+      </div>
+      <div class="rs-body">
+        <span class="rs-badge">REASON 1</span>
+        <p class="rs-heading">売れた分の手数料だけなので<br>リスクなくデリバリーを始められる！</p>
+        <p class="rs-desc">高額な初期費用や月額の固定費を気にすることなく、売れた分の手数料で済むため、費用対効果に優れた運用が可能です。 Uber Eats（ウーバーイーツ）で、コストを最小限に抑えたフードデリバリーが実現します。</p>
+      </div>
+    </li>
+
+    <li class="rs-card">
+      <div class="rs-img">
+        <img src="https://images.unsplash.com/photo-1704176269801-a5d4cfe8c3ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Njh8fGNsb3NlfGVufDB8fHx8MTc3OTY4NjU1MXww&ixlib=rb-4.1.0&q=80&w=1080" alt="REASON 2">
+      </div>
+      <div class="rs-body">
+        <span class="rs-badge">REASON 2</span>
+        <p class="rs-heading">解約金や違約金も一切不要なので<br>使わなくなった時でも安心安全！</p>
+        <p class="rs-desc">高額な解約金に悩む必要もありません。万が一やめたくなった場合には、いつでもサービスを終了することができるので、初めてのフードデリバリーでも気軽に導入することができます。</p>
+      </div>
+    </li>
+
+    <li class="rs-card">
+      <div class="rs-img">
+        <img src="https://images.unsplash.com/photo-1647427017067-8f33ccbae493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Y2FzaCUyMHJlZ2lzdGVyfGVufDB8fHx8MTc4MDAyMTkxOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="REASON 3">
+      </div>
+      <div class="rs-body">
+        <span class="rs-badge">REASON 3</span>
+        <p class="rs-heading">必要なのはタブレット1台だけなので<br>簡単でスピーディーに導入することが可能！</p>
+        <p class="rs-desc">配達スタッフの確保や車両の購入なども必要なく、受注から配達までを代行することができます。 Uber Eats（ウーバーイーツ）では、タブレットをレンタルすることもできるので、簡単にフードデリバリーを始めることが可能です。</p>
+      </div>
+    </li>
+    <li class="rs-note-item">※ 無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</li>
+
+  </ul>
+</section>
+
+<!-- ============================================================
+     STATS + CTA
+     ============================================================ -->
+<section class="cs">
+  <div class="cs-inner">
+
+    <div class="cs-stats">
+
+      <div class="cs-card">
+        <div class="cs-card-left">
+          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f300a400-cd95-40a3-bd1d-4f81c5ac8ffd.png" alt="登録店舗数"></span>
+          <span class="cs-card-label">登録店舗数</span>
+          <span class="cs-card-num">18万店舗</span>
+        </div>
+        <div class="cs-card-right">
+          <p class="cs-card-title">納得の導入実績</p>
+          <p class="cs-card-desc">日本全国180,000店舗以上が加盟！ Uber Eats（ウーバーイーツ）の数多い豊富な導入実績で、確かな集客効果を実感することができます！</p>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-left">
+          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_ad0f1e50-03d8-49a4-8319-78492de3e014.png" alt="ユーザー登録数"></span>
+          <span class="cs-card-label">ユーザー登録数</span>
+          <span class="cs-card-num">500万人</span>
+        </div>
+        <div class="cs-card-right">
+          <p class="cs-card-title">ユーザー登録数は全国最大規模</p>
+          <p class="cs-card-desc">Uber Eats（ウーバーイーツ）の圧倒的なブランド力と知名度で、登録ユーザー数は500万人以上！店の認知を拡大し売上アップを実現します！</p>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-left">
+          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_82150037-3470-46c9-a99b-4c235a2a676c.png" alt="全国どこでも"></span>
+          <span class="cs-card-label">全国どこでも</span>
+          <span class="cs-card-num">対応OK</span>
+        </div>
+        <div class="cs-card-right">
+          <p class="cs-card-title">全国で展開中</p>
+          <p class="cs-card-desc">全国で展開しておりますが、提供エリア・モデルにより条件が変わります。店舗の住所をもとに対応可否をご確認します。お気軽にご相談ください。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cs-cta">
+      <p class="cs-cta-title">まずはお気軽にご相談ください</p>
+      <p class="cs-cta-sub">お客様の現状をお聞きし、<br>最適なご提案をさせていただきます。</p>
+      <div class="cs-tel-wrap">
+        <span class="cs-tel-label">電話相談 9:30〜18:00（平日のみ）</span>
+        <a href="tel:0800-805-2440" class="cs-tel-num">0800-805-2440</a>
+      </div>
+      <div class="cs-btns">
+        <a href="mailto:ubereats-support@flagk-co.jp" class="cs-btn">
+          <span class="cs-btn-badge">無料</span>
+          <span class="cs-btn-text">相談する</span>
+          <span class="cs-btn-arrow">→</span>
+        </a>
+        <a href="https://lin.ee/RhSAYu3" class="cs-btn" target="_blank" rel="noopener">
+          <span class="cs-btn-badge">LINE</span>
+          <span class="cs-btn-text">簡単申し込み</span>
+          <span class="cs-btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SUPPORT
+     ============================================================ -->
+<section class="sp" id="support">
+  <h2 class="sp-title">充実したサポート機能</h2>
+  <div class="sp-grid">
+
+    <div class="sp-col">
+      <div class="sp-col-head">気軽に始められる！</div>
+      <div class="sp-items">
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_18025931-1f85-4ac8-9fc4-77a1bdbd6445.png" alt="初期費用・月額費用0円"></span>
+            <span class="sp-item-title">初期費用・月額費用0円</span>
+          </div>
+          <p class="sp-item-desc">売れた分の手数料だけで、初期費用や月額費用は一切不要です。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_5273225a-7d20-4283-8b6d-7b841394ad6e.png" alt="解約金・違約金0円"></span>
+            <span class="sp-item-title">解約金・違約金0円</span>
+          </div>
+          <p class="sp-item-desc">解約金や違約金もないので、いつでもサービスを辞められます。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_f565387e-027c-404b-ae35-fd2b239dd0d2.png" alt="タブレットのレンタル"></span>
+            <span class="sp-item-title">タブレットのレンタル</span>
+          </div>
+          <p class="sp-item-desc">タブレットがない場合には、オプションでレンタルが可能です。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-col">
+      <div class="sp-col-head">受注管理で業務の効率化！</div>
+      <div class="sp-items">
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_38b0911f-5db2-4fe6-b3f0-62817d9e0781.png" alt="注文の管理"></span>
+            <span class="sp-item-title">注文の管理</span>
+          </div>
+          <p class="sp-item-desc">専用のアプリから、注文の状況を確認できます。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_dc493632-2569-4f42-8dcb-b039d076bb7b.png" alt="配達の管理"></span>
+            <span class="sp-item-title">配達の管理</span>
+          </div>
+          <p class="sp-item-desc">専用のアプリから、配達パートナーの到着時間や待機時間の確認が可能です。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_e91bcad6-f8d2-4a59-98fc-8294c38d372d.png" alt="メニューの更新"></span>
+            <span class="sp-item-title">メニューの更新</span>
+          </div>
+          <p class="sp-item-desc">品切れになった段階で、瞬時に売り切れ表示に切り替えられます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-col">
+      <div class="sp-col-head">売上管理で達成率を分析！</div>
+      <div class="sp-items">
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_8499387e-2ccd-44fd-9f58-19fd12100c73.png" alt="売上の確認"></span>
+            <span class="sp-item-title">売上の確認</span>
+          </div>
+          <p class="sp-item-desc">管理画面から、週次や月次ごとの売上データを確認できます。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_5f0965bb-6605-42a1-a4bf-84fc21b7b207.png" alt="お支払い明細の確認"></span>
+            <span class="sp-item-title">お支払い明細の確認</span>
+          </div>
+          <p class="sp-item-desc">管理画面から、お支払い明細の確認やダウンロードが可能です。</p>
+        </div>
+        <div class="sp-item">
+          <div class="sp-item-head">
+            <span class="sp-item-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_942b109c-3ddb-4688-add4-96628ce1dfc2.png" alt="お客様からの評価"></span>
+            <span class="sp-item-title">お客様からの評価</span>
+          </div>
+          <p class="sp-item-desc">ユーザーレポートの提出で、今後のサービス改善に活かせます。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="sp-note" id="sp-note">※ キャンペーン対象エリアは無料の場合があります<br>　（お問合せ後にご案内します）。</p>
+</section>
+
+<!-- ============================================================
+     RESOURCE
+     ============================================================ -->
+<section class="rm" id="resource">
+  <div class="rm-title-wrap">
+    <span class="rm-badge">無料</span>
+    <h2 class="rm-title">資料を申し込む</h2>
+  </div>
+  <p class="rm-sub">
+    ウーバーイーツってなに？<br>
+    Uber Eats の使い方やノウハウが満載！
+  </p>
+  <div class="rm-scene">
+    <div class="rm-card">
+      <p class="rm-card-title">基本情報ガイド</p>
+      <p class="rm-card-desc">まずは、この資料で<br> Uber Eats（ウーバーイーツ）を知ろう！</p>
+      <p class="rm-card-logo">Uber Eats</p>
+    </div>
+  </div>
+  <br>
+  <!-- ★ href を資料申し込みページのURLに変更してください -->
+  <a href="#" class="rm-btn">
+    <span class="rm-btn-badge">無料</span>
+    <span class="rm-btn-text">資料を申し込む</span>
+    <span class="rm-btn-arrow">→</span>
+  </a>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="fq" id="faq">
+  <h2 class="fq-title">よくある質問</h2>
+  <ul class="fq-list">
+
+    <li>
+      <details class="fq-item">
+        <summary><span class="fq-q">Q1.  申し込みからどのくらいでサービスを開始できますか？</span><span class="fq-icon"></span></summary>
+        <div class="fq-a">
+          <p>A1.  最短5営業日での導入が可能です。<br><br>※必要書類が揃った時点から起算。通常は2〜4週間程度。エリア・審査・繁忙状況により変動します。</p>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="fq-item">
+        <summary><span class="fq-q">Q2.  サービスの手数料は、いくらになりますか？</span><span class="fq-icon"></span></summary>
+        <div class="fq-a">
+          <p>A2.  Uber Eats（ウーバーイーツ）の手数料は、注文代金の35%（税込38.5%）が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<br><br>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</p>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="fq-item">
+        <summary><span class="fq-q">Q3.  サービスを開始するためには、何を準備する必要がありますか？</span><span class="fq-icon"></span></summary>
+        <div class="fq-a">
+          <p>A3.  オーダーを受けるためのタブレット端末と、テイクアウト用の容器の準備が必要になります。タブレットをお持ちでない場合は、レンタルにてご用意することも可能です。タブレット端末やSIMカードのレンタルが必要な場合は、お気軽にご相談ください。<br><br>※無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</p>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="fq-item">
+        <summary><span class="fq-q">Q4.  導入可能なエリアはどのようになりますか？</span><span class="fq-icon"></span></summary>
+        <div class="fq-a">
+          <p>A4.  全国で展開しておりますが、地域によって提供エリアが異なります。お店のご住所をお知らせいただければ、対応可否をご案内します。お気軽にお問い合わせください。</p>
+        </div>
+      </details>
+    </li>
+
+    <li>
+      <details class="fq-item">
+        <summary><span class="fq-q">Q5.  売上金を受け取る銀行口座に、指定や制限などはありますか？</span><span class="fq-icon"></span></summary>
+        <div class="fq-a">
+          <p>A5.  売上金の受取銀行の選択には制限がございます。対応銀行は申込後の管理画面設定時にご確認いただけます。ご不明な点はお気軽にお問い合わせください。</p>
+        </div>
+      </details>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="cf" id="contact">
+  <div class="cf-panel">
+    <div class="cf-title-wrap">
+      <span class="cf-badge">無料</span>
+      <h2 class="cf-title">ご相談フォーム</h2>
+    </div>
+    <hr class="cf-hr">
+    <p class="cf-sub">まずはお気軽にご相談ください。<br>お客様の現状をお聞きし、最適なご提案をさせていただきます。</p>
+    <hr class="cf-hr">
+    <!-- ★ action を実際の送信先URLに変更してください -->
+    <form class="cf-form" action="#" method="post">
+
+      <div class="cf-row">
+        <label class="cf-lbl">会社名・店舗名・施設名<span class="cf-tag cf-req">必須</span></label>
+        <div class="cf-inp-wrap"><input class="cf-input" type="text" name="company" placeholder="例）FlagK株式会社" required></div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">担当者氏名<span class="cf-tag cf-opt">任意</span></label>
+        <div class="cf-inp-wrap">
+          <div class="cf-name-grid" style="margin-bottom:8px">
+            <input class="cf-input" type="text" name="last_name" placeholder="姓">
+            <input class="cf-input" type="text" name="first_name" placeholder="名">
+          </div>
+          <div class="cf-name-grid">
+            <input class="cf-input" type="text" name="last_name_kana" placeholder="セイ">
+            <input class="cf-input" type="text" name="first_name_kana" placeholder="メイ">
+          </div>
+        </div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">店舗番号<span class="cf-tag cf-opt">任意</span></label>
+        <div class="cf-inp-wrap"><input class="cf-input" type="text" name="store_number" placeholder="例）03-1234-5678"></div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">連絡先<span class="cf-tag cf-req">必須</span></label>
+        <div class="cf-inp-wrap"><input class="cf-input" type="text" name="contact" placeholder="例）090-1234-5678" required></div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">メールアドレス<span class="cf-tag cf-req">必須</span></label>
+        <div class="cf-inp-wrap"><input class="cf-input" type="email" name="email" placeholder="例）info@flagk-co.jp" required></div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">お問い合わせ種別<span class="cf-tag cf-req">必須</span></label>
+        <div class="cf-inp-wrap">
+          <div class="cf-sel-wrap">
+            <select class="cf-select" name="inquiry_type" required>
+              <option value="">選択してください</option>
+              <option>掲載希望</option>
+              <option>掲載に関するご相談</option>
+              <option>代理店・パートナー希望</option>
+              <option>その他</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="cf-row">
+        <label class="cf-lbl">お問い合わせ内容<span class="cf-tag cf-opt">任意</span></label>
+        <div class="cf-inp-wrap"><textarea class="cf-textarea" name="message" placeholder="例）デリバリーサービスを始めたい..."></textarea></div>
+      </div>
+
+      <div class="cf-privacy">
+        <input type="checkbox" id="cf-pp" name="privacy" required>
+        <label for="cf-pp" class="cf-privacy-text"><a href="privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label>
+      </div>
+      <div class="cf-submit-wrap">
+        <button type="submit" class="cf-submit">送信 →</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     LINE CTA
+     ============================================================ -->
+<section class="lc">
+  <p class="lc-catch">＼ 簡単申し込み実施中 ／</p>
+  <p class="lc-sub">LINEでも申し込みや質問を<br>受付けております！</p>
+  <div class="lc-qr">
+    <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-180x180_webp_291d501a-f430-45c1-a06a-21e869da7431.png" alt="LINE QRコード">
+  </div>
+  <br>
+  <a href="https://lin.ee/RhSAYu3" class="lc-btn" target="_blank" rel="noopener">
+    <img class="lc-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+    LINEで送る
+  </a>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="ft">
+  <div class="ft-inner">
+    <nav class="ft-nav">
+      <a href="#" class="ft-link" target="_blank" rel="noopener">
+        <svg class="ft-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="13" rx="1"/><path d="M14 10l7-7M14 3h7v7"/></svg>
+        会社概要
+      </a>
+      <span class="ft-sep">|</span>
+      <a href="privacy-policy.html" class="ft-link" target="_blank" rel="noopener">プライバシーポリシー</a>
+    </nav>
+    <p class="ft-copy">© 2026 FlagK Co., Ltd.</p>
+  </div>
+</footer>
+
+<!-- モバイル固定底バー -->
+<div class="mb-bar">
+  <a href="tel:0800-805-2440" class="mb-col">
+    <span class="mb-hours">平日 9:30〜18:00</span>
+    <span class="mb-num">☎ 0800-805-2440</span>
+  </a>
+  <a href="mailto:ubereats-support@flagk-co.jp" class="mb-col">
+    <svg class="mb-mail-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+    <span class="mb-mail-lbl">メールで相談</span>
+  </a>
+  <a href="https://lin.ee/RhSAYu3" class="mb-col" target="_blank" rel="noopener">
+    <span class="mb-line-badge">簡単申し込み</span>
+    <span class="mb-line-inner">
+      <img class="mb-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+      LINE で送る
+    </span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var openBtn  = document.getElementById('hd-open');
+  var closeBtn = document.getElementById('hd-close');
+  var overlay  = document.getElementById('hd-overlay');
+  var scrim    = document.getElementById('hd-scrim');
+  function openMenu(){
+    overlay.classList.add('is-open');
+    scrim.classList.add('is-open');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    overlay.classList.remove('is-open');
+    scrim.classList.remove('is-open');
+    document.body.style.overflow='';
+  }
+  openBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+})();
+</script>
+<script>
+(function(){
+  function eqWsTop(){
+    var tops = document.querySelectorAll('.ws-top');
+    if(!tops.length) return;
+    var vw = window.innerWidth;
+    if(vw < 769){ tops.forEach(function(e){ e.style.height=''; }); return; }
+    tops.forEach(function(e){ e.style.height=''; });
+    var max = 0;
+    tops.forEach(function(e){ max = Math.max(max, e.offsetHeight); });
+    tops.forEach(function(e){ e.style.height = max + 'px'; });
+  }
+  /* WORRIESモバイルスライダー */
+  (function(){
+    if(window.innerWidth > 768) return;
+    var grid = document.querySelector('.ws-grid');
+    var wraps = Array.prototype.slice.call(document.querySelectorAll('.ws-wrap'));
+    if(!grid || wraps.length < 2) return;
+    var curIdx = 0;
+    var ctrl = document.createElement('div'); ctrl.className = 'ws-slider-ctrl';
+    grid.parentNode.insertBefore(ctrl, grid.nextSibling);
+    var prevBtn = document.createElement('button'); prevBtn.className='ws-arrow'; prevBtn.innerHTML='&#8592;'; prevBtn.setAttribute('aria-label','前へ');
+    var dotsEl = document.createElement('div'); dotsEl.className='ws-dots';
+    var nextBtn = document.createElement('button'); nextBtn.className='ws-arrow'; nextBtn.innerHTML='&#8594;'; nextBtn.setAttribute('aria-label','次へ');
+    ctrl.appendChild(prevBtn); ctrl.appendChild(dotsEl); ctrl.appendChild(nextBtn);
+    var dots = wraps.map(function(_,i){
+      var btn = document.createElement('button');
+      btn.className='ws-dot'+(i===0?' active':'');
+      btn.addEventListener('click', function(){ goTo(i); });
+      dotsEl.appendChild(btn); return btn;
+    });
+    function goTo(idx){ if(idx<0||idx>=wraps.length) return; curIdx=idx; wraps[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); refresh(); }
+    function refresh(){ dots.forEach(function(d,i){ d.classList.toggle('active',i===curIdx); }); prevBtn.disabled=curIdx===0; nextBtn.disabled=curIdx===wraps.length-1; }
+    prevBtn.addEventListener('click', function(){ goTo(curIdx-1); });
+    nextBtn.addEventListener('click', function(){ goTo(curIdx+1); });
+    var ticking = false;
+    grid.addEventListener('scroll', function(){
+      if(ticking) return; ticking=true;
+      requestAnimationFrame(function(){
+        var center = grid.scrollLeft+grid.offsetWidth/2; var activeIdx=0,minDist=Infinity;
+        wraps.forEach(function(w,i){ var dist=Math.abs((w.offsetLeft+w.offsetWidth/2)-center); if(dist<minDist){minDist=dist;activeIdx=i;} });
+        curIdx=activeIdx; refresh(); ticking=false;
+      });
+    });
+    refresh();
+  })();
+  setTimeout(eqWsTop,0); setTimeout(eqWsTop,300);
+  window.addEventListener('load', eqWsTop);
+  window.addEventListener('resize', eqWsTop);
+})();
+</script>
+<script>
+(function(){
+  /* SUPPORTモバイルスライダー */
+  if(window.innerWidth > 768) return;
+  var grid = document.querySelector('.sp-grid');
+  var cols = Array.prototype.slice.call(document.querySelectorAll('.sp-col'));
+  if(!grid || cols.length < 2) return;
+  var curIdx = 0;
+  var noteEl = document.getElementById('sp-note');
+  var ctrl = document.createElement('div'); ctrl.className = 'sp-slider-ctrl';
+  /* 順序: grid → note → ctrl */
+  if(noteEl){ noteEl.parentNode.insertBefore(ctrl, noteEl.nextSibling); }
+  else { grid.parentNode.insertBefore(ctrl, grid.nextSibling); }
+  var prevBtn = document.createElement('button'); prevBtn.className='sp-arrow'; prevBtn.innerHTML='&#8592;'; prevBtn.setAttribute('aria-label','前へ');
+  var dotsEl = document.createElement('div'); dotsEl.className='sp-dots';
+  var nextBtn = document.createElement('button'); nextBtn.className='sp-arrow'; nextBtn.innerHTML='&#8594;'; nextBtn.setAttribute('aria-label','次へ');
+  ctrl.appendChild(prevBtn); ctrl.appendChild(dotsEl); ctrl.appendChild(nextBtn);
+  var dots = cols.map(function(_,i){
+    var btn = document.createElement('button');
+    btn.className='sp-dot'+(i===0?' active':'');
+    btn.addEventListener('click', function(){ goTo(i); });
+    dotsEl.appendChild(btn); return btn;
+  });
+  function goTo(idx){ if(idx<0||idx>=cols.length) return; curIdx=idx; cols[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); refresh(); }
+  function refresh(){
+    dots.forEach(function(d,i){ d.classList.toggle('active',i===curIdx); });
+    prevBtn.disabled=curIdx===0; nextBtn.disabled=curIdx===cols.length-1;
+  }
+  prevBtn.addEventListener('click', function(){ goTo(curIdx-1); });
+  nextBtn.addEventListener('click', function(){ goTo(curIdx+1); });
+  var ticking = false;
+  grid.addEventListener('scroll', function(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){
+      var center = grid.scrollLeft+grid.offsetWidth/2; var activeIdx=0,minDist=Infinity;
+      cols.forEach(function(w,i){ var dist=Math.abs((w.offsetLeft+w.offsetWidth/2)-center); if(dist<minDist){minDist=dist;activeIdx=i;} });
+      curIdx=activeIdx; refresh(); ticking=false;
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
