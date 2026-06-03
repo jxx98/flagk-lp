@@ -21,7 +21,7 @@ a{text-decoration:none;color:inherit}
    ============================================================ */
 .hd{position:sticky;top:0;z-index:100;background:#fff;border-bottom:3px solid #06C167}
 .hd-inner{display:flex;align-items:center;gap:12px;width:100%;padding:0 24px;height:64px;max-width:1200px;margin:0 auto}
-.hd-logo img{height:30px;width:auto}
+.hd-logo img{height:50px;width:auto}
 .hd-nav{display:none;list-style:none;gap:24px;flex:1;padding-left:16px}
 @media(min-width:900px){.hd-nav{display:flex}}
 .hd-nav a{font-size:15px;font-weight:500;color:#333;transition:color .2s}
@@ -32,7 +32,7 @@ a{text-decoration:none;color:inherit}
 .hd-tel-link:hover{background:#04a857}
 .hd-btns{display:none;gap:6px;align-items:center;flex-shrink:0}
 @media(min-width:900px){.hd-btns{display:flex;margin-left:16px}}
-.hd-btn{display:inline-flex;align-items:center;gap:4px;padding:8px 14px;border-radius:4px;border:none;cursor:pointer;background:#06C167;color:#fff;font-size:14px;font-weight:700;font-family:inherit;white-space:nowrap}
+.hd-btn{display:inline-flex;align-items:center;gap:4px;padding:8px 14px;border-radius:4px;border:1.5px solid #06C167;cursor:pointer;background:#fff;color:#111;font-size:14px;font-weight:700;font-family:inherit;white-space:nowrap;text-decoration:none;transition:all .2s}
 .hd-line-icon{width:16px;height:16px;flex-shrink:0;object-fit:contain}
 .hd-sp-right{display:flex;align-items:center;gap:8px;margin-left:auto}
 @media(min-width:900px){.hd-sp-right{display:none}}
@@ -241,6 +241,8 @@ a{text-decoration:none;color:inherit}
   line-height:1.7;
   text-align:left;
   margin-bottom:24px;
+  padding-left:1.5em;
+  text-indent:-1.5em;
 }
 
 /* LINE CTAボタン */
@@ -573,11 +575,63 @@ a{text-decoration:none;color:inherit}
   .mb-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 6px 14px;text-decoration:none;gap:6px;background:#FFD600;color:#111;text-align:center}
   .mb-col+.mb-col{border-left:2px solid rgba(0,0,0,.12)}
   .mb-col-icon{line-height:1;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .mb-col-icon img{width:48px;height:auto;display:block}
-  .mb-line-icon{width:42px;height:42px;object-fit:contain}
+  .mb-col-icon img{height:80px;width:auto;display:block}
+  .mb-line-icon{height:80px;width:auto;object-fit:contain}
   .mb-col-lbl{font-size:12px;font-weight:900;color:#111;letter-spacing:.02em;line-height:1.3}
-  .mb-camp-badge{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#e53935;color:#fff;font-size:10px;font-weight:900;padding:2px 8px;border-radius:20px;white-space:nowrap;letter-spacing:.04em}
-  .ft{padding-bottom:calc(14px + 120px + env(safe-area-inset-bottom,0px))!important}
+  .mb-camp-badge{position:absolute;top:-8px;right:-6px;transform:rotate(12deg);background:#e53935;color:#fff;font-size:10px;font-weight:900;padding:2px 8px;border-radius:20px;white-space:nowrap;letter-spacing:.04em}
+  .ft{padding-bottom:calc(14px + 160px + env(safe-area-inset-bottom,0px))!important}
+}
+
+/* ============================================================
+   PC: FIXED HEADER + 2-COLUMN HERO
+   ============================================================ */
+
+/* Hero right column (iframe) — hidden on SP */
+.hv2-right{display:none}
+.hv2-iframe{width:100%;border:none;display:block}
+
+@media(min-width:900px){
+  /* Fixed header */
+  .hd{position:fixed;left:0;right:0;width:100%;top:0}
+  /* Compensate for fixed header height */
+  .hv2{margin-top:64px}
+
+  /* 2-column hero inner layout */
+  .hv2-inner{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:44px;
+    padding:60px 48px 56px;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    align-items:start;
+    width:100%;
+  }
+  .hv2-left{min-width:0}
+  .hv2-right{
+    display:block;
+    min-width:0;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.18);
+  }
+  .hv2-iframe{
+    width:100%;
+    height:680px;
+    border:none;
+    display:block;
+  }
+
+  /* Yellow circles: left-aligned */
+  .hv2-circles{justify-content:flex-start}
+
+  /* Campaign box: single column, half width */
+  .hv2-box{
+    grid-template-columns:1fr;
+    max-width:320px;
+  }
 }
 </style>
 </head>
@@ -609,7 +663,7 @@ a{text-decoration:none;color:inherit}
         <img class="hd-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE"> 無料相談
       </a>
       <a href="tel-reservation.html" class="hd-sp-btn hd-sp-btn--tel">
-        <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" class="hd-sp-tel-icon"> 電話相談
+        <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" class="hd-sp-tel-icon"> 相談予約
       </a>
       <button class="hd-burger" id="hd-open" aria-label="メニューを開く">
         <span></span><span></span><span></span>
@@ -641,6 +695,9 @@ a{text-decoration:none;color:inherit}
        alt="">
   <div class="hv2-overlay"></div>
   <div class="hv2-inner">
+
+  <!-- ── 左カラム ── -->
+  <div class="hv2-left">
 
     <!-- ── 初期費用無料 ── -->
     <div class="hv2-tag">
@@ -711,13 +768,25 @@ a{text-decoration:none;color:inherit}
     </div>
 
     <!-- 注釈 -->
-    <p class="hv2-note">※&ensp;&ensp;適用キャンペーンは地域・時期により異なります。<br>　詳しくはお問い合わせ時にご案内いたします。</p>
+    <p class="hv2-note">※ 適用キャンペーンは地域・時期により異なります。<br>詳しくはお問い合わせ時にご案内いたします。</p>
 
-    <!-- キャンペーン確認 CTA ボタン -->
+    <!-- キャンペーン確認 CTA ボタン (SP のみ表示) -->
     <a href="campaign-check.html" class="hv2-cta">
       <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="" style="height:26px;width:auto;flex-shrink:0"> 適用キャンペーンを確認
       <span class="hv2-cta-arrow">›</span>
     </a>
+
+  </div><!-- /hv2-left -->
+
+  <!-- ── 右カラム: キャンペーン確認フォーム (PC のみ表示) ── -->
+  <div class="hv2-right">
+    <iframe id="hv2-iframe"
+            class="hv2-iframe"
+            src="campaign-check.html?embed=1"
+            title="キャンペーン確認フォーム"
+            scrolling="no"
+            loading="lazy"></iframe>
+  </div><!-- /hv2-right -->
 
   </div>
 </section>
@@ -820,7 +889,7 @@ a{text-decoration:none;color:inherit}
         <p class="rs-desc">配達スタッフの確保や車両の購入なども必要なく、受注から配達までを代行することができます。 Uber Eats（ウーバーイーツ）では、タブレットをレンタルすることもできるので、簡単にフードデリバリーを始めることが可能です。</p>
       </div>
     </li>
-    <li class="rs-note-item">※&ensp;無料タブレットはキャンペーン対象エリアのみ。<br>　対象外の場合は端末のご用意が必要です。<br>　（お問合せ後にご案内します）</li>
+    <li class="rs-note-item">※ 無料タブレットはキャンペーン対象エリアのみ。<br>対象外の場合は端末のご用意が必要です。<br>（お問合せ後にご案内します）</li>
 
   </ul>
 </section>
@@ -986,7 +1055,7 @@ a{text-decoration:none;color:inherit}
 
   </div>
 
-  <p class="sp-note" id="sp-note">※ キャンペーン対象エリアは無料の場合があります<br>　（お問合せ後にご案内します）</p>
+  <p class="sp-note" id="sp-note">※ キャンペーン対象エリアは無料の場合があります<br>（お問合せ後にご案内します）</p>
 </section>
 
 <!-- ============================================================
@@ -1241,6 +1310,18 @@ a{text-decoration:none;color:inherit}
     });
   });
   refresh();
+})();
+</script>
+<script>
+// iframe自動リサイズ（campaign-check.html からの postMessage）
+(function(){
+  var iframe = document.getElementById('hv2-iframe');
+  if(!iframe) return;
+  window.addEventListener('message', function(e){
+    if(e.data && typeof e.data.iframeHeight === 'number'){
+      iframe.style.height = e.data.iframeHeight + 'px';
+    }
+  });
 })();
 </script>
 </body>
