@@ -566,19 +566,15 @@ a{text-decoration:none;color:inherit}
    ============================================================ */
 .mb-bar{display:none}
 @media(max-width:768px){
-  .mb-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:998;background:#fff;align-items:stretch;box-shadow:0 -2px 14px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px);border-top:2px solid #06C167}
-  .mb-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px 7px;color:#111;text-decoration:none;gap:3px;text-align:center}
-  .mb-col+.mb-col{border-left:1px solid #e5e5e5}
-  .mb-col-icon{font-size:18px;line-height:1}
-  .mb-col-lbl{font-size:10px;font-weight:700;color:#111;letter-spacing:.02em;white-space:nowrap}
-  .mb-col--tel{background:#06C167}
-  .mb-col--tel .mb-col-icon,.mb-col--tel .mb-col-lbl{color:#fff}
-  .mb-col--camp{background:#FFD600}
-  .mb-col--camp .mb-col-lbl{color:#111}
-  .mb-col--line{background:#06C755}
-  .mb-col--line .mb-col-lbl{color:#fff}
-  .mb-line-icon{width:20px;height:20px;object-fit:contain}
-  .ft{padding-bottom:calc(14px + 68px + env(safe-area-inset-bottom,0px))!important}
+  .mb-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:998;align-items:stretch;box-shadow:0 -4px 20px rgba(0,0,0,.22);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .mb-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 6px 18px;color:#111;text-decoration:none;gap:10px;text-align:center;background:#FFD600}
+  .mb-col+.mb-col{border-left:2px solid rgba(0,0,0,.12)}
+  .mb-col-icon{line-height:1;position:relative;display:flex;align-items:center;justify-content:center}
+  .mb-col-icon img{width:60px;height:auto;display:block}
+  .mb-line-icon{width:56px;height:56px;object-fit:contain}
+  .mb-col-lbl{font-size:13px;font-weight:900;color:#111;letter-spacing:.02em;line-height:1.35}
+  .mb-camp-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#e53935;color:#fff;font-size:10px;font-weight:900;padding:2px 10px;border-radius:20px;white-space:nowrap;letter-spacing:.06em}
+  .ft{padding-bottom:calc(14px + 122px + env(safe-area-inset-bottom,0px))!important}
 }
 </style>
 </head>
@@ -1107,16 +1103,23 @@ a{text-decoration:none;color:inherit}
 <!-- モバイル固定底バー -->
 <div class="mb-bar">
   <a href="tel-reservation.html" class="mb-col mb-col--tel">
-    <span class="mb-col-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" style="width:24px;height:auto;display:block"></span>
+    <span class="mb-col-icon">
+      <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="">
+    </span>
     <span class="mb-col-lbl">電話相談予約</span>
   </a>
   <a href="campaign-check.html" class="mb-col mb-col--camp">
-    <span class="mb-col-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="" style="width:24px;height:auto;display:block"></span>
+    <span class="mb-col-icon">
+      <span class="mb-camp-badge">人気</span>
+      <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="">
+    </span>
     <span class="mb-col-lbl">キャンペーン確認</span>
   </a>
   <a href="https://lin.ee/RhSAYu3" class="mb-col mb-col--line" target="_blank" rel="noopener">
-    <img class="mb-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
-    <span class="mb-col-lbl" style="color:#fff">LINE申込</span>
+    <span class="mb-col-icon">
+      <img class="mb-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+    </span>
+    <span class="mb-col-lbl">LINE申込</span>
   </a>
 </div>
 
