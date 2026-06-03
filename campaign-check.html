@@ -19,15 +19,19 @@ button,input,select,textarea{font-family:inherit}
 .hd{background:#fff;border-bottom:3px solid #06C167;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .hd-logo img{height:26px;width:auto;flex-shrink:0}
 .hd-btns{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.hd-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:5px;background:#06C167;color:#fff;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;letter-spacing:.04em;transition:background .2s}
-.hd-btn:hover{background:#04a857}
+.hd-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:5px;background:#fff;color:#111;border:1.5px solid #06C167;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;letter-spacing:.04em;transition:all .2s}
+.hd-btn:hover{background:#f0fff8}
 .hd-btn-icon{height:20px;width:auto;flex-shrink:0;display:block}
 .hd-line-icon{width:20px;height:20px;flex-shrink:0;object-fit:contain}
+.back-bar{background:#f8f8f8;border-bottom:1px solid #e8e8e8;padding:7px 20px}
+.back-bar a{color:#06C167;text-decoration:none;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.back-bar a:hover{text-decoration:underline}
 @media(max-width:480px){
   .hd{padding:0 14px}
   .hd-btn{font-size:11px;padding:6px 9px;gap:4px}
   .hd-btn-icon{height:17px}
   .hd-line-icon{width:17px;height:17px}
+  .back-bar{padding:7px 14px}
 }
 
 /* ── HERO ── */
@@ -118,6 +122,9 @@ button,input,select,textarea{font-family:inherit}
     </a>
   </div>
 </header>
+<div class="back-bar">
+  <a href="index-lp.html">← メインLPへ戻る</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
