@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャンペーン確認フォーム | FlagK Co., Ltd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{width:100%;margin:0;padding:0;font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:#f5f7f6;color:#333}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:inherit}
+
+/* ── HEADER ── */
+.hd{background:#fff;border-bottom:3px solid #06C167;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.hd-logo img{height:26px;width:auto}
+.hd-label{font-size:13px;font-weight:700;color:#06C167;letter-spacing:.04em;white-space:nowrap}
+@media(max-width:480px){.hd-label{font-size:11px}}
+
+/* ── HERO ── */
+.hero{
+  width:100%;
+  margin:0;
+  background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1774x887_v-fms_webp_0d87d188-c8c0-4ede-8743-b6f168654307.png') right top / cover no-repeat;
+  background-color:#028844;
+  height:clamp(280px,26vw,420px);
+  padding:32px 40px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+}
+.hero-eyebrow{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.hero-eyebrow-icon{font-size:20px;line-height:1;flex-shrink:0}
+.hero-title{font-size:clamp(24px,3.8vw,42px);font-weight:900;line-height:1.3;margin-bottom:16px;letter-spacing:.02em;text-align:left;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero-hours{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:24px;padding:8px 20px;font-size:13px;font-weight:700}
+.hero-hours-dot{width:8px;height:8px;background:#FFD600;border-radius:50%;flex-shrink:0}
+/* ── HERO モバイル ── */
+@media(max-width:600px){
+  .hero{height:210px;padding:20px 20px;background-position:right top;justify-content:center;margin:0}
+  .hero-eyebrow{font-size:11px;margin-bottom:6px;gap:4px}
+  .hero-eyebrow-icon{font-size:14px}
+  .hero-title{font-size:16px;margin-bottom:12px;line-height:1.3}
+  .hero-hours{font-size:11px;padding:6px 14px}
+}
+
+/* ── FORM PANEL ── */
+.form-wrap{max-width:560px;margin:0 auto;padding:24px 16px 48px}
+.panel{background:#fff;border-radius:14px;box-shadow:0 4px 28px rgba(0,0,0,.10);padding:32px 32px 36px}
+@media(max-width:480px){.panel{padding:24px 18px 28px}}
+
+.panel-note{font-size:13px;color:#555;line-height:1.85;margin-bottom:24px;padding:12px 14px;background:#f0faf5;border-left:3px solid #06C167;border-radius:0 6px 6px 0}
+
+/* ── FORM ROWS ── */
+.f-row{margin-bottom:20px}
+.f-lbl{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;font-weight:700;color:#222}
+.f-req{display:inline-block;font-size:10px;font-weight:700;background:#06C167;color:#fff;padding:2px 6px;border-radius:3px;flex-shrink:0}
+.f-input{width:100%;border:1px solid #ddd;border-radius:7px;padding:13px 14px;font-size:15px;font-family:inherit;color:#111;background:#fafafa;transition:border-color .2s,background .2s;outline:none}
+.f-input:focus{border-color:#06C167;background:#fff;box-shadow:0 0 0 3px rgba(6,193,103,.12)}
+.f-input::placeholder{color:#bbb}
+
+/* ── TIME RADIO ── */
+.f-time-grid{display:flex;flex-direction:column;gap:10px}
+.f-radio-label{display:flex;align-items:center;gap:12px;cursor:pointer;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;transition:border-color .2s,background .2s;font-size:14px;font-weight:500;color:#333;background:#fafafa}
+.f-radio-label:hover{border-color:#06C167;background:#f0faf5}
+.f-radio-label input[type=checkbox]{width:18px;height:18px;accent-color:#06C167;flex-shrink:0;cursor:pointer;border-radius:4px}
+.f-radio-label input[type=checkbox]:checked+.f-radio-text{color:#06C167;font-weight:700}
+.f-radio-label:has(input:checked){border-color:#06C167;background:#f0faf5}
+.f-time-main{font-weight:700}
+.f-time-sub{font-size:12px;color:#888;margin-left:2px}
+
+/* ── PRIVACY ── */
+.f-privacy{display:flex;align-items:flex-start;gap:10px;margin:24px 0 28px;font-size:12px;color:#555;line-height:1.75}
+.f-privacy input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:#06C167;cursor:pointer}
+.f-privacy a{color:#06C167;text-decoration:underline}
+
+/* ── SUBMIT ── */
+.f-submit-wrap{text-align:center}
+.f-submit{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:380px;background:#111;color:#fff;border:none;border-radius:10px;padding:18px 28px;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .25s,border-radius .25s;letter-spacing:.04em}
+.f-submit:hover:not(:disabled){background:#222}
+.f-submit:disabled{background:#c5cacc;cursor:not-allowed;border-radius:50px}
+.f-submit-arrow{font-size:20px;font-weight:400;flex-shrink:0}
+
+/* ── SSL NOTICE ── */
+.ssl-notice{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;font-size:11px;color:#888;line-height:1.6;text-align:center}
+.ssl-icon{font-size:16px;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:#1a1a1a;color:#fff;text-align:center;padding:20px 16px;font-size:12px;opacity:.9}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd">
+  <div class="hd-logo">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACbEAAALFCAYAAAD3SDy+AAAACXBIWXMAAC4jAAAuIwF4pT92AAAgAElEQVR4nOzd4XUUZ5bH4f+d4++wEaCNADYCNBHARoCIwNoIaEeAHAEigpEjmHYEIyKwyAAiePdDlwaZEQZJLd2q7uc5RwdsY3SRZHW969f3rTFGAAAAAAAAAAAAoMPfugcAAAAAAAAAAABgf4nYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2P3UPAADA9apq3T3D5HyMcdw9BADAHFTVQZKDK3/rWZLH3/nXzpN8uvrXY4xP3/rFAACwj6rqWZKT7jkmx2OM8+4hAGCfiNgAAObrefcAAAD7qKoOswnVDpIcTn97q9dmVZUkn/MlcDtPcpHkYoyx3ub7AgCAhXic+Twn+r0XqgAAWyZiA4AmVbXqnoGtOB1jXHQPAcC3zfAxd73rgUpVvcxmO9XSfBpjzOVV/zyQabPa4fT2LMnTB3z3j/LlJt2LKzMlycdswrZ1Nt83bIEAYOtcKwMAAHMhYgOAPm+6B2Ar1tlszABgvub4mLvuHuC+TMe/nGYT5yzN6+4BeBhTaPkym3DtSe803/RkenuRJFX1OVPQluTMCykA2BLXygAAwCyI2AAAAICtmAK2dRYasI0xTruH4P5cCddeZplfo4+yCdpeJHlbVR+yCUYFbQAAAAAs3t+6BwAAAACWr6oeZ7kb2H4RsO2mqjqoqpOq+pTkH0leZZlfo9d5muRtkj+qal1VR83zAAAAAMCtidgAAACArVhnE9Kezk0MkzsDAN25KdUdY6kAAAAASUVORK5CYII=" alt="FlagK Co., Ltd.">
+  </div>
+  <span class="hd-label">キャンペーン確認フォーム</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">
+    <span class="hero-eyebrow-icon">🎁</span>
+    今すぐ確認！
+  </p>
+  <h1 class="hero-title">
+    Uber Eatsの最新キャンペーン、<br>
+    あなたのお店は対象？
+  </h1>
+  <div class="hero-hours">
+    <span class="hero-hours-dot"></span>
+    受付時間：平日 9:30〜18:00
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-wrap">
+  <div class="panel">
+
+    <p class="panel-note">※ お客様の店舗情報をもとに、適用可能なキャンペーンをご案内いたします。ご連絡が取れない場合は、改めてご連絡させていただく場合がございます。</p>
+
+    <!-- ★ action を送信先URLに変更してください -->
+    <form id="campaign-form" action="#" method="post">
+
+      <!-- お店の名前 -->
+      <div class="f-row">
+        <label class="f-lbl" for="shop_name">
+          お店の名前<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="shop_name" name="shop_name"
+               placeholder="例）〇〇食堂" required>
+      </div>
+
+      <!-- 担当者名 -->
+      <div class="f-row">
+        <label class="f-lbl" for="contact_name">
+          担当者名<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="contact_name" name="contact_name"
+               placeholder="例）田中 太郎" required>
+      </div>
+
+      <!-- 電話番号 -->
+      <div class="f-row">
+        <label class="f-lbl" for="tel">
+          ご連絡先（電話番号）<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="tel" id="tel" name="tel"
+               placeholder="例）090-1234-5678" required>
+      </div>
+
+      <!-- 連絡希望時間 -->
+      <div class="f-row">
+        <div class="f-lbl">
+          連絡希望時間<span class="f-req">必須</span>
+        </div>
+        <div class="f-time-grid">
+          <label class="f-radio-label">
+            <input type="checkbox" name="contact_time[]" value="午前（10:00〜12:00）">
+            <span class="f-radio-text">
+              <span class="f-time-main">午前</span><span class="f-time-sub">（10:00〜12:00）</span>
+            </span>
+          </label>
+          <label class="f-radio-label">
+            <input type="checkbox" name="contact_time[]" value="午後（13:00〜15:00）">
+            <span class="f-radio-text">
+              <span class="f-time-main">午後</span><span class="f-time-sub">（13:00〜15:00）</span>
+            </span>
+          </label>
+          <label class="f-radio-label">
+            <input type="checkbox" name="contact_time[]" value="夕方（15:00〜18:00）">
+            <span class="f-radio-text">
+              <span class="f-time-main">夕方</span><span class="f-time-sub">（15:00〜18:00）</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- プライバシーポリシー -->
+      <div class="f-privacy">
+        <input type="checkbox" id="privacy" required>
+        <label for="privacy">
+          <a href="https://jxx98.github.io/flagk-lp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
+        </label>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="f-submit-wrap">
+        <button type="submit" class="f-submit" id="submit-btn">
+          <span id="btn-text">未入力の項目があります</span>
+          <span class="f-submit-arrow" id="btn-arrow">›</span>
+        </button>
+      </div>
+
+    </form>
+
+    <!-- SSL -->
+    <div class="ssl-notice">
+      <span class="ssl-icon">🔒</span>
+      <span>当フォームはSSLに対応しています。<br>お客様の情報は暗号化して送信されます。</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 FlagK Co., Ltd.</p>
+</footer>
+
+<script>
+// バリデーション：未入力時はボタンにメッセージ表示
+(function(){
+  var form    = document.getElementById('campaign-form');
+  var btn     = document.getElementById('submit-btn');
+  var btnText = document.getElementById('btn-text');
+  var btnArr  = document.getElementById('btn-arrow');
+  function check(){
+    var formOk      = form.checkValidity();
+    var timeChecked = form.querySelectorAll('input[name="contact_time[]"]:checked').length > 0;
+    var ok = formOk && timeChecked;
+    btn.disabled      = !ok;
+    btnText.textContent = ok ? '送信する'         : '未入力の項目があります';
+    btnArr.textContent  = ok ? '→'               : '›';
+  }
+  form.addEventListener('input',  check);
+  form.addEventListener('change', check);
+  check();
+})();
+</script>
+
+</body>
+</html>
