@@ -27,7 +27,7 @@ button,input,select,textarea{font-family:inherit}
   margin:0;
   background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1774x887_v-fms_webp_0d87d188-c8c0-4ede-8743-b6f168654307.png') right top / cover no-repeat;
   background-color:#028844;
-  height:280px;
+  height:clamp(260px,22vw,360px);
   padding:32px 40px;
   color:#fff;
   position:relative;
@@ -83,10 +83,10 @@ button,input,select,textarea{font-family:inherit}
 
 /* ── SUBMIT ── */
 .f-submit-wrap{text-align:center}
-.f-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:380px;background:#111;color:#fff;border:none;border-radius:10px;padding:18px 24px;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s,opacity .2s;letter-spacing:.04em}
-.f-submit:hover{background:#222}
-.f-submit:disabled{background:#aaa;cursor:not-allowed}
-.f-submit-arrow{font-size:20px;font-weight:400}
+.f-submit{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:380px;background:#111;color:#fff;border:none;border-radius:10px;padding:18px 28px;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .25s,border-radius .25s;letter-spacing:.04em}
+.f-submit:hover:not(:disabled){background:#222}
+.f-submit:disabled{background:#c5cacc;cursor:not-allowed;border-radius:50px}
+.f-submit-arrow{font-size:20px;font-weight:400;flex-shrink:0}
 
 /* ── SSL NOTICE ── */
 .ssl-notice{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;font-size:11px;color:#888;line-height:1.6;text-align:center}
@@ -196,7 +196,8 @@ button,input,select,textarea{font-family:inherit}
       <!-- 送信ボタン -->
       <div class="f-submit-wrap">
         <button type="submit" class="f-submit" id="submit-btn">
-          送信する <span class="f-submit-arrow">→</span>
+          <span id="btn-text">未入力の項目があります</span>
+          <span class="f-submit-arrow" id="btn-arrow">›</span>
         </button>
       </div>
 
@@ -217,18 +218,21 @@ button,input,select,textarea{font-family:inherit}
 </footer>
 
 <script>
-// 未入力チェック：チェックボックス含む全必須項目が埋まるまでボタンをグレーに
+// バリデーション：未入力時はボタンにメッセージ表示
 (function(){
-  var form = document.getElementById('tel-form');
-  var btn  = document.getElementById('submit-btn');
+  var form    = document.getElementById('tel-form');
+  var btn     = document.getElementById('submit-btn');
+  var btnText = document.getElementById('btn-text');
+  var btnArr  = document.getElementById('btn-arrow');
   function check(){
-    var formOk = form.checkValidity();
+    var formOk      = form.checkValidity();
     var timeChecked = form.querySelectorAll('input[name="contact_time[]"]:checked').length > 0;
     var ok = formOk && timeChecked;
-    btn.disabled = !ok;
-    btn.style.background = ok ? '#111' : '#aaa';
+    btn.disabled      = !ok;
+    btnText.textContent = ok ? '送信する'         : '未入力の項目があります';
+    btnArr.textContent  = ok ? '→'               : '›';
   }
-  form.addEventListener('input', check);
+  form.addEventListener('input',  check);
   form.addEventListener('change', check);
   check();
 })();
