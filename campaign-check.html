@@ -62,19 +62,17 @@ button,input,select,textarea{font-family:inherit}
 .f-row{margin-bottom:20px}
 .f-lbl{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;font-weight:700;color:#222}
 .f-req{display:inline-block;font-size:10px;font-weight:700;background:#06C167;color:#fff;padding:2px 6px;border-radius:3px;flex-shrink:0}
+.f-opt{display:inline-block;font-size:10px;font-weight:700;background:#bbb;color:#fff;padding:2px 6px;border-radius:3px;flex-shrink:0}
 .f-input{width:100%;border:1px solid #ddd;border-radius:7px;padding:13px 14px;font-size:15px;font-family:inherit;color:#111;background:#fafafa;transition:border-color .2s,background .2s;outline:none}
 .f-input:focus{border-color:#06C167;background:#fff;box-shadow:0 0 0 3px rgba(6,193,103,.12)}
 .f-input::placeholder{color:#bbb}
-
-/* ── TIME RADIO ── */
-.f-time-grid{display:flex;flex-direction:column;gap:10px}
-.f-radio-label{display:flex;align-items:center;gap:12px;cursor:pointer;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;transition:border-color .2s,background .2s;font-size:14px;font-weight:500;color:#333;background:#fafafa}
-.f-radio-label:hover{border-color:#06C167;background:#f0faf5}
-.f-radio-label input[type=checkbox]{width:18px;height:18px;accent-color:#06C167;flex-shrink:0;cursor:pointer;border-radius:4px}
-.f-radio-label input[type=checkbox]:checked+.f-radio-text{color:#06C167;font-weight:700}
-.f-radio-label:has(input:checked){border-color:#06C167;background:#f0faf5}
-.f-time-main{font-weight:700}
-.f-time-sub{font-size:12px;color:#888;margin-left:2px}
+.f-sel-wrap{position:relative}
+.f-sel-wrap::after{content:'▼';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:11px;color:#888;pointer-events:none}
+.f-select{width:100%;border:1px solid #ddd;border-radius:7px;padding:13px 14px;font-size:15px;font-family:inherit;color:#111;background:#fafafa;appearance:none;outline:none;cursor:pointer;transition:border-color .2s}
+.f-select:focus{border-color:#06C167;background:#fff;box-shadow:0 0 0 3px rgba(6,193,103,.12)}
+.f-textarea{width:100%;border:1px solid #ddd;border-radius:7px;padding:13px 14px;font-size:15px;font-family:inherit;color:#111;background:#fafafa;resize:vertical;min-height:120px;outline:none;transition:border-color .2s}
+.f-textarea:focus{border-color:#06C167;background:#fff;box-shadow:0 0 0 3px rgba(6,193,103,.12)}
+.f-textarea::placeholder{color:#bbb}
 
 /* ── PRIVACY ── */
 .f-privacy{display:flex;align-items:flex-start;gap:10px;margin:24px 0 28px;font-size:12px;color:#555;line-height:1.75}
@@ -131,58 +129,74 @@ button,input,select,textarea{font-family:inherit}
     <!-- ★ action を送信先URLに変更してください -->
     <form id="campaign-form" action="#" method="post">
 
-      <!-- お店の名前 -->
+      <!-- 会社名・店舗名・施設名 -->
       <div class="f-row">
-        <label class="f-lbl" for="shop_name">
-          お店の名前<span class="f-req">必須</span>
+        <label class="f-lbl" for="company">
+          会社名・店舗名・施設名<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="text" id="shop_name" name="shop_name"
-               placeholder="例）〇〇食堂" required>
+        <input class="f-input" type="text" id="company" name="company"
+               placeholder="例）FlagK株式会社" required>
       </div>
 
-      <!-- 担当者名 -->
+      <!-- 担当者氏名 -->
       <div class="f-row">
         <label class="f-lbl" for="contact_name">
-          担当者名<span class="f-req">必須</span>
+          担当者氏名<span class="f-opt">任意</span>
         </label>
         <input class="f-input" type="text" id="contact_name" name="contact_name"
-               placeholder="例）田中 太郎" required>
+               placeholder="例）田中 太郎">
       </div>
 
-      <!-- 電話番号 -->
+      <!-- 店舗番号 -->
+      <div class="f-row">
+        <label class="f-lbl" for="store_number">
+          店舗番号<span class="f-opt">任意</span>
+        </label>
+        <input class="f-input" type="text" id="store_number" name="store_number"
+               placeholder="例）03-1234-5678">
+      </div>
+
+      <!-- 連絡先 -->
       <div class="f-row">
         <label class="f-lbl" for="tel">
-          ご連絡先（電話番号）<span class="f-req">必須</span>
+          連絡先<span class="f-req">必須</span>
         </label>
         <input class="f-input" type="tel" id="tel" name="tel"
                placeholder="例）090-1234-5678" required>
       </div>
 
-      <!-- 連絡希望時間 -->
+      <!-- メールアドレス -->
       <div class="f-row">
-        <div class="f-lbl">
-          連絡希望時間<span class="f-req">必須</span>
+        <label class="f-lbl" for="email">
+          メールアドレス<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="email" id="email" name="email"
+               placeholder="例）info@flagk-co.jp" required>
+      </div>
+
+      <!-- お問い合わせ種別 -->
+      <div class="f-row">
+        <label class="f-lbl" for="inquiry_type">
+          お問い合わせ種別<span class="f-req">必須</span>
+        </label>
+        <div class="f-sel-wrap">
+          <select class="f-select" id="inquiry_type" name="inquiry_type" required>
+            <option value="">選択してください</option>
+            <option>掲載希望</option>
+            <option>掲載に関するご相談</option>
+            <option>代理店・パートナー希望</option>
+            <option>その他</option>
+          </select>
         </div>
-        <div class="f-time-grid">
-          <label class="f-radio-label">
-            <input type="checkbox" name="contact_time[]" value="午前（10:00〜12:00）">
-            <span class="f-radio-text">
-              <span class="f-time-main">午前</span><span class="f-time-sub">（10:00〜12:00）</span>
-            </span>
-          </label>
-          <label class="f-radio-label">
-            <input type="checkbox" name="contact_time[]" value="午後（13:00〜15:00）">
-            <span class="f-radio-text">
-              <span class="f-time-main">午後</span><span class="f-time-sub">（13:00〜15:00）</span>
-            </span>
-          </label>
-          <label class="f-radio-label">
-            <input type="checkbox" name="contact_time[]" value="夕方（15:00〜18:00）">
-            <span class="f-radio-text">
-              <span class="f-time-main">夕方</span><span class="f-time-sub">（15:00〜18:00）</span>
-            </span>
-          </label>
-        </div>
+      </div>
+
+      <!-- お問い合わせ内容 -->
+      <div class="f-row">
+        <label class="f-lbl" for="message">
+          お問い合わせ内容<span class="f-opt">任意</span>
+        </label>
+        <textarea class="f-textarea" id="message" name="message"
+                  placeholder="例）デリバリーサービスを始めたい..."></textarea>
       </div>
 
       <!-- プライバシーポリシー -->
@@ -218,6 +232,17 @@ button,input,select,textarea{font-family:inherit}
 </footer>
 
 <script>
+// 親ページへ高さを通知（iframe自動リサイズ用）
+(function(){
+  function sendHeight(){
+    var h = document.documentElement.scrollHeight;
+    window.parent.postMessage({iframeHeight: h}, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  new MutationObserver(sendHeight).observe(document.body,{childList:true,subtree:true,attributes:true});
+})();
+
 // バリデーション：未入力時はボタンにメッセージ表示
 (function(){
   var form    = document.getElementById('campaign-form');
@@ -225,12 +250,10 @@ button,input,select,textarea{font-family:inherit}
   var btnText = document.getElementById('btn-text');
   var btnArr  = document.getElementById('btn-arrow');
   function check(){
-    var formOk      = form.checkValidity();
-    var timeChecked = form.querySelectorAll('input[name="contact_time[]"]:checked').length > 0;
-    var ok = formOk && timeChecked;
-    btn.disabled      = !ok;
-    btnText.textContent = ok ? '送信する'         : '未入力の項目があります';
-    btnArr.textContent  = ok ? '→'               : '›';
+    var ok = form.checkValidity();
+    btn.disabled        = !ok;
+    btnText.textContent = ok ? '送信する' : '未入力の項目があります';
+    btnArr.textContent  = ok ? '→'       : '›';
   }
   form.addEventListener('input',  check);
   form.addEventListener('change', check);

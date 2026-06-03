@@ -218,6 +218,17 @@ button,input,select,textarea{font-family:inherit}
 </footer>
 
 <script>
+// 親ページへ高さを通知（iframe自動リサイズ用）
+(function(){
+  function sendHeight(){
+    var h = document.documentElement.scrollHeight;
+    window.parent.postMessage({iframeHeight: h}, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  new MutationObserver(sendHeight).observe(document.body,{childList:true,subtree:true,attributes:true});
+})();
+
 // バリデーション：未入力時はボタンにメッセージ表示
 (function(){
   var form    = document.getElementById('tel-form');
