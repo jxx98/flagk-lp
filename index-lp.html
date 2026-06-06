@@ -19,7 +19,7 @@ a{text-decoration:none;color:inherit}
 /* ============================================================
    HEADER
    ============================================================ */
-.hd{position:sticky;top:0;z-index:100;background:#fff;border-bottom:3px solid #06C167}
+.hd{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;background:#fff;border-bottom:3px solid #06C167}
 .hd-inner{display:flex;align-items:center;gap:12px;width:100%;padding:0 24px;height:64px;max-width:1200px;margin:0 auto}
 .hd-logo img{height:50px;width:auto}
 .hd-nav{display:none;list-style:none;gap:24px;flex:1;padding-left:16px}
@@ -63,6 +63,7 @@ a{text-decoration:none;color:inherit}
   display:grid;
   background:#1a0a00;
   overflow:hidden;
+  margin-top:64px;
 }
 
 /* 背景画像 — gridで同セルに積む（iOS Safariでも確実に表示） */
@@ -604,9 +605,9 @@ a{text-decoration:none;color:inherit}
 
   /* Single column hero inner layout */
   .hv2-inner{
-    padding:60px 80px 56px;
+    padding:60px 80px 56px 60px;
     max-width:960px;
-    margin-left:auto;
+    margin-left:3%;
     margin-right:auto;
     width:100%;
   }
