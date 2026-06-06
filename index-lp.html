@@ -586,7 +586,7 @@ a{text-decoration:none;color:inherit}
    PC: FIXED HEADER + 2-COLUMN HERO
    ============================================================ */
 
-/* Hero right column (iframe) — hidden on SP */
+/* Hero right column — hidden on SP */
 .hv2-right{display:none}
 .hv2-iframe{width:100%;border:none;display:block}
 
@@ -616,6 +616,8 @@ a{text-decoration:none;color:inherit}
     overflow:hidden;
     box-shadow:0 8px 40px rgba(0,0,0,.35);
     border:1px solid rgba(255,255,255,.18);
+    background:rgba(0,0,0,.15);
+    min-height:400px;
   }
   .hv2-iframe{
     width:100%;
@@ -778,11 +780,12 @@ a{text-decoration:none;color:inherit}
 
   </div><!-- /hv2-left -->
 
-  <!-- ── 右カラム: キャンペーン確認フォーム (PC のみ表示) ── -->
+  <!-- ── 右カラム: Studio フォーム埋め込み予定 ── -->
   <div class="hv2-right">
+    <!-- Studio のフォームURLが確定したら下の src を更新 -->
     <iframe id="hv2-iframe"
             class="hv2-iframe"
-            src="campaign-check.html?embed=1"
+            src=""
             title="キャンペーン確認フォーム"
             scrolling="no"
             loading="lazy"></iframe>
@@ -1310,18 +1313,6 @@ a{text-decoration:none;color:inherit}
     });
   });
   refresh();
-})();
-</script>
-<script>
-// iframe自動リサイズ（campaign-check.html からの postMessage）
-(function(){
-  var iframe = document.getElementById('hv2-iframe');
-  if(!iframe) return;
-  window.addEventListener('message', function(e){
-    if(e.data && typeof e.data.iframeHeight === 'number'){
-      iframe.style.height = e.data.iframeHeight + 'px';
-    }
-  });
 })();
 </script>
 </body>
