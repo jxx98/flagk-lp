@@ -30,11 +30,11 @@ a{text-decoration:none;color:inherit}
 .hd-brand-sub{font-size:10px;color:#888;white-space:nowrap;margin-top:2px}
 .hd-brand-small{font-size:10px;font-weight:700;color:#111}
 .hd-spacer{flex:1;min-width:6px;max-width:24px}
-.hd-tel{display:flex;align-items:center;flex-shrink:0}
+.hd-tel{display:none;align-items:center;flex-shrink:0}
 .hd-tel-link{display:inline-flex;align-items:center;gap:6px;background:#06C167;color:#fff;font-size:13px;font-weight:700;padding:10px 12px;border-radius:8px;white-space:nowrap;letter-spacing:.02em;text-decoration:none}
 .hd-tel-link img{height:15px;width:auto;flex-shrink:0}
 .hd-tel-link:hover{background:#04a857}
-.hd-btns{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.hd-btns{display:none;gap:6px;align-items:center;flex-shrink:0}
 .hd-btn{display:inline-flex;align-items:center;gap:5px;padding:9px 12px;border-radius:8px;border:1.5px solid #06C167;cursor:pointer;background:#fff;color:#111;font-size:13px;font-weight:700;font-family:inherit;white-space:nowrap;text-decoration:none;transition:all .2s}
 .hd-line-icon{width:15px;height:15px;flex-shrink:0;object-fit:contain}
 /* 超小画面（360px未満）はブランドを隠す */
@@ -46,6 +46,8 @@ a{text-decoration:none;color:inherit}
 /* ── PC ── */
 @media(min-width:900px){
   .hd-inner{gap:14px;padding:0 28px;height:76px}
+  .hd-tel{display:flex}
+  .hd-btns{display:flex}
   .hd-logo img{height:52px}
   .hd-divider{height:42px}
   .hd-brand-main{font-size:15px}
@@ -759,7 +761,8 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="hd-divider"></div>
     <div class="hd-brand">
-      <p class="hd-brand-main"><span class="hd-brand-ue">Uber Eats</span><br><span class="hd-brand-small">出店登録サポート</span></p>
+      <p class="hd-brand-main"><span class="hd-brand-ue">Uber Eats</span> <span class="hd-brand-small">出店登録サポート</span></p>
+      <p class="hd-brand-sub">初期費用0円・設定無料サポート</p>
     </div>
     <div class="hd-spacer"></div>
     <div class="hd-tel">
@@ -1321,21 +1324,7 @@ a{text-decoration:none;color:inherit}
   </ul>
 </section>
 
-<!-- ============================================================
-     LINE CTA
-     ============================================================ -->
-<section class="lc">
-  <p class="lc-catch">＼ 簡単申し込み実施中 ／</p>
-  <p class="lc-sub">LINEでも申し込みや質問を<br>受付けております！</p>
-  <div class="lc-qr">
-    <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-180x180_webp_291d501a-f430-45c1-a06a-21e869da7431.png" alt="LINE QRコード">
-  </div>
-  <br>
-  <a href="https://lin.ee/RhSAYu3" class="lc-btn" target="_blank" rel="noopener">
-    <img class="lc-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
-    LINEで送る
-  </a>
-</section>
+
 
 <!-- ============================================================
      FOOTER
