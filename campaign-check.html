@@ -30,9 +30,6 @@ button,input,select,textarea{font-family:inherit}
 .hd-btn--line:hover{background:#04a857}
 .hd-btn-icon{height:22px;width:auto;flex-shrink:0;display:block}
 .hd-line-icon{width:20px;height:20px;flex-shrink:0;object-fit:contain}
-.back-bar{background:#f8f8f8;border-bottom:1px solid #e8e8e8;padding:7px 20px;text-align:right}
-.back-bar a{color:#06C167;text-decoration:none;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px}
-.back-bar a:hover{text-decoration:underline}
 @media(max-width:600px){
   .hd{padding:0 14px;height:56px}
   .hd-divider{display:none}
@@ -40,7 +37,6 @@ button,input,select,textarea{font-family:inherit}
   .hd-btn{font-size:11px;padding:7px 10px;gap:4px}
   .hd-btn-icon{height:18px}
   .hd-line-icon{width:17px;height:17px}
-  .back-bar{padding:7px 14px}
 }
 
 /* ── HERO ── */
@@ -74,7 +70,7 @@ button,input,select,textarea{font-family:inherit}
 
 
 /* ── EMBED MODE (iframe内表示時) ── */
-.embed-mode .hd,.embed-mode .back-bar{display:none!important}
+.embed-mode .hd{display:none!important}
 .embed-mode .hero{border-radius:0}
 </style>
 <script>if(location.search.indexOf('embed=1')!==-1)document.documentElement.classList.add('embed-mode');</script>
@@ -89,7 +85,7 @@ button,input,select,textarea{font-family:inherit}
     </div>
     <div class="hd-divider"></div>
     <div class="hd-brand">
-      <span class="hd-brand-text">Uber Eats出店サポート</span>
+      <span class="hd-brand-text">Uber Eats 出店登録サポート</span>
     </div>
   </div><!-- /hd-left -->
   <div class="hd-btns">
@@ -101,9 +97,6 @@ button,input,select,textarea{font-family:inherit}
     </a>
   </div>
 </header>
-<div class="back-bar">
-  <a href="index-lp.html"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> TOPへ</a>
-</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -112,8 +105,9 @@ button,input,select,textarea{font-family:inherit}
     今すぐ確認！
   </p>
   <h1 class="hero-title">
-    Uber Eatsの最新キャンペーン、<br>
-    あなたのお店は対象？
+    Uber Eatsの<br>
+    最新キャンペーンを<br>
+    無料でご案内
   </h1>
   <div class="hero-hours">
     <span class="hero-hours-dot"></span>
