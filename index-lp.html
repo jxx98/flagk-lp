@@ -134,7 +134,7 @@ a{text-decoration:none;color:inherit}
 
 /* サークル下テキスト */
 .hv2-sub{
-  text-align:center;
+  text-align:left;
   margin-bottom:20px;
   text-shadow:0 1px 6px rgba(0,0,0,.6);
 }
@@ -586,44 +586,19 @@ a{text-decoration:none;color:inherit}
    PC: FIXED HEADER + 2-COLUMN HERO
    ============================================================ */
 
-/* Hero right column — hidden on SP */
-.hv2-right{display:none}
-.hv2-iframe{width:100%;border:none;display:block}
-
 @media(min-width:900px){
   /* Fixed header */
   .hd{position:fixed;left:0;right:0;width:100%;top:0}
   /* Compensate for fixed header height */
   .hv2{margin-top:64px}
 
-  /* 2-column hero inner layout */
+  /* Single column hero inner layout */
   .hv2-inner{
-    display:grid;
-    grid-template-columns:1.15fr 1fr;
-    gap:44px;
-    padding:60px 48px 56px;
-    max-width:1200px;
+    padding:60px 80px 56px;
+    max-width:960px;
     margin-left:auto;
     margin-right:auto;
-    align-items:start;
     width:100%;
-  }
-  .hv2-left{min-width:0}
-  .hv2-right{
-    display:block;
-    min-width:0;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 8px 40px rgba(0,0,0,.35);
-    border:1px solid rgba(255,255,255,.18);
-    background:rgba(0,0,0,.15);
-    min-height:400px;
-  }
-  .hv2-iframe{
-    width:100%;
-    height:680px;
-    border:none;
-    display:block;
   }
 
   /* Yellow circles: left-aligned */
@@ -779,17 +754,6 @@ a{text-decoration:none;color:inherit}
     </a>
 
   </div><!-- /hv2-left -->
-
-  <!-- ── 右カラム: Studio フォーム埋め込み予定 ── -->
-  <div class="hv2-right">
-    <!-- Studio のフォームURLが確定したら下の src を更新 -->
-    <iframe id="hv2-iframe"
-            class="hv2-iframe"
-            src=""
-            title="キャンペーン確認フォーム"
-            scrolling="no"
-            loading="lazy"></iframe>
-  </div><!-- /hv2-right -->
 
   </div>
 </section>
