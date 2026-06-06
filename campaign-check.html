@@ -43,9 +43,12 @@ button,input,select,textarea{font-family:inherit}
 .hero{
   width:100%;
   margin:0;
-  background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1774x887_v-fms_webp_0d87d188-c8c0-4ede-8743-b6f168654307.png') right top / cover no-repeat #028844;
-  height:clamp(280px,26vw,420px);
-  padding:32px 40px;
+  /* ① 人物を約13%縮小・右寄せ */
+  background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1774x887_v-fms_webp_0d87d188-c8c0-4ede-8743-b6f168654307.png') right top / auto 87% no-repeat #028844;
+  /* ③ 高さUP */
+  height:clamp(400px,36vw,500px);
+  /* ② 左余白増加 */
+  padding:44px 40px 44px 90px;
   color:#fff;
   position:relative;
   overflow:hidden;
@@ -54,18 +57,22 @@ button,input,select,textarea{font-family:inherit}
   align-items:flex-start;
   justify-content:center;
 }
-.hero-eyebrow{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.4)}
-.hero-eyebrow-icon{font-size:20px;line-height:1;flex-shrink:0}
-.hero-title{font-size:clamp(24px,3.8vw,42px);font-weight:900;line-height:1.3;margin-bottom:16px;letter-spacing:.02em;text-align:left;text-shadow:0 2px 12px rgba(0,0,0,.4)}
-.hero-hours{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:24px;padding:8px 20px;font-size:13px;font-weight:700;color:#fff}
-.hero-hours-dot{width:8px;height:8px;background:#FFD600;border-radius:50%;flex-shrink:0}
+/* ⑦ 「今すぐ確認！」強調 */
+.hero-eyebrow{display:flex;align-items:center;gap:7px;font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.4);color:#FFD600}
+.hero-eyebrow-icon{line-height:1;flex-shrink:0}
+.hero-title{font-size:clamp(26px,3.8vw,44px);font-weight:900;line-height:1.3;margin-bottom:12px;letter-spacing:.02em;text-align:left;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+/* ④ サブコピー */
+.hero-sub{font-size:clamp(13px,1.5vw,16px);font-weight:500;color:rgba(255,255,255,.88);margin-bottom:24px;line-height:1.75;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+/* ⑤ 受付時間バッジ1.2倍 */
+.hero-hours{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:24px;padding:10px 26px;font-size:15px;font-weight:700;color:#fff}
+.hero-hours-dot{width:9px;height:9px;background:#FFD600;border-radius:50%;flex-shrink:0}
 /* ── HERO モバイル ── */
 @media(max-width:600px){
-  .hero{height:210px;padding:20px 20px;background-position:right top;justify-content:center;margin:0}
-  .hero-eyebrow{font-size:11px;margin-bottom:6px;gap:4px}
-  .hero-eyebrow-icon{font-size:14px}
-  .hero-title{font-size:16px;margin-bottom:12px;line-height:1.3}
-  .hero-hours{font-size:11px;padding:6px 14px}
+  .hero{height:auto;min-height:280px;padding:24px 20px 24px 24px;background-size:auto 80%;background-position:right top;justify-content:center;margin:0}
+  .hero-eyebrow{font-size:13px;margin-bottom:8px;gap:4px}
+  .hero-title{font-size:20px;margin-bottom:8px;line-height:1.3}
+  .hero-sub{font-size:12px;margin-bottom:14px}
+  .hero-hours{font-size:12px;padding:7px 16px}
 }
 
 
@@ -109,6 +116,7 @@ button,input,select,textarea{font-family:inherit}
     最新キャンペーンを<br>
     無料でご案内
   </h1>
+  <p class="hero-sub">出店費用・キャンペーン・<br>導入方法をご案内します</p>
   <div class="hero-hours">
     <span class="hero-hours-dot"></span>
     受付時間：平日 9:30〜18:00
