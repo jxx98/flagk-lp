@@ -16,21 +16,30 @@ a{text-decoration:none;color:inherit}
 button,input,select,textarea{font-family:inherit}
 
 /* ── HEADER ── */
-.hd{background:#fff;border-bottom:3px solid #06C167;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.hd{background:#fff;border-bottom:3px solid #06C167;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.hd-left{display:flex;align-items:center;gap:14px;min-width:0}
 .hd-logo img{height:44px;width:auto;flex-shrink:0}
+.hd-divider{width:1px;height:34px;background:#ddd;flex-shrink:0}
+.hd-brand{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hd-brand-text{font-size:15px;font-weight:700;color:#111;white-space:nowrap;letter-spacing:.02em}
 .hd-btns{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.hd-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:5px;background:#fff;color:#111;border:1.5px solid #06C167;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;letter-spacing:.04em;transition:all .2s}
-.hd-btn:hover{background:#f0fff8}
-.hd-btn-icon{height:26px;width:auto;flex-shrink:0;display:block}
-.hd-line-icon{width:22px;height:22px;flex-shrink:0;object-fit:contain}
+.hd-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:700;white-space:nowrap;text-decoration:none;letter-spacing:.02em;transition:all .2s;border:1.5px solid #06C167}
+.hd-btn--tel{background:#fff;color:#111}
+.hd-btn--tel:hover{background:#f0fff8}
+.hd-btn--line{background:#06C167;color:#fff}
+.hd-btn--line:hover{background:#04a857}
+.hd-btn-icon{height:22px;width:auto;flex-shrink:0;display:block}
+.hd-line-icon{width:20px;height:20px;flex-shrink:0;object-fit:contain}
 .back-bar{background:#f8f8f8;border-bottom:1px solid #e8e8e8;padding:7px 20px;text-align:right}
 .back-bar a{color:#06C167;text-decoration:none;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px}
 .back-bar a:hover{text-decoration:underline}
-@media(max-width:480px){
-  .hd{padding:0 14px}
-  .hd-btn{font-size:11px;padding:6px 9px;gap:4px}
-  .hd-btn-icon{height:22px}
-  .hd-line-icon{width:19px;height:19px}
+@media(max-width:600px){
+  .hd{padding:0 14px;height:56px}
+  .hd-divider{display:none}
+  .hd-brand-text{display:none}
+  .hd-btn{font-size:11px;padding:7px 10px;gap:4px}
+  .hd-btn-icon{height:18px}
+  .hd-line-icon{width:17px;height:17px}
   .back-bar{padding:7px 14px}
 }
 
@@ -74,14 +83,20 @@ button,input,select,textarea{font-family:inherit}
 
 <!-- HEADER -->
 <header class="hd">
+  <div class="hd-left">
   <div class="hd-logo">
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACbEAAALFCAYAAAD3SDy+AAAACXBIWXMAAC4jAAAuIwF4pT92AAAgAElEQVR4nOzd4XUUZ5bH4f+d4++wEaCNADYCNBHARoCIwNoIaEeAHAEigpEjmHYEIyKwyAAiePdDlwaZEQZJLd2q7uc5RwdsY3SRZHW969f3rTFGAAAAAAAAAAAAoMPfugcAAAAAAAAAAABgf4nYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2IjYAAAAAAAAAAADaiNgAAAAAAAAAAABoI2IDAAAAAAAAAACgjYgNAAAAAAAAAACANiI2AAAAAAAAAAAA2ojYAAAAAAAAAAAAaCNiAwAAAAAAAAAAoI2IDQAAAAAAAAAAgDYiNgAAAAAAAAAAANqI2AAAAAAAAAAAAGgjYgMAAAAAAAAAAKCNiA0AAAAAAAAAAIA2P3UPAADA9apq3T3D5HyMcdw9BADAHFTVQZKDK3/rWZLH3/nXzpN8uvrXY4xP3/rFAACwj6rqWZKT7jkmx2OM8+4hAGCfiNgAAObrefcAAAD7qKoOswnVDpIcTn97q9dmVZUkn/MlcDtPcpHkYoyx3ub7AgCAhXic+Twn+r0XqgAAWyZiA4AmVbXqnoGtOB1jXHQPAcC3zfAxd73rgUpVvcxmO9XSfBpjzOVV/zyQabPa4fT2LMnTB3z3j/LlJt2LKzMlycdswrZ1Nt83bIEAYOtcKwMAAHMhYgOAPm+6B2Ar1tlszABgvub4mLvuHuC+TMe/nGYT5yzN6+4BeBhTaPkym3DtSe803/RkenuRJFX1OVPQluTMCykA2BLXygAAwCyI2AAAAICtmAK2dRYasI0xTruH4P5cCddeZplfo4+yCdpeJHlbVR+yCUYFbQAAAAAs3t+6BwAAAACWr6oeZ7kb2H4RsO2mqjqoqpOq+pTkH0leZZlfo9d5muRtkj+qal1VR83zAAAAAMCtidgAAACArVhnE9Kezk0MkzsDAN25KdUdY6kAAAAASUVORK5CYII=" alt="FlagK Co., Ltd.">
-  </div>
+    </div>
+    <div class="hd-divider"></div>
+    <div class="hd-brand">
+      <span class="hd-brand-text">Uber Eats出店サポート</span>
+    </div>
+  </div><!-- /hd-left -->
   <div class="hd-btns">
-    <a href="tel-reservation.html" class="hd-btn">
+    <a href="tel-reservation.html" class="hd-btn hd-btn--tel">
       <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" class="hd-btn-icon"> 電話相談予約
     </a>
-    <a href="https://lin.ee/RhSAYu3" class="hd-btn" target="_blank" rel="noopener">
+    <a href="https://lin.ee/RhSAYu3" class="hd-btn hd-btn--line" target="_blank" rel="noopener">
       <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE" class="hd-line-icon"> LINE申込
     </a>
   </div>
