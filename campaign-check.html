@@ -57,12 +57,11 @@ button,input,select,textarea{font-family:inherit}
 }
 
 .hd-logo img{height:44px;width:auto;display:block}
-@media(max-width:600px){.hd{padding:0 16px;height:56px}.hd-logo img{height:36px}}
 
 /* ── HERO ── */
 .hero-img{width:100%;display:block;margin:0;margin-top:38px}
 @media(min-width:601px){
-  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto}
+  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto;margin-top:38px}
 }
 
 /* ── FORM SECTION TITLE ── */
@@ -98,6 +97,26 @@ button,input,select,textarea{font-family:inherit}
 .f-privacy a{color:#06C167;text-decoration:underline}
 
 /* ── SUBMIT ── */
+
+/* モバイル：縦1列・横並びラベル */
+.f-time-grid{display:grid;grid-template-columns:1fr;gap:8px}
+.f-radio-label{display:flex;flex-direction:row;align-items:center;gap:8px;cursor:pointer;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:10px;transition:border-color .2s,background .2s;background:#fafafa}
+.f-radio-label:hover{border-color:#06C167;background:#f0faf5}
+.f-radio-label input[type=radio]{width:16px;height:16px;accent-color:#06C167;flex-shrink:0;cursor:pointer}
+.f-time-main{font-size:14px;font-weight:700;color:#222;white-space:nowrap}
+.f-time-sep{color:#ccc;font-size:13px}
+.f-time-time{font-size:13px;color:#555;white-space:nowrap}
+.f-radio-label:has(input:checked){border-color:#06C167;background:#f0faf5}
+.f-radio-label:has(input:checked) .f-time-main,
+.f-radio-label:has(input:checked) .f-time-time{color:#06C167;font-weight:700}
+/* PC：横3列・縦並びカード */
+@media(min-width:601px){
+  .f-time-grid{grid-template-columns:repeat(3,1fr)}
+  .f-radio-label{flex-direction:column;align-items:center;padding:14px 8px 12px;gap:4px;text-align:center}
+  .f-time-sep{display:none}
+  .f-time-main{font-size:13px}
+  .f-time-time{font-size:13px;font-weight:700;color:#222}
+}
 .f-submit-wrap{display:flex;justify-content:center}
 .f-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:#06C167;color:#fff;border:none;border-radius:50px;padding:18px 28px;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s;letter-spacing:.04em}
 .f-submit:hover:not(:disabled){background:#04a857}
@@ -203,6 +222,34 @@ button,input,select,textarea{font-family:inherit}
         <input class="f-input" type="email" id="email" name="email" placeholder="例）example@flagk.com">
       </div>
 
+      <!-- 連絡希望時間 -->
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          連絡希望時間<span class="f-req">必須</span>
+        </div>
+        <div class="f-time-grid">
+          <label class="f-radio-label">
+              <input type="radio" name="contact_time" value="10:00〜12:00" required>
+              <span class="f-time-main">午前</span>
+              <span class="f-time-sep">｜</span>
+              <span class="f-time-time">10:00〜12:00</span>
+          </label>
+          <label class="f-radio-label">
+              <input type="radio" name="contact_time" value="13:00〜15:00">
+              <span class="f-time-main">午後</span>
+              <span class="f-time-sep">｜</span>
+              <span class="f-time-time">13:00〜15:00</span>
+          </label>
+          <label class="f-radio-label">
+              <input type="radio" name="contact_time" value="15:00〜18:00">
+              <span class="f-time-main">夕方</span>
+              <span class="f-time-sep">｜</span>
+              <span class="f-time-time">15:00〜18:00</span>
+          </label>
+        </div>
+      </div>
+
       <!-- お問合せ内容 -->
       <div class="f-row">
         <label class="f-lbl" for="inquiry_type">
@@ -236,7 +283,7 @@ button,input,select,textarea{font-family:inherit}
       <!-- 送信ボタン -->
       <div class="f-submit-wrap">
         <button type="submit" class="f-submit" id="submit-btn" disabled>
-          <span id="btn-text">入力内容を送信する</span>
+          <span id="btn-text">未入力の項目があります</span>
           <span class="f-submit-arrow" id="btn-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0"><circle cx="5.5" cy="17.5" r="3"/><circle cx="18.5" cy="17.5" r="3"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z" fill="currentColor" stroke="none"/><path d="M12 17.5L9 10.5l3-3h4l2.5 3.5"/><path d="M5.5 17.5L9 10.5"/></svg></span>
         </button>
       </div>
@@ -309,8 +356,8 @@ button,input,select,textarea{font-family:inherit}
   function check(){
     var ok = form.checkValidity();
     btn.disabled        = !ok;
-    btnText.textContent = '入力内容を送信する';
-      }
+    btnText.textContent = ok ? '入力内容を送信する' : '未入力の項目があります';
+  }
   form.addEventListener('input',  check);
   form.addEventListener('change', check);
   check();

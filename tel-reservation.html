@@ -57,12 +57,11 @@ button,input,select,textarea{font-family:inherit}
 }
 
 .hd-logo img{height:44px;width:auto;display:block}
-@media(max-width:600px){.hd{padding:0 16px;height:56px}.hd-logo img{height:36px}}
 
 /* ── HERO ── */
 .hero-img{width:100%;display:block;margin:0;margin-top:38px}
 @media(min-width:601px){
-  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto}
+  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto;margin-top:38px}
 }
 
 /* ── FORM SECTION TITLE ── */
@@ -210,25 +209,22 @@ button,input,select,textarea{font-family:inherit}
         </div>
         <div class="f-time-grid">
           <label class="f-radio-label">
-            <div class="f-radio-top">
               <input type="radio" name="contact_time" value="10:00〜12:00" required>
+              <span class="f-time-main">午前</span>
+              <span class="f-time-sep">｜</span>
               <span class="f-time-time">10:00〜12:00</span>
-            </div>
-            <span class="f-time-main">午前</span>
           </label>
           <label class="f-radio-label">
-            <div class="f-radio-top">
               <input type="radio" name="contact_time" value="13:00〜15:00">
+              <span class="f-time-main">午後</span>
+              <span class="f-time-sep">｜</span>
               <span class="f-time-time">13:00〜15:00</span>
-            </div>
-            <span class="f-time-main">午後</span>
           </label>
           <label class="f-radio-label">
-            <div class="f-radio-top">
               <input type="radio" name="contact_time" value="15:00〜18:00">
+              <span class="f-time-main">夕方</span>
+              <span class="f-time-sep">｜</span>
               <span class="f-time-time">15:00〜18:00</span>
-            </div>
-            <span class="f-time-main">夕方</span>
           </label>
         </div>
       </div>
