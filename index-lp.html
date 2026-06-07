@@ -720,7 +720,7 @@ a{text-decoration:none;color:inherit}
     grid-template-columns:1fr 380px;
     gap:40px;
     align-items:start;            /* 上端揃え */
-    min-height:calc(100vh - 64px);
+    min-height:600px;
     padding:32px 48px 32px 60px;
     max-width:1240px;
     margin:0 auto;
@@ -731,8 +731,7 @@ a{text-decoration:none;color:inherit}
   /* 右フォーム: ビューポート内に収まるよう最大高さを設定 */
   .hv2-right{
     display:block;
-    max-height:calc(100vh - 64px - 64px); /* header + 上下余白 */
-    overflow-y:auto;
+    overflow-y:visible;
     /* スクロールバーを細く */
     scrollbar-width:thin;
     scrollbar-color:#06C167 transparent;
