@@ -22,9 +22,10 @@ a{text-decoration:none;color:inherit}
 .hd{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;background:#fff;border-bottom:3px solid #06C167}
 /* ── モバイル ── */
 .hd-inner{display:flex;align-items:center;gap:6px;width:100%;padding:0 10px;height:76px;max-width:1200px;margin:0 auto}
+.hd-logo{display:flex;align-items:center;flex-shrink:0}
 .hd-logo img{height:46px;width:auto}
 .hd-divider{width:1px;height:40px;background:#e0e0e0;flex-shrink:0}
-.hd-brand{min-width:0;flex-shrink:1}
+.hd-brand{display:flex;align-items:center;min-width:0;flex-shrink:1}
 .hd-brand-main{font-size:13px;font-weight:700;color:#111;white-space:nowrap;line-height:1.3}
 .hd-brand-ue{color:#06C167}
 .hd-brand-sub{font-size:10px;color:#888;white-space:nowrap;margin-top:2px}
@@ -287,7 +288,7 @@ a{text-decoration:none;color:inherit}
    WORRIES
    ============================================================ */
 .ws{padding:64px 20px 72px;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_942c9a71-113d-4c88-bef5-afe780965d4e.png') center/cover no-repeat,#fff}
-.ws-title{text-align:center;font-size:clamp(20px,3vw,26px);font-weight:700;line-height:1.6;margin-bottom:48px;color:#111}
+.ws-title{text-align:center;font-size:clamp(20px,3vw,28px);font-weight:700;line-height:1.6;margin-bottom:48px;color:#111}
 .ws-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:860px;margin:0 auto}
 @media(min-width:769px){.ws-grid{grid-template-columns:repeat(3,1fr);column-gap:24px;row-gap:0}}
 .ws-wrap{display:flex;flex-direction:column}
@@ -300,7 +301,7 @@ a{text-decoration:none;color:inherit}
 .ws-badge{position:absolute;top:calc(100% + 21px);left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;background:#FFD600;color:#333;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.2);z-index:3}
 .ws-illust{width:90px;height:90px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .ws-illust img{width:100%;height:100%;object-fit:contain}
-.ws-text{font-size:16px;line-height:1.8;color:#333;font-weight:400}
+.ws-text{font-size:15px;line-height:1.8;color:#333;font-weight:400}
 .ws-bottom{position:relative;z-index:1;background:#06C167;padding:92px 16px 20px;text-align:center;flex:1 0 auto;display:flex;flex-direction:column;align-items:center}
 .ws-chevron{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:8px;flex-shrink:0;height:32px}
 .ws-chevron i{display:block;width:14px;height:14px;border-right:3px solid rgba(255,255,255,.55);border-bottom:3px solid rgba(255,255,255,.55);transform:rotate(45deg)}
@@ -315,10 +316,10 @@ a{text-decoration:none;color:inherit}
   .ws-grid{max-width:1060px;column-gap:32px}
   .ws-top{min-height:210px;padding:16px 20px 14px}
   .ws-illust{width:74px;height:74px;margin-bottom:6px}
-  .ws-text{font-size:15px;line-height:1.7}
+  .ws-text{line-height:1.7}
   .ws-bottom{padding:82px 20px 16px}
   .ws-sol-illust{width:62px;height:62px;margin-bottom:6px}
-  .ws-sol-text{font-size:14px;line-height:1.7}
+  .ws-sol-text{font-size:15px;line-height:1.7}
 }
 @media(max-width:768px){
   .ws{background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_05331cb2-1133-4dd4-94cd-0463508cf7ea.png') center/cover no-repeat,#fff}
@@ -328,25 +329,25 @@ a{text-decoration:none;color:inherit}
   .ws-grid::-webkit-scrollbar{display:none}
   .ws-wrap{flex:0 0 82%;scroll-snap-align:center;flex-shrink:0}
   .ws-card-note{display:none}
-  .ws-top{padding:14px 16px 10px}
-  .ws-illust{width:68px;height:68px}
-  .ws-sol-illust{width:56px;height:56px}
-  .ws-bottom{padding:74px 16px 16px}
-  .ws-badge{top:calc(100% + 16px);width:50px;height:50px;font-size:13px}
-  .ws-top::after{height:42px}
   .ws-slider-ctrl{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:16px}
   .ws-arrow{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.14);color:#333;transition:opacity .2s;flex-shrink:0;padding:0;line-height:1}
   .ws-arrow:disabled{opacity:.25;cursor:default}
   .ws-dots{display:flex;gap:8px;align-items:center}
   .ws-dot{width:9px;height:9px;border-radius:50%;background:#ccc;border:none;padding:0;cursor:pointer;transition:background .25s}
   .ws-dot.active{background:#06C167}
+  .ws-top{padding:14px 16px 10px}
+  .ws-illust{width:68px;height:68px}
+  .ws-sol-illust{width:56px;height:56px}
+  .ws-bottom{padding:74px 16px 16px}
+  .ws-badge{top:calc(100% + 16px);width:50px;height:50px;font-size:13px}
+  .ws-top::after{height:42px}
 }
 
 /* ============================================================
    REASONS
    ============================================================ */
 .rs{background:#F0FAF4;padding:64px 20px 72px}
-.rs-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.rs-title{text-align:center;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
 .rs-list{display:flex;flex-direction:column;gap:24px;max-width:780px;margin:0 auto;list-style:none}
 .rs-card{background:#fff;border:1px solid #e4e4e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(0,0,0,.07)}
 @media(min-width:769px){.rs-card{flex-direction:row;min-height:200px}}
@@ -355,8 +356,8 @@ a{text-decoration:none;color:inherit}
 .rs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rs-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:center}
 .rs-badge{display:inline-block;background:none;color:#06C167;font-size:13px;font-weight:700;letter-spacing:.1em;padding:3px 0;margin-bottom:12px}
-.rs-heading{font-size:clamp(19px,2.2vw,23px);font-weight:700;line-height:1.55;color:#111;margin-bottom:12px}
-.rs-desc{font-size:15px;line-height:1.9;color:#444}
+.rs-heading{font-size:clamp(15px,2.2vw,23px);font-weight:700;line-height:1.55;color:#111;margin-bottom:12px}
+.rs-desc{font-size:14px;line-height:1.9;color:#444}
 .rs-desc small{font-size:11px;color:#666}
 .rs-note-item{list-style:none;font-size:11px;color:#666;line-height:1.7;padding-left:1.5em;text-indent:-1.5em;margin-top:-8px}
 
@@ -368,14 +369,14 @@ a{text-decoration:none;color:inherit}
 @media(min-width:769px){.cs-inner{flex-direction:row;align-items:stretch;gap:32px}}
 .cs-stats{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
 .cs-card{background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.5);border-radius:8px;padding:18px 20px;display:flex;align-items:center}
-.cs-card-left{flex:0 0 auto;text-align:center;color:#111;padding-right:20px;border-right:1px solid rgba(0,0,0,.15);min-width:110px}
+.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:20px;border-right:1px solid rgba(0,0,0,.15)}
 .cs-card-icon{line-height:1;margin-bottom:6px;display:flex;align-items:center;justify-content:center}
 .cs-card-icon img{width:64px;height:64px;object-fit:contain}
 .cs-card-label{font-size:11px;font-weight:700;letter-spacing:.04em;color:#333;display:block;margin-bottom:3px}
 .cs-card-num{font-size:24px;font-weight:700;white-space:nowrap;line-height:1.2;color:#111}
 .cs-card-right{flex:1;min-width:0;color:#111;padding-left:20px}
-.cs-card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.4;color:#111}
-.cs-card-desc{font-size:15px;line-height:1.85;color:#333}
+.cs-card-title{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.4;color:#111}
+.cs-card-desc{font-size:14px;line-height:1.85;color:#333}
 .cs-cta{background:#fff;border-radius:12px;padding:32px 24px 28px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
   .cs-cta{flex:none}
@@ -386,7 +387,7 @@ a{text-decoration:none;color:inherit}
   .cs-card-label{grid-area:label;font-size:10px;display:block;align-self:end;padding-bottom:2px;margin-bottom:0}
   .cs-card-num{grid-area:num;font-size:10px;font-weight:700;color:#333;white-space:nowrap;line-height:inherit;display:block;align-self:end;padding-bottom:2px}
   .cs-card-right{display:contents}
-  .cs-card-title{grid-area:title;margin-bottom:0;font-size:19px;padding-top:8px;border-top:1px solid rgba(0,0,0,.15)}
+  .cs-card-title{grid-area:title;margin-bottom:0;font-size:15px;padding-top:8px;border-top:1px solid rgba(0,0,0,.15)}
   .cs-card-desc{grid-area:desc;border-top:1px solid rgba(0,0,0,.2);padding-top:10px;margin-top:10px}
 }
 .cs-cta-title{font-size:clamp(18px,2.5vw,22px);font-weight:700;color:#111;margin-bottom:10px;line-height:1.5}
@@ -398,9 +399,23 @@ a{text-decoration:none;color:inherit}
 .cs-btns{display:flex;flex-direction:column;gap:10px}
 .cs-btn{display:flex;align-items:stretch;background:#111;color:#fff;border-radius:6px;overflow:hidden;transition:background .2s}
 .cs-btn:hover{background:#2a2a2a}
-.cs-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;letter-spacing:.04em;padding:0 12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;min-width:46px}
+.cs-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;flex:0 0 68px;width:68px}
 .cs-btn-text{flex:1;padding:14px 8px;font-size:16px;font-weight:700;text-align:center;letter-spacing:.04em}
 .cs-btn-arrow{padding:14px 14px 14px 0;font-size:16px;opacity:.6;display:flex;align-items:center}
+/* ===== cs-cta リデザイン ===== */
+.cs-cta{border:2.5px solid #06C167;border-radius:18px}
+.cs-cta-icon-outer{display:flex;justify-content:center;margin-bottom:14px;position:relative}
+.cs-cta-icon-ring{width:64px;height:64px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cs-cta-icon-ring img{width:38px;height:auto;display:block}
+.cs-cta-icon-ring svg{display:block;flex-shrink:0}
+.cs-cta-spark{position:absolute;color:#06C167;font-weight:900;line-height:1;pointer-events:none}
+.cs-cta-spark-a{font-size:13px;top:-2px;right:calc(50% - 46px);transform:rotate(15deg)}
+.cs-cta-spark-b{font-size:10px;top:14px;right:calc(50% - 58px);transform:rotate(-10deg)}
+.cs-cta-title-green{color:#06C167}
+.cs-cta-divider{display:flex;align-items:center;gap:8px;margin:14px 0 12px}
+.cs-cta-divider::before,.cs-cta-divider::after{content:'';flex:1;height:1px;background:#ddd}
+.cs-cta-divider-v{font-size:18px;color:#06C167;line-height:1}
+
 
 /* ============================================================
    SUPPORT
@@ -412,7 +427,7 @@ a{text-decoration:none;color:inherit}
     #fff;
   padding:64px 24px 72px;
 }
-.sp-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.sp-title{text-align:center;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
 .sp-grid{display:grid;grid-template-columns:1fr;column-gap:20px;row-gap:20px;max-width:1020px;margin:0 auto}
 @media(min-width:769px){.sp-grid{grid-template-columns:repeat(3,1fr)}}
 .sp-col{border:2px solid #06C167;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
@@ -422,8 +437,8 @@ a{text-decoration:none;color:inherit}
 .sp-item-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}
 .sp-item-icon{flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .sp-item-icon img{width:36px;height:36px;object-fit:contain}
-.sp-item-title{font-size:16px;font-weight:700;color:#06C167;line-height:1.4}
-.sp-item-desc{font-size:15px;line-height:1.9;color:#444}
+.sp-item-title{font-size:15px;font-weight:700;color:#06C167;line-height:1.4}
+.sp-item-desc{font-size:14px;line-height:1.9;color:#444}
 .sp-note{font-size:11px;color:#888;line-height:1.7;padding-left:1.5em;text-indent:-1.5em;max-width:1020px;margin:8px auto 0}
 @media(max-width:768px){
   .sp{background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_9ee0210b-1139-4473-82a0-3b204afbdca5.png') center/cover no-repeat,#fff}
@@ -453,7 +468,7 @@ a{text-decoration:none;color:inherit}
 }
 .rm-title-wrap{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px}
 .rm-badge{background:#06C167;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:4px;flex-shrink:0}
-.rm-title{font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#111;letter-spacing:.04em;line-height:1}
+.rm-title{font-size:clamp(20px,3.5vw,28px);font-weight:700;color:#111;letter-spacing:.04em;line-height:1}
 .rm-sub{font-size:16px;color:#444;line-height:1.9;margin-bottom:40px}
 .rm-scene{position:relative;display:inline-block;margin-bottom:40px}
 .rm-scene::before{
@@ -489,7 +504,7 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
   .fq{background:url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_f3f1b416-4de8-41dd-bd6f-ce3a63f1f81c.png') center/cover no-repeat #fff}
 }
-.fq-title{text-align:center;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
+.fq-title{text-align:center;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:#222;margin-bottom:40px;letter-spacing:.04em}
 .fq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px;list-style:none}
 .fq-item{border:2px solid #06C167;border-radius:8px;overflow:hidden}
 .fq-item summary{
@@ -499,12 +514,13 @@ a{text-decoration:none;color:inherit}
 }
 .fq-item summary::-webkit-details-marker{display:none}
 .fq-item summary:hover{background:#05b35e}
-.fq-q{font-size:17px;font-weight:700;color:#111;flex:1;line-height:1.6}
+.fq-q{font-size:15px;font-weight:700;color:#111;flex:1;line-height:1.6}
 .fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#111;line-height:1}
 .fq-icon::before{content:'+'}
 .fq-item[open] .fq-icon::before{content:'−'}
 .fq-a{background:#fff;padding:20px 24px 22px}
-.fq-a p{font-size:16px;line-height:1.95;color:#333}
+.fq-a p{font-size:14px;line-height:1.95;color:#333}
+.fq-a small{font-size:13px;color:#666;line-height:1.8;display:block;margin-top:8px}
 
 /* ============================================================
    CONTACT
@@ -522,7 +538,7 @@ a{text-decoration:none;color:inherit}
 .cf-panel{background:#fff;border-radius:12px;max-width:580px;margin:0 auto;padding:36px 40px 40px;box-shadow:0 4px 28px rgba(0,0,0,.14)}
 .cf-title-wrap{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:16px}
 .cf-badge{background:#06C167;color:#fff;font-size:14px;font-weight:700;padding:4px 11px;border-radius:4px;flex-shrink:0}
-.cf-title{font-size:clamp(24px,4vw,30px);font-weight:700;color:#111;letter-spacing:.04em}
+.cf-title{font-size:clamp(20px,4vw,28px);font-weight:700;color:#111;letter-spacing:.04em}
 .cf-hr{border:none;border-top:1px solid #ddd;margin:0 0 12px}
 .cf-sub{font-size:15px;color:#555;text-align:center;line-height:1.85;margin-bottom:12px}
 .cf-form{margin-top:20px}
@@ -605,6 +621,8 @@ a{text-decoration:none;color:inherit}
     left:12px;right:12px;
     z-index:998;
     align-items:stretch;
+    border-radius:20px;
+    overflow:hidden;
     box-shadow:0 6px 28px rgba(0,0,0,.30);
   }
   /* ── 各カラム共通 ── */
@@ -614,9 +632,9 @@ a{text-decoration:none;color:inherit}
     flex-direction:column;
     align-items:center;
     justify-content:flex-start;
-    padding:12px 6px 12px;
+    padding:7px 4px;
     text-decoration:none;
-    gap:5px;
+    gap:4px;
     background:#FFD600;
     color:#111;
     text-align:center;
@@ -626,23 +644,24 @@ a{text-decoration:none;color:inherit}
   .mb-col+.mb-col{border-left:2px solid rgba(0,0,0,.08)}
   /* ── LINE カラム：黄色背景（他カラムと統一） ── */
   .mb-col--line{background:#FFD600}
+  /* ── 各カラム：高さ半分 ── */
+  .mb-col{padding:7px 4px}
+  .mb-col+.mb-col{border-left:2px solid rgba(0,0,0,.08)}
   /* ── アイコン（絵文字） ── */
-  .mb-icon-wrap{height:76px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .mb-icon{font-size:48px;line-height:1;display:block;flex-shrink:0}
+  .mb-icon-wrap{height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .mb-icon{font-size:28px;line-height:1;display:block;flex-shrink:0}
   /* ── LINE SVGロゴ ── */
   .mb-line-svg{display:block;flex-shrink:0}
-  .mb-icon-img{width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0}
-  .mb-col--tel .mb-icon-img{width:76px;height:76px}
-  .mb-icon-img--line{width:60px;height:60px}
+  .mb-icon-img{width:28px;height:28px;object-fit:contain;display:block;flex-shrink:0}
+  .mb-col--tel .mb-icon-img{width:34px;height:34px}
+  .mb-icon-img--line{width:28px;height:28px}
   /* ── タイトル ── */
-  .mb-title{font-size:12px;font-weight:900;line-height:1.35;letter-spacing:.01em;color:#111}
+  .mb-title{font-size:11px;font-weight:900;line-height:1.3;letter-spacing:.01em;color:#111}
   .mb-col--line .mb-title{color:#111}
-  /* ── サブテキスト ── */
-  .mb-sub{font-size:10px;color:#555;font-weight:600;display:flex;align-items:center;gap:1px}
-  .mb-col--line .mb-sub{color:#555}
-  .mb-arrow{font-size:12px;font-weight:700}
-  /* ── フッター下余白 ── */
-  .ft{padding-bottom:calc(12px + 162px + env(safe-area-inset-bottom,0px))!important}
+  /* ── サブテキスト：非表示 ── */
+  .mb-sub{display:none}
+  /* ── フッター下余白（バー高さ約70px） ── */
+  .ft{padding-bottom:calc(12px + 82px + env(safe-area-inset-bottom,0px))!important}
 }
 
 
@@ -740,17 +759,156 @@ a{text-decoration:none;color:inherit}
   /* Yellow circles: left-aligned */
   .hv2-circles{justify-content:flex-start}
 
-  /* Campaign box: single column, half width */
+  /* Campaign box: two columns */
   .hv2-box{
     grid-template-columns:1fr 1fr;
-    max-width:400px;
-    gap:10px 12px;
+    max-width:520px;
+    gap:10px 16px;
   }
 
   /* Stats CTA card: widen to prevent title line-break */
   .cs-cta{flex:0 0 360px}
   .cs-cta-title{white-space:nowrap}
 }
+
+/* ===== SCROLL FADE-IN ===== */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.is-visible{opacity:1;transform:translateY(0)}
+.fade-in:nth-child(2){transition-delay:.12s}
+.fade-in:nth-child(3){transition-delay:.24s}
+.fade-in:nth-child(4){transition-delay:.36s}
+.fade-in:nth-child(5){transition-delay:.48s}
+.fade-in:nth-child(6){transition-delay:.60s}
+
+/* ===== HOVER EFFECTS（マウス操作デバイスのみ） ===== */
+@media(hover:hover){
+  .cs-card{transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+  .cs-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.58);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+  .rs-card{transition:transform .22s ease,box-shadow .22s ease}
+  .rs-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
+  .hv2-cta{transition:transform .2s ease,box-shadow .2s ease}
+  .hv2-cta:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+}
+
+/* ===== SHAKE（資料カード） ===== */
+@keyframes rm-shake{
+  0%,100%{transform:translateX(0) rotate(0deg)}
+  15%  {transform:translateX(-7px) rotate(-1.2deg)}
+  30%  {transform:translateX( 7px) rotate( 1.2deg)}
+  45%  {transform:translateX(-5px) rotate(-.8deg)}
+  60%  {transform:translateX( 5px) rotate( .8deg)}
+  75%  {transform:translateX(-3px) rotate(-.4deg)}
+  90%  {transform:translateX( 2px) rotate( .2deg)}
+}
+.rm-card.do-shake{animation:rm-shake .75s ease both}
+
+/* cs-cta 高さをleftに合わせて伸ばす */
+@media(min-width:769px){
+  .cs-cta{align-self:stretch;justify-content:flex-start;padding-top:28px}
+  /* ── PC本文 15px統一 ── */
+  .cs-card-title{font-size:17px}
+  .rs-desc{font-size:15px}
+  .cs-card-desc{font-size:15px}
+  .ws-text{font-size:15px}
+  .fq-a p{font-size:14px}
+  .sp-item-desc{font-size:14px}
+  .rm-card-desc{font-size:15px}
+  .cs-cta-sub{font-size:15px}
+}
+
+/* cs-cta 最速バッジ */
+.cs-cta-fast{
+  display:inline-block;
+  background:#06C167;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.06em;
+  padding:5px 18px;
+  border-radius:20px;
+  margin-bottom:12px;
+}
+
+/* ===== 自転車送信アニメーション ===== */
+.dlv-overlay{
+  position:fixed;inset:0;
+  background:rgba(6,193,103,.97);
+  z-index:99999;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility .3s;
+}
+.dlv-overlay.dlv-on{opacity:1;visibility:visible}
+.dlv-label{
+  color:#fff;font-size:clamp(18px,4vw,24px);font-weight:700;
+  letter-spacing:.1em;margin-bottom:8px;
+}
+.dlv-dots{display:flex;gap:8px;margin-bottom:48px}
+.dlv-dot{
+  width:9px;height:9px;background:rgba(255,255,255,.5);
+  border-radius:50%;animation:dlvDot .9s ease infinite;
+}
+.dlv-dot:nth-child(2){animation-delay:.2s}
+.dlv-dot:nth-child(3){animation-delay:.4s}
+@keyframes dlvDot{
+  0%,80%,100%{transform:scale(1);opacity:.4}
+  40%{transform:scale(1.5);opacity:1;background:#fff}
+}
+.dlv-road-wrap{position:relative;width:100vw;height:90px}
+.dlv-road{
+  position:absolute;top:50%;left:0;right:0;
+  height:3px;
+  background:repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,.5) 0, rgba(255,255,255,.5) 28px,
+    transparent 28px, transparent 52px
+  );
+  transform:translateY(-50%);
+}
+.dlv-bike-track{
+  position:absolute;top:50%;left:-110px;
+  transform:translateY(-100%);
+}
+.dlv-overlay.dlv-on .dlv-bike-track{
+  animation:dlvBikeRide 2s cubic-bezier(.3,.05,.7,.95) forwards;
+}
+.dlv-bike-icon{
+  width:80px;height:80px;display:block;
+}
+.dlv-overlay.dlv-on .dlv-bike-icon{
+  animation:dlvBikeWobble .22s ease infinite alternate;
+}
+@keyframes dlvBikeRide{
+  from{transform:translateX(0) translateY(-100%)}
+  to{transform:translateX(calc(100vw + 220px)) translateY(-100%)}
+}
+@keyframes dlvBikeWobble{
+  from{transform:translateY(0)}
+  to{transform:translateY(-7px)}
+}
+
+/* ===== Cookie同意バナー ===== */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:99990;
+  background:rgba(20,20,20,.96);backdrop-filter:blur(6px);
+  color:#fff;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+  transform:translateY(100%);transition:transform .4s ease;
+}
+.cookie-banner.cookie-show{transform:translateY(0)}
+.cookie-banner-text{
+  font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);flex:1;min-width:200px;
+}
+.cookie-banner-text a{color:#06C167;text-decoration:underline}
+.cookie-banner-btn{
+  background:#06C167;color:#fff;border:none;border-radius:6px;
+  padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;
+  white-space:nowrap;flex-shrink:0;
+  transition:background .2s;
+}
+.cookie-banner-btn:hover{background:#04a857}
 </style>
 </head>
 <body>
@@ -759,11 +917,13 @@ a{text-decoration:none;color:inherit}
 <header class="hd" id="top">
   <div class="hd-inner">
     <div class="hd-logo">
-      <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_47882e92-4939-4748-81c3-57aeb5a1d5b3.png" alt="FlagK Co., Ltd.">
+      <a href="index-lp.html" style="display:flex;align-items:center;line-height:0">
+        <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1024x1024_v-fs_webp_47882e92-4939-4748-81c3-57aeb5a1d5b3.png" alt="FlagK Co., Ltd.">
+      </a>
     </div>
     <div class="hd-divider"></div>
     <div class="hd-brand">
-      <p class="hd-brand-main"><span class="hd-brand-ue">Uber Eats</span> <span class="hd-brand-small">出店登録サポート</span><span class="hd-brand-sep">｜</span><span class="hd-brand-sub2">初期費用0円・設定無料サポート</span></p>
+      <p class="hd-brand-main"><span class="hd-brand-ue">Uber Eats</span> <span class="hd-brand-small">出店登録サポート</span></p>
     </div>
     <div class="hd-spacer"></div>
     <div class="hd-tel">
@@ -977,7 +1137,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- WORRIES -->
 <section class="ws" id="worry">
-  <h2 class="ws-title">こんなお悩みありませんか？<br>そのお悩み「Uber Eats」で解決できます！</h2>
+  <h2 class="ws-title">そのお悩み<br>「Uber Eats」で解決できます！</h2>
   <div class="ws-grid">
 
     <div class="ws-wrap">
@@ -1047,8 +1207,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="rs-body">
         <span class="rs-badge">REASON 1</span>
-        <p class="rs-heading">売れた分の手数料だけなので<br>リスクなくデリバリーを始められる！</p>
-        <p class="rs-desc">高額な初期費用や月額の固定費を気にすることなく、売れた分の手数料で済むため、費用対効果に優れた運用が可能です。 Uber Eats（ウーバーイーツ）で、コストを最小限に抑えたフードデリバリーが実現します。</p>
+        <p class="rs-heading">初期費用0円・月額費用0円！<br>売れた分だけの手数料でスタート</p>
+        <p class="rs-desc">高額な設備投資や固定費は必要ありません。売上が発生した分だけ手数料がかかるため、コストを抑えながら気軽にデリバリーを始められます。</p>
       </div>
     </li>
 
@@ -1058,8 +1218,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="rs-body">
         <span class="rs-badge">REASON 2</span>
-        <p class="rs-heading">解約金や違約金も一切不要なので<br>使わなくなった時でも安心安全！</p>
-        <p class="rs-desc">高額な解約金に悩む必要もありません。万が一やめたくなった場合には、いつでもサービスを終了することができるので、初めてのフードデリバリーでも気軽に導入することができます。</p>
+        <p class="rs-heading">解約金0円だから安心して始められる！</p>
+        <p class="rs-desc">解約金や違約金は一切不要。サービスが合わなければいつでも利用を終了できるため、リスクを抑えてUber Eats（ウーバーイーツ）を導入できます。</p>
       </div>
     </li>
 
@@ -1069,8 +1229,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="rs-body">
         <span class="rs-badge">REASON 3</span>
-        <p class="rs-heading">必要なのはタブレット1台だけなので<br>簡単でスピーディーに導入することが可能！</p>
-        <p class="rs-desc">配達スタッフの確保や車両の購入なども必要なく、受注から配達までを代行することができます。 Uber Eats（ウーバーイーツ）では、タブレットをレンタルすることもできるので、簡単にフードデリバリーを始めることが可能です。</p>
+        <p class="rs-heading">面倒な準備は不要！<br>タブレット1台ですぐにスタート</p>
+        <p class="rs-desc">配達スタッフの確保や車両の購入は必要ありません。Uber Eatsではタブレットのレンタルも可能なため、タブレット1台あればデリバリーを始めることができます。</p>
       </div>
     </li>
     <li class="rs-note-item">※ 無料タブレットはキャンペーン対象エリアのみ。<br>対象外の場合は端末のご用意が必要です。（お問合せ後にご案内します）</li>
@@ -1090,11 +1250,11 @@ a{text-decoration:none;color:inherit}
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f300a400-cd95-40a3-bd1d-4f81c5ac8ffd.png" alt="登録店舗数"></span>
           <span class="cs-card-label">登録店舗数</span>
-          <span class="cs-card-num">18万店舗</span>
+          <span class="cs-card-num" data-count="18" data-suffix="万店舗">18万店舗</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">納得の導入実績</p>
-          <p class="cs-card-desc">日本全国180,000店舗以上が加盟！ Uber Eats（ウーバーイーツ）の数多い豊富な導入実績で、確かな集客効果を実感することができます！</p>
+          <p class="cs-card-title">日本全国18万店舗以上が加盟！</p>
+          <p class="cs-card-desc">全国18万店舗以上の飲食店が導入しているUber Eats。多くの店舗に選ばれているサービスだからこそ、初めてのデリバリー導入でも安心して始められます。</p>
         </div>
       </div>
 
@@ -1102,39 +1262,50 @@ a{text-decoration:none;color:inherit}
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_ad0f1e50-03d8-49a4-8319-78492de3e014.png" alt="ユーザー登録数"></span>
           <span class="cs-card-label">ユーザー登録数</span>
-          <span class="cs-card-num">500万人</span>
+          <span class="cs-card-num" data-count="500" data-suffix="万人">500万人</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">ユーザー登録数は全国最大規模</p>
-          <p class="cs-card-desc">Uber Eats（ウーバーイーツ）の圧倒的なブランド力と知名度で、登録ユーザー数は500万人以上！店の認知を拡大し売上アップを実現します！</p>
+          <p class="cs-card-title">500万人以上の登録ユーザー</p>
+          <p class="cs-card-desc">Uber Eatsは500万人以上の登録ユーザーが利用するフードデリバリーサービスです。新たなお客様との接点を増やし、集客機会の拡大が期待できます。</p>
         </div>
       </div>
 
       <div class="cs-card">
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_82150037-3470-46c9-a99b-4c235a2a676c.png" alt="全国どこでも"></span>
-          <span class="cs-card-label">全国どこでも</span>
-          <span class="cs-card-num">対応OK</span>
+          <span class="cs-card-label">対応エリア</span>
+          <span class="cs-card-num">確認可能</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">全国で展開中</p>
-          <p class="cs-card-desc">全国で展開しておりますが、提供エリア・モデルにより条件が変わります。店舗の住所をもとに対応可否をご確認します。お気軽にご相談ください。</p>
+          <p class="cs-card-title">あなたのお店も対象か確認できます</p>
+          <p class="cs-card-desc">Uber Eatsは全国でサービスを展開しています。エリアや店舗形態によって条件が異なるため、店舗情報をもとにご案内いたします。</p>
         </div>
       </div>
 
     </div>
 
     <div class="cs-cta">
-      <p class="cs-cta-title">まずはお気軽にご相談ください</p>
-      <p class="cs-cta-sub">お客様の現状をお聞きし、<br>最適なご提案をさせていただきます。</p>
+      <!-- トップアイコン -->
+      <div class="cs-cta-icon-outer">
+        <span class="cs-cta-spark cs-cta-spark-a">✦</span>
+        <span class="cs-cta-spark cs-cta-spark-b">✦</span>
+        <div class="cs-cta-icon-ring">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でご案内</p>
+      <div class="cs-cta-divider"><span class="cs-cta-divider-v">∨</span></div>
+      <p class="cs-cta-sub">導入費用やキャンペーンの適用可否など、<br>お気軽にご相談ください。</p>
       <div class="cs-btns">
         <a href="tel-reservation.html" class="cs-btn">
-          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" style="width:26px;height:auto;display:block"></span>
+          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" style="width:36px;height:auto;display:block"></span>
           <span class="cs-btn-text">電話相談予約</span>
           <span class="cs-btn-arrow">→</span>
         </a>
         <a href="campaign-check.html" class="cs-btn">
-          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="" style="width:26px;height:auto;display:block"></span>
+          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="" style="width:36px;height:auto;display:block"></span>
           <span class="cs-btn-text">キャンペーン確認</span>
           <span class="cs-btn-arrow">→</span>
         </a>
@@ -1257,7 +1428,7 @@ a{text-decoration:none;color:inherit}
   <div class="rm-scene">
     <div class="rm-card">
       <p class="rm-card-title">基本情報ガイド</p>
-      <p class="rm-card-desc">まずは、この資料で<br> Uber Eats（ウーバーイーツ）を知ろう！</p>
+      <p class="rm-card-desc">まずは、この資料で<br> Uber Eatsを知ろう！</p>
       <p class="rm-card-logo">Uber Eats</p>
     </div>
   </div>
@@ -1281,7 +1452,7 @@ a{text-decoration:none;color:inherit}
       <details class="fq-item">
         <summary><span class="fq-q">Q1.  申し込みからどのくらいでサービスを開始できますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A1.  最短5営業日での導入が可能です。<br><br>※必要書類が揃った時点から起算。通常は2〜4週間程度。エリア・審査・繁忙状況により変動します。</p>
+          <p>A1.  最短5営業日での導入が可能です。<small>※必要書類が揃った時点から起算。通常は2〜4週間程度。エリア・審査・繁忙状況により変動します。</small></p>
         </div>
       </details>
     </li>
@@ -1290,7 +1461,7 @@ a{text-decoration:none;color:inherit}
       <details class="fq-item">
         <summary><span class="fq-q">Q2.  サービスの手数料は、いくらになりますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A2.  Uber Eats（ウーバーイーツ）の手数料は、注文代金の35%（税込38.5%）が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<br><br>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</p>
+          <p>A2.  Uber Eatsの手数料は、注文代金の35%（税込38.5%）が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<small>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</small></p>
         </div>
       </details>
     </li>
@@ -1299,7 +1470,7 @@ a{text-decoration:none;color:inherit}
       <details class="fq-item">
         <summary><span class="fq-q">Q3.  サービスを開始するためには、何を準備する必要がありますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A3.  オーダーを受けるためのタブレット端末と、テイクアウト用の容器の準備が必要になります。タブレットをお持ちでない場合は、レンタルにてご用意することも可能です。タブレット端末やSIMカードのレンタルが必要な場合は、お気軽にご相談ください。<br><br>※無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</p>
+          <p>A3.  オーダーを受けるためのタブレット端末と、テイクアウト用の容器の準備が必要になります。タブレットをお持ちでない場合は、レンタルにてご用意することも可能です。タブレット端末やSIMカードのレンタルが必要な場合は、お気軽にご相談ください。<small>※無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</small></p>
         </div>
       </details>
     </li>
@@ -1338,7 +1509,7 @@ a{text-decoration:none;color:inherit}
         会社概要
       </a>
       <span class="ft-sep">|</span>
-      <a href="privacy-policy.html" class="ft-link" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://jxx98.github.io/flagk-lp/privacy-policy.html" class="ft-link" target="_blank" rel="noopener">プライバシーポリシー</a>
     </nav>
     <p class="ft-copy">© 2026 FlagK Co., Ltd.</p>
   </div>
@@ -1383,6 +1554,9 @@ a{text-decoration:none;color:inherit}
     tops.forEach(function(e){ max = Math.max(max, e.offsetHeight); });
     tops.forEach(function(e){ e.style.height = max + 'px'; });
   }
+  setTimeout(eqWsTop,0); setTimeout(eqWsTop,300);
+  window.addEventListener('load', eqWsTop);
+  window.addEventListener('resize', eqWsTop);
   /* WORRIESモバイルスライダー */
   (function(){
     if(window.innerWidth > 768) return;
@@ -1417,9 +1591,6 @@ a{text-decoration:none;color:inherit}
     });
     refresh();
   })();
-  setTimeout(eqWsTop,0); setTimeout(eqWsTop,300);
-  window.addEventListener('load', eqWsTop);
-  window.addEventListener('resize', eqWsTop);
 })();
 </script>
 <script>
@@ -1478,5 +1649,221 @@ a{text-decoration:none;color:inherit}
   update();
 })();
 </script>
+
+<script>
+/* ===== スクロールフェードイン ===== */
+(function(){
+  if(!window.IntersectionObserver) return;
+  var sel = [
+    '.ws-title','.ws-wrap',
+    '.rs-title','.rs-card',
+    '.cs-card','.cs-cta',
+    '.sp-title','.sp-item',
+    '.rm-title-wrap',
+    '.cf-wrap','.lc-inner'
+  ].join(',');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll(sel).forEach(function(el){
+    el.classList.add('fade-in');
+    io.observe(el);
+  });
+})();
+
+/* ===== 数字カウントアップ ===== */
+(function(){
+  if(!window.IntersectionObserver) return;
+  var nums = document.querySelectorAll('.cs-card-num[data-count]');
+  if(!nums.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var end    = parseInt(el.dataset.count, 10);
+      var suffix = el.dataset.suffix || '';
+      var dur    = 1400;
+      var t0     = performance.now();
+      (function tick(now){
+        var p = Math.min((now - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3); /* cubic ease-out */
+        el.textContent = Math.round(eased * end) + suffix;
+        if(p < 1) requestAnimationFrame(tick);
+      })(t0);
+      io.unobserve(el);
+    });
+  },{threshold:0.5});
+  nums.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+
+<script>
+/* ===== 資料カード シェイク ===== */
+(function(){
+  var card = document.querySelector('.rm-card');
+  if(!card || !window.IntersectionObserver) return;
+  var fired = false;
+  var io = new IntersectionObserver(function(entries){
+    if(fired) return;
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        fired = true;
+        /* 少し待ってからシェイク（視線が落ち着いてから揺らす） */
+        setTimeout(function(){ card.classList.add('do-shake'); }, 300);
+        io.unobserve(card);
+      }
+    });
+  },{threshold:0.5});
+  io.observe(card);
+})();
+</script>
+
+
+<script>
+/* ===== サポートカード 行高さ揃え ===== */
+(function(){
+  function equalizeSpItems(){
+    var cols = document.querySelectorAll('.sp-items');
+    if(cols.length < 2) return;
+    /* リセット */
+    document.querySelectorAll('.sp-item').forEach(function(el){
+      el.style.minHeight = '';
+    });
+    /* モバイルは不要 */
+    if(window.innerWidth < 769) return;
+    /* 列数分のアイテム数の最大値 */
+    var maxLen = 0;
+    cols.forEach(function(c){ if(c.children.length > maxLen) maxLen = c.children.length; });
+    /* 行ごとに最大高さを求めてセット */
+    for(var i = 0; i < maxLen; i++){
+      var rowItems = [];
+      cols.forEach(function(c){ if(c.children[i]) rowItems.push(c.children[i]); });
+      var maxH = Math.max.apply(null, rowItems.map(function(el){ return el.offsetHeight; }));
+      rowItems.forEach(function(el){ el.style.minHeight = maxH + 'px'; });
+    }
+  }
+  window.addEventListener('load', equalizeSpItems);
+  window.addEventListener('resize', equalizeSpItems);
+})();
+</script>
+
+
+<!-- 自転車アニメーションオーバーレイ -->
+<div id="dlv-overlay" class="dlv-overlay" aria-hidden="true">
+  <p class="dlv-label">送信しています</p>
+  <div class="dlv-dots">
+    <span class="dlv-dot"></span>
+    <span class="dlv-dot"></span>
+    <span class="dlv-dot"></span>
+  </div>
+  <div class="dlv-road-wrap">
+    <div class="dlv-road"></div>
+    <div class="dlv-bike-track">
+      <svg class="dlv-bike-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="5.5" cy="17.5" r="3.5"/>
+        <circle cx="18.5" cy="17.5" r="3.5"/>
+        <path d="M15 6a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="#fff" stroke="none"/>
+        <path d="M12 17.5L9 10l3.5-2.5h4L19 12l-0.5 5.5"/>
+        <path d="M5.5 17.5L9 10"/>
+        <path d="M14.5 7.5L12 17.5"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== 自転車送信アニメーション ===== */
+(function(){
+  var ov = document.getElementById('dlv-overlay');
+  if(!ov) return;
+
+  function showBike(cb){
+    /* アニメーションリセット */
+    var track = ov.querySelector('.dlv-bike-track');
+    var icon  = ov.querySelector('.dlv-bike-icon');
+    [track, icon].forEach(function(el){
+      el.style.animation = 'none';
+      el.offsetHeight; /* reflow */
+      el.style.animation = '';
+    });
+    ov.setAttribute('aria-hidden','false');
+    ov.classList.add('dlv-on');
+    setTimeout(function(){
+      ov.classList.remove('dlv-on');
+      ov.setAttribute('aria-hidden','true');
+      setTimeout(cb, 300);
+    }, 2400);
+  }
+
+  var pending = false;
+  document.querySelectorAll('form').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      if(pending) return;
+      if(!form.checkValidity()) return;
+      e.preventDefault();
+      pending = true;
+      showBike(function(){
+        pending = false;
+        form.submit();
+      });
+    }, true);
+  });
+})();
+</script>
+
+
+<!-- Cookie同意バナー -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie使用の同意">
+  <p class="cookie-banner-text">
+    当サイトでは、Google Analytics・Google Tag Manager等のツールによるアクセス解析にCookieを使用しています。
+    「同意する」をクリックすることで、Cookieの使用に同意いただけます。
+    詳細は<a href="https://jxx98.github.io/flagk-lp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。
+  </p>
+  <button class="cookie-banner-btn" id="cookie-accept-btn">同意する</button>
+</div>
+
+<script>
+/* ===== Cookie同意バナー ===== */
+(function(){
+  var KEY = 'cookie_consent_v1';
+  if(localStorage.getItem(KEY)) return; /* 既に同意済み */
+  var banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  setTimeout(function(){ banner.classList.add('cookie-show'); }, 1200);
+  document.getElementById('cookie-accept-btn').addEventListener('click', function(){
+    localStorage.setItem(KEY, '1');
+    banner.classList.remove('cookie-show');
+    setTimeout(function(){ banner.style.display='none'; }, 400);
+  });
+})();
+</script>
+
+
+<script>
+/* ===== iframe高さ自動送信（STUDIO埋め込み用） ===== */
+(function(){
+  function sendH(){
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    window.parent.postMessage({type:'lp-resize',height:h},'*');
+  }
+  window.addEventListener('load', sendH);
+  window.addEventListener('resize', sendH);
+  /* 画像読み込み完了後にも再送 */
+  window.addEventListener('load', function(){
+    setTimeout(sendH, 500);
+    setTimeout(sendH, 1500);
+  });
+})();
+</script>
+
 </body>
 </html>
