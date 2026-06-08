@@ -59,9 +59,16 @@ button,input,select,textarea{font-family:inherit}
 
 
 /* ── HERO ── */
-.hero-img{width:100%;display:block;margin:0;margin-top:38px}
+.hero-wrap{margin-top:38px;text-align:center}
+.hero-img{width:100%;display:block;margin:0;
+  -webkit-mask-image:linear-gradient(to bottom,black 70%,transparent 100%);
+  mask-image:linear-gradient(to bottom,black 70%,transparent 100%)}
 @media(min-width:601px){
-  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto;margin-top:38px}
+  .hero-img{width:auto;max-height:580px;max-width:100%;display:inline-block;margin:0 auto;
+    -webkit-mask-image:linear-gradient(to bottom,black 70%,transparent 100%),linear-gradient(to right,black 80%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to bottom,black 70%,transparent 100%),linear-gradient(to right,black 80%,transparent 100%);
+    mask-composite:intersect}
 }
 
 /* ── FORM SECTION TITLE ── */
@@ -246,7 +253,9 @@ button,input,select,textarea{font-family:inherit}
 </header>
 
 <!-- HERO -->
-<img class="hero-img" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_27c2279a-7140-4120-a18c-4563e3b87136.png" alt="Uber Eats最新キャンペーンを無料でご案内">
+<div class="hero-wrap">
+  <img class="hero-img" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_ee0bc494-9e68-4021-ad0d-ddfd178b76fc.png" alt="Uber Eats最新キャンペーンを無料でご案内">
+</div>
 
 <!-- FORM SECTION TITLE -->
 <div class="form-section-wrap">

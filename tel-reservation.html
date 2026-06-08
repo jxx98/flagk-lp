@@ -59,9 +59,16 @@ button,input,select,textarea{font-family:inherit}
 
 
 /* ── HERO ── */
-.hero-img{width:100%;display:block;margin:0;margin-top:38px}
+.hero-wrap{margin-top:38px;text-align:center}
+.hero-img{width:100%;display:block;margin:0;
+  -webkit-mask-image:linear-gradient(to bottom,black 70%,transparent 100%);
+  mask-image:linear-gradient(to bottom,black 70%,transparent 100%)}
 @media(min-width:601px){
-  .hero-img{width:auto;max-height:580px;max-width:100%;margin:0 auto;margin-top:38px}
+  .hero-img{width:auto;max-height:580px;max-width:100%;display:inline-block;margin:0 auto;
+    -webkit-mask-image:linear-gradient(to bottom,black 70%,transparent 100%),linear-gradient(to right,black 80%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(to bottom,black 70%,transparent 100%),linear-gradient(to right,black 80%,transparent 100%);
+    mask-composite:intersect}
 }
 
 /* ── FORM SECTION TITLE ── */
@@ -98,13 +105,9 @@ button,input,select,textarea{font-family:inherit}
 .f-radio-label:has(input:checked){border-color:#06C167;background:#f0faf5}
 .f-radio-label:has(input:checked) .f-time-main,
 .f-radio-label:has(input:checked) .f-time-time{color:#06C167;font-weight:700}
-/* PC：横3列・縦並びカード */
+/* PC：縦1列 */
 @media(min-width:601px){
-  .f-time-grid{grid-template-columns:repeat(3,1fr)}
-  .f-radio-label{flex-direction:column;align-items:center;padding:14px 8px 12px;gap:4px;text-align:center}
-  .f-time-sep{display:none}
-  .f-time-main{font-size:13px}
-  .f-time-time{font-size:13px;font-weight:700;color:#222}
+  .f-time-grid{grid-template-columns:1fr}
 }
 
 /* ── PRIVACY ── */
@@ -241,7 +244,9 @@ button,input,select,textarea{font-family:inherit}
 </header>
 
 <!-- HERO -->
-<img class="hero-img" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_8c1be314-ea91-4594-bc1d-1db75a20a119.png" alt="Uber Eats導入前の疑問をお電話でサクッと解決！">
+<div class="hero-wrap">
+  <img class="hero-img" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1672x941_v-fms_webp_8c1be314-ea91-4594-bc1d-1db75a20a119.png" alt="Uber Eats導入前の疑問をお電話でサクッと解決！">
+</div>
 
 <!-- FORM SECTION TITLE -->
 <div class="form-section-wrap">
