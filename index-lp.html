@@ -887,6 +887,19 @@ a{text-decoration:none;color:inherit}
   to{transform:translateY(-7px)}
 }
 
+/* ===== 資料申し込みモーダル ===== */
+.md-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.md-overlay.md-open{opacity:1;visibility:visible}
+.md-box{background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 12px 48px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
+.md-overlay.md-open .md-box{transform:translateY(0)}
+.md-head{padding:24px 24px 16px;border-bottom:2px solid #e8faf2;text-align:center}
+.md-title{font-size:18px;font-weight:700;color:#111;display:inline-flex;align-items:center;gap:8px}
+.md-title-icon{color:#06C167}
+.md-sub{font-size:13px;color:#06C167;font-weight:700;margin-top:4px}
+.md-close{position:absolute;top:14px;right:16px;width:32px;height:32px;border:none;background:none;font-size:22px;cursor:pointer;color:#888;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.md-close:hover{background:#f0f0f0}
+.md-body{padding:20px 24px 24px}
+
 /* ===== Cookie同意バナー ===== */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:99990;
@@ -1428,12 +1441,11 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
   <br>
-  <!-- ★ href を資料申し込みページのURLに変更してください -->
-  <a href="#" class="rm-btn">
+  <button type="button" class="rm-btn" id="rm-modal-open-btn">
     <span class="rm-btn-badge">無料</span>
     <span class="rm-btn-text">資料を申し込む</span>
     <span class="rm-btn-arrow">→</span>
-  </a>
+  </button>
 </section>
 
 <!-- ============================================================
@@ -1814,6 +1826,77 @@ a{text-decoration:none;color:inherit}
 
 
 <!-- Cookie同意バナー -->
+<!-- ===== 資料申し込みモーダル ===== -->
+<div id="rm-modal" class="md-overlay" role="dialog" aria-modal="true" aria-label="資料申し込みフォーム">
+  <div class="md-box">
+    <button class="md-close" id="rm-modal-close" aria-label="閉じる">✕</button>
+    <div class="md-head">
+      <p class="md-title">
+        <span class="md-title-icon">📄</span>
+        資料申し込みフォーム
+      </p>
+      <p class="md-sub">30秒で入力完了！</p>
+    </div>
+    <div class="md-body">
+      <form id="rm-form" action="#" method="post">
+
+        <!-- お店の名前 -->
+        <div class="f-row">
+          <label class="f-lbl" for="md_shop_name">
+            お店の名前<span class="f-req">必須</span>
+          </label>
+          <input class="f-input" type="text" id="md_shop_name" name="shop_name"
+                 placeholder="例）〇〇食堂" required>
+        </div>
+
+        <!-- 担当者名 -->
+        <div class="f-row">
+          <label class="f-lbl" for="md_contact_name">
+            担当者名<span class="f-req">必須</span>
+          </label>
+          <input class="f-input" type="text" id="md_contact_name" name="contact_name"
+                 placeholder="例）田中 太郎" required>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="f-row">
+          <label class="f-lbl" for="md_tel">
+            ご連絡先（電話番号）<span class="f-req">必須</span>
+          </label>
+          <input class="f-input" type="tel" id="md_tel" name="tel"
+                 placeholder="例）090-1234-5678" required>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="f-row">
+          <label class="f-lbl" for="md_email">
+            メールアドレス<span class="f-req">必須</span>
+          </label>
+          <input class="f-input" type="email" id="md_email" name="email"
+                 placeholder="例）info@example.com" required>
+        </div>
+
+        <!-- プライバシーポリシー -->
+        <div class="f-privacy">
+          <input type="checkbox" id="md_privacy" required>
+          <label for="md_privacy">
+            <a href="https://jxx98.github.io/flagk-lp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
+          </label>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="f-submit-wrap">
+          <button type="submit" class="f-submit" id="md-submit-btn" disabled>
+            <span id="md-btn-text">未入力の項目があります</span>
+            <span class="f-submit-arrow">→</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie使用の同意">
   <p class="cookie-banner-text">
     当サイトでは、Google Analytics・Google Tag Manager等のツールによるアクセス解析にCookieを使用しています。
@@ -1836,6 +1919,54 @@ a{text-decoration:none;color:inherit}
     banner.classList.remove('cookie-show');
     setTimeout(function(){ banner.style.display='none'; }, 400);
   });
+})();
+</script>
+
+<script>
+/* ===== 資料申し込みモーダル ===== */
+(function(){
+  var overlay = document.getElementById('rm-modal');
+  var openBtn = document.getElementById('rm-modal-open-btn');
+  var closeBtn = document.getElementById('rm-modal-close');
+  var form = document.getElementById('rm-form');
+  var submitBtn = document.getElementById('md-submit-btn');
+  var btnText = document.getElementById('md-btn-text');
+
+  /* 開く */
+  openBtn.addEventListener('click', function(){
+    overlay.classList.add('md-open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  /* 閉じる */
+  function closeModal(){
+    overlay.classList.remove('md-open');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* バリデーション */
+  var required = form.querySelectorAll('[required]');
+  function validate(){
+    var ok = Array.prototype.every.call(required, function(el){
+      return el.type === 'checkbox' ? el.checked : el.value.trim() !== '';
+    });
+    submitBtn.disabled = !ok;
+    btnText.textContent = ok ? '資料を申し込む（無料）' : '未入力の項目があります';
+  }
+  form.addEventListener('input', validate);
+  form.addEventListener('change', validate);
+  validate();
+
+  /* 送信：自転車アニメーション */
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    closeModal();
+    var dlv = document.getElementById('dlv-overlay');
+    if(dlv){ dlv.classList.add('dlv-on'); setTimeout(function(){ dlv.classList.remove('dlv-on'); }, 3200); }
+  }, true);
 })();
 </script>
 
