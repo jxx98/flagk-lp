@@ -109,13 +109,9 @@ button,input,select,textarea{font-family:inherit}
 .f-radio-label:has(input:checked){border-color:#06C167;background:#f0faf5}
 .f-radio-label:has(input:checked) .f-time-main,
 .f-radio-label:has(input:checked) .f-time-time{color:#06C167;font-weight:700}
-/* PC：横3列・縦並びカード */
+/* PC：縦1列 */
 @media(min-width:601px){
-  .f-time-grid{grid-template-columns:repeat(3,1fr)}
-  .f-radio-label{flex-direction:column;align-items:center;padding:14px 8px 12px;gap:4px;text-align:center}
-  .f-time-sep{display:none}
-  .f-time-main{font-size:13px}
-  .f-time-time{font-size:13px;font-weight:700;color:#222}
+  .f-time-grid{grid-template-columns:1fr}
 }
 .f-submit-wrap{display:flex;justify-content:center}
 .f-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:#06C167;color:#fff;border:none;border-radius:50px;padding:18px 28px;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s;letter-spacing:.04em}
