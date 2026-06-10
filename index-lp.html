@@ -956,8 +956,8 @@ a{text-decoration:none;color:inherit}
 
 /* ===== Cookie同意バナー ===== */
 .cookie-banner{
-  position:fixed;bottom:0;left:0;right:0;z-index:99990;
-  background:rgba(20,20,20,.96);backdrop-filter:blur(6px);
+  position:fixed;bottom:0;left:0;right:0;z-index:99993;
+  background:rgba(20,20,20,.97);backdrop-filter:blur(6px);
   color:#fff;padding:14px 20px;
   display:flex;align-items:center;justify-content:space-between;
   gap:12px;flex-wrap:wrap;
@@ -2366,7 +2366,23 @@ a{text-decoration:none;color:inherit}
   if(localStorage.getItem(KEY)) return; /* 既に同意済み */
   var banner = document.getElementById('cookie-banner');
   if(!banner) return;
-  setTimeout(function(){ banner.classList.add('cookie-show'); }, 1200);
+
+  /* フローティングバーの上に積み重ねて表示 */
+  function stackAboveBar(){
+    var bar = document.querySelector('.mb-bar');
+    if(bar && window.getComputedStyle(bar).display !== 'none'){
+      var rect = bar.getBoundingClientRect();
+      banner.style.bottom = (window.innerHeight - rect.top) + 'px';
+    } else {
+      banner.style.bottom = '0';
+    }
+  }
+
+  setTimeout(function(){
+    stackAboveBar();
+    banner.classList.add('cookie-show');
+  }, 1000);
+
   document.getElementById('cookie-accept-btn').addEventListener('click', function(){
     localStorage.setItem(KEY, '1');
     banner.classList.remove('cookie-show');
