@@ -148,14 +148,14 @@ a{text-decoration:none;color:inherit}
   text-shadow:0 1px 6px rgba(0,0,0,.6);
 }
 .hv2-sub-main{
-  font-size:clamp(12px,3.5vw,14px);
+  font-size:clamp(16px,3.5vw,18px);
   font-weight:700;
   color:#fff;
   line-height:1.7;
   margin-bottom:2px;
 }
 .hv2-sub-note{
-  font-size:clamp(10px,3vw,12px);
+  font-size:clamp(14px,3vw,15px);
   font-weight:500;
   color:rgba(255,255,255,.9);
   line-height:1.7;
@@ -229,12 +229,11 @@ a{text-decoration:none;color:inherit}
 }
 .hv2-box-item{
   display:flex;align-items:flex-start;gap:5px;
-  font-size:clamp(11px,3vw,13px);
+  font-size:clamp(14px,3.5vw,16px);
   font-weight:500;
   color:#111;
   line-height:1.4;
 }
-@media(max-width:420px){.hv2-box-item{font-size:10px}}
 .hv2-box-check{
   color:#06C167;
   font-weight:700;
@@ -369,9 +368,10 @@ a{text-decoration:none;color:inherit}
 @media(min-width:769px){.cs-inner{flex-direction:row;align-items:stretch;gap:32px}}
 .cs-stats{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
 .cs-card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.7);border-radius:12px;padding:22px 24px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:22px;border-right:1px solid rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:22px;border-right:1px solid rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
 .cs-card-icon{display:flex;align-items:center;justify-content:center}
 .cs-card-icon img{width:80px;height:80px;object-fit:contain}
+.cs-card-label{font-size:11px;font-weight:700;color:#666;display:none} /* PC:非表示 */
 .cs-card-num{font-size:20px;font-weight:700;white-space:nowrap;line-height:1.3;color:#111}
 .cs-card-right{flex:1;min-width:0;color:#111;padding-left:22px}
 .cs-card-title{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;color:#111}
@@ -379,13 +379,15 @@ a{text-decoration:none;color:inherit}
 .cs-cta{background:#fff;border-radius:18px;border:2.5px solid #06C167;padding:36px 28px 32px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
   .cs-cta{flex:none}
-  .cs-card{display:flex;align-items:center;padding:16px}
-  .cs-card-left{flex:0 0 88px;width:88px;padding-right:14px}
-  .cs-card-icon img{width:52px;height:52px}
-  .cs-card-num{font-size:15px}
-  .cs-card-right{padding-left:14px}
-  .cs-card-title{font-size:14px}
-  .cs-card-desc{font-size:13px}
+  .cs-card{display:grid;grid-template-columns:68px 1fr;column-gap:12px;row-gap:0;padding:16px}
+  .cs-card-left{display:contents}
+  .cs-card-icon{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;align-self:center;margin-bottom:0}
+  .cs-card-icon img{width:60px;height:60px}
+  .cs-card-label{display:none}
+  .cs-card-num{display:none}
+  .cs-card-right{display:contents}
+  .cs-card-title{grid-column:2;grid-row:1;font-size:15px;font-weight:700;margin:0;line-height:1.45;align-self:center;color:#111}
+  .cs-card-desc{grid-column:1/-1;grid-row:2;font-size:13px;line-height:1.85;margin:0;padding-top:10px;margin-top:10px;border-top:1px solid rgba(255,255,255,.5)}
 }
 .cs-cta-icon-outer{display:flex;justify-content:center;margin-bottom:16px;position:relative}
 .cs-cta-icon-ring{width:72px;height:72px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(6,193,103,.35)}
@@ -403,10 +405,24 @@ a{text-decoration:none;color:inherit}
 .cs-cta-yb:hover{opacity:.85}
 .cs-cta-yb-arrow{font-size:14px;margin-left:4px}
 .cs-banner{margin-bottom:40px;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.3);text-align:center}
-.cs-banner-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:900px;margin:0 auto;flex-wrap:wrap}
-.cs-banner-text{color:#fff;font-size:clamp(15px,1.8vw,18px);font-weight:700;letter-spacing:.03em}
+.cs-banner-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:900px;margin:0 auto;flex-wrap:nowrap}
+@media(max-width:768px){
+  .cs-banner{margin:0 -24px 32px;padding:16px 0}
+  .cs-banner-inner{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:6px;padding:0 4px}
+}
+.cs-banner-text{color:#fff;font-size:14px;font-weight:700;letter-spacing:0;text-align:center;line-height:1.75}
+@media(min-width:769px){
+  .cs-banner-text{font-size:clamp(15px,1.8vw,18px);letter-spacing:.03em}
+}
 .cs-banner-leaf{display:flex;align-items:center;flex-shrink:0}
 
+
+/* ============================================================
+   MOBILE FORM SECTION (モバイル限定)
+   ============================================================ */
+.mf-section{display:block;background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-941x1672_v-fms_webp_548428e1-f804-43b0-84bf-5e0a49ab98bd.png') center/cover no-repeat;padding:48px 20px 56px}
+@media(min-width:769px){.mf-section{display:none}}
+.mf-section .hv2-form-panel{max-width:480px;margin:0 auto}
 
 /* ============================================================
    SUPPORT
@@ -511,13 +527,13 @@ a{text-decoration:none;color:inherit}
 .fq-item{border:2px solid #06C167;border-radius:8px;overflow:hidden}
 .fq-item summary{
   list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
-  background:#06C167;padding:16px 22px;cursor:pointer;user-select:none;
+  background:#fff;padding:16px 22px;cursor:pointer;user-select:none;
   -webkit-tap-highlight-color:transparent;
 }
 .fq-item summary::-webkit-details-marker{display:none}
-.fq-item summary:hover{background:#05b35e}
+.fq-item summary:hover{background:#f0faf5}
 .fq-q{font-size:15px;font-weight:700;color:#111;flex:1;line-height:1.6}
-.fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#111;line-height:1}
+.fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#06C167;line-height:1}
 .fq-icon::before{content:'+'}
 .fq-item[open] .fq-icon::before{content:'−'}
 .fq-a{background:#fff;padding:20px 24px 22px}
@@ -706,6 +722,18 @@ a{text-decoration:none;color:inherit}
 .f-submit:hover:not(:disabled){background:#04a857}
 .f-submit:disabled{background:#b0e0ca;cursor:not-allowed}
 .f-submit-arrow{font-size:18px;font-weight:400;flex-shrink:0}
+.f-radio-group{display:flex;gap:10px}
+.f-radio-label{display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;background:#f5f5f5;border:1.5px solid #e0e0e0;border-radius:8px;padding:11px 14px;font-size:14px;font-weight:600;color:#333;transition:border-color .18s,background .18s;flex:1}
+.f-radio-label:has(input:checked){border-color:#06C167;background:#e8faf2;color:#06C167}
+.f-radio-label.is-no:has(input:checked){border-color:#e74c3c;background:#fff3f3;color:#c0392b}
+.f-radio-label input[type=radio]{accent-color:#06C167;width:16px;height:16px;cursor:pointer;flex-shrink:0}
+.f-radio-label.is-no input[type=radio]{accent-color:#e74c3c}
+.f-no-msg{display:none;margin-top:10px;background:#fff8f8;border:1.5px solid #ffc5c5;border-radius:8px;padding:14px 16px;font-size:13px;color:#c0392b;line-height:1.85}
+.f-no-msg.is-shown{display:block}
+.f-no-msg p{margin-bottom:10px}
+.f-no-msg p:last-child{margin-bottom:0}
+.f-no-note{font-size:11px!important;color:#c0392b;opacity:.75;line-height:1.7;margin-top:10px!important;padding-top:10px;border-top:1px solid #ffc5c5}
+.f-form-body.is-hidden{display:none}
 
 /* ============================================================
    PC: FIXED HEADER + 2-COLUMN HERO
@@ -988,7 +1016,7 @@ a{text-decoration:none;color:inherit}
 .fc-title-sub{font-size:clamp(15px,2vw,20px);font-weight:700;color:#06C167;margin-bottom:14px;letter-spacing:.02em}
 .fc-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:72px}
 .fc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
-@media(max-width:768px){.fc-cards{grid-template-columns:1fr;max-width:420px}}
+@media(max-width:768px){.fc-cards{grid-template-columns:1fr;max-width:420px;gap:56px}}
 .fc-card{background:#fff;border:1px solid #e0f0e8;border-radius:20px;padding:0 24px 28px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.06);position:relative;padding-top:44px}
 .fc-card--featured{background:#f5fdf8;border-color:#b8e8cc}
 .fc-card-icon{width:72px;height:72px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-36px;left:50%;transform:translateX(-50%);box-shadow:0 4px 16px rgba(6,193,103,.35)}
@@ -1004,7 +1032,7 @@ a{text-decoration:none;color:inherit}
 .fc-btn--featured{background:#7ec83e}
 .fc-btn--featured:hover{background:#6ab52e}
 .fc-btn-icon{width:18px;height:18px;flex-shrink:0}
-.fc-btn-arrow{font-size:16px;margin-left:auto;flex-shrink:0}
+.fc-btn-arrow{font-size:16px;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -1137,13 +1165,31 @@ a{text-decoration:none;color:inherit}
   <div class="hv2-right">
     <div class="hv2-form-panel">
       <div class="hv2-form-top">
-        <p class="hv2-form-title">
-          <span class="hv2-form-deco"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-          無料出店相談フォーム
-          <span class="hv2-form-deco"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-        </p>
+        <p class="hv2-form-title">無料出店相談フォーム</p>
       </div>
       <form id="hero-cf-form" action="#" method="post">
+
+        <!-- 新規出店確認 -->
+        <div class="f-row">
+          <label class="f-lbl">
+            新規出店をご検討中ですか？<span class="f-req">必須</span>
+          </label>
+          <div class="f-radio-group">
+            <label class="f-radio-label">
+              <input type="radio" name="h_new_store" value="yes" required> はい
+            </label>
+            <label class="f-radio-label is-no">
+              <input type="radio" name="h_new_store" value="no"> いいえ
+            </label>
+          </div>
+          <div class="f-no-msg" id="h-no-msg">
+            <p>本フォームはUber Eatsへの<br>新規出店をご検討中の方向けです。</p>
+            <p>既存加盟店様からのお問い合わせには<br>対応しておりません。</p>
+            <p class="f-no-note">※Uber Eatsご利用中の店舗様は<br>Uber Eatsサポート窓口へお問い合わせください。</p>
+          </div>
+        </div>
+
+        <div class="f-form-body" id="h-form-body">
 
         <!-- 店舗名 -->
         <div class="f-row">
@@ -1224,6 +1270,8 @@ a{text-decoration:none;color:inherit}
             <span class="f-submit-arrow">›</span>
           </button>
         </div>
+
+        </div><!-- /f-form-body -->
 
       </form>
     </div>
@@ -1394,13 +1442,131 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ============================================================
+     MOBILE FORM (モバイル限定：理由セクション下)
+     ============================================================ -->
+<section class="mf-section">
+  <div class="hv2-form-panel">
+    <div class="hv2-form-top">
+      <p class="hv2-form-title">無料出店相談フォーム</p>
+    </div>
+    <form id="mobile-cf-form" action="#" method="post">
+
+      <!-- 新規出店確認 -->
+      <div class="f-row">
+        <label class="f-lbl">
+          新規出店をご検討中ですか？<span class="f-req">必須</span>
+        </label>
+        <div class="f-radio-group">
+          <label class="f-radio-label">
+            <input type="radio" name="m_new_store" value="yes" required> はい
+          </label>
+          <label class="f-radio-label is-no">
+            <input type="radio" name="m_new_store" value="no"> いいえ
+          </label>
+        </div>
+        <div class="f-no-msg" id="m-no-msg">
+          <p>本フォームはUber Eatsへの<br>新規出店をご検討中の方向けです。</p>
+          <p>既存加盟店様からのお問い合わせには<br>対応しておりません。</p>
+          <p class="f-no-note">※Uber Eatsご利用中の店舗様は<br>Uber Eatsサポート窓口へお問い合わせください。</p>
+        </div>
+      </div>
+
+      <div class="f-form-body" id="m-form-body">
+
+      <!-- 店舗名 -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-shop_name">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          店舗名<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="m-shop_name" name="shop_name" placeholder="例）ラーメン○○ 新宿店" required>
+      </div>
+
+      <!-- 担当者名 -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-contact_name">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          担当者名<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="m-contact_name" name="contact_name" placeholder="例）山田 太郎" required>
+      </div>
+
+      <!-- 郵便番号 -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-zip">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          郵便番号<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="m-zip" name="zip" placeholder="例）160-0000" maxlength="8" required>
+        <div class="f-addr-row">
+          <div class="f-addr-col">
+            <label class="f-addr-lbl">都道府県</label>
+            <input class="f-input f-input-auto" type="text" id="m-pref" name="pref" placeholder="都道府県" readonly tabindex="-1">
+          </div>
+          <div class="f-addr-col">
+            <label class="f-addr-lbl">市区町村</label>
+            <input class="f-input f-input-auto" type="text" id="m-city" name="city" placeholder="市区町村" readonly tabindex="-1">
+          </div>
+        </div>
+      </div>
+
+      <!-- 丁目・番地 -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-address2">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+          丁目・番地<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="text" id="m-address2" name="address2" placeholder="例）1-2-3" required>
+      </div>
+
+      <!-- 電話番号 -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-tel">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
+          電話番号<span class="f-req">必須</span>
+        </label>
+        <input class="f-input" type="tel" id="m-tel" name="tel" placeholder="例）09012345678" required>
+      </div>
+
+      <!-- メールアドレス -->
+      <div class="f-row">
+        <label class="f-lbl" for="m-email">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          メールアドレス<span class="f-opt">任意</span>
+        </label>
+        <input class="f-input" type="email" id="m-email" name="email" placeholder="例）shinjukuRahmen@co.jp">
+      </div>
+
+      <!-- プライバシーポリシー -->
+      <div class="f-privacy">
+        <input type="checkbox" id="m-privacy" required>
+        <label for="m-privacy">
+          <a href="https://jxx98.github.io/flagk-lp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
+        </label>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="f-submit-wrap">
+        <button type="submit" class="f-submit" id="mobile-submit-btn" disabled>
+          <span id="mobile-btn-text">無料で相談する</span>
+          <span class="f-submit-arrow">›</span>
+        </button>
+      </div>
+
+      </div><!-- /f-form-body -->
+
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
      STATS + CTA
      ============================================================ -->
 <section class="cs">
   <div class="cs-banner">
     <div class="cs-banner-inner">
       <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M38 14 Q30 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="31" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 31 7)"/><ellipse cx="24" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 24 5)"/><ellipse cx="31" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 31 21)"/><ellipse cx="24" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 24 23)"/></svg></span>
-      <p class="cs-banner-text">Uber Eats の正規パートナーとして、出店から運用までしっかりサポートします</p>
+      <p class="cs-banner-text">Uber Eats の正規パートナーとして、<br>出店から運用までしっかりサポートします</p>
       <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M6 14 Q14 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="13" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 13 7)"/><ellipse cx="20" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 20 5)"/><ellipse cx="13" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 13 21)"/><ellipse cx="20" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 20 23)"/></svg></span>
     </div>
   </div>
@@ -1410,16 +1576,18 @@ a{text-decoration:none;color:inherit}
       <div class="cs-card">
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f300a400-cd95-40a3-bd1d-4f81c5ac8ffd.png" alt="登録店舗数"></span>
+          <span class="cs-card-label">登録店舗数</span>
           <span class="cs-card-num">18万店舗</span>
         </div>
         <div class="cs-card-right">
           <p class="cs-card-title">多くの飲食店に選ばれているサービス</p>
-          <p class="cs-card-desc">全国18万店舗以上の飲食店が導入。<br>多くの店舗に選ばれているサービスだからこそ、<br>初めてのデリバリー導入でも安心して始められます。</p>
+          <p class="cs-card-desc"><strong>全国18万店舗以上</strong>の飲食店が導入。<br>多くの店舗に選ばれているサービスだからこそ、<br>初めてのデリバリー導入でも安心して始められます。</p>
         </div>
       </div>
       <div class="cs-card">
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_ad0f1e50-03d8-49a4-8319-78492de3e014.png" alt="登録ユーザー数"></span>
+          <span class="cs-card-label">登録ユーザー数</span>
           <span class="cs-card-num">500万人</span>
         </div>
         <div class="cs-card-right">
@@ -1430,6 +1598,7 @@ a{text-decoration:none;color:inherit}
       <div class="cs-card">
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_82150037-3470-46c9-a99b-4c235a2a676c.png" alt="全国対応"></span>
+          <span class="cs-card-label">対応エリア</span>
           <span class="cs-card-num">全国対応</span>
         </div>
         <div class="cs-card-right">
@@ -1596,7 +1765,7 @@ a{text-decoration:none;color:inherit}
   <br>
   <button type="button" class="rm-btn" id="rm-modal-open-btn">
     <span class="rm-btn-badge">無料</span>
-    <span class="rm-btn-text">資料を申し込む</span>
+    <span class="rm-btn-text">資料請求</span>
     <span class="rm-btn-arrow">→</span>
   </button>
 </section>
@@ -1610,45 +1779,45 @@ a{text-decoration:none;color:inherit}
 
     <li>
       <details class="fq-item">
-        <summary><span class="fq-q">Q1. 申請から注文開始までどのくらいかかりますか？</span><span class="fq-icon"></span></summary>
+        <summary><span class="fq-q">申請から注文開始までどのくらいかかりますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A1. 最短5営業日での導入が可能です。<small>※必要書類が揃った時点から起算。通常は2〜4週間程度。エリア・審査・繁忙状況により変動します。</small></p>
+          <p>最短5営業日での導入が可能です。<small>※必要書類が揃った時点から起算。通常は2〜4週間程度。エリア・審査・繁忙状況により変動します。</small></p>
         </div>
       </details>
     </li>
 
     <li>
       <details class="fq-item">
-        <summary><span class="fq-q">Q2. 注文手数料はいくらですか？</span><span class="fq-icon"></span></summary>
+        <summary><span class="fq-q">注文手数料はいくらですか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A2. Uber Eatsの手数料は、サービス手数料30.0%＋税が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<small>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</small></p>
+          <p>Uber Eatsの手数料は、サービス手数料30.0%＋税が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<small>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</small></p>
         </div>
       </details>
     </li>
 
     <li>
       <details class="fq-item">
-        <summary><span class="fq-q">Q3. オーダーを受付けるために何か準備するものはありますか？</span><span class="fq-icon"></span></summary>
+        <summary><span class="fq-q">オーダーを受付けるために何か準備するものはありますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A3. オーダー受付専用タブレット端末とデリバリー用の容器をご用意頂く必要があります。タブレットに関しては、レンタルでご用意することも可能ですのでお気軽にご相談ください。<small>※無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</small></p>
+          <p>オーダー受付専用タブレット端末とデリバリー用の容器をご用意頂く必要があります。タブレットに関しては、レンタルでご用意することも可能ですのでお気軽にご相談ください。<small>※無料タブレットはキャンペーン対象エリアのみ。対象外の場合は端末のご用意が必要です（お問合せ後にご案内します）。</small></p>
         </div>
       </details>
     </li>
 
     <li>
       <details class="fq-item">
-        <summary><span class="fq-q">Q4. 申請ができる地域かはどうしたらわかりますか？</span><span class="fq-icon"></span></summary>
+        <summary><span class="fq-q">申請ができる地域かはどうしたらわかりますか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A4. お店のご住所をお知らせいただければ、対応可否と適用キャンペーンなどをご案内します。お気軽にお問い合わせください。</p>
+          <p>お店のご住所をお知らせいただければ、対応可否と適用キャンペーンなどをご案内します。お気軽にお問い合わせください。</p>
         </div>
       </details>
     </li>
 
     <li>
       <details class="fq-item">
-        <summary><span class="fq-q">Q5. 売上の入金は振込ですか？</span><span class="fq-icon"></span></summary>
+        <summary><span class="fq-q">売上の入金は振込ですか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>A5. 銀行振り込みになります。対応銀行かどうかはご案内できますので、お気軽にお問い合わせください。</p>
+          <p>銀行振り込みになります。対応銀行かどうかはご案内できますので、お気軽にお問い合わせください。</p>
         </div>
       </details>
     </li>
@@ -1680,7 +1849,6 @@ a{text-decoration:none;color:inherit}
       <hr class="fc-card-sep">
       <p class="fc-card-desc">出店方法や費用について<br>担当者がご案内します。</p>
       <a href="tel-reservation.html" class="fc-btn">
-        <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
         電話相談を予約する
         <span class="fc-btn-arrow">›</span>
       </a>
@@ -1695,7 +1863,6 @@ a{text-decoration:none;color:inherit}
       <hr class="fc-card-sep">
       <p class="fc-card-desc">対象キャンペーンや<br>適用条件をご案内します。</p>
       <a href="campaign-check.html" class="fc-btn fc-btn--featured">
-        <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
         無料で確認する
         <span class="fc-btn-arrow">›</span>
       </a>
@@ -1710,7 +1877,6 @@ a{text-decoration:none;color:inherit}
       <hr class="fc-card-sep">
       <p class="fc-card-desc">出店に関するご相談や<br>お申し込みを承ります。</p>
       <a href="#" class="fc-btn">
-        <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.11 18.1.127 18.11a19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
         LINEで相談を始める
         <span class="fc-btn-arrow">›</span>
       </a>
@@ -1749,14 +1915,14 @@ a{text-decoration:none;color:inherit}
   <!-- キャンペーン確認フォーム -->
   <a href="campaign-check.html" class="mb-col mb-col--camp">
     <span class="mb-icon-wrap"><span class="mb-icon">🎁</span></span>
-    <span class="mb-title">キャンペーン確認</span>
+    <span class="mb-title">特典確認</span>
     <span class="mb-sub">特典を確認する<span class="mb-arrow"> ›</span></span>
   </a>
 
   <!-- LINEで相談する -->
   <a href="https://lin.ee/RhSAYu3" class="mb-col mb-col--line" target="_blank" rel="noopener">
     <span class="mb-icon-wrap"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE" class="mb-icon-img mb-icon-img--line"></span>
-    <span class="mb-title">LINEで申込</span>
+    <span class="mb-title">LINE相談</span>
     <span class="mb-sub">24時間受付中<span class="mb-arrow"> ›</span></span>
   </a>
 
@@ -1863,7 +2029,13 @@ a{text-decoration:none;color:inherit}
   var btn  = document.getElementById('hero-submit-btn');
   if(!form || !btn) return;
   function update(){
-    btn.disabled = !form.checkValidity();
+    var noRadio = form.querySelector('input[name="h_new_store"][value="no"]');
+    var noSelected = noRadio && noRadio.checked;
+    var noMsg = document.getElementById('h-no-msg');
+    var formBody = document.getElementById('h-form-body');
+    if(noMsg) noMsg.classList.toggle('is-shown', noSelected);
+    if(formBody) formBody.classList.toggle('is-hidden', noSelected);
+    btn.disabled = !form.checkValidity() || noSelected;
   }
   form.addEventListener('input', update);
   form.addEventListener('change', update);
@@ -1897,6 +2069,51 @@ a{text-decoration:none;color:inherit}
       prefEl.value = '';
       cityEl.value = '';
     }
+  });
+})();
+</script>
+
+<script>
+/* モバイルフォーム：送信ボタン有効化 */
+(function(){
+  var form = document.getElementById('mobile-cf-form');
+  var btn  = document.getElementById('mobile-submit-btn');
+  if(!form || !btn) return;
+  function update(){
+    var noRadio = form.querySelector('input[name="m_new_store"][value="no"]');
+    var noSelected = noRadio && noRadio.checked;
+    var noMsg = document.getElementById('m-no-msg');
+    var formBody = document.getElementById('m-form-body');
+    if(noMsg) noMsg.classList.toggle('is-shown', noSelected);
+    if(formBody) formBody.classList.toggle('is-hidden', noSelected);
+    btn.disabled = !form.checkValidity() || noSelected;
+  }
+  form.addEventListener('input', update);
+  form.addEventListener('change', update);
+  update();
+})();
+
+/* モバイルフォーム：郵便番号→住所自動入力 */
+(function(){
+  var zipEl  = document.getElementById('m-zip');
+  var prefEl = document.getElementById('m-pref');
+  var cityEl = document.getElementById('m-city');
+  if(!zipEl || !prefEl || !cityEl) return;
+  zipEl.addEventListener('input', function(){
+    var raw = this.value.replace(/[^\d]/g,'');
+    if(raw.length === 7){
+      fetch('https://zipcloud.ibsnet.co.jp/api/search?zipcode=' + raw)
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if(d.results && d.results.length){
+            var r = d.results[0];
+            prefEl.value = r.address1;
+            cityEl.value = r.address2 + r.address3;
+            document.getElementById('mobile-cf-form').dispatchEvent(new Event('input'));
+          } else { prefEl.value=''; cityEl.value=''; }
+        })
+        .catch(function(){ prefEl.value=''; cityEl.value=''; });
+    } else { prefEl.value=''; cityEl.value=''; }
   });
 })();
 </script>
