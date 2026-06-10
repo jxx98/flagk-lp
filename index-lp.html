@@ -23,7 +23,7 @@ a{text-decoration:none;color:inherit}
 /* ── モバイル ── */
 .hd-inner{display:flex;align-items:center;gap:6px;width:100%;padding:0 10px;height:76px;max-width:1200px;margin:0 auto}
 .hd-logo{display:flex;align-items:center;flex-shrink:0}
-.hd-logo img{height:46px;width:auto}
+.hd-logo img{height:56px;width:auto}
 .hd-divider{width:1px;height:40px;background:#e0e0e0;flex-shrink:0}
 .hd-brand{display:flex;align-items:center;min-width:0;flex-shrink:1}
 .hd-brand-main{font-size:16px;font-weight:700;color:#111;white-space:nowrap;line-height:1.3}
@@ -51,7 +51,7 @@ a{text-decoration:none;color:inherit}
   .hd-inner{gap:14px;padding:0 28px;height:76px}
   .hd-tel{display:flex}
   .hd-btns{display:flex}
-  .hd-logo img{height:52px}
+  .hd-logo img{height:62px}
   .hd-divider{height:42px}
   .hd-brand-main{font-size:18px}
   .hd-brand-sub{font-size:11px;margin-top:3px}
@@ -368,53 +368,44 @@ a{text-decoration:none;color:inherit}
 .cs-inner{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
 @media(min-width:769px){.cs-inner{flex-direction:row;align-items:stretch;gap:32px}}
 .cs-stats{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
-.cs-card{background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.5);border-radius:8px;padding:18px 20px;display:flex;align-items:center}
-.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:20px;border-right:1px solid rgba(0,0,0,.15)}
-.cs-card-icon{line-height:1;margin-bottom:6px;display:flex;align-items:center;justify-content:center}
-.cs-card-icon img{width:64px;height:64px;object-fit:contain}
-.cs-card-label{font-size:11px;font-weight:700;letter-spacing:.04em;color:#333;display:block;margin-bottom:3px}
-.cs-card-num{font-size:24px;font-weight:700;white-space:nowrap;line-height:1.2;color:#111}
-.cs-card-right{flex:1;min-width:0;color:#111;padding-left:20px}
-.cs-card-title{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.4;color:#111}
-.cs-card-desc{font-size:14px;line-height:1.85;color:#333}
-.cs-cta{background:#fff;border-radius:12px;padding:32px 24px 28px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
+.cs-card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.7);border-radius:12px;padding:22px 24px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:22px;border-right:1px solid rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.cs-card-icon{display:flex;align-items:center;justify-content:center}
+.cs-card-icon img{width:80px;height:80px;object-fit:contain}
+.cs-card-num{font-size:20px;font-weight:700;white-space:nowrap;line-height:1.3;color:#111}
+.cs-card-right{flex:1;min-width:0;color:#111;padding-left:22px}
+.cs-card-title{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;color:#111}
+.cs-card-desc{font-size:14px;line-height:1.85;color:#555}
+.cs-cta{background:#fff;border-radius:18px;border:2.5px solid #06C167;padding:36px 28px 32px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
   .cs-cta{flex:none}
-  .cs-card{display:grid;grid-template-columns:auto auto auto 1fr;grid-template-areas:"icon label num ." "icon title title title" "desc desc desc desc";column-gap:6px;row-gap:0;padding:14px 16px;align-items:start}
-  .cs-card-left{display:contents}
-  .cs-card-icon{grid-area:icon;align-self:center;margin-bottom:0}
+  .cs-card{display:flex;align-items:center;padding:16px}
+  .cs-card-left{flex:0 0 88px;width:88px;padding-right:14px}
   .cs-card-icon img{width:52px;height:52px}
-  .cs-card-label{grid-area:label;font-size:10px;display:block;align-self:end;padding-bottom:2px;margin-bottom:0}
-  .cs-card-num{grid-area:num;font-size:10px;font-weight:700;color:#333;white-space:nowrap;line-height:inherit;display:block;align-self:end;padding-bottom:2px}
-  .cs-card-right{display:contents}
-  .cs-card-title{grid-area:title;margin-bottom:0;font-size:15px;padding-top:8px;border-top:1px solid rgba(0,0,0,.15)}
-  .cs-card-desc{grid-area:desc;border-top:1px solid rgba(0,0,0,.2);padding-top:10px;margin-top:10px}
+  .cs-card-num{font-size:15px}
+  .cs-card-right{padding-left:14px}
+  .cs-card-title{font-size:14px}
+  .cs-card-desc{font-size:13px}
 }
-.cs-cta-title{font-size:clamp(18px,2.5vw,22px);font-weight:700;color:#111;margin-bottom:10px;line-height:1.5}
-.cs-cta-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:22px}
-.cs-tel-wrap{margin-bottom:22px}
-.cs-tel-label{display:inline-block;font-size:11px;color:#555;background:#f0f0f0;border-radius:4px;padding:3px 10px;margin-bottom:8px}
-.cs-tel-num{display:block;font-size:26px;font-weight:700;color:#111;letter-spacing:.01em;line-height:1.2;white-space:nowrap}
-.cs-tel-num::before{content:'☎ ';font-size:22px;vertical-align:middle}
-.cs-btns{display:flex;flex-direction:column;gap:10px}
-.cs-btn{display:flex;align-items:stretch;background:#111;color:#fff;border-radius:6px;overflow:hidden;transition:background .2s}
-.cs-btn:hover{background:#2a2a2a}
-.cs-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;flex:0 0 68px;width:68px}
-.cs-btn-text{flex:1;padding:14px 8px;font-size:16px;font-weight:700;text-align:center;letter-spacing:.04em}
-.cs-btn-arrow{padding:14px 14px 14px 0;font-size:16px;opacity:.6;display:flex;align-items:center}
-/* ===== cs-cta リデザイン ===== */
-.cs-cta{border:2.5px solid #06C167;border-radius:18px}
-.cs-cta-icon-outer{display:flex;justify-content:center;margin-bottom:14px;position:relative}
-.cs-cta-icon-ring{width:64px;height:64px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cs-cta-icon-ring img{width:38px;height:auto;display:block}
+.cs-cta-icon-outer{display:flex;justify-content:center;margin-bottom:16px;position:relative}
+.cs-cta-icon-ring{width:72px;height:72px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(6,193,103,.35)}
 .cs-cta-icon-ring svg{display:block;flex-shrink:0}
 .cs-cta-spark{position:absolute;color:#06C167;font-weight:900;line-height:1;pointer-events:none}
 .cs-cta-spark-a{font-size:13px;top:-2px;right:calc(50% - 46px);transform:rotate(15deg)}
 .cs-cta-spark-b{font-size:10px;top:14px;right:calc(50% - 58px);transform:rotate(-10deg)}
+.cs-cta-title{font-size:clamp(22px,3vw,30px);font-weight:700;color:#111;margin-bottom:0;line-height:1.4}
 .cs-cta-title-green{color:#06C167}
 .cs-cta-divider{display:flex;align-items:center;gap:8px;margin:14px 0 12px}
 .cs-cta-divider::before,.cs-cta-divider::after{content:'';flex:1;height:1px;background:#ddd}
 .cs-cta-divider-v{font-size:18px;color:#06C167;line-height:1}
+.cs-cta-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:24px}
+.cs-cta-yb{display:flex;align-items:center;justify-content:center;gap:10px;background:#FFD600;color:#222;border-radius:8px;padding:16px 20px;font-size:17px;font-weight:700;text-decoration:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.cs-cta-yb:hover{opacity:.85}
+.cs-cta-yb-arrow{font-size:14px;margin-left:4px}
+.cs-banner{margin-bottom:40px;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.3);text-align:center}
+.cs-banner-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:900px;margin:0 auto;flex-wrap:wrap}
+.cs-banner-text{color:#fff;font-size:clamp(15px,1.8vw,18px);font-weight:700;letter-spacing:.03em}
+.cs-banner-leaf{display:flex;align-items:center;flex-shrink:0}
 
 
 /* ============================================================
@@ -781,8 +772,8 @@ a{text-decoration:none;color:inherit}
     gap:10px 16px;
   }
 
-  /* Stats CTA card: widen to prevent title line-break */
-  .cs-cta{flex:0 0 360px}
+  /* Stats CTA card */
+  .cs-cta{flex:0 0 340px}
   .cs-cta-title{white-space:nowrap}
 }
 
@@ -794,11 +785,20 @@ a{text-decoration:none;color:inherit}
 .fade-in:nth-child(4){transition-delay:.36s}
 .fade-in:nth-child(5){transition-delay:.48s}
 .fade-in:nth-child(6){transition-delay:.60s}
+/* フローステップ個別遅延 */
+.fl-step.fade-in:nth-of-type(1){transition-delay:0s}
+.fl-step.fade-in:nth-of-type(2){transition-delay:.15s}
+.fl-step.fade-in:nth-of-type(3){transition-delay:.30s}
+.fl-step.fade-in:nth-of-type(4){transition-delay:.45s}
+/* 最終CTAカード遅延 */
+.fc-card.fade-in:nth-of-type(1){transition-delay:0s}
+.fc-card.fade-in:nth-of-type(2){transition-delay:.15s}
+.fc-card.fade-in:nth-of-type(3){transition-delay:.30s}
 
 /* ===== HOVER EFFECTS（マウス操作デバイスのみ） ===== */
 @media(hover:hover){
-  .cs-card{transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
-  .cs-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.58);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+  .cs-card{transition:transform .22s ease,box-shadow .22s ease}
+  .cs-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.14)}
   .rs-card{transition:transform .22s ease,box-shadow .22s ease}
   .rs-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
   .hv2-cta{transition:transform .2s ease,box-shadow .2s ease}
@@ -819,7 +819,7 @@ a{text-decoration:none;color:inherit}
 
 /* cs-cta 高さをleftに合わせて伸ばす */
 @media(min-width:769px){
-  .cs-cta{align-self:stretch;justify-content:flex-start;padding-top:28px}
+  .cs-cta{align-self:stretch;justify-content:center;padding-top:32px}
   /* ── PC本文 15px統一 ── */
   .cs-card-title{font-size:17px}
   .rs-desc{font-size:15px}
@@ -1025,12 +1025,12 @@ a{text-decoration:none;color:inherit}
     <div class="hd-tel">
       <a href="tel-reservation.html" class="hd-tel-link">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        電話予約
+        無料相談予約
       </a>
     </div>
     <div class="hd-btns">
       <a href="https://lin.ee/RhSAYu3" class="hd-btn" target="_blank" rel="noopener">
-        <img class="hd-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE"> LINE申込
+        <img class="hd-line-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE"> LINE相談
       </a>
     </div>
   </div>
@@ -1397,79 +1397,61 @@ a{text-decoration:none;color:inherit}
      STATS + CTA
      ============================================================ -->
 <section class="cs">
+  <div class="cs-banner">
+    <div class="cs-banner-inner">
+      <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M38 14 Q30 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="31" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 31 7)"/><ellipse cx="24" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 24 5)"/><ellipse cx="31" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 31 21)"/><ellipse cx="24" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 24 23)"/></svg></span>
+      <p class="cs-banner-text">Uber Eats の正規パートナーとして、出店から運用までしっかりサポートします</p>
+      <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M6 14 Q14 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="13" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 13 7)"/><ellipse cx="20" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 20 5)"/><ellipse cx="13" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 13 21)"/><ellipse cx="20" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 20 23)"/></svg></span>
+    </div>
+  </div>
   <div class="cs-inner">
 
     <div class="cs-stats">
-
       <div class="cs-card">
         <div class="cs-card-left">
           <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f300a400-cd95-40a3-bd1d-4f81c5ac8ffd.png" alt="登録店舗数"></span>
-          <span class="cs-card-label">登録店舗数</span>
-          <span class="cs-card-num" data-count="18" data-suffix="万店舗">18万店舗</span>
+          <span class="cs-card-num">18万店舗</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">日本全国18万店舗以上が加盟！</p>
-          <p class="cs-card-desc">全国18万店舗以上の飲食店が導入しているUber Eats。多くの店舗に選ばれているサービスだからこそ、初めてのデリバリー導入でも安心して始められます。</p>
+          <p class="cs-card-title">多くの飲食店に選ばれているサービス</p>
+          <p class="cs-card-desc">全国18万店舗以上の飲食店が導入。<br>多くの店舗に選ばれているサービスだからこそ、<br>初めてのデリバリー導入でも安心して始められます。</p>
         </div>
       </div>
-
       <div class="cs-card">
         <div class="cs-card-left">
-          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_ad0f1e50-03d8-49a4-8319-78492de3e014.png" alt="ユーザー登録数"></span>
-          <span class="cs-card-label">ユーザー登録数</span>
-          <span class="cs-card-num" data-count="500" data-suffix="万人">500万人</span>
+          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_ad0f1e50-03d8-49a4-8319-78492de3e014.png" alt="登録ユーザー数"></span>
+          <span class="cs-card-num">500万人</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">500万人以上の登録ユーザー</p>
-          <p class="cs-card-desc">Uber Eatsは500万人以上の登録ユーザーが利用するフードデリバリーサービスです。新たなお客様との接点を増やし、集客機会の拡大が期待できます。</p>
+          <p class="cs-card-title">新しいお客様との接点を拡大</p>
+          <p class="cs-card-desc">500万人以上の登録ユーザーが利用。<br>店舗の認知拡大や新規顧客の獲得など、<br>集客機会の拡大が期待できます。</p>
         </div>
       </div>
-
       <div class="cs-card">
         <div class="cs-card-left">
-          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_82150037-3470-46c9-a99b-4c235a2a676c.png" alt="全国どこでも"></span>
-          <span class="cs-card-label">対応エリア</span>
-          <span class="cs-card-num">確認可能</span>
+          <span class="cs-card-icon"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_82150037-3470-46c9-a99b-4c235a2a676c.png" alt="全国対応"></span>
+          <span class="cs-card-num">全国対応</span>
         </div>
         <div class="cs-card-right">
-          <p class="cs-card-title">あなたのお店も対象か確認できます</p>
-          <p class="cs-card-desc">Uber Eatsは全国でサービスを展開しています。エリアや店舗形態によって条件が異なるため、店舗情報をもとにご案内いたします。</p>
+          <p class="cs-card-title">お店が対象かすぐに確認可能</p>
+          <p class="cs-card-desc">Uber Eatsは全国でサービスを展開しています。<br>エリアや店舗形態に応じて条件が異なるため、<br>店舗情報をもとにご案内いたします。</p>
         </div>
       </div>
-
     </div>
 
     <div class="cs-cta">
-      <!-- トップアイコン -->
       <div class="cs-cta-icon-outer">
-        <span class="cs-cta-spark cs-cta-spark-a">✦</span>
-        <span class="cs-cta-spark cs-cta-spark-b">✦</span>
         <div class="cs-cta-icon-ring">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-          </svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
       </div>
-      <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でご案内</p>
+      <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でお申し込み</p>
       <div class="cs-cta-divider"><span class="cs-cta-divider-v">∨</span></div>
-      <p class="cs-cta-sub">導入費用やキャンペーンの適用可否など、<br>お気軽にご相談ください。</p>
-      <div class="cs-btns">
-        <a href="tel-reservation.html" class="cs-btn">
-          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_f505f13c-f085-497c-b9fe-9397be5bfb88.png" alt="" style="width:36px;height:auto;display:block"></span>
-          <span class="cs-btn-text">電話相談予約</span>
-          <span class="cs-btn-arrow">→</span>
-        </a>
-        <a href="campaign-check.html" class="cs-btn">
-          <span class="cs-btn-badge"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1536x1024_v-fms_webp_e15ed3a7-0367-49da-9713-e19b2c024199.png" alt="" style="width:36px;height:auto;display:block"></span>
-          <span class="cs-btn-text">キャンペーン確認</span>
-          <span class="cs-btn-arrow">→</span>
-        </a>
-        <a href="https://lin.ee/RhSAYu3" class="cs-btn" target="_blank" rel="noopener">
-          <span class="cs-btn-badge">LINE</span>
-          <span class="cs-btn-text">簡単申し込み</span>
-          <span class="cs-btn-arrow">→</span>
-        </a>
-      </div>
+      <p class="cs-cta-sub">必要事項をご入力いただくだけで、<br>担当者よりご連絡いたします。</p>
+      <a href="#hero" class="cs-cta-yb">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        無料相談フォームへ<span class="cs-cta-yb-arrow">›</span>
+      </a>
     </div>
 
   </div>
@@ -1699,7 +1681,7 @@ a{text-decoration:none;color:inherit}
       <p class="fc-card-desc">出店方法や費用について<br>担当者がご案内します。</p>
       <a href="tel-reservation.html" class="fc-btn">
         <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-        電話で相談する
+        電話相談を予約する
         <span class="fc-btn-arrow">›</span>
       </a>
     </div>
@@ -1711,10 +1693,10 @@ a{text-decoration:none;color:inherit}
       </div>
       <p class="fc-card-title">お得な特典を確認</p>
       <hr class="fc-card-sep">
-      <p class="fc-card-desc">利用可能な特典や<br>適用条件をご案内します。</p>
+      <p class="fc-card-desc">対象キャンペーンや<br>適用条件をご案内します。</p>
       <a href="campaign-check.html" class="fc-btn fc-btn--featured">
         <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
-        キャンペーンを確認する
+        無料で確認する
         <span class="fc-btn-arrow">›</span>
       </a>
     </div>
@@ -1724,12 +1706,12 @@ a{text-decoration:none;color:inherit}
       <div class="fc-card-icon">
         <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE" style="width:42px;height:42px;object-fit:contain;display:block">
       </div>
-      <p class="fc-card-title">LINEで相談する</p>
+      <p class="fc-card-title">LINEで出店相談</p>
       <hr class="fc-card-sep">
-      <p class="fc-card-desc">お好きなタイミングで<br>お問い合わせいただけます。</p>
+      <p class="fc-card-desc">出店に関するご相談や<br>お申し込みを承ります。</p>
       <a href="#" class="fc-btn">
         <svg class="fc-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.11 18.1.127 18.11a19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
-        LINEで相談する
+        LINEで相談を始める
         <span class="fc-btn-arrow">›</span>
       </a>
     </div>
@@ -1929,7 +1911,11 @@ a{text-decoration:none;color:inherit}
     '.cs-card','.cs-cta',
     '.sp-title','.sp-item',
     '.rm-title-wrap',
-    '.cf-wrap','.lc-inner'
+    '.cf-wrap','.lc-inner',
+    '.fl-eyebrow','.fl-title','.fl-title-bar','.fl-sub',
+    '.fl-step','.fl-banner',
+    '.fc-eyebrow','.fc-title','.fc-title-sub','.fc-sub','.fc-card',
+    '.cs-stats','.cs-cta'
   ].join(',');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
@@ -1945,30 +1931,7 @@ a{text-decoration:none;color:inherit}
   });
 })();
 
-/* ===== 数字カウントアップ ===== */
-(function(){
-  if(!window.IntersectionObserver) return;
-  var nums = document.querySelectorAll('.cs-card-num[data-count]');
-  if(!nums.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var el = e.target;
-      var end    = parseInt(el.dataset.count, 10);
-      var suffix = el.dataset.suffix || '';
-      var dur    = 1400;
-      var t0     = performance.now();
-      (function tick(now){
-        var p = Math.min((now - t0) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3); /* cubic ease-out */
-        el.textContent = Math.round(eased * end) + suffix;
-        if(p < 1) requestAnimationFrame(tick);
-      })(t0);
-      io.unobserve(el);
-    });
-  },{threshold:0.5});
-  nums.forEach(function(el){ io.observe(el); });
-})();
+/* 数字カウントアップ: 不使用 */
 </script>
 
 
