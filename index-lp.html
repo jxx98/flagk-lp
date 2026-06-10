@@ -641,7 +641,7 @@ a{text-decoration:none;color:inherit}
     position:fixed;
     bottom:calc(12px + env(safe-area-inset-bottom,0px));
     left:12px;right:12px;
-    z-index:998;
+    z-index:99992;
     align-items:stretch;
     border-radius:20px;
     overflow:hidden;
@@ -936,7 +936,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ===== 資料申し込みモーダル ===== */
-.md-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.md-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99995;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .md-overlay.md-open{opacity:1;visibility:visible}
 .md-box{background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 12px 48px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
 .md-overlay.md-open .md-box{transform:translateY(0)}
@@ -1448,7 +1448,7 @@ a{text-decoration:none;color:inherit}
 <!-- ============================================================
      MOBILE FORM (モバイル限定：理由セクション下)
      ============================================================ -->
-<section class="mf-section">
+<section class="mf-section" id="mobile-form">
   <div class="hv2-form-panel">
     <div class="hv2-form-top">
       <p class="hv2-form-title">無料出店相談フォーム</p>
@@ -1620,8 +1620,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でお申し込み</p>
       <div class="cs-cta-divider"><span class="cs-cta-divider-v">∨</span></div>
-      <p class="cs-cta-sub">必要事項をご入力いただくだけで、<br>担当者よりご連絡いたします。</p>
-      <a href="#hero" class="cs-cta-yb">
+      <p class="cs-cta-sub">出店費用や利用可能な特典など、<br>お気軽にご相談ください。</p>
+      <a href="#mobile-form" class="cs-cta-yb">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
         無料相談フォームへ<span class="cs-cta-yb-arrow">›</span>
       </a>
@@ -1880,7 +1880,7 @@ a{text-decoration:none;color:inherit}
       <p class="fc-card-title">LINEで出店相談</p>
       <hr class="fc-card-sep">
       <p class="fc-card-desc">出店に関するご相談や<br>お申し込みを承ります。</p>
-      <a href="#" class="fc-btn">
+      <a href="https://lin.ee/RhSAYu3" class="fc-btn" target="_blank" rel="noopener">
         LINEで相談を始める
         <span class="fc-btn-arrow">›</span>
       </a>
