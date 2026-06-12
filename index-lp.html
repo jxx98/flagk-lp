@@ -954,6 +954,23 @@ a{text-decoration:none;color:inherit}
 .md-close:hover{background:#f0f0f0}
 .md-body{padding:20px 24px 24px}
 
+/* ===== LINE QRモーダル（PC専用） ===== */
+.lq-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99995;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.lq-overlay.lq-open{opacity:1;visibility:visible}
+.lq-box{background:#fff;border-radius:20px;width:100%;max-width:340px;position:relative;box-shadow:0 12px 48px rgba(0,0,0,.28);transform:translateY(20px);transition:transform .3s;text-align:center;padding:36px 28px 28px}
+.lq-overlay.lq-open .lq-box{transform:translateY(0)}
+.lq-close{position:absolute;top:14px;right:16px;width:32px;height:32px;border:none;background:none;font-size:22px;cursor:pointer;color:#888;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.lq-close:hover{background:#f0f0f0}
+.lq-icon{width:48px;height:48px;margin:0 auto 12px}
+.lq-icon img{width:100%;height:100%;object-fit:contain}
+.lq-title{font-size:18px;font-weight:700;color:#111;margin-bottom:8px}
+.lq-sub{font-size:13px;color:#666;line-height:1.75;margin-bottom:20px}
+.lq-qr-wrap{width:180px;height:180px;margin:0 auto 20px;border:1px solid #eee;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lq-qr-wrap img{width:100%;height:100%;display:block}
+.lq-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#06C168;color:#fff;text-decoration:none;border-radius:10px;padding:12px 28px;font-size:14px;font-weight:700;transition:background .2s;width:100%}
+.lq-btn:hover{background:#04a857}
+.lq-btn-icon{width:18px;height:18px;flex-shrink:0}
+
 /* ===== Cookie同意バナー ===== */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:99993;
@@ -1194,9 +1211,9 @@ a{text-decoration:none;color:inherit}
             </label>
           </div>
           <div class="f-no-msg" id="h-no-msg">
-            <p>本フォームはUber Eatsへの<br>新規出店をご検討中の方向けです。</p>
+            <p>本フォームは Uber Eats への<br>新規出店をご検討中の方向けです。</p>
             <p>既存加盟店様からのお問い合わせには<br>対応しておりません。</p>
-            <p class="f-no-note">※Uber Eatsご利用中の店舗様は<br>Uber Eatsサポート窓口へお問い合わせください。</p>
+            <p class="f-no-note">※Uber Eats ご利用中の店舗様は<br>Uber Eats サポート窓口へお問い合わせください。</p>
           </div>
         </div>
 
@@ -1341,7 +1358,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <p class="fl-step-title">販売開始</p>
       <div class="fl-step-sep"></div>
-      <p class="fl-step-desc">申請完了後、Uber Eatsへ掲載。<br>注文受付をスタートできます。</p>
+      <p class="fl-step-desc">申請完了後、Uber Eats へ掲載。<br>注文受付をスタートできます。</p>
     </div>
 
   </div><!-- /fl-steps -->
@@ -1444,7 +1461,7 @@ a{text-decoration:none;color:inherit}
       <div class="rs-body">
         <span class="rs-badge">理由3</span>
         <p class="rs-heading">面倒な準備は不要！<br>タブレット1台ですぐにスタート</p>
-        <p class="rs-desc">配達スタッフの確保や車両の購入は必要ありません。Uber Eatsではタブレットのレンタルも可能なため、タブレット1台あればデリバリーを始めることができます。</p>
+        <p class="rs-desc">配達スタッフの確保や車両の購入は必要ありません。Uber Eats ではタブレットのレンタルも可能なため、タブレット1台あればデリバリーを始めることができます。</p>
       </div>
     </li>
     <li class="rs-note-item">※ 無料タブレットはキャンペーン対象エリアのみ。<br>対象外の場合は端末のご用意が必要です。（お問合せ後にご案内します）</li>
@@ -1476,9 +1493,9 @@ a{text-decoration:none;color:inherit}
           </label>
         </div>
         <div class="f-no-msg" id="m-no-msg">
-          <p>本フォームはUber Eatsへの<br>新規出店をご検討中の方向けです。</p>
+          <p>本フォームは Uber Eats への<br>新規出店をご検討中の方向けです。</p>
           <p>既存加盟店様からのお問い合わせには<br>対応しておりません。</p>
-          <p class="f-no-note">※Uber Eatsご利用中の店舗様は<br>Uber Eatsサポート窓口へお問い合わせください。</p>
+          <p class="f-no-note">※Uber Eats ご利用中の店舗様は<br>Uber Eats サポート窓口へお問い合わせください。</p>
         </div>
       </div>
 
@@ -1614,7 +1631,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="cs-card-right">
           <p class="cs-card-title">あなたのお店も対象か確認可能</p>
-          <p class="cs-card-desc">Uber Eatsは全国でサービスを展開しています。<br>エリアや店舗形態に応じて条件が異なるため、<br>店舗情報をもとにご案内いたします。</p>
+          <p class="cs-card-desc">Uber Eats は全国でサービスを展開しています。<br>エリアや店舗形態に応じて条件が異なるため、<br>店舗情報をもとにご案内いたします。</p>
         </div>
       </div>
     </div>
@@ -1769,7 +1786,7 @@ a{text-decoration:none;color:inherit}
   <div class="rm-scene">
     <div class="rm-card">
       <p class="rm-card-title">基本情報ガイド</p>
-      <p class="rm-card-desc">まずは、この資料で<br> Uber Eatsを知ろう！</p>
+      <p class="rm-card-desc">まずは、この資料で<br> Uber Eats を知ろう！</p>
       <p class="rm-card-logo">Uber Eats</p>
     </div>
   </div>
@@ -1801,7 +1818,7 @@ a{text-decoration:none;color:inherit}
       <details class="fq-item">
         <summary><span class="fq-q">注文手数料はいくらですか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>Uber Eatsの手数料は、サービス手数料30.0%＋税が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<small>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</small></p>
+          <p>Uber Eats の手数料は、サービス手数料30.0%＋税が売上金から差し引かれる仕組みです。<br><br>掲載価格はお店側で自由に設定できるため、手数料分を価格に上乗せすることで、実質的な利益を確保することができます。また、注文がなければ手数料は発生しません。売れた分だけのコストで運用できます。<small>※手数料・キャンペーン内容は、契約プラン・エリア・時期により異なります。適用可否は Uber Eats 側の条件に準じます。最新の条件は個別にご案内します。</small></p>
         </div>
       </details>
     </li>
@@ -2279,6 +2296,26 @@ a{text-decoration:none;color:inherit}
 
 
 <!-- Cookie同意バナー -->
+
+<!-- ===== LINE QRモーダル（PC専用） ===== -->
+<div id="line-qr-modal" class="lq-overlay" role="dialog" aria-modal="true" aria-label="LINEで出店相談">
+  <div class="lq-box">
+    <button class="lq-close" id="lq-close-btn" aria-label="閉じる">✕</button>
+    <div class="lq-icon">
+      <img src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="LINE">
+    </div>
+    <p class="lq-title">LINEで出店相談</p>
+    <p class="lq-sub">QRコードをカメラで読み取って<br>LINEから無料相談を始めましょう</p>
+    <div class="lq-qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&data=https://lin.ee/RhSAYu3" alt="LINE QRコード">
+    </div>
+    <a href="https://lin.ee/RhSAYu3" class="lq-btn" target="_blank" rel="noopener">
+      <img class="lq-btn-icon" src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-1001x1000_v-fs_webp_71b9b646-1d96-41fb-99ed-d80842e2173a.png" alt="">
+      このデバイスでLINEを開く
+    </a>
+  </div>
+</div>
+
 <!-- ===== 資料申し込みモーダル ===== -->
 <div id="rm-modal" class="md-overlay" role="dialog" aria-modal="true" aria-label="資料申し込みフォーム">
   <div class="md-box">
@@ -2388,6 +2425,39 @@ a{text-decoration:none;color:inherit}
     banner.classList.remove('cookie-show');
     setTimeout(function(){ banner.style.display='none'; }, 400);
   });
+})();
+</script>
+
+<script>
+/* ===== LINE QRモーダル（PC専用） ===== */
+(function(){
+  var modal = document.getElementById('line-qr-modal');
+  var closeBtn = document.getElementById('lq-close-btn');
+  if(!modal) return;
+
+  function openLineModal(e){
+    /* PC（769px以上）のみモーダル、モバイルはLINEに直接遷移 */
+    if(window.innerWidth < 769) return;
+    e.preventDefault();
+    modal.classList.add('lq-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('lq-open');
+    document.body.style.overflow = '';
+  }
+
+  /* ヘッダーLINEボタン */
+  var hdBtn = document.querySelector('.hd-btns a');
+  if(hdBtn) hdBtn.addEventListener('click', openLineModal);
+
+  /* Final CTAカードのLINEボタン */
+  var fcBtn = document.querySelector('#final-cta .fc-btn[href*="lin.ee"]');
+  if(fcBtn) fcBtn.addEventListener('click', openLineModal);
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 })();
 </script>
 
