@@ -368,13 +368,13 @@ a{text-decoration:none;color:inherit}
 /* ============================================================
    STATS + CTA
    ============================================================ */
-.cs{background:#06C167;padding:64px 24px 72px}
+.cs{background:#fff;padding:64px 24px 72px}
 @media(max-width:768px){.cs{padding:40px 20px 48px}}
 .cs-inner{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
 @media(min-width:769px){.cs-inner{flex-direction:row;align-items:stretch;gap:32px}}
 .cs-stats{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
-.cs-card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.7);border-radius:12px;padding:22px 24px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:22px;border-right:1px solid rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.cs-card{background:#f0faf5;border:1.5px solid rgba(6,193,103,.4);border-radius:12px;padding:22px 24px;display:flex;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.cs-card-left{flex:0 0 120px;width:120px;text-align:center;color:#111;padding-right:22px;border-right:1px solid rgba(6,193,103,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
 .cs-card-icon{display:flex;align-items:center;justify-content:center}
 .cs-card-icon img{width:80px;height:80px;object-fit:contain}
 .cs-card-label{font-size:11px;font-weight:700;color:#666;display:none} /* PC:非表示 */
@@ -382,7 +382,7 @@ a{text-decoration:none;color:inherit}
 .cs-card-right{flex:1;min-width:0;color:#111;padding-left:22px}
 .cs-card-title{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;color:#111}
 .cs-card-desc{font-size:14px;line-height:1.85;color:#555}
-.cs-cta{background:#fff;border-radius:18px;border:2.5px solid #06C167;padding:36px 28px 32px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-content:center}
+.cs-cta{background:#f0faf5;border-radius:18px;border:1.5px solid rgba(6,193,103,.4);padding:36px 28px 32px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);display:flex;flex-direction:column;justify-content:center}
 @media(max-width:768px){
   .cs-cta{flex:none}
   .cs-card{display:grid;grid-template-columns:68px 1fr;column-gap:12px;row-gap:0;padding:16px}
@@ -393,7 +393,7 @@ a{text-decoration:none;color:inherit}
   .cs-card-num{display:none}
   .cs-card-right{display:contents}
   .cs-card-title{grid-column:2;grid-row:1;font-size:15px;font-weight:700;margin:0;line-height:1.45;align-self:center;color:#111}
-  .cs-card-desc{grid-column:1/-1;grid-row:2;font-size:13px;line-height:1.85;margin:0;padding-top:10px;margin-top:10px;border-top:1px solid rgba(255,255,255,.5)}
+  .cs-card-desc{grid-column:1/-1;grid-row:2;font-size:13px;line-height:1.85;margin:0;padding-top:10px;margin-top:10px;border-top:1px solid rgba(6,193,103,.25)}
 }
 .cs-cta-icon-outer{display:flex;justify-content:center;margin-bottom:16px;position:relative}
 .cs-cta-icon-ring{width:72px;height:72px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(6,193,103,.35)}
@@ -410,13 +410,13 @@ a{text-decoration:none;color:inherit}
 .cs-cta-yb{display:flex;align-items:center;justify-content:center;gap:10px;background:#FFD600;color:#222;border-radius:8px;padding:16px 20px;font-size:17px;font-weight:700;text-decoration:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .cs-cta-yb:hover{opacity:.85}
 .cs-cta-yb-arrow{font-size:14px;margin-left:4px}
-.cs-banner{margin-bottom:40px;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.3);text-align:center}
+.cs-banner{margin-bottom:40px;padding:16px 24px;border-bottom:2px solid #06C167;text-align:center}
 .cs-banner-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:900px;margin:0 auto;flex-wrap:nowrap}
 @media(max-width:768px){
   .cs-banner{margin:0 -24px 32px;padding:16px 0}
   .cs-banner-inner{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:6px;padding:0 4px}
 }
-.cs-banner-text{color:#fff;font-size:14px;font-weight:700;letter-spacing:0;text-align:center;line-height:1.75}
+.cs-banner-text{color:#111;font-size:14px;font-weight:700;letter-spacing:0;text-align:center;line-height:1.75}
 @media(max-width:374px){
   .cs-banner-text{font-size:12px}
   .cs-banner-inner{grid-template-columns:36px 1fr 36px}
@@ -1594,7 +1594,7 @@ a{text-decoration:none;color:inherit}
   <div class="cs-banner">
     <div class="cs-banner-inner">
       <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M38 14 Q30 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="31" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 31 7)"/><ellipse cx="24" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 24 5)"/><ellipse cx="31" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 31 21)"/><ellipse cx="24" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 24 23)"/></svg></span>
-      <p class="cs-banner-text"><span style="color:#111">Uber Eats</span> の正規パートナーとして、<br>出店から運用までしっかりサポートします</p>
+      <p class="cs-banner-text">Uber Eats の正規パートナーとして、<br>出店から運用までしっかりサポートします</p>
       <span class="cs-banner-leaf"><svg width="44" height="28" viewBox="0 0 44 28" fill="none"><path d="M6 14 Q14 14 22 14" stroke="#FFD600" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="13" cy="7" rx="7" ry="2.8" fill="#FFD600" transform="rotate(35 13 7)"/><ellipse cx="20" cy="5" rx="7" ry="2.8" fill="#FFD600" transform="rotate(50 20 5)"/><ellipse cx="13" cy="21" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-35 13 21)"/><ellipse cx="20" cy="23" rx="7" ry="2.8" fill="#FFD600" transform="rotate(-50 20 23)"/></svg></span>
     </div>
   </div>
