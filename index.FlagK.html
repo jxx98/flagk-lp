@@ -147,6 +147,7 @@
 
     .header-contact-btn:hover {
       background: var(--color-accent);
+      color: #ffffff;
     }
 
     /* ─── HAMBURGER (mobile) ─── */
@@ -220,9 +221,10 @@
       .header-contact-btn {
         display: inline-flex;
         align-items: center;
-        padding: 8px 16px;
-        background: var(--color-text);
-        color: #ffffff;
+        padding: 6px 14px;
+        background: transparent;
+        color: var(--color-accent);
+        border: 1.5px solid var(--color-accent);
         font-size: 11px;
         font-weight: 600;
         transition: background 0.2s, color 0.2s;
@@ -638,7 +640,7 @@
       font-size: var(--fs-sm);
       color: var(--color-text-muted);
       line-height: var(--lh-body);
-      margin-bottom: 6px;
+      margin-bottom: 40px;
       text-align: left;
     }
 
@@ -1014,8 +1016,7 @@
         <label for="privacy"><a href="privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
       </div>
       <p class="form-privacy-note">
-        当社の個人情報の取扱いについては、個人情報保護委員会のガイドラインに準拠しています。<br>
-        詳細は以下をご確認ください。
+        当社の個人情報の取扱いについては、個人情報保護委員会のガイドラインに準拠しています。
       </p>
 
       <button class="form-submit" type="submit">送信する</button>
