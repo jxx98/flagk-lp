@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社 FlagK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -39,7 +42,7 @@
       --fw-medium: 500;
       --fw-bold:   700;
 
-      --font-body: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      --font-body: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
     }
 
     html {
@@ -626,6 +629,11 @@
       cursor: pointer;
     }
 
+    .form-privacy label a {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+
     .form-privacy-note {
       font-size: var(--fs-sm);
       color: var(--color-text-muted);
@@ -1003,13 +1011,12 @@
 
       <div class="form-privacy">
         <input type="checkbox" id="privacy" name="privacy" required>
-        <label for="privacy">プライバシーポリシーに同意する</label>
+        <label for="privacy"><a href="privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
       </div>
       <p class="form-privacy-note">
         当社の個人情報の取扱いについては、個人情報保護委員会のガイドラインに準拠しています。<br>
         詳細は以下をご確認ください。
       </p>
-      <span class="form-privacy-link"><a href="privacy-policy.html">プライバシーポリシーを確認する</a></span>
 
       <button class="form-submit" type="submit">送信する</button>
 
