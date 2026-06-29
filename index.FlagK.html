@@ -795,7 +795,7 @@
   <div class="header-inner">
 
     <!-- Logo -->
-    <a href="/" class="logo-link" aria-label="株式会社 FlagK トップへ">
+    <a href="index.FlagK.html" class="logo-link" aria-label="株式会社 FlagK トップへ">
       <img
         class="logo-img"
         src="https://storage.googleapis.com/studio-design-asset-files/projects/v7qG76kJqL/s-2481x709_v-frms_webp_23439467-793e-4864-8cc0-b51c87d45b07.png"
@@ -1055,7 +1055,6 @@
     function openModal() {
       overlay.classList.add('is-open');
       document.body.style.overflow = 'hidden';
-      closeBtn.focus();
     }
 
     function closeModal() {
@@ -1064,9 +1063,14 @@
       history.replaceState(null, '', location.pathname);
     }
 
-    // ?sent=1 を検知して表示
+    // ?sent=1 を検知してモーダルを表示
     if (new URLSearchParams(location.search).get('sent') === '1') {
-      openModal();
+      // DOMContentLoaded後に確実に開く
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', openModal);
+      } else {
+        openModal();
+      }
     }
 
     closeBtn.addEventListener('click', closeModal);
