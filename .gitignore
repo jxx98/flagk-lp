@@ -1,0 +1,27 @@
+# 認証情報を含むファイル
+deploy/ubereats-support/mail.php
+deploy/contact.php
+05.LP_1/mail.php
+05.LP_1/contact.php
+
+# PHPMailerライブラリ（大容量・公開不要）
+deploy/phpmailer/
+
+# バイナリ・大容量ファイル
+*.zip
+*.pdf
+*.pptx
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/
