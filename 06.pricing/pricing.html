@@ -20,8 +20,6 @@
   --ground:  #F4F7FA;
   --white:   #FFFFFF;
   --sep:     #D0DCE8;
-  --free-bg: #EBF5EC;
-  --free-fg: #2C7A35;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -84,175 +82,227 @@ body {
   align-items: start;
 }
 
-/* ── Catalog (left) ──────────────────── */
-.catalog-intro {
-  font-size: 12.5px;
-  color: var(--slate);
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--sep);
-  margin-bottom: 28px;
-  line-height: 1.7;
-}
+/* ── Steps (left) ─────────────────────── */
+.step { margin-bottom: 32px; }
+.step:last-child { margin-bottom: 0; }
 
-.catalog-intro strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.category { margin-bottom: 28px; }
-
-.category-header {
+.step-head {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
-.cat-label {
+.step-eyebrow {
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
   background: var(--navy);
   color: var(--white);
   padding: 3px 10px 2px;
   flex-shrink: 0;
 }
 
-.cat-label.free { background: var(--free-fg); }
+.step-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
 
-.cat-desc {
+.step-back {
+  margin-left: auto;
   font-size: 11.5px;
   color: var(--slate);
-  margin-bottom: 8px;
-  padding-left: 2px;
-}
-
-.cat-rule {
-  flex: 1;
+  background: none;
   border: none;
-  border-top: 1px solid var(--sep);
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+}
+.step-back:hover { color: var(--ink); }
+
+/* Choice cards (step 1) */
+.choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-.service-items { display: flex; flex-direction: column; gap: 2px; }
-
-.svc {
-  display: grid;
-  grid-template-columns: 18px 1fr auto;
-  gap: 12px;
-  align-items: start;
-  padding: 13px 14px;
+.choice-card {
   background: var(--white);
+  border: 1px solid var(--sep);
   border-left: 3px solid transparent;
+  padding: 20px 20px 18px;
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s;
   user-select: none;
 }
 
-.svc:hover { background: var(--sky); }
+.choice-card:hover { background: var(--sky); }
 
-.svc.selected {
+.choice-card.selected {
   border-left-color: var(--accent);
+  border-color: var(--accent);
   background: var(--accent-lt);
 }
 
-.svc input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  margin-top: 2px;
-  accent-color: var(--accent);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.svc-info { min-width: 0; }
-
-.svc-name {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.4;
-}
-
-.svc-desc {
-  font-size: 11.5px;
-  color: var(--slate);
-  margin-top: 3px;
-  line-height: 1.5;
-}
-
-.qty-row {
-  display: none;
+.choice-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--horizon);
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  padding-top: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.choice-card.selected .choice-icon { background: var(--accent); }
+
+.choice-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.choice-desc {
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+/* Plan cards (step 2 / new) */
+.plan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.plan-card {
+  background: var(--white);
+  border: 1px solid var(--sep);
+  border-left: 3px solid transparent;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.plan-card:hover { background: var(--sky); }
+
+.plan-card.selected {
+  border-left-color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-lt);
+}
+
+.plan-card:not(.selectable) { cursor: default; }
+.plan-card:not(.selectable):hover { background: var(--white); }
+
+.plan-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.plan-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.plan-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.plan-tagline {
+  font-size: 12px;
+  color: var(--slate);
+  margin-bottom: 14px;
+}
+
+.example-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
   border-top: 1px solid var(--horizon);
 }
 
-.qty-row.on { display: flex; }
-
-.qty-row label {
+.example-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
   font-size: 11.5px;
+  line-height: 1.7;
+}
+
+.example-label {
   color: var(--slate);
-  white-space: nowrap;
-}
-
-.qty-row input[type="number"] {
-  width: 52px;
-  padding: 3px 6px;
-  border: 1px solid var(--sep);
-  background: var(--white);
-  font-size: 13px;
-  font-family: inherit;
-  font-variant-numeric: tabular-nums;
-  text-align: center;
-  color: var(--ink);
-}
-
-.qty-row input[type="number"]:focus {
-  outline: 2px solid var(--accent);
-  border-color: transparent;
-}
-
-.qty-sub {
-  margin-left: auto;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--navy);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.svc-price-col {
-  text-align: right;
-  flex-shrink: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   padding-top: 1px;
 }
 
-.svc-price {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  display: block;
+.example-list { color: var(--ink); }
+.example-list::before { content: "例）"; color: var(--slate); }
+
+/* Section slider (step 2 / renew) */
+.slider-block {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--horizon);
 }
 
-.svc-price.free-tag {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--free-fg);
-  background: var(--free-bg);
-  padding: 2px 7px;
-  letter-spacing: 0.04em;
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
 }
 
-.svc-unit {
-  font-size: 10.5px;
+.slider-label {
+  font-size: 12px;
   color: var(--slate);
-  margin-top: 2px;
-  text-align: right;
+  font-weight: 600;
+}
+
+.slider-value {
+  font-size: 12.5px;
+  color: var(--navy);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.slider-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--slate);
+  margin-top: 4px;
+}
+
+.minor-note {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--horizon);
+  font-size: 11px;
+  color: var(--slate);
+  line-height: 1.7;
 }
 
 /* ── Estimate panel (right) ──────────── */
@@ -285,19 +335,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-.est-badge {
-  font-size: 11px;
-  font-weight: 700;
-  background: var(--accent);
-  color: var(--navy);
-  border-radius: 9999px;
-  padding: 2px 9px;
-  display: none;
-  font-variant-numeric: tabular-nums;
-}
-
-.est-badge.on { display: block; }
-
 .est-body { padding: 0; }
 
 .est-empty {
@@ -319,49 +356,27 @@ body {
   line-height: 1.6;
 }
 
-.est-lines {
+.est-selected {
   display: none;
-  flex-direction: column;
+  padding: 18px 20px;
   border-bottom: 1px solid var(--sep);
 }
 
-.est-lines.on { display: flex; }
+.est-selected.on { display: block; }
 
-.est-line {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
-  align-items: baseline;
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--horizon);
-}
-
-.est-line:last-child { border-bottom: none; }
-
-.est-line-name {
-  font-size: 12.5px;
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.est-line-qty {
-  font-size: 11px;
+.est-selected-kind {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--slate);
-  margin-top: 2px;
+  margin-bottom: 6px;
 }
 
-.est-line-amount {
-  font-size: 13px;
+.est-selected-name {
+  font-size: 14px;
   font-weight: 700;
-  color: var(--navy);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
-.est-line-amount.free {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--free-fg);
+  color: var(--ink);
+  line-height: 1.5;
 }
 
 .est-total {
@@ -413,7 +428,13 @@ body {
   margin-bottom: 8px;
 }
 
-.est-cta:hover { background: var(--navy); color: var(--white); }
+.est-cta:disabled {
+  background: var(--horizon);
+  color: var(--slate);
+  cursor: not-allowed;
+}
+
+.est-cta:not(:disabled):hover { background: var(--navy); color: var(--white); }
 .est-cta:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 
 .est-reset {
@@ -447,11 +468,12 @@ body {
   .header-divider { display: none; }
   .layout { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
   .estimate-panel { position: static; order: -1; }
-  .svc { grid-template-columns: 18px 1fr auto; gap: 8px; padding: 11px 12px; }
+  .choice-grid { grid-template-columns: 1fr; }
+  .example-row { grid-template-columns: 1fr; gap: 2px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .svc, .est-cta, .est-reset { transition: none; }
+  .choice-card, .plan-card, .est-cta, .est-reset { transition: none; }
 }
 </style>
 
@@ -460,19 +482,33 @@ body {
   <div class="header-divider"></div>
   <div class="header-text">
     <h1>料金・費用シミュレーター</h1>
-    <p>作業内容を選択すると、概算費用をご確認いただけます</p>
+    <p>2つの質問にお答えいただくだけで、概算費用がわかります</p>
   </div>
 </header>
 
 <div class="layout">
-  <!-- Catalog -->
+  <!-- Steps -->
   <section>
-    <p class="catalog-intro">
-      各項目をクリックして選択してください。<strong>複数選択可能</strong>です。
-      選択した内容が右側の見積もりに自動で反映されます。<br>
-      金額はすべて目安（税込）です。実際の内容により変動する場合があります。
-    </p>
-    <div id="catalog"></div>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-head">
+        <span class="step-eyebrow">STEP 1</span>
+        <span class="step-title">どちらに近いですか？</span>
+      </div>
+      <div class="choice-grid" id="choice-grid"></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" id="step2" style="display:none;">
+      <div class="step-head">
+        <span class="step-eyebrow">STEP 2</span>
+        <span class="step-title" id="step2-title"></span>
+        <button class="step-back" onclick="goBack()">STEP 1に戻る</button>
+      </div>
+      <div id="step2-body"></div>
+    </div>
+
   </section>
 
   <!-- Estimate panel -->
@@ -482,7 +518,6 @@ body {
         <div class="est-header-label">概算見積もり</div>
         <div class="est-header-title">お見積もり内容</div>
       </div>
-      <span class="est-badge" id="badge">0件</span>
     </div>
     <div class="est-body">
       <div class="est-empty" id="empty">
@@ -492,20 +527,23 @@ body {
           <line x1="13" y1="18" x2="27" y2="18" stroke="#1C3A5E" stroke-width="1.5"/>
           <line x1="13" y1="23" x2="22" y2="23" stroke="#1C3A5E" stroke-width="1.5"/>
         </svg>
-        <p>左の作業内容を<br>選択してください</p>
+        <p>左の質問にお答えください</p>
       </div>
-      <div class="est-lines" id="lines"></div>
-      <div class="est-total">
-        <span class="est-total-label">合計（税込）</span>
+      <div class="est-selected" id="est-selected">
+        <div class="est-selected-kind" id="est-selected-kind"></div>
+        <div class="est-selected-name" id="est-selected-name"></div>
+      </div>
+      <div class="est-total" id="est-total-row" style="display:none;">
+        <span class="est-total-label">概算金額（税込）</span>
         <span class="est-total-amount" id="total">¥0</span>
       </div>
       <div class="est-footer">
         <p class="est-note">
           ※ 上記はあくまで目安です。実際の作業規模・難易度により変動します。<br>
-          ※ 複数の作業をまとめてご依頼いただく場合は、ご相談に応じます。
+          ※ 複数のご依頼をまとめる場合や、上記に当てはまらない内容はご相談に応じます。
         </p>
-        <button class="est-cta" onclick="handleContact()">この内容でお問い合わせする</button>
-        <button class="est-reset" onclick="resetAll()">選択をリセット</button>
+        <button class="est-cta" id="cta-btn" onclick="handleContact()" disabled>この内容でお問い合わせする</button>
+        <button class="est-reset" onclick="resetAll()">最初からやり直す</button>
       </div>
     </div>
   </aside>
@@ -514,272 +552,266 @@ body {
 <footer class="page-footer">© FlagK — 料金はすべて税込表示です</footer>
 
 <script>
-const SERVICES = [
-  {
-    id: 'content',
-    label: '文言・素材',
-    free: false,
-    desc: 'テキストや画像素材の変更',
-    items: [
-      { id: 'text',  name: 'テキスト・文言の修正',     desc: 'キャッチコピー・説明文・CTAテキストなどの変更', price: 0,     unit: null },
-      { id: 'photo', name: '写真・画像の差し替え',      desc: 'ヒーロー画像・バナー・商品写真の入れ替え',     price: 1000,  unit: '点'  },
-      { id: 'logo',  name: 'ロゴ・アイコンの差し替え', desc: 'ロゴ画像・SVGアイコン素材の入れ替え',           price: 1000,  unit: null  }
-    ]
-  },
-  {
-    id: 'design',
-    label: 'デザイン・見た目',
-    free: false,
-    desc: 'ビジュアルデザインの変更',
-    items: [
-      { id: 'color',   name: '色・配色の変更',          desc: 'メインカラー・ボタン色・背景色などの変更',           price: 3000,  unit: null },
-      { id: 'font',    name: 'フォント・文字サイズ変更', desc: '書体の変更、見出し・本文のサイズ・太さ調整',         price: 3000,  unit: null },
-      { id: 'btn-sty', name: 'ボタンのデザイン変更',    desc: '形・色・サイズ・文言の変更',                        price: 5000,  unit: null },
-      { id: 'layout',  name: '余白・レイアウトの調整',  desc: '要素の配置・間隔・整列の微調整',                    price: 5000,  unit: null },
-      { id: 'sp',      name: 'スマホ表示の最適化',      desc: 'モバイルでの表示崩れ修正・レイアウト改善',           price: 8000,  unit: null }
-    ]
-  },
-  {
-    id: 'section',
-    label: 'セクション構成',
-    free: false,
-    desc: 'ページのセクション単位の作業',
-    items: [
-      { id: 'sec-edit', name: 'セクション内容の更新',         desc: '既存セクションのデザイン・構成・内容の変更',                   price: 5000,  unit: null },
-      { id: 'sec-add',  name: '新規セクションの追加',          desc: '実績・FAQ・料金表など新しいセクションのデザイン・実装',        price: 10000, unit: '個'  },
-      { id: 'sec-del',  name: 'セクションの削除・並び替え',    desc: '不要セクションの削除や表示順序の変更',                        price: 3000,  unit: null },
-      { id: 'hero',     name: 'ファーストビューの改修',        desc: 'ヒーローエリアのデザイン・コピー・CTAを全面改修',              price: 15000, unit: null },
-      { id: 'cta',      name: 'CTAの追加・最適化',             desc: '問い合わせボタン・フォームへの導線の追加・改善',               price: 5000,  unit: null }
-    ]
-  },
-  {
-    id: 'form',
-    label: 'フォーム・問い合わせ',
-    free: false,
-    desc: 'フォームや送信機能の作業',
-    items: [
-      { id: 'form-item',   name: 'フォーム項目の追加・変更',   desc: '入力項目の追加・削除・ラベル変更・並び替え',               price: 5000,  unit: null },
-      { id: 'form-action', name: '送信後の動作変更',            desc: 'サンクスページの変更・自動返信メール文の修正',              price: 5000,  unit: null },
-      { id: 'form-new',    name: '新規フォームの作成',          desc: '問い合わせ・資料請求・予約フォームの設計・実装・メール通知', price: 15000, unit: null },
-      { id: 'form-sheet',  name: 'スプレッドシート自動記録',    desc: 'フォーム送信内容をGoogleスプレッドシートに自動記録',        price: 10000, unit: null }
-    ]
-  },
-  {
-    id: 'tracking',
-    label: '計測・広告連携',
-    free: false,
-    desc: 'アクセス解析・広告タグの設定',
-    items: [
-      { id: 'ga4',     name: 'Google Analytics 4（GA4）設置',   desc: 'GA4計測コードの設置と基本イベントの設定',               price: 8000,  unit: null },
-      { id: 'gads-cv', name: 'Google広告 コンバージョン設定',   desc: 'CVタグの設置・フォーム連携・計測テスト',                price: 10000, unit: null },
-      { id: 'gtm',     name: 'GTM（タグマネージャー）設定',     desc: 'GTMコンテナの設置・タグ管理の設定',                     price: 10000, unit: null },
-      { id: 'meta-px', name: 'Meta広告 ピクセル設置',           desc: 'Metaピクセルの設置・コンバージョンイベント設定',         price: 8000,  unit: null }
-    ]
-  },
+const CONTACT_EMAIL = 'info@flagk-co.jp';
+
+const MODES = [
   {
     id: 'new',
-    label: '新規制作・大規模改修',
-    free: false,
-    desc: 'ページ新規制作・LP全体改修',
-    items: [
-      { id: 'lp-reform', name: 'LP大規模改修（構成・デザイン全面刷新）', desc: '構成・デザイン・コピーを包括的に見直す全体改修',                          price: 30000, unit: null },
-      { id: 'lp-new',    name: 'LP新規制作',                             desc: '広告・集客用LPの企画〜コーディング・Xserver公開まで',                    price: 30000, unit: null },
-      { id: 'hp-new',    name: 'HP新規制作（3〜5ページ）',               desc: 'コーポレートサイト・サービスサイトの設計・制作',                          price: 80000, unit: null }
+    name: '新規に作りたい',
+    desc: 'まだ何もない状態から、LPやホームページを新しく作りたい方はこちら',
+  },
+  {
+    id: 'renew',
+    name: '今あるサイトを直したい',
+    desc: '公開済みのLP・ホームページのデザインや構成を見直したい方はこちら',
+  }
+];
+
+const NEW_PLANS = [
+  {
+    id: 'lp-new',
+    name: 'LP（ランディングページ）新規制作',
+    tagline: '1枚のページで完結する、広告・集客用ページを作りたい方に',
+    price: 30000,
+    priceLabel: '¥30,000',
+    examples: [
+      { label: 'デザイン', text: 'ヒーローセクション、サービス紹介、料金表、お客様の声、FAQ など' },
+      { label: '機能',     text: 'お問い合わせフォーム、LINE誘導、アクセス解析の設置 など' }
+    ]
+  },
+  {
+    id: 'hp-new',
+    name: 'ホームページ新規制作（3〜4ページ）',
+    tagline: '複数ページで会社やサービスをきちんと紹介したい方に',
+    price: 50000,
+    priceLabel: '上限¥50,000',
+    examples: [
+      { label: 'ページ構成', text: 'トップページ、会社概要、サービス紹介、お問い合わせ など' },
+      { label: '機能',       text: 'お問い合わせフォーム、レスポンシブ対応、アクセス解析の設置 など' }
     ]
   }
 ];
 
-// Flat lookup
-const ITEM_MAP = {};
-SERVICES.forEach(cat => cat.items.forEach(item => { ITEM_MAP[item.id] = item; }));
+const RENEW_PLAN = {
+  id: 'renewal',
+  name: 'ホームページ・LP改修',
+  tagline: '今のサイトを活かしながら、デザインや構成を見直します',
+  priceMin: 20000,
+  priceMax: 30000,
+  sectionMin: 3,
+  sectionMax: 8,
+  examples: [
+    { label: 'デザイン', text: '配色・フォントの刷新、レイアウトの調整、スマホ表示の最適化 など' },
+    { label: '構成',     text: 'セクションの追加・削除・並び替え、ファーストビューの改修 など' },
+    { label: '機能',     text: 'フォームの改善、広告タグ・計測タグの設置 など' }
+  ]
+};
 
-// State: Map<id, qty>
-const selected = new Map();
+const state = {
+  mode: null,       // 'new' | 'renew'
+  planId: null,     // for 'new' mode
+  sections: 5        // for 'renew' mode
+};
 
 function fmtYen(n) {
-  return '¥' + n.toLocaleString('ja-JP');
+  return '¥' + Math.round(n).toLocaleString('ja-JP');
 }
 
-/* Build catalog HTML */
-function buildCatalog() {
-  const root = document.getElementById('catalog');
+function renewPrice(sections) {
+  const { priceMin, priceMax, sectionMin, sectionMax } = RENEW_PLAN;
+  const clamped = Math.min(sectionMax, Math.max(sectionMin, sections));
+  const ratio = (clamped - sectionMin) / (sectionMax - sectionMin);
+  return priceMin + ratio * (priceMax - priceMin);
+}
 
-  SERVICES.forEach(cat => {
-    const section = document.createElement('div');
-    section.className = 'category';
-
-    const hdr = document.createElement('div');
-    hdr.className = 'category-header';
-    hdr.innerHTML = `<span class="cat-label${cat.free ? ' free' : ''}">${cat.label}</span><hr class="cat-rule">`;
-    section.appendChild(hdr);
-
-    if (cat.desc) {
-      const descEl = document.createElement('p');
-      descEl.className = 'cat-desc';
-      descEl.textContent = cat.desc;
-      section.appendChild(descEl);
-    }
-
-    const list = document.createElement('div');
-    list.className = 'service-items';
-    section.appendChild(list);
-
-    cat.items.forEach(item => {
-      const row = document.createElement('div');
-      row.className = 'svc';
-      row.id = 'svc-' + item.id;
-
-      const priceHtml = item.price === 0
-        ? `<span class="svc-price free-tag">無料</span>`
-        : `<span class="svc-price">${fmtYen(item.price)}${item.price >= 10000 ? '' : ''}</span>${item.unit ? `<div class="svc-unit">/ ${item.unit}</div>` : ''}`;
-
-      row.innerHTML = `
-        <input type="checkbox" id="chk-${item.id}">
-        <div class="svc-info">
-          <div class="svc-name">${item.name}</div>
-          <div class="svc-desc">${item.desc}</div>
-          ${item.unit ? `
-            <div class="qty-row" id="qrow-${item.id}">
-              <label for="qty-${item.id}">${item.unit}数</label>
-              <input type="number" id="qty-${item.id}" min="1" max="99" value="1">
-              <span class="qty-sub" id="qsub-${item.id}">${fmtYen(item.price)}</span>
-            </div>` : ''}
+function exampleGroupsHtml(examples) {
+  return `
+    <div class="example-groups">
+      ${examples.map(g => `
+        <div class="example-row">
+          <span class="example-label">${g.label}</span>
+          <span class="example-list">${g.text}</span>
         </div>
-        <div class="svc-price-col">${priceHtml}</div>
-      `;
+      `).join('')}
+    </div>
+  `;
+}
 
-      list.appendChild(row);
+/* ── STEP 1 ── */
+function buildChoiceGrid() {
+  const root = document.getElementById('choice-grid');
+  root.innerHTML = MODES.map(m => `
+    <div class="choice-card" id="mode-${m.id}" onclick="selectMode('${m.id}')">
+      <div class="choice-icon">
+        ${m.id === 'new'
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A5E" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A5E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0115-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 01-15 6.7L3 16"/></svg>'}
+      </div>
+      <div class="choice-name">${m.name}</div>
+      <div class="choice-desc">${m.desc}</div>
+    </div>
+  `).join('');
+}
 
-      const chk = row.querySelector('input[type="checkbox"]');
-
-      chk.addEventListener('change', () => {
-        setItem(item, chk.checked);
-        row.classList.toggle('selected', chk.checked);
-        if (item.unit) {
-          document.getElementById('qrow-' + item.id).classList.toggle('on', chk.checked);
-        }
-      });
-
-      if (item.unit) {
-        const qInput = row.querySelector('#qty-' + item.id);
-        qInput.addEventListener('input', () => {
-          const q = Math.max(1, parseInt(qInput.value) || 1);
-          qInput.value = q;
-          if (selected.has(item.id)) {
-            selected.set(item.id, q);
-            document.getElementById('qsub-' + item.id).textContent = fmtYen(item.price * q);
-            renderEstimate();
-          }
-        });
-        qInput.addEventListener('click', e => e.stopPropagation());
-        qInput.addEventListener('change', e => e.stopPropagation());
-      }
-
-      row.addEventListener('click', e => {
-        if (e.target.tagName === 'INPUT') return;
-        chk.checked = !chk.checked;
-        chk.dispatchEvent(new Event('change'));
-      });
-    });
-
-    root.appendChild(section);
+function selectMode(modeId) {
+  state.mode = modeId;
+  state.planId = null;
+  document.querySelectorAll('.choice-card').forEach(el => {
+    el.classList.toggle('selected', el.id === 'mode-' + modeId);
   });
+  renderStep2();
+  renderSummary();
 }
 
-function setItem(item, on) {
-  if (on) {
-    const qEl = document.getElementById('qty-' + item.id);
-    selected.set(item.id, item.unit ? (parseInt(qEl?.value) || 1) : 1);
+/* ── STEP 2 ── */
+function renderStep2() {
+  const step2 = document.getElementById('step2');
+  const title = document.getElementById('step2-title');
+  const body  = document.getElementById('step2-body');
+
+  if (!state.mode) { step2.style.display = 'none'; return; }
+  step2.style.display = '';
+
+  if (state.mode === 'new') {
+    title.textContent = 'どちらのイメージに近いですか？';
+    body.innerHTML = `<div class="plan-grid" id="plan-grid"></div>`;
+    const grid = document.getElementById('plan-grid');
+    grid.innerHTML = NEW_PLANS.map(p => `
+      <div class="plan-card selectable" id="plan-${p.id}" onclick="selectPlan('${p.id}')">
+        <div class="plan-top">
+          <span class="plan-name">${p.name}</span>
+          <span class="plan-price">${p.priceLabel}</span>
+        </div>
+        <div class="plan-tagline">${p.tagline}</div>
+        ${exampleGroupsHtml(p.examples)}
+      </div>
+    `).join('');
+    if (state.planId) {
+      document.getElementById('plan-' + state.planId)?.classList.add('selected');
+    }
   } else {
-    selected.delete(item.id);
+    title.textContent = '今のサイトのセクション数を教えてください';
+    const price = renewPrice(state.sections);
+    body.innerHTML = `
+      <div class="plan-card">
+        <div class="plan-top">
+          <span class="plan-name">${RENEW_PLAN.name}</span>
+          <span class="plan-price">${fmtYen(price)}</span>
+        </div>
+        <div class="plan-tagline">${RENEW_PLAN.tagline}</div>
+        <div class="slider-block">
+          <div class="slider-label-row">
+            <span class="slider-label">現在のセクション数</span>
+            <span class="slider-value" id="section-value">${state.sections}個</span>
+          </div>
+          <input type="range" id="section-slider"
+                 min="${RENEW_PLAN.sectionMin}" max="${RENEW_PLAN.sectionMax}" step="1"
+                 value="${state.sections}" oninput="updateSections(this.value)">
+          <div class="slider-scale">
+            <span>${RENEW_PLAN.sectionMin}個〜（${fmtYen(RENEW_PLAN.priceMin)}）</span>
+            <span>${RENEW_PLAN.sectionMax}個以上（${fmtYen(RENEW_PLAN.priceMax)}）</span>
+          </div>
+        </div>
+        ${exampleGroupsHtml(RENEW_PLAN.examples)}
+        <p class="minor-note">
+          ※ テキスト修正や画像の差し替えなど軽微な変更のみの場合は、内容に応じて別途無料〜数千円程度でご案内します。
+        </p>
+      </div>
+    `;
+    state.planId = RENEW_PLAN.id;
   }
-  renderEstimate();
 }
 
-function renderEstimate() {
-  const emptyEl  = document.getElementById('empty');
-  const linesEl  = document.getElementById('lines');
-  const totalEl  = document.getElementById('total');
-  const badgeEl  = document.getElementById('badge');
-  const count    = selected.size;
+function selectPlan(planId) {
+  state.planId = planId;
+  document.querySelectorAll('.plan-card.selectable').forEach(el => {
+    el.classList.toggle('selected', el.id === 'plan-' + planId);
+  });
+  renderSummary();
+}
 
-  badgeEl.textContent = count + '件';
-  badgeEl.classList.toggle('on', count > 0);
+function updateSections(val) {
+  state.sections = parseInt(val, 10);
+  document.getElementById('section-value').textContent = state.sections + '個';
+  const price = renewPrice(state.sections);
+  document.querySelector('#step2-body .plan-price').textContent = fmtYen(price);
+  renderSummary();
+}
 
-  if (count === 0) {
+/* ── Summary panel ── */
+function getCurrentSelection() {
+  if (state.mode === 'new' && state.planId) {
+    const plan = NEW_PLANS.find(p => p.id === state.planId);
+    return plan ? { kind: '新規制作', name: plan.name, amount: plan.price, label: plan.priceLabel } : null;
+  }
+  if (state.mode === 'renew') {
+    const amount = renewPrice(state.sections);
+    return { kind: '既存サイトの改修', name: `${RENEW_PLAN.name}（セクション数：${state.sections}個）`, amount, label: fmtYen(amount) };
+  }
+  return null;
+}
+
+function renderSummary() {
+  const emptyEl    = document.getElementById('empty');
+  const selEl      = document.getElementById('est-selected');
+  const kindEl     = document.getElementById('est-selected-kind');
+  const nameEl     = document.getElementById('est-selected-name');
+  const totalRow   = document.getElementById('est-total-row');
+  const totalEl    = document.getElementById('total');
+  const ctaBtn     = document.getElementById('cta-btn');
+
+  const sel = getCurrentSelection();
+
+  if (!sel) {
     emptyEl.style.display = '';
-    linesEl.classList.remove('on');
-    linesEl.innerHTML = '';
-    totalEl.textContent = '¥0';
+    selEl.classList.remove('on');
+    totalRow.style.display = 'none';
+    ctaBtn.disabled = true;
     return;
   }
 
   emptyEl.style.display = 'none';
-  linesEl.classList.add('on');
-  linesEl.innerHTML = '';
+  selEl.classList.add('on');
+  kindEl.textContent = sel.kind;
+  nameEl.textContent = sel.name;
+  totalRow.style.display = 'flex';
+  totalEl.textContent = sel.label;
+  ctaBtn.disabled = false;
+}
 
-  let total = 0;
-  selected.forEach((qty, id) => {
-    const item = ITEM_MAP[id];
-    if (!item) return;
-    const amount = item.price * qty;
-    total += amount;
-
-    const line = document.createElement('div');
-    line.className = 'est-line';
-    const amtCls = item.price === 0 ? 'est-line-amount free' : 'est-line-amount';
-    const amtTxt = item.price === 0 ? '無料' : fmtYen(amount);
-    const qtyTxt = item.unit && qty > 1 ? `${qty} ${item.unit}` : '';
-    line.innerHTML = `
-      <div>
-        <div class="est-line-name">${item.name}</div>
-        ${qtyTxt ? `<div class="est-line-qty">${qtyTxt}</div>` : ''}
-      </div>
-      <div class="${amtCls}">${amtTxt}</div>
-    `;
-    linesEl.appendChild(line);
-  });
-
-  totalEl.textContent = fmtYen(total);
+function goBack() {
+  state.mode = null;
+  state.planId = null;
+  document.querySelectorAll('.choice-card').forEach(el => el.classList.remove('selected'));
+  document.getElementById('step2').style.display = 'none';
+  renderSummary();
 }
 
 function resetAll() {
-  selected.clear();
-  document.querySelectorAll('.svc input[type="checkbox"]').forEach(c => { c.checked = false; });
-  document.querySelectorAll('.svc').forEach(el => el.classList.remove('selected'));
-  document.querySelectorAll('.qty-row').forEach(el => el.classList.remove('on'));
-  document.querySelectorAll('.qty-row input[type="number"]').forEach(el => { el.value = 1; });
-  document.querySelectorAll('.qty-sub').forEach((el, i) => {
-    const id = el.id.replace('qsub-', '');
-    if (ITEM_MAP[id]) el.textContent = fmtYen(ITEM_MAP[id].price);
-  });
-  renderEstimate();
+  state.mode = null;
+  state.planId = null;
+  state.sections = 5;
+  document.querySelectorAll('.choice-card').forEach(el => el.classList.remove('selected'));
+  document.getElementById('step2').style.display = 'none';
+  renderSummary();
 }
 
 function handleContact() {
-  if (selected.size === 0) {
-    alert('作業内容を選択してください。');
-    return;
-  }
-  const lines = [];
-  selected.forEach((qty, id) => {
-    const item = ITEM_MAP[id];
-    if (!item) return;
-    lines.push(item.unit ? `・${item.name}（${qty}${item.unit}）` : `・${item.name}`);
-  });
-  const total = Array.from(selected.entries()).reduce((sum, [id, qty]) => {
-    return sum + (ITEM_MAP[id]?.price || 0) * qty;
-  }, 0);
-  const msg = `以下の作業についてお問い合わせしたいです。\n\n${lines.join('\n')}\n\n概算合計：${fmtYen(total)}`;
-  if (typeof sendPrompt === 'function') {
-    sendPrompt(msg);
-  } else {
-    alert(msg);
-  }
+  const sel = getCurrentSelection();
+  if (!sel) return;
+  const subject = 'FlagK 料金シミュレーターからのお問い合わせ';
+  const body =
+    `料金シミュレーターで以下の内容を選択しました。\n\n` +
+    `分類：${sel.kind}\n` +
+    `内容：${sel.name}\n` +
+    `概算金額：${sel.label}\n\n` +
+    `--\nご記入ください\n店舗名・会社名：\nお名前：\n電話番号：\n`;
+  window.location.href =
+    `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-buildCatalog();
-renderEstimate();
+buildChoiceGrid();
+renderSummary();
 </script>
 </body>
 </html>
