@@ -15,8 +15,8 @@
   --slate:   #4A647E;
   --horizon: #E4EDF6;
   --sky:     #F0F5FB;
-  --amber:   #E08B28;
-  --amber-lt:#FFF4E6;
+  --accent:   #829CD0;
+  --accent-lt:#F1F4FA;
   --ground:  #F4F7FA;
   --white:   #FFFFFF;
   --sep:     #D0DCE8;
@@ -41,7 +41,7 @@ body {
   display: flex;
   align-items: baseline;
   gap: 28px;
-  border-bottom: 3px solid var(--amber);
+  border-bottom: 3px solid var(--accent);
 }
 
 .brand {
@@ -152,15 +152,15 @@ body {
 .svc:hover { background: var(--sky); }
 
 .svc.selected {
-  border-left-color: var(--amber);
-  background: var(--amber-lt);
+  border-left-color: var(--accent);
+  background: var(--accent-lt);
 }
 
 .svc input[type="checkbox"] {
   width: 15px;
   height: 15px;
   margin-top: 2px;
-  accent-color: var(--amber);
+  accent-color: var(--accent);
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -211,7 +211,7 @@ body {
 }
 
 .qty-row input[type="number"]:focus {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--accent);
   border-color: transparent;
 }
 
@@ -288,8 +288,8 @@ body {
 .est-badge {
   font-size: 11px;
   font-weight: 700;
-  background: var(--amber);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--navy);
   border-radius: 9999px;
   padding: 2px 9px;
   display: none;
@@ -401,19 +401,19 @@ body {
   display: block;
   width: 100%;
   padding: 13px;
-  background: var(--amber);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--navy);
   font-size: 13.5px;
   font-weight: 700;
   font-family: inherit;
   border: none;
   cursor: pointer;
   letter-spacing: 0.04em;
-  transition: background 0.12s;
+  transition: background 0.12s, color 0.12s;
   margin-bottom: 8px;
 }
 
-.est-cta:hover { background: #C97820; }
+.est-cta:hover { background: var(--navy); color: var(--white); }
 .est-cta:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 
 .est-reset {
