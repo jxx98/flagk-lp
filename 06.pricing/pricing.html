@@ -816,7 +816,8 @@ const NEW_PLANS = [
     tagline: '1枚のページで完結する、広告・集客用ページを作りたい方に',
     price: 30000,
     priceLabel: '¥30,000',
-    previewUrl: 'https://flagk-co.jp/ubereats-support/',
+    previewUrl: 'https://jxx98.github.io/flagk-lp/06.pricing/preview/ubereats-support/',
+    liveUrl: 'https://flagk-co.jp/ubereats-support/',
     previewLabel: '参考：Uber Eats 出店登録サポートLP（実例）',
     examples: [
       { label: 'デザイン', text: 'ヒーローセクション、サービス紹介、料金表、お客様の声、FAQ など' },
@@ -829,7 +830,8 @@ const NEW_PLANS = [
     tagline: '複数ページで会社やサービスをきちんと紹介したい方に',
     price: 50000,
     priceLabel: '上限¥50,000',
-    previewUrl: 'https://flagk-co.jp/',
+    previewUrl: 'https://jxx98.github.io/flagk-lp/06.pricing/preview/',
+    liveUrl: 'https://flagk-co.jp/',
     previewLabel: '参考：株式会社FlagK コーポレートサイト（実例）',
     examples: [
       { label: 'ページ構成', text: 'トップページ、会社概要、サービス紹介、お問い合わせ など' },
@@ -998,7 +1000,7 @@ function renderStep2() {
           <a href="https://flagk-co.jp/ubereats-support/" target="_blank" rel="noopener" class="live-preview-link">別タブで開く ↗</a>
         </div>
         <div class="live-preview-viewport" id="live-preview-viewport">
-          <iframe id="preview-frame" src="https://flagk-co.jp/ubereats-support/" loading="lazy"></iframe>
+          <iframe id="preview-frame" src="https://jxx98.github.io/flagk-lp/06.pricing/preview/ubereats-support/" loading="lazy"></iframe>
         </div>
         <p class="live-preview-hint">項目にカーソルを合わせる（またはタップする）と、該当箇所がハイライトされます</p>
       </div>
@@ -1039,7 +1041,7 @@ function showPlanPreview(planId) {
   const panel = document.getElementById('live-preview');
   if (!plan || !plan.previewUrl || !panel) return;
   document.getElementById('live-preview-label').textContent = plan.previewLabel;
-  document.getElementById('live-preview-link').href = plan.previewUrl;
+  document.getElementById('live-preview-link').href = plan.liveUrl || plan.previewUrl;
   document.getElementById('preview-frame').src = plan.previewUrl;
   panel.style.display = '';
   requestAnimationFrame(applyPreviewScale);
