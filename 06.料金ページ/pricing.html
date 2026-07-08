@@ -1,5 +1,11 @@
-<title>FlagK — 料金・費用シミュレーター</title>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlagK — 料金・費用シミュレーター</title>
+</head>
+<body>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -655,7 +661,7 @@ function buildCatalog() {
       });
 
       if (item.unit) {
-        const qInput = document.getElementById('qty-' + item.id);
+        const qInput = row.querySelector('#qty-' + item.id);
         qInput.addEventListener('input', () => {
           const q = Math.max(1, parseInt(qInput.value) || 1);
           qInput.value = q;
@@ -775,3 +781,5 @@ function handleContact() {
 buildCatalog();
 renderEstimate();
 </script>
+</body>
+</html>
