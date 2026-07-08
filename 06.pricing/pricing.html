@@ -254,73 +254,6 @@ body {
 .example-list { color: var(--ink); }
 .example-list::before { content: "例）"; color: var(--slate); }
 
-/* Live preview iframe (real LP/HP) */
-.live-preview {
-  margin-bottom: 20px;
-  border: 1px solid var(--sep);
-  background: var(--white);
-}
-
-.live-preview-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  background: var(--sky);
-  border-bottom: 1px solid var(--sep);
-  gap: 12px;
-}
-
-.live-preview-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--slate);
-  letter-spacing: 0.02em;
-}
-
-.live-preview-link {
-  font-size: 11px;
-  color: var(--navy);
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.live-preview-link:hover { text-decoration: underline; }
-
-.live-preview-viewport {
-  position: relative;
-  width: 100%;
-  height: 440px;
-  overflow: hidden;
-  background: var(--ground);
-}
-
-.live-preview-viewport iframe {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1280px;
-  height: 900px;
-  border: none;
-  transform-origin: 0 0;
-  pointer-events: none;
-}
-
-.live-preview-hint {
-  font-size: 10.5px;
-  color: var(--slate);
-  padding: 8px 14px;
-  border-top: 1px solid var(--horizon);
-}
-
-.live-preview-empty {
-  padding: 28px 14px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--slate);
-}
-
 /* Granular catalog (step 2 / renew) */
 .catalog-intro {
   font-size: 12px;
@@ -816,9 +749,6 @@ const NEW_PLANS = [
     tagline: '1枚のページで完結する、広告・集客用ページを作りたい方に',
     price: 30000,
     priceLabel: '¥30,000',
-    previewUrl: 'https://jxx98.github.io/flagk-lp/06.pricing/preview/ubereats-support/',
-    liveUrl: 'https://flagk-co.jp/ubereats-support/',
-    previewLabel: '参考：Uber Eats 出店登録サポートLP（実例）',
     examples: [
       { label: 'デザイン', text: 'ヒーローセクション、サービス紹介、料金表、お客様の声、FAQ など' },
       { label: '機能',     text: 'お問い合わせフォーム、LINE誘導、アクセス解析の設置 など' }
@@ -830,9 +760,6 @@ const NEW_PLANS = [
     tagline: '複数ページで会社やサービスをきちんと紹介したい方に',
     price: 50000,
     priceLabel: '上限¥50,000',
-    previewUrl: 'https://jxx98.github.io/flagk-lp/06.pricing/preview/',
-    liveUrl: 'https://flagk-co.jp/',
-    previewLabel: '参考：株式会社FlagK コーポレートサイト（実例）',
     examples: [
       { label: 'ページ構成', text: 'トップページ、会社概要、サービス紹介、お問い合わせ など' },
       { label: '機能',       text: 'お問い合わせフォーム、レスポンシブ対応、アクセス解析の設置 など' }
@@ -847,9 +774,9 @@ const RENEW_CATEGORIES = [
     label: '文言・素材',
     desc: 'テキストや画像素材の変更',
     items: [
-      { id: 'text',  name: 'テキスト・文言の修正',     desc: 'キャッチコピー・説明文・CTAテキストなどの変更', price: 0,     unit: null, sync: 'top' },
-      { id: 'photo', name: '写真・画像の差し替え',      desc: 'ヒーロー画像・バナー・商品写真の入れ替え',     price: 1000,  unit: '点',  sync: 'top' },
-      { id: 'logo',  name: 'ロゴ・アイコンの差し替え', desc: 'ロゴ画像・SVGアイコン素材の入れ替え',           price: 1000,  unit: null,  sync: 'top' }
+      { id: 'text',  name: 'テキスト・文言の修正',     desc: 'キャッチコピー・説明文・CTAテキストなどの変更', price: 0,     unit: null },
+      { id: 'photo', name: '写真・画像の差し替え',      desc: 'ヒーロー画像・バナー・商品写真の入れ替え',     price: 1000,  unit: '点'  },
+      { id: 'logo',  name: 'ロゴ・アイコンの差し替え', desc: 'ロゴ画像・SVGアイコン素材の入れ替え',           price: 1000,  unit: null  }
     ]
   },
   {
@@ -857,11 +784,11 @@ const RENEW_CATEGORIES = [
     label: 'デザイン・見た目',
     desc: 'ビジュアルデザインの変更',
     items: [
-      { id: 'color',   name: '色・配色の変更',          desc: 'メインカラー・ボタン色・背景色などの変更',           price: 3000,  unit: null, sync: 'top' },
-      { id: 'font',    name: 'フォント・文字サイズ変更', desc: '書体の変更、見出し・本文のサイズ・太さ調整',         price: 3000,  unit: null, sync: 'top' },
-      { id: 'btn-sty', name: 'ボタンのデザイン変更',    desc: '形・色・サイズ・文言の変更',                        price: 5000,  unit: null, sync: 'hero-submit-btn' },
-      { id: 'layout',  name: '余白・レイアウトの調整',  desc: '要素の配置・間隔・整列の微調整',                    price: 5000,  unit: null, sync: 'reasons' },
-      { id: 'sp',      name: 'スマホ表示の最適化',      desc: 'モバイルでの表示崩れ修正・レイアウト改善',           price: 8000,  unit: null, sync: 'top' }
+      { id: 'color',   name: '色・配色の変更',          desc: 'メインカラー・ボタン色・背景色などの変更',           price: 3000,  unit: null },
+      { id: 'font',    name: 'フォント・文字サイズ変更', desc: '書体の変更、見出し・本文のサイズ・太さ調整',         price: 3000,  unit: null },
+      { id: 'btn-sty', name: 'ボタンのデザイン変更',    desc: '形・色・サイズ・文言の変更',                        price: 5000,  unit: null },
+      { id: 'layout',  name: '余白・レイアウトの調整',  desc: '要素の配置・間隔・整列の微調整',                    price: 5000,  unit: null },
+      { id: 'sp',      name: 'スマホ表示の最適化',      desc: 'モバイルでの表示崩れ修正・レイアウト改善',           price: 8000,  unit: null }
     ]
   },
   {
@@ -869,11 +796,11 @@ const RENEW_CATEGORIES = [
     label: 'セクション構成',
     desc: 'ページのセクション単位の作業',
     items: [
-      { id: 'sec-edit', name: 'セクション内容の更新',         desc: '既存セクションのデザイン・構成・内容の変更',                   price: 5000,  unit: null, sync: 'reasons' },
-      { id: 'sec-add',  name: '新規セクションの追加',          desc: '実績・FAQ・料金表など新しいセクションのデザイン・実装',        price: 10000, unit: '個',  sync: 'faq' },
-      { id: 'sec-del',  name: 'セクションの削除・並び替え',    desc: '不要セクションの削除や表示順序の変更',                        price: 3000,  unit: null, sync: 'flow' },
-      { id: 'hero',     name: 'ファーストビューの改修',        desc: 'ヒーローエリアのデザイン・コピー・CTAを全面改修',              price: 15000, unit: null, sync: 'top' },
-      { id: 'cta',      name: 'CTAの追加・最適化',             desc: '問い合わせボタン・フォームへの導線の追加・改善',               price: 5000,  unit: null, sync: 'final-cta' }
+      { id: 'sec-edit', name: 'セクション内容の更新',         desc: '既存セクションのデザイン・構成・内容の変更',                   price: 5000,  unit: null },
+      { id: 'sec-add',  name: '新規セクションの追加',          desc: '実績・FAQ・料金表など新しいセクションのデザイン・実装',        price: 10000, unit: '個'  },
+      { id: 'sec-del',  name: 'セクションの削除・並び替え',    desc: '不要セクションの削除や表示順序の変更',                        price: 3000,  unit: null },
+      { id: 'hero',     name: 'ファーストビューの改修',        desc: 'ヒーローエリアのデザイン・コピー・CTAを全面改修',              price: 15000, unit: null },
+      { id: 'cta',      name: 'CTAの追加・最適化',             desc: '問い合わせボタン・フォームへの導線の追加・改善',               price: 5000,  unit: null }
     ]
   },
   {
@@ -881,9 +808,9 @@ const RENEW_CATEGORIES = [
     label: 'フォーム・問い合わせ',
     desc: 'フォームや送信機能の作業',
     items: [
-      { id: 'form-item',   name: 'フォーム項目の追加・変更',   desc: '入力項目の追加・削除・ラベル変更・並び替え',               price: 5000,  unit: null, sync: 'hero-cf-form' },
-      { id: 'form-action', name: '送信後の動作変更',            desc: 'サンクスページの変更・自動返信メール文の修正',              price: 5000,  unit: null, sync: 'hero-submit-btn' },
-      { id: 'form-new',    name: '新規フォームの作成',          desc: '問い合わせ・資料請求・予約フォームの設計・実装・メール通知', price: 15000, unit: null, sync: 'hero-cf-form' },
+      { id: 'form-item',   name: 'フォーム項目の追加・変更',   desc: '入力項目の追加・削除・ラベル変更・並び替え',               price: 5000,  unit: null },
+      { id: 'form-action', name: '送信後の動作変更',            desc: 'サンクスページの変更・自動返信メール文の修正',              price: 5000,  unit: null },
+      { id: 'form-new',    name: '新規フォームの作成',          desc: '問い合わせ・資料請求・予約フォームの設計・実装・メール通知', price: 15000, unit: null },
       { id: 'form-sheet',  name: 'スプレッドシート自動記録',    desc: 'フォーム送信内容をGoogleスプレッドシートに自動記録',        price: 10000, unit: null }
     ]
   },
@@ -964,18 +891,7 @@ function renderStep2() {
 
   if (state.mode === 'new') {
     title.textContent = 'どちらのイメージに近いですか？';
-    body.innerHTML = `
-      <div class="plan-grid" id="plan-grid"></div>
-      <div class="live-preview" id="live-preview" style="display:none;">
-        <div class="live-preview-head">
-          <span class="live-preview-label" id="live-preview-label"></span>
-          <a href="#" target="_blank" rel="noopener" class="live-preview-link" id="live-preview-link">別タブで開く ↗</a>
-        </div>
-        <div class="live-preview-viewport" id="live-preview-viewport">
-          <iframe id="preview-frame" src="about:blank" loading="lazy"></iframe>
-        </div>
-      </div>
-    `;
+    body.innerHTML = `<div class="plan-grid" id="plan-grid"></div>`;
     const grid = document.getElementById('plan-grid');
     grid.innerHTML = NEW_PLANS.map(p => `
       <div class="plan-card" id="plan-${p.id}" onclick="selectPlan('${p.id}')">
@@ -989,21 +905,10 @@ function renderStep2() {
     `).join('');
     if (state.planId) {
       document.getElementById('plan-' + state.planId)?.classList.add('selected');
-      showPlanPreview(state.planId);
     }
   } else {
     title.textContent = '直したい内容を選んでください';
     body.innerHTML = `
-      <div class="live-preview" id="live-preview">
-        <div class="live-preview-head">
-          <span class="live-preview-label">参考：Uber Eats 出店登録サポートLP（実例）</span>
-          <a href="https://flagk-co.jp/ubereats-support/" target="_blank" rel="noopener" class="live-preview-link">別タブで開く ↗</a>
-        </div>
-        <div class="live-preview-viewport" id="live-preview-viewport">
-          <iframe id="preview-frame" src="https://jxx98.github.io/flagk-lp/06.pricing/preview/ubereats-support/" loading="lazy"></iframe>
-        </div>
-        <p class="live-preview-hint">項目にカーソルを合わせる（またはタップする）と、該当箇所がハイライトされます</p>
-      </div>
       <p class="catalog-intro">
         各項目をクリックして選択してください。<strong>複数選択可能</strong>です。
         選んだ項目の合計金額が、右側の概算金額になります。
@@ -1011,40 +916,7 @@ function renderStep2() {
       <div id="renew-catalog"></div>
     `;
     buildRenewCatalog();
-    requestAnimationFrame(applyPreviewScale);
   }
-}
-
-/* ── Live preview sync (postMessage to embedded iframe) ── */
-const PREVIEW_FRAME_WIDTH = 1280; // iframe always renders at desktop width so real desktop layout is guaranteed
-
-function applyPreviewScale() {
-  const viewport = document.getElementById('live-preview-viewport');
-  const frame = document.getElementById('preview-frame');
-  if (!viewport || !frame) return;
-  const scale = viewport.clientWidth / PREVIEW_FRAME_WIDTH;
-  frame.style.transform = `scale(${scale})`;
-}
-
-window.addEventListener('resize', applyPreviewScale);
-
-function sendSimMessage(type, targetId) {
-  const frame = document.getElementById('preview-frame');
-  if (!frame || !frame.src || frame.src === 'about:blank') return;
-  let targetOrigin;
-  try { targetOrigin = new URL(frame.src).origin; } catch (e) { return; }
-  frame.contentWindow.postMessage({ source: 'flagk-sim', type, targetId }, targetOrigin);
-}
-
-function showPlanPreview(planId) {
-  const plan = NEW_PLANS.find(p => p.id === planId);
-  const panel = document.getElementById('live-preview');
-  if (!plan || !plan.previewUrl || !panel) return;
-  document.getElementById('live-preview-label').textContent = plan.previewLabel;
-  document.getElementById('live-preview-link').href = plan.liveUrl || plan.previewUrl;
-  document.getElementById('preview-frame').src = plan.previewUrl;
-  panel.style.display = '';
-  requestAnimationFrame(applyPreviewScale);
 }
 
 function selectPlan(planId) {
@@ -1052,7 +924,6 @@ function selectPlan(planId) {
   document.querySelectorAll('.plan-card').forEach(el => {
     el.classList.toggle('selected', el.id === 'plan-' + planId);
   });
-  showPlanPreview(planId);
   renderSummary();
 }
 
@@ -1115,17 +986,7 @@ function buildRenewCatalog() {
         if (item.unit) {
           row.querySelector('#qrow-' + item.id).classList.toggle('on', chk.checked);
         }
-        if (item.sync) {
-          chk.checked ? sendSimMessage('highlight', item.sync) : sendSimMessage('clear');
-        }
       });
-
-      if (item.sync) {
-        row.addEventListener('mouseenter', () => sendSimMessage('highlight', item.sync));
-        row.addEventListener('mouseleave', () => {
-          if (!chk.checked) sendSimMessage('clear');
-        });
-      }
 
       if (item.unit) {
         const qInput = row.querySelector('#qty-' + item.id);
