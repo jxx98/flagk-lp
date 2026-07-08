@@ -20,6 +20,8 @@
   --ground:  #F4F7FA;
   --white:   #FFFFFF;
   --sep:     #D0DCE8;
+  --free-bg: #EBF5EC;
+  --free-fg: #2C7A35;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -198,9 +200,6 @@ body {
   background: var(--accent-lt);
 }
 
-.plan-card:not(.selectable) { cursor: default; }
-.plan-card:not(.selectable):hover { background: var(--white); }
-
 .plan-top {
   display: flex;
   justify-content: space-between;
@@ -255,54 +254,169 @@ body {
 .example-list { color: var(--ink); }
 .example-list::before { content: "例）"; color: var(--slate); }
 
-/* Section slider (step 2 / renew) */
-.slider-block {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--horizon);
-}
-
-.slider-label-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 10px;
-}
-
-.slider-label {
+/* Granular catalog (step 2 / renew) */
+.catalog-intro {
   font-size: 12px;
   color: var(--slate);
-  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.7;
 }
 
-.slider-value {
-  font-size: 12.5px;
-  color: var(--navy);
+.catalog-intro strong { color: var(--ink); font-weight: 600; }
+
+.category { margin-bottom: 24px; }
+.category:last-child { margin-bottom: 0; }
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cat-label {
+  font-size: 9.5px;
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--navy);
+  color: var(--white);
+  padding: 3px 10px 2px;
+  flex-shrink: 0;
 }
 
-input[type="range"] {
-  width: 100%;
+.cat-desc {
+  font-size: 11.5px;
+  color: var(--slate);
+  margin-bottom: 8px;
+  padding-left: 2px;
+}
+
+.cat-rule {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--sep);
+}
+
+.service-items { display: flex; flex-direction: column; gap: 2px; }
+
+.svc {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 13px 14px;
+  background: var(--white);
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  user-select: none;
+}
+
+.svc:hover { background: var(--sky); }
+
+.svc.selected {
+  border-left-color: var(--accent);
+  background: var(--accent-lt);
+}
+
+.svc input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
   accent-color: var(--accent);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.slider-scale {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
+.svc-info { min-width: 0; }
+
+.svc-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.svc-desc {
+  font-size: 11.5px;
   color: var(--slate);
-  margin-top: 4px;
+  margin-top: 3px;
+  line-height: 1.5;
 }
 
-.minor-note {
-  margin-top: 14px;
-  padding-top: 14px;
+.qty-row {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--horizon);
-  font-size: 11px;
+}
+
+.qty-row.on { display: flex; }
+
+.qty-row label {
+  font-size: 11.5px;
   color: var(--slate);
-  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.qty-row input[type="number"] {
+  width: 52px;
+  padding: 3px 6px;
+  border: 1px solid var(--sep);
+  background: var(--white);
+  font-size: 13px;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--ink);
+}
+
+.qty-row input[type="number"]:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+.qty-sub {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.svc-price-col {
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.svc-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  display: block;
+}
+
+.svc-price.free-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--free-fg);
+  background: var(--free-bg);
+  padding: 2px 7px;
+  letter-spacing: 0.04em;
+}
+
+.svc-unit {
+  font-size: 10.5px;
+  color: var(--slate);
+  margin-top: 2px;
+  text-align: right;
 }
 
 /* ── Estimate panel (right) ──────────── */
@@ -334,6 +448,19 @@ input[type="range"] {
   color: var(--white);
   letter-spacing: 0.02em;
 }
+
+.est-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--navy);
+  border-radius: 9999px;
+  padding: 2px 9px;
+  display: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.est-badge.on { display: block; }
 
 .est-body { padding: 0; }
 
@@ -377,6 +504,51 @@ input[type="range"] {
   font-weight: 700;
   color: var(--ink);
   line-height: 1.5;
+}
+
+.est-lines {
+  display: none;
+  flex-direction: column;
+  border-bottom: 1px solid var(--sep);
+}
+
+.est-lines.on { display: flex; }
+
+.est-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--horizon);
+}
+
+.est-line:last-child { border-bottom: none; }
+
+.est-line-name {
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.est-line-qty {
+  font-size: 11px;
+  color: var(--slate);
+  margin-top: 2px;
+}
+
+.est-line-amount {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.est-line-amount.free {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--free-fg);
 }
 
 .est-total {
@@ -470,10 +642,11 @@ input[type="range"] {
   .estimate-panel { position: static; order: -1; }
   .choice-grid { grid-template-columns: 1fr; }
   .example-row { grid-template-columns: 1fr; gap: 2px; }
+  .svc { grid-template-columns: 18px 1fr auto; gap: 8px; padding: 11px 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .choice-card, .plan-card, .est-cta, .est-reset { transition: none; }
+  .choice-card, .plan-card, .svc, .est-cta, .est-reset { transition: none; }
 }
 </style>
 
@@ -518,6 +691,7 @@ input[type="range"] {
         <div class="est-header-label">概算見積もり</div>
         <div class="est-header-title">お見積もり内容</div>
       </div>
+      <span class="est-badge" id="badge">0件</span>
     </div>
     <div class="est-body">
       <div class="est-empty" id="empty">
@@ -533,6 +707,7 @@ input[type="range"] {
         <div class="est-selected-kind" id="est-selected-kind"></div>
         <div class="est-selected-name" id="est-selected-name"></div>
       </div>
+      <div class="est-lines" id="lines"></div>
       <div class="est-total" id="est-total-row" style="display:none;">
         <span class="est-total-label">概算金額（税込）</span>
         <span class="est-total-amount" id="total">¥0</span>
@@ -592,36 +767,77 @@ const NEW_PLANS = [
   }
 ];
 
-const RENEW_PLAN = {
-  id: 'renewal',
-  name: 'ホームページ・LP改修',
-  tagline: '今のサイトを活かしながら、デザインや構成を見直します',
-  priceMin: 20000,
-  priceMax: 30000,
-  sectionMin: 3,
-  sectionMax: 8,
-  examples: [
-    { label: 'デザイン', text: '配色・フォントの刷新、レイアウトの調整、スマホ表示の最適化 など' },
-    { label: '構成',     text: 'セクションの追加・削除・並び替え、ファーストビューの改修 など' },
-    { label: '機能',     text: 'フォームの改善、広告タグ・計測タグの設置 など' }
-  ]
-};
+/* 「今あるサイトを直したい」の詳細カテゴリ（選んだ項目の合計がそのまま金額） */
+const RENEW_CATEGORIES = [
+  {
+    id: 'content',
+    label: '文言・素材',
+    desc: 'テキストや画像素材の変更',
+    items: [
+      { id: 'text',  name: 'テキスト・文言の修正',     desc: 'キャッチコピー・説明文・CTAテキストなどの変更', price: 0,     unit: null },
+      { id: 'photo', name: '写真・画像の差し替え',      desc: 'ヒーロー画像・バナー・商品写真の入れ替え',     price: 1000,  unit: '点'  },
+      { id: 'logo',  name: 'ロゴ・アイコンの差し替え', desc: 'ロゴ画像・SVGアイコン素材の入れ替え',           price: 1000,  unit: null  }
+    ]
+  },
+  {
+    id: 'design',
+    label: 'デザイン・見た目',
+    desc: 'ビジュアルデザインの変更',
+    items: [
+      { id: 'color',   name: '色・配色の変更',          desc: 'メインカラー・ボタン色・背景色などの変更',           price: 3000,  unit: null },
+      { id: 'font',    name: 'フォント・文字サイズ変更', desc: '書体の変更、見出し・本文のサイズ・太さ調整',         price: 3000,  unit: null },
+      { id: 'btn-sty', name: 'ボタンのデザイン変更',    desc: '形・色・サイズ・文言の変更',                        price: 5000,  unit: null },
+      { id: 'layout',  name: '余白・レイアウトの調整',  desc: '要素の配置・間隔・整列の微調整',                    price: 5000,  unit: null },
+      { id: 'sp',      name: 'スマホ表示の最適化',      desc: 'モバイルでの表示崩れ修正・レイアウト改善',           price: 8000,  unit: null }
+    ]
+  },
+  {
+    id: 'section',
+    label: 'セクション構成',
+    desc: 'ページのセクション単位の作業',
+    items: [
+      { id: 'sec-edit', name: 'セクション内容の更新',         desc: '既存セクションのデザイン・構成・内容の変更',                   price: 5000,  unit: null },
+      { id: 'sec-add',  name: '新規セクションの追加',          desc: '実績・FAQ・料金表など新しいセクションのデザイン・実装',        price: 10000, unit: '個'  },
+      { id: 'sec-del',  name: 'セクションの削除・並び替え',    desc: '不要セクションの削除や表示順序の変更',                        price: 3000,  unit: null },
+      { id: 'hero',     name: 'ファーストビューの改修',        desc: 'ヒーローエリアのデザイン・コピー・CTAを全面改修',              price: 15000, unit: null },
+      { id: 'cta',      name: 'CTAの追加・最適化',             desc: '問い合わせボタン・フォームへの導線の追加・改善',               price: 5000,  unit: null }
+    ]
+  },
+  {
+    id: 'form',
+    label: 'フォーム・問い合わせ',
+    desc: 'フォームや送信機能の作業',
+    items: [
+      { id: 'form-item',   name: 'フォーム項目の追加・変更',   desc: '入力項目の追加・削除・ラベル変更・並び替え',               price: 5000,  unit: null },
+      { id: 'form-action', name: '送信後の動作変更',            desc: 'サンクスページの変更・自動返信メール文の修正',              price: 5000,  unit: null },
+      { id: 'form-new',    name: '新規フォームの作成',          desc: '問い合わせ・資料請求・予約フォームの設計・実装・メール通知', price: 15000, unit: null },
+      { id: 'form-sheet',  name: 'スプレッドシート自動記録',    desc: 'フォーム送信内容をGoogleスプレッドシートに自動記録',        price: 10000, unit: null }
+    ]
+  },
+  {
+    id: 'tracking',
+    label: '計測・広告連携',
+    desc: 'アクセス解析・広告タグの設定',
+    items: [
+      { id: 'ga4',     name: 'Google Analytics 4（GA4）設置',   desc: 'GA4計測コードの設置と基本イベントの設定',               price: 8000,  unit: null },
+      { id: 'gads-cv', name: 'Google広告 コンバージョン設定',   desc: 'CVタグの設置・フォーム連携・計測テスト',                price: 10000, unit: null },
+      { id: 'gtm',     name: 'GTM（タグマネージャー）設定',     desc: 'GTMコンテナの設置・タグ管理の設定',                     price: 10000, unit: null },
+      { id: 'meta-px', name: 'Meta広告 ピクセル設置',           desc: 'Metaピクセルの設置・コンバージョンイベント設定',         price: 8000,  unit: null }
+    ]
+  }
+];
+
+const RENEW_ITEM_MAP = {};
+RENEW_CATEGORIES.forEach(cat => cat.items.forEach(item => { RENEW_ITEM_MAP[item.id] = item; }));
 
 const state = {
-  mode: null,       // 'new' | 'renew'
-  planId: null,     // for 'new' mode
-  sections: 5        // for 'renew' mode
+  mode: null,               // 'new' | 'renew'
+  planId: null,             // for 'new' mode
+  renewSelected: new Map()  // for 'renew' mode: itemId -> qty
 };
 
 function fmtYen(n) {
   return '¥' + Math.round(n).toLocaleString('ja-JP');
-}
-
-function renewPrice(sections) {
-  const { priceMin, priceMax, sectionMin, sectionMax } = RENEW_PLAN;
-  const clamped = Math.min(sectionMax, Math.max(sectionMin, sections));
-  const ratio = (clamped - sectionMin) / (sectionMax - sectionMin);
-  return priceMin + ratio * (priceMax - priceMin);
 }
 
 function exampleGroupsHtml(examples) {
@@ -656,6 +872,7 @@ function buildChoiceGrid() {
 function selectMode(modeId) {
   state.mode = modeId;
   state.planId = null;
+  state.renewSelected.clear();
   document.querySelectorAll('.choice-card').forEach(el => {
     el.classList.toggle('selected', el.id === 'mode-' + modeId);
   });
@@ -677,7 +894,7 @@ function renderStep2() {
     body.innerHTML = `<div class="plan-grid" id="plan-grid"></div>`;
     const grid = document.getElementById('plan-grid');
     grid.innerHTML = NEW_PLANS.map(p => `
-      <div class="plan-card selectable" id="plan-${p.id}" onclick="selectPlan('${p.id}')">
+      <div class="plan-card" id="plan-${p.id}" onclick="selectPlan('${p.id}')">
         <div class="plan-top">
           <span class="plan-name">${p.name}</span>
           <span class="plan-price">${p.priceLabel}</span>
@@ -690,122 +907,262 @@ function renderStep2() {
       document.getElementById('plan-' + state.planId)?.classList.add('selected');
     }
   } else {
-    title.textContent = '今のサイトのセクション数を教えてください';
-    const price = renewPrice(state.sections);
+    title.textContent = '直したい内容を選んでください';
     body.innerHTML = `
-      <div class="plan-card">
-        <div class="plan-top">
-          <span class="plan-name">${RENEW_PLAN.name}</span>
-          <span class="plan-price">${fmtYen(price)}</span>
-        </div>
-        <div class="plan-tagline">${RENEW_PLAN.tagline}</div>
-        <div class="slider-block">
-          <div class="slider-label-row">
-            <span class="slider-label">現在のセクション数</span>
-            <span class="slider-value" id="section-value">${state.sections}個</span>
-          </div>
-          <input type="range" id="section-slider"
-                 min="${RENEW_PLAN.sectionMin}" max="${RENEW_PLAN.sectionMax}" step="1"
-                 value="${state.sections}" oninput="updateSections(this.value)">
-          <div class="slider-scale">
-            <span>${RENEW_PLAN.sectionMin}個〜（${fmtYen(RENEW_PLAN.priceMin)}）</span>
-            <span>${RENEW_PLAN.sectionMax}個以上（${fmtYen(RENEW_PLAN.priceMax)}）</span>
-          </div>
-        </div>
-        ${exampleGroupsHtml(RENEW_PLAN.examples)}
-        <p class="minor-note">
-          ※ テキスト修正や画像の差し替えなど軽微な変更のみの場合は、内容に応じて別途無料〜数千円程度でご案内します。
-        </p>
-      </div>
+      <p class="catalog-intro">
+        各項目をクリックして選択してください。<strong>複数選択可能</strong>です。
+        選んだ項目の合計金額が、右側の概算金額になります。
+      </p>
+      <div id="renew-catalog"></div>
     `;
-    state.planId = RENEW_PLAN.id;
+    buildRenewCatalog();
   }
 }
 
 function selectPlan(planId) {
   state.planId = planId;
-  document.querySelectorAll('.plan-card.selectable').forEach(el => {
+  document.querySelectorAll('.plan-card').forEach(el => {
     el.classList.toggle('selected', el.id === 'plan-' + planId);
   });
   renderSummary();
 }
 
-function updateSections(val) {
-  state.sections = parseInt(val, 10);
-  document.getElementById('section-value').textContent = state.sections + '個';
-  const price = renewPrice(state.sections);
-  document.querySelector('#step2-body .plan-price').textContent = fmtYen(price);
+/* ── Renew catalog (granular multi-select) ── */
+function buildRenewCatalog() {
+  const root = document.getElementById('renew-catalog');
+  root.innerHTML = '';
+
+  RENEW_CATEGORIES.forEach(cat => {
+    const section = document.createElement('div');
+    section.className = 'category';
+
+    const hdr = document.createElement('div');
+    hdr.className = 'category-header';
+    hdr.innerHTML = `<span class="cat-label">${cat.label}</span><hr class="cat-rule">`;
+    section.appendChild(hdr);
+
+    if (cat.desc) {
+      const descEl = document.createElement('p');
+      descEl.className = 'cat-desc';
+      descEl.textContent = cat.desc;
+      section.appendChild(descEl);
+    }
+
+    const list = document.createElement('div');
+    list.className = 'service-items';
+    section.appendChild(list);
+
+    cat.items.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'svc';
+      row.id = 'svc-' + item.id;
+
+      const priceHtml = item.price === 0
+        ? `<span class="svc-price free-tag">無料</span>`
+        : `<span class="svc-price">${fmtYen(item.price)}</span>${item.unit ? `<div class="svc-unit">/ ${item.unit}</div>` : ''}`;
+
+      row.innerHTML = `
+        <input type="checkbox" id="chk-${item.id}">
+        <div class="svc-info">
+          <div class="svc-name">${item.name}</div>
+          <div class="svc-desc">${item.desc}</div>
+          ${item.unit ? `
+            <div class="qty-row" id="qrow-${item.id}">
+              <label for="qty-${item.id}">${item.unit}数</label>
+              <input type="number" id="qty-${item.id}" min="1" max="99" value="1">
+              <span class="qty-sub" id="qsub-${item.id}">${fmtYen(item.price)}</span>
+            </div>` : ''}
+        </div>
+        <div class="svc-price-col">${priceHtml}</div>
+      `;
+
+      list.appendChild(row);
+
+      const chk = row.querySelector('input[type="checkbox"]');
+
+      chk.addEventListener('change', () => {
+        setRenewItem(item, chk.checked);
+        row.classList.toggle('selected', chk.checked);
+        if (item.unit) {
+          row.querySelector('#qrow-' + item.id).classList.toggle('on', chk.checked);
+        }
+      });
+
+      if (item.unit) {
+        const qInput = row.querySelector('#qty-' + item.id);
+        qInput.addEventListener('input', () => {
+          const q = Math.max(1, parseInt(qInput.value) || 1);
+          qInput.value = q;
+          if (state.renewSelected.has(item.id)) {
+            state.renewSelected.set(item.id, q);
+            row.querySelector('#qsub-' + item.id).textContent = fmtYen(item.price * q);
+            renderSummary();
+          }
+        });
+        qInput.addEventListener('click', e => e.stopPropagation());
+        qInput.addEventListener('change', e => e.stopPropagation());
+      }
+
+      row.addEventListener('click', e => {
+        if (e.target.tagName === 'INPUT') return;
+        chk.checked = !chk.checked;
+        chk.dispatchEvent(new Event('change'));
+      });
+    });
+
+    root.appendChild(section);
+  });
+}
+
+function setRenewItem(item, on) {
+  if (on) {
+    const qEl = document.getElementById('qty-' + item.id);
+    state.renewSelected.set(item.id, item.unit ? (parseInt(qEl?.value) || 1) : 1);
+  } else {
+    state.renewSelected.delete(item.id);
+  }
   renderSummary();
 }
 
 /* ── Summary panel ── */
-function getCurrentSelection() {
-  if (state.mode === 'new' && state.planId) {
-    const plan = NEW_PLANS.find(p => p.id === state.planId);
-    return plan ? { kind: '新規制作', name: plan.name, amount: plan.price, label: plan.priceLabel } : null;
-  }
-  if (state.mode === 'renew') {
-    const amount = renewPrice(state.sections);
-    return { kind: '既存サイトの改修', name: `${RENEW_PLAN.name}（セクション数：${state.sections}個）`, amount, label: fmtYen(amount) };
-  }
-  return null;
-}
-
 function renderSummary() {
   const emptyEl    = document.getElementById('empty');
   const selEl      = document.getElementById('est-selected');
   const kindEl     = document.getElementById('est-selected-kind');
   const nameEl     = document.getElementById('est-selected-name');
+  const linesEl    = document.getElementById('lines');
   const totalRow   = document.getElementById('est-total-row');
   const totalEl    = document.getElementById('total');
+  const badgeEl    = document.getElementById('badge');
   const ctaBtn     = document.getElementById('cta-btn');
 
-  const sel = getCurrentSelection();
+  if (state.mode === 'new') {
+    badgeEl.classList.remove('on');
+    linesEl.classList.remove('on');
+    linesEl.innerHTML = '';
 
-  if (!sel) {
-    emptyEl.style.display = '';
-    selEl.classList.remove('on');
-    totalRow.style.display = 'none';
-    ctaBtn.disabled = true;
+    const plan = NEW_PLANS.find(p => p.id === state.planId);
+    if (!plan) {
+      emptyEl.style.display = '';
+      selEl.classList.remove('on');
+      totalRow.style.display = 'none';
+      ctaBtn.disabled = true;
+      return;
+    }
+    emptyEl.style.display = 'none';
+    selEl.classList.add('on');
+    kindEl.textContent = '新規制作';
+    nameEl.textContent = plan.name;
+    totalRow.style.display = 'flex';
+    totalEl.textContent = plan.priceLabel;
+    ctaBtn.disabled = false;
     return;
   }
 
-  emptyEl.style.display = 'none';
-  selEl.classList.add('on');
-  kindEl.textContent = sel.kind;
-  nameEl.textContent = sel.name;
-  totalRow.style.display = 'flex';
-  totalEl.textContent = sel.label;
-  ctaBtn.disabled = false;
+  if (state.mode === 'renew') {
+    selEl.classList.remove('on');
+
+    const count = state.renewSelected.size;
+    badgeEl.textContent = count + '件';
+    badgeEl.classList.toggle('on', count > 0);
+
+    if (count === 0) {
+      emptyEl.style.display = '';
+      linesEl.classList.remove('on');
+      linesEl.innerHTML = '';
+      totalRow.style.display = 'none';
+      ctaBtn.disabled = true;
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    linesEl.classList.add('on');
+    linesEl.innerHTML = '';
+
+    let total = 0;
+    state.renewSelected.forEach((qty, id) => {
+      const item = RENEW_ITEM_MAP[id];
+      if (!item) return;
+      const amount = item.price * qty;
+      total += amount;
+
+      const line = document.createElement('div');
+      line.className = 'est-line';
+      const amtCls = item.price === 0 ? 'est-line-amount free' : 'est-line-amount';
+      const amtTxt = item.price === 0 ? '無料' : fmtYen(amount);
+      const qtyTxt = item.unit && qty > 1 ? `${qty} ${item.unit}` : '';
+      line.innerHTML = `
+        <div>
+          <div class="est-line-name">${item.name}</div>
+          ${qtyTxt ? `<div class="est-line-qty">${qtyTxt}</div>` : ''}
+        </div>
+        <div class="${amtCls}">${amtTxt}</div>
+      `;
+      linesEl.appendChild(line);
+    });
+
+    totalRow.style.display = 'flex';
+    totalEl.textContent = fmtYen(total);
+    ctaBtn.disabled = false;
+    return;
+  }
+
+  // no mode selected yet
+  badgeEl.classList.remove('on');
+  emptyEl.style.display = '';
+  selEl.classList.remove('on');
+  linesEl.classList.remove('on');
+  linesEl.innerHTML = '';
+  totalRow.style.display = 'none';
+  ctaBtn.disabled = true;
 }
 
 function goBack() {
   state.mode = null;
   state.planId = null;
+  state.renewSelected.clear();
   document.querySelectorAll('.choice-card').forEach(el => el.classList.remove('selected'));
   document.getElementById('step2').style.display = 'none';
   renderSummary();
 }
 
 function resetAll() {
-  state.mode = null;
-  state.planId = null;
-  state.sections = 5;
-  document.querySelectorAll('.choice-card').forEach(el => el.classList.remove('selected'));
-  document.getElementById('step2').style.display = 'none';
-  renderSummary();
+  goBack();
 }
 
 function handleContact() {
-  const sel = getCurrentSelection();
-  if (!sel) return;
-  const subject = 'FlagK 料金シミュレーターからのお問い合わせ';
-  const body =
-    `料金シミュレーターで以下の内容を選択しました。\n\n` +
-    `分類：${sel.kind}\n` +
-    `内容：${sel.name}\n` +
-    `概算金額：${sel.label}\n\n` +
-    `--\nご記入ください\n店舗名・会社名：\nお名前：\n電話番号：\n`;
+  let subject, body;
+
+  if (state.mode === 'new') {
+    const plan = NEW_PLANS.find(p => p.id === state.planId);
+    if (!plan) return;
+    subject = 'FlagK 料金シミュレーターからのお問い合わせ';
+    body =
+      `料金シミュレーターで以下の内容を選択しました。\n\n` +
+      `分類：新規制作\n` +
+      `内容：${plan.name}\n` +
+      `概算金額：${plan.priceLabel}\n\n` +
+      `--\nご記入ください\n店舗名・会社名：\nお名前：\n電話番号：\n`;
+  } else if (state.mode === 'renew' && state.renewSelected.size > 0) {
+    const lines = [];
+    let total = 0;
+    state.renewSelected.forEach((qty, id) => {
+      const item = RENEW_ITEM_MAP[id];
+      if (!item) return;
+      total += item.price * qty;
+      lines.push(item.unit ? `・${item.name}（${qty}${item.unit}）` : `・${item.name}`);
+    });
+    subject = 'FlagK 料金シミュレーターからのお問い合わせ';
+    body =
+      `料金シミュレーターで以下の内容を選択しました。\n\n` +
+      `分類：既存サイトの改修\n` +
+      `内容：\n${lines.join('\n')}\n\n` +
+      `概算金額：${fmtYen(total)}\n\n` +
+      `--\nご記入ください\n店舗名・会社名：\nお名前：\n電話番号：\n`;
+  } else {
+    return;
+  }
+
   window.location.href =
     `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
