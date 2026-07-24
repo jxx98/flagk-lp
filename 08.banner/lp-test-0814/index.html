@@ -348,6 +348,12 @@ a{text-decoration:none;color:inherit}
   display:block;
 }
 .hv2-cta--banner img{width:100%;height:auto;display:block}
+@media(min-width:900px){
+  /* PC: バナーをヒーロー左カラムの余白に表示（フォームに代替されるため通常は非表示だが、バナーのみ復活） */
+  .hv2-cta.hv2-cta--banner{display:block;max-width:520px;margin-top:20px}
+  /* PC: キャンペーンポップアップを大きく表示 */
+  .cp-overlay .cp-box{max-width:480px}
+}
 .hv2-cta-icon-wrap{
   width:52px;height:52px;
   background:#e8faf2;border-radius:50%;
@@ -1505,7 +1511,7 @@ a{text-decoration:none;color:inherit}
      ============================================================ -->
 <section class="fl" id="flow" data-section="flow">
   <p class="fl-eyebrow"><span class="fl-eyebrow-inner">最短5分で受付完了</span></p>
-  <h2 class="fl-title"><span class="fl-title-sp">申込から出店までの流れ</span><span class="fl-title-pc">出店までの流れ</span></h2>
+  <h2 class="fl-title"><span class="fl-title-sp">申込から出店までの流れ</span><span class="fl-title-pc">申込から出店までの流れ</span></h2>
   <div class="fl-title-bar"></div>
   <p class="fl-sub">はじめての方でも安心！担当者が丁寧にサポートいたします。</p>
 
