@@ -999,6 +999,16 @@ a{text-decoration:none;color:inherit}
 .cp-box{width:100%;max-width:360px;max-height:90vh;position:relative;transform:translateY(20px);transition:transform .3s}
 .cp-overlay.cp-open .cp-box{transform:translateY(0)}
 .cp-box img{width:100%;height:auto;max-height:90vh;object-fit:contain;display:block;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.3);cursor:pointer}
+.cp-close{
+  position:absolute; top:-14px; right:-14px;
+  width:32px; height:32px; border-radius:50%;
+  border:none; background:#fff; color:#333;
+  font-size:16px; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+  z-index:1; transition:background .2s;
+}
+.cp-close:hover{background:#f0f0f0}
 
 /* ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後） ===== */
 .cp-float{display:none}
@@ -2708,6 +2718,7 @@ a{text-decoration:none;color:inherit}
 <!-- ===== 8/14キャンペーン ポップアップ（テスト版） ===== -->
 <div class="cp-overlay" id="cp-overlay">
   <div class="cp-box">
+    <button class="cp-close" id="cp-close-btn" aria-label="閉じる">✕</button>
     <img src="images/campaign/popup-0814.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
   </div>
 </div>
@@ -2715,6 +2726,7 @@ a{text-decoration:none;color:inherit}
 (function(){
   var overlay = document.getElementById('cp-overlay');
   var box = overlay.querySelector('.cp-box');
+  var closeBtn = document.getElementById('cp-close-btn');
   var SHOWN_KEY = 'lp_campaign_popup_shown';
 
   function openPopup(){
@@ -2735,6 +2747,12 @@ a{text-decoration:none;color:inherit}
   // ポップアップ以外（背景）をタップ・クリックしたら閉じる
   overlay.addEventListener('click', function(e){
     if (e.target === overlay) closePopup();
+  });
+
+  // ×ボタンをクリックしたら閉じる（フォームへの遷移はしない）
+  closeBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    closePopup();
   });
 
   // ポップアップ本体（画像）をクリックしたらフォームへ遷移してから閉じる
