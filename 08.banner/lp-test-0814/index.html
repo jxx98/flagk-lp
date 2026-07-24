@@ -1000,6 +1000,29 @@ a{text-decoration:none;color:inherit}
 .cp-overlay.cp-open .cp-box{transform:translateY(0)}
 .cp-box img{width:100%;height:auto;max-height:90vh;object-fit:contain;display:block;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.3);cursor:pointer}
 
+/* ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後） ===== */
+.cp-float{display:none}
+@media(min-width:900px){
+  .cp-float{
+    display:block;
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:200px;
+    z-index:900;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 28px rgba(0,0,0,.28);
+    opacity:0;
+    transform:translateY(16px);
+    pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease;
+  }
+  .cp-float.cp-float-show{opacity:1;transform:translateY(0);pointer-events:auto}
+  .cp-float:hover{transform:translateY(-4px)}
+  .cp-float img{width:100%;height:auto;display:block}
+}
+
 /* ===== 資料申し込みモーダル ===== */
 .md-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99995;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .md-overlay.md-open{opacity:1;visibility:visible}
@@ -2720,6 +2743,31 @@ a{text-decoration:none;color:inherit}
     var target = document.getElementById('mobile-form') || document.getElementById('flow');
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
+})();
+</script>
+
+<!-- ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後に右下表示） ===== -->
+<a href="campaign-check/" class="cp-float" id="cp-float">
+  <img src="images/campaign/popup-0814.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
+</a>
+<script>
+(function(){
+  var floatEl = document.getElementById('cp-float');
+  var hero = document.querySelector('[data-section="hero"]');
+  if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        floatEl.classList.remove('cp-float-show');
+      } else if (entry.boundingClientRect.top < 0) {
+        // ヒーローを下にスクロールして通り過ぎた場合のみ表示
+        floatEl.classList.add('cp-float-show');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(hero);
 })();
 </script>
 
