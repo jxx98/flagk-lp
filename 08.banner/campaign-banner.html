@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャンペーンバナー プレビュー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans JP','Hiragino Sans',sans-serif;
+  background:#eef2f0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+.banner{
+  position:relative;
+  width:100%;
+  max-width:1040px;
+  display:flex;
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 16px 40px rgba(0,0,0,.14);
+}
+
+/* ============ 左：グリーンゾーン ============ */
+.banner-left{
+  position:relative;
+  flex:0 0 220px;
+  background:linear-gradient(150deg,#049654 0%,#06C167 60%,#0bb46e 100%);
+  padding:36px 20px 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  overflow:hidden;
+}
+
+/* リボン（期間限定キャンペーン） */
+.ribbon{
+  position:absolute;
+  top:16px;
+  left:-8px;
+  background:#FFD600;
+  color:#1a4a2e;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.02em;
+  padding:8px 14px 8px 20px;
+  clip-path:polygon(0 0,100% 0,88% 50%,100% 100%,0 100%);
+  box-shadow:0 3px 6px rgba(0,0,0,.18);
+  white-space:nowrap;
+}
+.ribbon::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  width:0;
+  height:0;
+  border-left:8px solid transparent;
+  border-top:7px solid #a88400;
+}
+
+/* 紙吹雪の装飾 */
+.confetti{position:absolute;opacity:.85;pointer-events:none}
+.confetti.diamond{background:#FFD600;width:10px;height:10px;border-radius:2px}
+.confetti.diamond.alt{background:rgba(255,255,255,.8)}
+.c1{top:26px;right:22px;transform:rotate(20deg)}
+.c2{top:58px;right:46px;width:6px;height:6px;transform:rotate(45deg)}
+.c3{bottom:70px;left:14px;transform:rotate(15deg)}
+.c4{bottom:40px;left:44px;width:7px;height:7px;transform:rotate(30deg)}
+.c5{top:96px;left:20px;width:6px;height:6px;transform:rotate(60deg)}
+.c6{bottom:100px;right:18px;width:8px;height:8px;transform:rotate(10deg)}
+
+.icon-cal{
+  width:78px;height:78px;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.15));
+  position:relative;
+  z-index:1;
+}
+
+.left-copy{
+  text-align:center;
+  color:#fff;
+  position:relative;
+  z-index:1;
+}
+.left-copy .em{
+  display:block;
+  font-size:26px;
+  font-weight:900;
+  color:#FFE44D;
+  line-height:1.25;
+  text-shadow:0 2px 3px rgba(0,0,0,.15);
+}
+.left-copy .sub{
+  display:block;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.25;
+}
+
+/* ============ 中央：メインコピー ============ */
+.banner-main{
+  flex:1;
+  padding:30px 36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:10px;
+  min-width:0;
+}
+.banner-main .lead{
+  font-size:16px;
+  font-weight:700;
+  color:#333;
+}
+.banner-main .lead .strike{
+  color:#999;
+  text-decoration:line-through;
+  text-decoration-color:#c33;
+  text-decoration-thickness:2px;
+  margin:0 2px;
+}
+
+.price-row{
+  position:relative;
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  line-height:1;
+}
+.price-row .label{
+  font-size:34px;
+  font-weight:900;
+  color:#111;
+  letter-spacing:.02em;
+}
+.price-row .price{
+  font-size:76px;
+  font-weight:900;
+  color:#FF6A00;
+  letter-spacing:-.01em;
+}
+.price-row .price sup{
+  font-size:34px;
+  font-weight:900;
+  margin-left:2px;
+}
+.sparkle{
+  position:absolute;
+  color:#FFD600;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.12));
+}
+.sp1{ top:-6px; right:74px; font-size:26px; transform:rotate(-8deg);}
+.sp2{ bottom:2px; right:6px; font-size:20px; transform:rotate(12deg);}
+.sp3{ top:16px; right:-6px; font-size:14px; transform:rotate(-15deg);}
+
+.deadline-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  align-self:flex-start;
+  background:#f2f8f5;
+  border:1.5px solid #cdeadd;
+  border-radius:999px;
+  padding:9px 20px;
+  font-size:16px;
+  font-weight:700;
+  color:#222;
+}
+.deadline-pill .date{ color:#111; font-weight:900; }
+.deadline-pill .free{ color:#FF6A00; font-weight:900; }
+
+/* ============ 右：特典リスト ============ */
+.banner-features{
+  flex:0 0 260px;
+  display:flex;
+  flex-direction:column;
+  background:#fafbfa;
+  border-left:1px solid #edf1ee;
+}
+.feature-row{
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:0 22px;
+  border-bottom:1px solid #edf1ee;
+}
+.feature-row:last-child{border-bottom:none}
+.feature-icon{
+  flex:0 0 42px;
+  width:42px;height:42px;
+  border-radius:50%;
+  background:#e8f7ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.feature-icon svg{width:22px;height:22px}
+.feature-text{
+  font-size:13.5px;
+  font-weight:700;
+  color:#333;
+  line-height:1.5;
+}
+.feature-text .accent{
+  color:#06C167;
+  font-size:15.5px;
+  font-weight:900;
+}
+
+/* ============ レスポンシブ ============ */
+@media(max-width:760px){
+  .banner{flex-direction:column}
+  .banner-left{flex-direction:row;flex:none;padding:20px;gap:16px}
+  .icon-cal{width:56px;height:56px}
+  .left-copy .em{font-size:18px}
+  .left-copy .sub{font-size:16px}
+  .ribbon{top:8px;left:-8px;font-size:11px;padding:6px 10px 6px 14px}
+  .banner-main{padding:24px 22px}
+  .price-row .price{font-size:52px}
+  .price-row .label{font-size:24px}
+  .price-row .price sup{font-size:24px}
+  .banner-features{flex-direction:row;border-left:none;border-top:1px solid #edf1ee}
+  .feature-row{flex-direction:column;text-align:center;gap:8px;padding:16px 10px;border-bottom:none;border-right:1px solid #edf1ee}
+  .feature-row:last-child{border-right:none}
+  .feature-text{font-size:11.5px}
+  .feature-text .accent{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+
+  <!-- 左：グリーンゾーン -->
+  <div class="banner-left">
+    <span class="ribbon">期間限定キャンペーン</span>
+
+    <span class="confetti diamond c1"></span>
+    <span class="confetti diamond alt c2"></span>
+    <span class="confetti diamond c3"></span>
+    <span class="confetti diamond alt c4"></span>
+    <span class="confetti diamond c5"></span>
+    <span class="confetti diamond alt c6"></span>
+
+    <svg class="icon-cal" viewBox="0 0 80 80" fill="none">
+      <rect x="10" y="16" width="52" height="46" rx="6" stroke="#fff" stroke-width="3.5"/>
+      <line x1="10" y1="30" x2="62" y2="30" stroke="#fff" stroke-width="3.5"/>
+      <line x1="24" y1="10" x2="24" y2="22" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="48" y1="10" x2="48" y2="22" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      <rect x="20" y="38" width="8" height="8" rx="1.5" fill="#fff"/>
+      <rect x="34" y="38" width="8" height="8" rx="1.5" fill="#fff" opacity=".6"/>
+      <circle cx="58" cy="56" r="18" fill="#049654" stroke="#fff" stroke-width="3.5"/>
+      <line x1="58" y1="56" x2="58" y2="46" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <line x1="58" y1="56" x2="65" y2="59" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <p class="left-copy">
+      <span class="em">8/14</span>
+      <span class="sub">までの<br>期間限定！</span>
+    </p>
+  </div>
+
+  <!-- 中央：メインコピー -->
+  <div class="banner-main">
+    <p class="lead">通常 <span class="strike">38,000円</span> の初期費用が</p>
+
+    <div class="price-row">
+      <span class="label">初期費用</span>
+      <span class="price">0<sup>円</sup></span>
+      <span class="sparkle sp1">✦</span>
+      <span class="sparkle sp2">✦</span>
+      <span class="sparkle sp3">✧</span>
+    </div>
+
+    <div class="deadline-pill">
+      <span class="date">8/14</span> お申込受付完了で<span class="free">無料！</span>
+    </div>
+  </div>
+
+  <!-- 右：特典リスト -->
+  <div class="banner-features">
+    <div class="feature-row">
+      <span class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="16" cy="15" r="1.6" fill="#06C167" stroke="none"/></svg>
+      </span>
+      <span class="feature-text">初期費用<br><span class="accent">0円</span></span>
+    </div>
+    <div class="feature-row">
+      <span class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="15" cy="15" r="4.2"/><path d="M15 13v2l1.4 1"/></svg>
+      </span>
+      <span class="feature-text">最短<span class="accent">5分</span>で申込</span>
+    </div>
+    <div class="feature-row">
+      <span class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0116 0v3"/><path d="M21 16a2 2 0 01-2 2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h3zM3 16a2 2 0 002 2h1a2 2 0 002-2v-2a2 2 0 00-2-2H3z"/><path d="M12 19v1a2 2 0 01-2 2H9"/></svg>
+      </span>
+      <span class="feature-text">専任スタッフが<br><span class="accent">無料</span>サポート</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
