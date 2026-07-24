@@ -1031,6 +1031,16 @@ a{text-decoration:none;color:inherit}
   .cp-float.cp-float-show{opacity:1;transform:translateY(0);pointer-events:auto}
   .cp-float:hover{transform:translateY(-4px)}
   .cp-float img{width:100%;height:auto;display:block}
+  .cp-float-close{
+    position:absolute; top:-10px; right:-10px;
+    width:26px; height:26px; border-radius:50%;
+    border:none; background:#fff; color:#333;
+    font-size:14px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+    z-index:1; transition:background .2s;
+  }
+  .cp-float-close:hover{background:#f0f0f0}
 }
 
 /* ===== 資料申し込みモーダル ===== */
@@ -2765,27 +2775,43 @@ a{text-decoration:none;color:inherit}
 </script>
 
 <!-- ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後に右下表示） ===== -->
-<a href="campaign-check/" class="cp-float" id="cp-float">
-  <img src="images/campaign/popup-0814.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
-</a>
+<div class="cp-float" id="cp-float">
+  <button class="cp-float-close" id="cp-float-close-btn" aria-label="閉じる">✕</button>
+  <a href="campaign-check/">
+    <img src="images/campaign/popup-0814.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
+  </a>
+</div>
 <script>
 (function(){
   var floatEl = document.getElementById('cp-float');
+  var closeBtn = document.getElementById('cp-float-close-btn');
   var hero = document.querySelector('[data-section="hero"]');
   if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
+
+  var DISMISSED_KEY = 'lp_campaign_float_dismissed';
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch(e){}
 
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if (entry.isIntersecting) {
         floatEl.classList.remove('cp-float-show');
-      } else if (entry.boundingClientRect.top < 0) {
-        // ヒーローを下にスクロールして通り過ぎた場合のみ表示
+      } else if (entry.boundingClientRect.top < 0 && !dismissed) {
+        // ヒーローを下にスクロールして通り過ぎた場合のみ表示（閉じた後は再表示しない）
         floatEl.classList.add('cp-float-show');
       }
     });
   }, { threshold: 0 });
 
   observer.observe(hero);
+
+  closeBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    dismissed = true;
+    try { sessionStorage.setItem(DISMISSED_KEY, '1'); } catch(e){}
+    floatEl.classList.remove('cp-float-show');
+  });
 })();
 </script>
 
