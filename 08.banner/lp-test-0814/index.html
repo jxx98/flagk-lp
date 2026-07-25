@@ -1028,14 +1028,14 @@ a{text-decoration:none;color:inherit}
 .cp-box{width:100%;max-width:360px;max-height:90vh;position:relative;transform:translateY(20px);transition:transform .3s}
 .cp-overlay.cp-open .cp-box{transform:translateY(0)}
 .cp-caption{
-  position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  position:absolute; top:-30px; left:50%; transform:translateX(-50%);
   color:#fff;
   font-size:14px; font-weight:700;
   text-shadow:0 1px 4px rgba(0,0,0,.5);
   z-index:1; white-space:nowrap; letter-spacing:.01em;
 }
 .cp-box-inner{position:relative}
-.cp-box img{width:100%;height:auto;max-height:90vh;object-fit:contain;display:block;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.3);cursor:pointer}
+.cp-box img{width:100%;height:auto;max-height:calc(90vh - 40px);object-fit:contain;display:block;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.3);cursor:pointer}
 .cp-close{
   position:absolute; top:10px; right:10px;
   width:32px; height:32px; border-radius:50%;
