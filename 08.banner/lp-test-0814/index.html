@@ -1027,6 +1027,8 @@ a{text-decoration:none;color:inherit}
 .cp-overlay.cp-open{opacity:1;visibility:visible}
 .cp-box{width:100%;max-width:360px;max-height:90vh;position:relative;transform:translateY(20px);transition:transform .3s}
 .cp-overlay.cp-open .cp-box{transform:translateY(0)}
+.cp-caption{color:#fff;font-size:14px;font-weight:700;text-align:center;margin-bottom:10px;letter-spacing:.02em;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.cp-box-inner{position:relative}
 .cp-box img{width:100%;height:auto;max-height:90vh;object-fit:contain;display:block;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,.3);cursor:pointer}
 .cp-close{
   position:absolute; top:10px; right:10px;
@@ -2768,11 +2770,14 @@ a{text-decoration:none;color:inherit}
 <!-- ===== 8/14キャンペーン ポップアップ（テスト版） ===== -->
 <div class="cp-overlay" id="cp-overlay">
   <div class="cp-box">
-    <button class="cp-close" id="cp-close-btn" aria-label="閉じる">✕</button>
-    <picture>
-      <source media="(min-width:900px)" srcset="images/campaign/popup-0814.png">
-      <img src="images/campaign/popup-0814-mobile.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
-    </picture>
+    <p class="cp-caption">Uber Eats（ウーバーイーツ）</p>
+    <div class="cp-box-inner">
+      <button class="cp-close" id="cp-close-btn" aria-label="閉じる">✕</button>
+      <picture>
+        <source media="(min-width:900px)" srcset="images/campaign/popup-0814.png">
+        <img src="images/campaign/popup-0814-mobile.png" alt="8月14日23時59分59秒までのお問い合わせで初期費用0円">
+      </picture>
+    </div>
   </div>
 </div>
 <script>
