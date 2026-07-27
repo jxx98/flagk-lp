@@ -2044,7 +2044,21 @@ a{text-decoration:none;color:inherit}
   </ul>
 </section>
 
-
+<script>
+/* FAQをアコーディオン化：1つ開いたら他は自動で閉じる */
+(function(){
+  var items = document.querySelectorAll('#faq .fq-item');
+  items.forEach(function(item){
+    item.addEventListener('toggle', function(){
+      if (item.open) {
+        items.forEach(function(other){
+          if (other !== item) other.open = false;
+        });
+      }
+    });
+  });
+})();
+</script>
 
 <!-- ============================================================
      FINAL CTA
