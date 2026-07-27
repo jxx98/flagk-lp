@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag: テスト環境のため無効化 -->
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電話相談予約 | Uber Eats 出店登録サポート | FlagK</title>
+<meta name="description" content="Uber Eats（ウーバーイーツ）導入前の疑問をお電話で解決。加盟・出店・申込に関するご相談を無料で承ります。ご都合の良い日時をお選びください。">
+<link rel="canonical" href="https://flagk-co.jp/ubereats-support/tel-reservation/">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;font-family:'Noto Sans JP','Hiragino Sans',sans-serif;color:#222;background:#f0f7f3}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font-family:inherit}
+
+/* ── PAGE BACKGROUND ── */
+.page-bg{
+  position:fixed;inset:0;z-index:0;
+  background:url('../images/ubereats-support/lp-11.png') center top/cover no-repeat;
+  pointer-events:none;
+}
+
+/* ── HEADER ── */
+.hd{
+  position:fixed;top:0;left:0;right:0;
+  height:60px;background:#fff;
+  border-bottom:3px solid #06C167;
+  z-index:1000;
+}
+.hd-inner{
+  display:flex;align-items:center;gap:10px;
+  height:100%;padding:0 20px;
+  max-width:1200px;margin:0 auto;
+}
+.hd-logo img{height:38px;width:auto}
+.hd-divider{width:1px;height:36px;background:#e0e0e0;flex-shrink:0;margin:0 6px}
+.hd-brand{font-size:15px;font-weight:700;color:#111;white-space:nowrap}
+.hd-spacer{flex:1}
+.hd-btns{display:flex;gap:10px;align-items:center}
+.hd-btn-tel{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#06C167;color:#fff;
+  font-size:13px;font-weight:700;
+  padding:9px 18px;border-radius:8px;
+  white-space:nowrap;text-decoration:none;
+  transition:background .2s;
+}
+.hd-btn-tel:hover{background:#04a857}
+.hd-btn-line{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;color:#06C167;
+  border:2px solid #06C167;
+  font-size:13px;font-weight:700;
+  padding:7px 16px;border-radius:8px;
+  white-space:nowrap;text-decoration:none;
+  transition:all .2s;
+}
+.hd-btn-line:hover{background:#f0faf5}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  margin-top:60px;
+}
+.hero-inner{
+  display:flex;
+  align-items:flex-start;
+  max-width:1160px;margin:0 auto;
+  padding:40px 48px 0;
+  min-height:460px;
+}
+.hero-left{
+  flex:1;min-width:0;
+}
+.hero-right{
+  flex:0 0 520px;
+  align-self:flex-end;
+  position:relative;
+  min-height:420px;
+}
+.hero-person{
+  position:absolute;
+  bottom:-150px;
+  left:0;right:0;
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* タグバッジ */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.92);
+  border:1.5px solid #06C167;
+  border-radius:24px;padding:8px 18px;
+  font-size:13px;font-weight:700;color:#333;
+  margin-bottom:22px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+/* タイトル */
+.hero-title{
+  font-size:clamp(26px,3.2vw,44px);
+  font-weight:700;color:#111;
+  line-height:1.35;
+  margin-bottom:36px;
+  letter-spacing:.01em;
+}
+.hero-title-pink{
+  color:#e91e8c;
+  display:inline;
+  position:relative;
+  padding-bottom:16px;
+}
+.hero-title-pink::after{
+  content:'';
+  position:absolute;
+  left:-4px;right:-4px;bottom:0;
+  height:14px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 18' preserveAspectRatio='none'%3E%3Cpath d='M2,13 C40,6 100,17 170,11 C240,5 300,16 360,10 C385,7 395,13 399,12' stroke='%23e91e8c' stroke-width='5' fill='none' stroke-linecap='round' opacity='.88'/%3E%3C/svg%3E") no-repeat center/100% auto;
+  pointer-events:none;
+}
+.hero-sparkle{
+  display:inline-flex;align-items:flex-end;
+  vertical-align:bottom;
+  margin-left:6px;
+  margin-bottom:18px;
+}
+
+/* チェック項目 */
+.hero-checks{
+  display:flex;align-items:center;flex-wrap:nowrap;
+  gap:10px 14px;
+  margin-bottom:22px;
+}
+.hero-check{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;color:#333;
+  background:rgba(255,255,255,.88);
+  border-radius:50px;
+  padding:7px 14px 7px 7px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  white-space:nowrap;
+}
+.hero-check-dot{
+  width:20px;height:20px;background:#06C167;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.hero-check-dot svg{width:11px;height:11px}
+.hero-check-etc{font-size:15px;font-weight:900;color:#111;white-space:nowrap}
+
+/* 本文 */
+.hero-body{
+  font-size:15px;color:#444;
+  line-height:1.9;
+  margin-bottom:22px;
+}
+
+/* 受付時間（ヘッダー内） */
+.hd-hours{
+  display:flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;color:#333;
+  white-space:nowrap;
+}
+.hd-hours svg{display:block;flex-shrink:0}
+
+/* ── FORM SECTION ── */
+/* padding-top:0 → フォーム上端がヒーロー（人物見切れ）底にぴったり接続 */
+.form-section{
+  position:relative;z-index:1;
+  padding:0 20px 72px;
+}
+.form-card{
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 8px 40px rgba(0,0,0,.13);
+  max-width:560px;
+  margin:0 auto;
+  padding:32px 36px 44px;
+}
+
+/* ── FORM INNER ── */
+.form-title{
+  text-align:center;
+  font-size:20px;font-weight:700;color:#111;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:6px;
+}
+.form-sub{
+  text-align:center;font-size:14px;color:#06C167;font-weight:700;
+  margin-bottom:20px;
+}
+.form-rule{width:100%;height:1px;background:rgba(6,193,103,.25);border:none;margin-bottom:24px}
+
+.f-row{margin-bottom:18px}
+.f-lbl{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;font-weight:700;color:#222}
+.f-lbl-icon{width:28px;height:28px;border-radius:50%;background:#e8faf2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.f-lbl-icon svg{width:15px;height:15px}
+.f-req{display:inline-block;font-size:10px;font-weight:700;background:#06C167;color:#fff;padding:2px 7px;border-radius:3px;flex-shrink:0}
+.f-input{
+  width:100%;border:1.5px solid #e0e0e0;border-radius:10px;
+  padding:12px 14px;font-size:14px;color:#111;background:#fafafa;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.f-input:focus{border-color:#06C167;background:#fff;box-shadow:0 0 0 3px rgba(6,193,103,.12)}
+.f-input::placeholder{color:#ccc}
+
+.f-time-grid{display:flex;flex-direction:column;gap:8px}
+.f-time-label{
+  display:flex;align-items:center;gap:10px;cursor:pointer;
+  padding:11px 14px;border:1.5px solid #e0e0e0;border-radius:10px;
+  background:#fafafa;transition:border-color .2s,background .2s;
+}
+.f-time-label:hover{border-color:#06C167;background:#f0faf5}
+.f-time-label input[type=checkbox]{width:16px;height:16px;accent-color:#06C167;flex-shrink:0;cursor:pointer}
+.f-time-label:has(input:checked){border-color:#06C167;background:#f0faf5}
+.f-time-name{font-size:13px;font-weight:700;color:#222}
+.f-time-sep{color:#ccc;font-size:12px;margin:0 2px}
+.f-time-range{font-size:12px;color:#555}
+
+.f-privacy{display:flex;align-items:center;gap:8px;margin:20px 0 18px;font-size:12px;color:#555;line-height:1.75}
+.f-privacy input[type=checkbox]{width:16px;height:16px;flex-shrink:0;accent-color:#06C167;cursor:pointer}
+.f-privacy a{color:#06C167;text-decoration:underline}
+
+.f-submit{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;background:#06C167;color:#fff;border:none;border-radius:50px;
+  padding:16px 24px;font-size:16px;font-weight:700;
+  cursor:pointer;transition:background .2s;letter-spacing:.04em;
+}
+.f-submit:disabled{background:#ccc;cursor:not-allowed}
+.f-submit:not(:disabled):hover{background:#04a857}
+
+/* ── モバイル ── */
+@media(max-width:899px){
+  .hd-divider,.hd-brand{display:none}
+  .hero-inner{
+    flex-direction:row;
+    align-items:flex-start;
+    padding:24px 0 0 16px;
+    min-height:auto;
+    overflow:visible;
+  }
+  .hero-left{flex:1;min-width:0;padding-right:8px;padding-bottom:20px}
+  .hero-right{flex:0 0 120px;position:relative;min-height:280px;overflow:visible}
+  .hero-person{
+    position:absolute;
+    top:0;left:0;right:0;
+    width:100%;height:320px;
+    object-fit:cover;
+    object-position:top center;
+  }
+  .hero-tag{white-space:nowrap;font-size:12px;padding:6px 14px}
+  .hero-checks{flex-wrap:wrap;gap:8px}
+  .form-section{position:relative;z-index:2;padding:0 16px 48px}
+  .form-card{
+    position:relative;z-index:2;
+    max-width:100%;
+    margin:0;
+    border-radius:16px;
+    padding:24px 20px 36px;
+  }
+}
+
+/* ── FOOTER ── */
+.footer{
+  position:relative;z-index:1;
+  background:#1a1a1a;color:#fff;
+  text-align:center;padding:20px;font-size:12px;
+}
+</style>
+</head>
+<body>
+
+<!-- 全画面背景 -->
+<div class="page-bg"></div>
+
+<!-- HEADER -->
+<header class="hd">
+  <div class="hd-inner">
+    <div class="hd-logo">
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <img src="../images/ubereats-support/lp-04.png" alt="FlagK">
+      </a>
+    </div>
+    <div class="hd-divider"></div>
+    <div class="hd-brand"><span style="color:#111">Uber Eats</span> 出店登録サポート</div>
+    <div class="hd-spacer"></div>
+    <div class="hd-hours">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      受付時間：平日 9:30〜18:00
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- 左：テキスト -->
+    <div class="hero-left">
+
+      <div class="hero-tag">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        相談無料・所要時間は数分でOK！
+      </div>
+
+      <h1 class="hero-title">
+        Uber Eats 導入前の<br>
+        疑問をお電話で<br>
+        <span class="hero-title-pink">サクッと解決！</span><span class="hero-sparkle" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="13" y1="1" x2="13" y2="9" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="17" x2="13" y2="25" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round"/><line x1="1" y1="13" x2="9" y2="13" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="13" x2="25" y2="13" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round"/><line x1="4.5" y1="4.5" x2="9.5" y2="9.5" stroke="#e91e8c" stroke-width="1.5" stroke-linecap="round"/><line x1="16.5" y1="16.5" x2="21.5" y2="21.5" stroke="#e91e8c" stroke-width="1.5" stroke-linecap="round"/><line x1="21.5" y1="4.5" x2="16.5" y2="9.5" stroke="#e91e8c" stroke-width="1.5" stroke-linecap="round"/><line x1="4.5" y1="21.5" x2="9.5" y2="16.5" stroke="#e91e8c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      </h1>
+
+      <div class="hero-checks">
+        <span class="hero-check">
+          <span class="hero-check-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          導入の流れを知りたい
+        </span>
+        <span class="hero-check">
+          <span class="hero-check-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          キャンペーンを知りたい
+        </span>
+        <span class="hero-check">
+          <span class="hero-check-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          売上が上がるか相談したい
+        </span>
+        <span class="hero-check-etc">など</span>
+      </div>
+
+      <p class="hero-body">
+        導入に関するご不明点を、担当者がわかりやすくご案内します。
+      </p>
+
+    </div>
+
+    <!-- 右：人物 -->
+    <div class="hero-right">
+      <img class="hero-person"
+           src="../images/ubereats-support/lp-17.png"
+           alt="担当者">
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM：人物の見切れ底にぴったり接続（padding-top: 0、右寄せで人物幅に揃える） -->
+<div class="form-section" id="form">
+  <div class="form-card">
+    <h2 class="form-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      電話相談予約
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3"/><circle cx="18.5" cy="17.5" r="3"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z" fill="#06C167" stroke="none"/><path d="M12 17.5L9 10.5l3-3h4l2.5 3.5"/><path d="M5.5 17.5L9 10.5"/></svg>
+    </h2>
+    <p class="form-sub">30秒で入力完了！</p>
+    <hr class="form-rule">
+
+    <form id="tel-form" action="../mail.php" method="post">
+      <input type="hidden" name="form_type" value="tel">
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          お店の名前<span class="f-req">必須</span>
+        </div>
+        <input class="f-input" type="text" name="shop_name" placeholder="例）〇〇食堂" required>
+      </div>
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          担当者名<span class="f-req">必須</span>
+        </div>
+        <input class="f-input" type="text" name="contact_name" placeholder="例）田中 太郎" required>
+      </div>
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
+          ご連絡先（電話番号）<span class="f-req">必須</span>
+        </div>
+        <input class="f-input" type="tel" name="tel" placeholder="例）090-1234-5678" required>
+      </div>
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          連絡希望時間<span class="f-req">必須</span>
+        </div>
+        <div class="f-time-grid">
+          <label class="f-time-label">
+            <input type="checkbox" name="contact_time[]" value="10:00〜12:00">
+            <span class="f-time-name">午前</span>
+            <span class="f-time-sep">｜</span>
+            <span class="f-time-range">10:00〜12:00</span>
+          </label>
+          <label class="f-time-label">
+            <input type="checkbox" name="contact_time[]" value="13:00〜15:00">
+            <span class="f-time-name">午後</span>
+            <span class="f-time-sep">｜</span>
+            <span class="f-time-range">13:00〜15:00</span>
+          </label>
+          <label class="f-time-label">
+            <input type="checkbox" name="contact_time[]" value="15:00〜18:00">
+            <span class="f-time-name">夕方</span>
+            <span class="f-time-sep">｜</span>
+            <span class="f-time-range">15:00〜18:00</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="f-privacy">
+        <input type="checkbox" id="privacy" required>
+        <label for="privacy">
+          <a href="https://flagk-co.jp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
+        </label>
+      </div>
+
+      <button type="submit" class="f-submit" id="submit-btn" disabled>
+        <span id="btn-text">未入力の項目があります</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3"/><circle cx="18.5" cy="17.5" r="3"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z" fill="currentColor" stroke="none"/><path d="M12 17.5L9 10.5l3-3h4l2.5 3.5"/><path d="M5.5 17.5L9 10.5"/></svg>
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 FlagK Co., Ltd.</p>
+</footer>
+
+<script>
+(function(){
+  var form    = document.getElementById('tel-form');
+  var btn     = document.getElementById('submit-btn');
+  var btnText = document.getElementById('btn-text');
+  function check(){
+    var timeChecked = form.querySelectorAll('input[name="contact_time[]"]:checked').length > 0;
+    var ok = form.checkValidity() && timeChecked;
+    btn.disabled        = !ok;
+    btnText.textContent = ok ? '電話相談予約を申し込む' : '未入力の項目があります';
+  }
+  form.addEventListener('input',  check);
+  form.addEventListener('change', check);
+  check();
+})();
+</script>
+
+<!-- ─── 送信完了モーダル ─── -->
+<div id="lp-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:16px;max-width:560px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.2);">
+    <div style="width:56px;height:56px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p style="font-size:1.1rem;font-weight:700;color:#111;margin-bottom:16px;">お問い合わせありがとうございました。</p>
+    <p style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:32px;">担当者より平日9:30〜18:30の営業時間内に順次ご連絡いたします。<br>土日・祝日にいただいたお問い合わせは、翌営業日より順次ご連絡いたします。</p>
+    <a href="/ubereats-support/" style="display:inline-block;background:#06C167;color:#fff;text-decoration:none;border-radius:50px;padding:14px 40px;font-size:.9rem;font-weight:700;letter-spacing:.04em;">メインページへ戻る</a>
+  </div>
+</div>
+<script>
+(function(){
+  if (new URLSearchParams(location.search).get('sent') === 'tel') {
+    if(typeof gtag === 'function'){
+      gtag('event', 'conversion', {'send_to': 'AW-18173726920/PIjuCImw6cccEMih9NID'});
+    }
+    var modal = document.getElementById('lp-modal');
+    modal.style.display = 'flex';
+    modal.addEventListener('click', function(e){ if(e.target===modal){ modal.style.display='none'; history.replaceState(null,'',location.pathname); } });
+  }
+})();
+</script>
+
+</body>
+</html>
