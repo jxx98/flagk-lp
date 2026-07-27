@@ -463,7 +463,7 @@ a{text-decoration:none;color:inherit}
 }
 
 .cmp-table{max-width:1060px;margin:0 auto;border:1px solid #d6ebdd;border-radius:12px;overflow:hidden;background:#fff}
-.cmp-head,.cmp-row{display:grid;grid-template-columns:1fr 1.15fr 1.25fr}
+.cmp-head,.cmp-row{display:grid;grid-template-columns:.9fr 1.1fr 1.4fr}
 .cmp-row+.cmp-row,.cmp-head+.cmp-row{border-top:1px solid #e4f1e9}
 .cmp-h{padding:16px 18px;text-align:center;font-size:clamp(13px,1.3vw,16px);font-weight:700;line-height:1.4}
 .cmp-h--item{color:#333;background:#fff}
@@ -496,6 +496,22 @@ a{text-decoration:none;color:inherit}
   .cmp-c--fk .cmp-c-label{background:#e6f7ee;color:#06C167}
   .cmp-check{width:20px;height:20px}
   .cmp-check svg{width:11px;height:11px}
+}
+
+/* FlagKが具体的にやること 3カード */
+.cmp-cards{max-width:1060px;margin:22px auto 0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cmp-card{background:#fff;border:1px solid #e4e4e4;border-radius:14px;padding:24px 22px 26px;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.cmp-card-icon{width:54px;height:54px;border-radius:50%;background:#e6f7ee;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.cmp-card-icon svg{width:27px;height:27px}
+.cmp-card-title{font-size:16px;font-weight:700;color:#111;line-height:1.5;margin-bottom:10px}
+.cmp-card-text{font-size:13.5px;line-height:1.85;color:#555;text-align:left}
+@media(max-width:768px){
+  .cmp-cards{grid-template-columns:1fr;gap:12px;margin-top:16px}
+  .cmp-card{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:center;text-align:left;padding:16px 18px}
+  .cmp-card-icon{width:44px;height:44px;margin:0;grid-row:1/3}
+  .cmp-card-icon svg{width:22px;height:22px}
+  .cmp-card-title{font-size:15px;margin-bottom:4px}
+  .cmp-card-text{font-size:13px;line-height:1.75}
 }
 
 .cmp-note{max-width:920px;margin:26px auto 0;background:#f4fbf7;border:1px solid #d6ebdd;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:22px}
@@ -1825,8 +1841,8 @@ a{text-decoration:none;color:inherit}
      ============================================================ -->
 <section class="cmp" id="compare" data-section="compare">
   <p class="cmp-eyebrow">OFFICIAL VS FLAGK</p>
-  <h2 class="cmp-title">Uber Eats（ウーバーイーツ）出店申請<span class="cmp-sep">｜</span><br class="cmp-br-sp">公式申請とFlagKの違い</h2>
-  <p class="cmp-lead">Uber Eatsへの出店・加盟店登録は、公式へ直接申請する方法と、<br class="cmp-br-pc">一次代理店FlagKを通じてお申し込みいただく方法があります。</p>
+  <h2 class="cmp-title">Uber Eats（ウーバーイーツ）出店申請は、<br class="cmp-br-pc">一次代理店FlagKにお任せください</h2>
+  <p class="cmp-lead">ご契約はUber Eats公式との直接契約です。<br class="cmp-br-pc">FlagKなら、出店準備・キャンペーンの確認・申請後の疑問まで、専任担当がサポートします。</p>
 
   <div class="cmp-table">
 
@@ -1839,43 +1855,78 @@ a{text-decoration:none;color:inherit}
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M8.5 11h5M8.5 14.5h3"/></svg></span>
-        <span class="cmp-item-label">出店申込・入力</span>
+        <span class="cmp-item-label">出店申請の準備</span>
       </div>
-      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>自分で入力</div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>必要な情報・書類を自分で確認</div>
       <div class="cmp-c cmp-c--fk">
         <span class="cmp-c-label">FlagK</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <span class="cmp-fk-text">担当がサポート</span>
+        <span class="cmp-fk-text">必要な準備を整理し、申請をサポート</span>
       </div>
     </div>
 
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"/><path d="M6 14v4a1 1 0 001 1h1.5"/><path d="M15 9.5a3.5 3.5 0 010 5"/><path d="M17.5 7a7 7 0 010 10"/></svg></span>
-        <span class="cmp-item-label">キャンペーンの確認</span>
+        <span class="cmp-item-label">キャンペーン</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>適用条件を自分で確認</div>
       <div class="cmp-c cmp-c--fk">
         <span class="cmp-c-label">FlagK</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <span class="cmp-fk-text">適用条件を確認・ご案内</span>
+        <span class="cmp-fk-text">対象条件を確認し、ご案内</span>
       </div>
     </div>
 
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 10-3.2 6.4L21 20l-.6-3.1A7.9 7.9 0 0021 12z"/><path d="M9.7 9.6a2.4 2.4 0 014.6.8c0 1.6-2.3 2-2.3 3.4"/><path d="M12 16.2h.01"/></svg></span>
-        <span class="cmp-item-label">申請・導入前の不明点</span>
+        <span class="cmp-item-label">不明点への対応</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>自分で調査</div>
       <div class="cmp-c cmp-c--fk">
         <span class="cmp-c-label">FlagK</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <span class="cmp-fk-text">専任担当が回答</span>
+        <span class="cmp-fk-text">専任担当に相談できる</span>
       </div>
     </div>
 
+    <!-- ▼要確認：掲載開始後のサポートを実際に提供する場合のみ表示。行わない場合はこの .cmp-row ブロックごと削除 -->
+    <div class="cmp-row">
+      <div class="cmp-c cmp-c--item">
+        <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1116 0v4.5a2.5 2.5 0 01-2.5 2.5H15"/><path d="M4 12.5v2a1.5 1.5 0 001.5 1.5H7v-5H5.5A1.5 1.5 0 004 12.5z"/><path d="M20 12.5v2a1.5 1.5 0 01-1.5 1.5H17v-5h1.5a1.5 1.5 0 011.5 1.5z"/><path d="M12.5 19h-1a1 1 0 100 2h1a1 1 0 100-2z"/></svg></span>
+        <span class="cmp-item-label">掲載開始後の質問</span>
+      </div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>問い合わせ先を自分で確認</div>
+      <div class="cmp-c cmp-c--fk">
+        <span class="cmp-c-label">FlagK</span>
+        <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span class="cmp-fk-text">掲載・導入に関する簡単な質問にも対応</span>
+      </div>
+    </div>
+    <!-- ▲要確認ここまで -->
+
   </div>
+
+  <ul class="cmp-cards">
+    <li class="cmp-card">
+      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M8.5 12.2l1.7 1.7 3.6-3.7"/></svg></span>
+      <p class="cmp-card-title">出店準備を一緒に整理</p>
+      <p class="cmp-card-text">必要書類、店舗情報、口座登録など、申請前に確認すべき内容を整理します。</p>
+    </li>
+    <li class="cmp-card">
+      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"/><path d="M6 14v4a1 1 0 001 1h1.5"/><path d="M15 9.5a3.5 3.5 0 010 5"/><path d="M17.5 7a7 7 0 010 10"/></svg></span>
+      <p class="cmp-card-title">キャンペーン条件を確認</p>
+      <p class="cmp-card-text">出店エリアや条件に応じて、適用可能なキャンペーンを確認してご案内します。</p>
+    </li>
+    <!-- ▼要確認：掲載開始後のサポートを実際に提供する場合のみ表示。行わない場合はこの .cmp-card ブロックごと削除 -->
+    <li class="cmp-card">
+      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4H8a1 1 0 00-1 1v7a1 1 0 001 1h8l4 3.5V5a1 1 0 00-1-1z"/><path d="M16 15.5v2.5a1 1 0 01-1 1H8l-4 3.5V11a1 1 0 011-1h2"/></svg></span>
+      <p class="cmp-card-title">掲載開始後も相談できる</p>
+      <p class="cmp-card-text">メニューの選定、写真サイズ、掲載後の簡単な疑問などを相談できます。</p>
+    </li>
+    <!-- ▲要確認ここまで -->
+  </ul>
 
   <div class="cmp-note">
     <span class="cmp-note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3v6c0 4.6-3.2 8.4-7.5 10-4.3-1.6-7.5-5.4-7.5-10v-6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span>
