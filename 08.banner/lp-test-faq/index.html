@@ -3145,5 +3145,103 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
+<!-- ============================================================
+     CTAクリック計測（GA4）＋ 流入元の引き継ぎ
+     - どのバナー／ポップアップ／フローティングからお問い合わせに
+       至ったかを判別するための計測。
+     - クリック時に GA4 へ cta_click イベントを送信し、同時に
+       sessionStorage へ保存してフォーム送信・CV完了まで引き継ぐ。
+     - HTMLの各リンクには手を入れず、セレクタで対応付けている。
+     ============================================================ -->
+<script>
+(function(){
+  var KEY_LAST  = 'lp_cta_last';   // 最後にクリックしたCTA
+  var KEY_FIRST = 'lp_cta_first';  // 最初にクリックしたCTA
+
+  /* [セレクタ, cta_id, 日本語ラベル] */
+  var CTA_MAP = [
+    /* ▼ 8/14キャンペーン系（今回いちばん知りたいところ） */
+    ['.hv2-pc-banner',                 'pc_banner_0814',      'PCヒーローバナー（8/14）'],
+    ['#cp-float a',                    'pc_float_0814',       'PC右下フローティング（8/14）'],
+    ['#cp-mfloat a',                   'mobile_float_0814',   'モバイルフローティング（8/14）'],
+    /* ▼ 通常CTA */
+    ['.hd-tel-link',                   'header_tel',          'ヘッダー：電話相談予約'],
+    ['.hd-btn',                        'header_line',         'ヘッダー：LINE相談'],
+    ['.hv2-cta',                       'hero_campaign',       'ヒーロー：対象キャンペーンを確認'],
+    ['.cs-cta-yb',                     'stats_tel',           '実績セクション：出店申込フォームへ'],
+    ['.fc-btn--featured',              'final_campaign',      '最終CTA：キャンペーン確認'],
+    ['.fc-btn[href="tel-reservation/"]','final_tel',           '最終CTA：電話相談予約'],
+    ['.fc-btn[href*="lin.ee"]',        'final_line',          '最終CTA：LINE相談'],
+    ['.mb-col--tel',                   'mobile_bar_tel',      'モバイル下部バー：電話相談予約'],
+    ['.mb-col--camp',                  'mobile_bar_campaign', 'モバイル下部バー：特典確認'],
+    ['.mb-col--line',                  'mobile_bar_line',     'モバイル下部バー：LINE相談'],
+    ['.lq-btn',                        'line_qr',             'LINE QRセクション：LINEで相談']
+  ];
+
+  /* 閉じるボタン：CVには繋がらないので流入元としては保存しない。
+     「表示されたが閉じられた」回数を見るためにイベントのみ送る。 */
+  var CLOSE_MAP = [
+    ['#cp-close-btn',         'popup_0814_close',         'ポップアップ（8/14）を閉じた'],
+    ['#cp-float-close-btn',   'pc_float_0814_close',      'PC右下フローティング（8/14）を閉じた'],
+    ['#cp-mfloat-close-btn',  'mobile_float_0814_close',  'モバイルフローティング（8/14）を閉じた']
+  ];
+
+  function send(id, label){
+    if (typeof gtag === 'function') {
+      gtag('event', 'cta_click', { cta_id: id, cta_label: label });
+    }
+  }
+
+  /* CV導線に繋がるクリック：イベント送信＋流入元を保存 */
+  function track(id, label){
+    send(id, label);
+    try {
+      sessionStorage.setItem(KEY_LAST, id);
+      if (!sessionStorage.getItem(KEY_FIRST)) sessionStorage.setItem(KEY_FIRST, id);
+    } catch(e){}
+  }
+
+  function bind(list, handler){
+    list.forEach(function(row){
+      var sel = row[0], id = row[1], label = row[2];
+      Array.prototype.forEach.call(document.querySelectorAll(sel), function(el){
+        el.addEventListener('click', function(){ handler(id, label); });
+      });
+    });
+  }
+
+  bind(CTA_MAP, track);
+  bind(CLOSE_MAP, send);
+
+  /* ポップアップ本体のタップ（フォームへスクロールする導線）。
+     ×ボタンは stopPropagation しているのでここには流れてこない。 */
+  var popupBox = document.querySelector('#cp-overlay .cp-box');
+  if (popupBox) {
+    popupBox.addEventListener('click', function(){
+      track('popup_0814', 'ポップアップ（8/14）をタップ');
+    });
+  }
+
+  /* フォーム送信時に流入元を hidden で同送（お問い合わせメールに記載される） */
+  Array.prototype.forEach.call(document.querySelectorAll('form[action$="mail.php"]'), function(form){
+    form.addEventListener('submit', function(){
+      var last = '', first = '';
+      try {
+        last  = sessionStorage.getItem(KEY_LAST)  || '';
+        first = sessionStorage.getItem(KEY_FIRST) || '';
+      } catch(e){}
+      [['cta_last', last], ['cta_first', first]].forEach(function(pair){
+        if (form.querySelector('input[name="' + pair[0] + '"]')) return;
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = pair[0];
+        input.value = pair[1];
+        form.appendChild(input);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
