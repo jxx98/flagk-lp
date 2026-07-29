@@ -501,22 +501,6 @@ a{text-decoration:none;color:inherit}
   .cmp-check svg{width:11px;height:11px}
 }
 
-/* FlagKが具体的にやること 3カード */
-.cmp-cards{max-width:1060px;margin:22px auto 0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.cmp-card{background:#fff;border:1px solid #e4e4e4;border-radius:14px;padding:24px 22px 26px;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.06)}
-.cmp-card-icon{width:54px;height:54px;border-radius:50%;background:#e6f7ee;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.cmp-card-icon svg{width:27px;height:27px}
-.cmp-card-title{font-size:16px;font-weight:700;color:#111;line-height:1.5;margin-bottom:10px}
-.cmp-card-text{font-size:13.5px;line-height:1.85;color:#555;text-align:center}
-@media(max-width:768px){
-  .cmp-cards{grid-template-columns:1fr;gap:12px;margin-top:16px}
-  .cmp-card{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:center;text-align:left;padding:16px 18px}
-  .cmp-card-icon{width:44px;height:44px;margin:0;grid-row:1/3}
-  .cmp-card-icon svg{width:22px;height:22px}
-  .cmp-card-title{font-size:15px;margin-bottom:4px}
-  .cmp-card-text{font-size:13px;line-height:1.75;text-align:left}
-}
-
 .cmp-note{max-width:920px;margin:26px auto 0;background:#f4fbf7;border:1px solid #d6ebdd;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:22px}
 .cmp-note-icon{flex-shrink:0;width:64px;height:64px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .cmp-note-icon svg{width:32px;height:32px}
@@ -1912,26 +1896,6 @@ a{text-decoration:none;color:inherit}
 
   </div>
 
-  <ul class="cmp-cards">
-    <li class="cmp-card">
-      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M8.5 12.2l1.7 1.7 3.6-3.7"/></svg></span>
-      <p class="cmp-card-title">出店準備を一緒に整理</p>
-      <p class="cmp-card-text">必要書類、店舗情報、口座登録など、申請前に確認すべき内容を整理します。</p>
-    </li>
-    <li class="cmp-card">
-      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"/><path d="M6 14v4a1 1 0 001 1h1.5"/><path d="M15 9.5a3.5 3.5 0 010 5"/><path d="M17.5 7a7 7 0 010 10"/></svg></span>
-      <p class="cmp-card-title">キャンペーン条件を確認</p>
-      <p class="cmp-card-text">出店エリアや条件に応じて、適用可能なキャンペーンを確認してご案内します。</p>
-    </li>
-    <!-- 掲載開始後サポートのカード（2026/07/29 掲載する方針で確定）。
-         提供しない方針に変わった場合はこの .cmp-card ブロックごと削除すれば2枚になる -->
-    <li class="cmp-card">
-      <span class="cmp-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4H8a1 1 0 00-1 1v7a1 1 0 001 1h8l4 3.5V5a1 1 0 00-1-1z"/><path d="M16 15.5v2.5a1 1 0 01-1 1H8l-4 3.5V11a1 1 0 011-1h2"/></svg></span>
-      <p class="cmp-card-title">掲載開始後も相談できる</p>
-      <p class="cmp-card-text">メニューの選定、写真サイズ、掲載後の簡単な疑問などを相談できます。</p>
-    </li>
-    <!-- 掲載開始後サポートここまで -->
-  </ul>
 
   <div class="cmp-note">
     <span class="cmp-note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3v6c0 4.6-3.2 8.4-7.5 10-4.3-1.6-7.5-5.4-7.5-10v-6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span>
