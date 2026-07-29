@@ -482,22 +482,37 @@ a{text-decoration:none;color:inherit}
 .cmp-check svg{width:14px;height:14px}
 .cmp-c-label{display:none}
 
-/* モバイル：1項目＝1カードに積み上げ */
+/* モバイル：1項目＝1カード。
+   項目名を全幅の見出しにし、その下を「公式」「FlagK」の2列に分ける。
+   PCの表ヘッダーに相当する列名は、各列の値の上に小さく表示する。 */
 @media(max-width:768px){
   .cmp-head{display:none}
   .cmp-table{border:none;border-radius:0;display:flex;flex-direction:column;gap:14px}
-  .cmp-row{display:block;border:1px solid #d6ebdd;border-radius:12px;overflow:hidden}
+  .cmp-row{display:grid;grid-template-columns:1fr 1fr;border:1px solid #d6ebdd;border-radius:12px;overflow:hidden}
   .cmp-row+.cmp-row,.cmp-head+.cmp-row{border-top:1px solid #d6ebdd}
-  .cmp-c{padding:13px 16px;font-size:14px;justify-content:flex-start;gap:10px}
-  .cmp-c--item{background:#f0faf4;padding:12px 16px;gap:10px;border-bottom:1px solid #d6ebdd}
-  .cmp-c--off{border:none;border-bottom:1px solid #eee;text-align:left}
-  .cmp-c--fk{padding-left:16px}
-  .cmp-ic{width:26px;height:26px}
-  .cmp-ic svg{width:26px;height:26px}
-  .cmp-c-label{display:inline-block;flex-shrink:0;width:70px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 0;text-align:center;border-radius:4px}
-  .cmp-c--off .cmp-c-label{background:#f2f2f2;color:#666}
-  .cmp-c--fk .cmp-c-label{background:#fff;color:#067F41}
-  .cmp-check{width:20px;height:20px}
+  .cmp-c{padding:12px 13px;font-size:13px;line-height:1.65;text-align:left}
+
+  /* 項目名：アイコン＋見出しを全幅で */
+  .cmp-c--item{grid-column:1/-1;display:flex;align-items:center;justify-content:flex-start;gap:10px;padding:13px 16px;font-size:14.5px;background:#fff;border-bottom:1px solid #d6ebdd}
+
+  /* 公式列 */
+  .cmp-c--off{display:block;border:none;background:#fff;color:#555;text-align:left}
+
+  /* FlagK列：列名を上段、チェック＋本文を下段に配置。
+     本文が複数行になってもチェックが1行目に揃うよう start 起点にする */
+  .cmp-c--fk{display:grid;grid-template-columns:auto 1fr;grid-template-areas:'label label' 'check text';align-items:start;column-gap:7px;background:#E8F8EF;padding-left:13px}
+  .cmp-c--fk .cmp-c-label{grid-area:label}
+  .cmp-c--fk .cmp-check{grid-area:check;margin-top:1px}
+  .cmp-c--fk .cmp-fk-text{grid-area:text}
+
+  /* 列名（PCの表ヘッダー相当） */
+  .cmp-c-label{display:block;font-size:10.5px;font-weight:700;line-height:1.45;letter-spacing:0;margin-bottom:6px}
+  .cmp-c--off .cmp-c-label{color:#8a8a8a}
+  .cmp-c--fk .cmp-c-label{color:#067F41}
+
+  .cmp-ic{width:25px;height:25px}
+  .cmp-ic svg{width:25px;height:25px}
+  .cmp-check{width:19px;height:19px}
   .cmp-check svg{width:11px;height:11px}
 }
 
@@ -1844,9 +1859,9 @@ a{text-decoration:none;color:inherit}
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M8.5 11h5M8.5 14.5h3"/></svg></span>
         <span class="cmp-item-label">出店申請の準備</span>
       </div>
-      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>必要な情報・書類を自分で確認</div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">Uber Eats公式へ直接申請</span>必要な情報・書類を自分で確認</div>
       <div class="cmp-c cmp-c--fk">
-        <span class="cmp-c-label">FlagK</span>
+        <span class="cmp-c-label">FlagK（一次代理店）</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
         <span class="cmp-fk-text">必要な準備を整理し、申請をサポート</span>
       </div>
@@ -1857,9 +1872,9 @@ a{text-decoration:none;color:inherit}
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"/><path d="M6 14v4a1 1 0 001 1h1.5"/><path d="M15 9.5a3.5 3.5 0 010 5"/><path d="M17.5 7a7 7 0 010 10"/></svg></span>
         <span class="cmp-item-label">キャンペーン</span>
       </div>
-      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>適用条件を自分で確認</div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">Uber Eats公式へ直接申請</span>適用条件を自分で確認</div>
       <div class="cmp-c cmp-c--fk">
-        <span class="cmp-c-label">FlagK</span>
+        <span class="cmp-c-label">FlagK（一次代理店）</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
         <span class="cmp-fk-text">対象条件を確認し、ご案内</span>
       </div>
@@ -1870,9 +1885,9 @@ a{text-decoration:none;color:inherit}
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 10-3.2 6.4L21 20l-.6-3.1A7.9 7.9 0 0021 12z"/><path d="M9.7 9.6a2.4 2.4 0 014.6.8c0 1.6-2.3 2-2.3 3.4"/><path d="M12 16.2h.01"/></svg></span>
         <span class="cmp-item-label">不明点への対応</span>
       </div>
-      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>自分で調査</div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">Uber Eats公式へ直接申請</span>自分で調査</div>
       <div class="cmp-c cmp-c--fk">
-        <span class="cmp-c-label">FlagK</span>
+        <span class="cmp-c-label">FlagK（一次代理店）</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
         <span class="cmp-fk-text">専任担当に相談できる</span>
       </div>
@@ -1885,9 +1900,9 @@ a{text-decoration:none;color:inherit}
         <span class="cmp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1116 0v4.5a2.5 2.5 0 01-2.5 2.5H15"/><path d="M4 12.5v2a1.5 1.5 0 001.5 1.5H7v-5H5.5A1.5 1.5 0 004 12.5z"/><path d="M20 12.5v2a1.5 1.5 0 01-1.5 1.5H17v-5h1.5a1.5 1.5 0 011.5 1.5z"/><path d="M12.5 19h-1a1 1 0 100 2h1a1 1 0 100-2z"/></svg></span>
         <span class="cmp-item-label">掲載開始後の質問</span>
       </div>
-      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>問い合わせ先を自分で確認</div>
+      <div class="cmp-c cmp-c--off"><span class="cmp-c-label">Uber Eats公式へ直接申請</span>問い合わせ先を自分で確認</div>
       <div class="cmp-c cmp-c--fk">
-        <span class="cmp-c-label">FlagK</span>
+        <span class="cmp-c-label">FlagK（一次代理店）</span>
         <span class="cmp-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
         <span class="cmp-fk-text">掲載・導入に関する簡単な質問にも対応</span>
       </div>
