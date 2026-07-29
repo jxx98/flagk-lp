@@ -3039,10 +3039,17 @@ a{text-decoration:none;color:inherit}
     closePopup();
   });
 
-  // ポップアップ本体（画像）をクリックしたらフォームへ遷移してから閉じる
+  // ポップアップ本体（画像）をクリックしたときの遷移先
+  //  ・モバイル：ページ内のモバイル用フォームへスクロール
+  //  ・PC：モバイル用フォームは非表示のため、キャンペーン確認フォームへ遷移
   box.addEventListener('click', function(){
     closePopup();
-    var target = document.getElementById('mobile-form') || document.getElementById('flow');
+    if (window.matchMedia('(min-width:769px)').matches) {
+      // クリック計測イベントが送信されてから遷移させる
+      setTimeout(function(){ location.href = 'campaign-check/'; }, 150);
+      return;
+    }
+    var target = document.getElementById('mobile-form');
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 })();
