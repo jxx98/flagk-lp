@@ -2621,12 +2621,25 @@ a{text-decoration:none;color:inherit}
   var pending = false;
   document.querySelectorAll('form').forEach(function(form){
     form.addEventListener('submit', function(e){
-      if(pending) return;
+      /* 送信処理中の再送信は必ず止める。
+         preventDefault を呼ばずに return するとブラウザ既定の送信が
+         そのまま走ってしまい、二重送信になるので注意。 */
+      if(pending){ e.preventDefault(); return; }
       if(!form.checkValidity()) return;
       e.preventDefault();
       pending = true;
+
+      /* 2.7秒のアニメーション中は何も起きていないように見えるため、
+         ボタンを無効化して「送信中…」を出し、再クリックを防ぐ */
+      var btn = form.querySelector('button[type="submit"]');
+      if(btn){
+        btn.disabled = true;
+        var label = btn.querySelector('span:not(.f-submit-arrow)');
+        if(label) label.textContent = '送信中…';
+      }
+
       showBike(function(){
-        pending = false;
+        /* pending は false に戻さない。送信は1回だけ */
         form.submit();
       });
     }, true);

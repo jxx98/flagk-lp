@@ -531,6 +531,32 @@ button,input,textarea,select{font-family:inherit}
 })();
 </script>
 
+<!-- ============================================================
+     二重送信ガード
+     送信後の再クリック・Enter連打による重複送信を止める。
+     preventDefault を必ず呼ぶこと（呼ばずに return すると
+     ブラウザ既定の送信がそのまま走り二重送信になる）。
+     ============================================================ -->
+<script>
+(function(){
+  var form = document.querySelector('form[action$="mail.php"]');
+  if (!form) return;
+  var submitting = false;
+  form.addEventListener('submit', function(e){
+    if (submitting) { e.preventDefault(); return; }
+    if (!form.checkValidity()) return;
+    submitting = true;
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      var label = btn.querySelector('span');
+      if (label) label.textContent = '送信中…';
+    }
+  }, true);
+})();
+</script>
+
 </body>
+
 
 </html>
