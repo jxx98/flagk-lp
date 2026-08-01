@@ -458,6 +458,45 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ============================================================
+   UNIQUENESS（FlagK独自性：専任担当のサポート内容）
+   ============================================================ */
+.uq{background:#F0FAF4;padding:64px 24px 72px}
+.uq-title{text-align:center;font-size:clamp(21px,3vw,36px);font-weight:700;color:#111;line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
+.uq-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:40px}
+
+.uq-flow{max-width:1100px;margin:0 auto;display:flex;align-items:stretch;gap:18px}
+
+.uq-store{flex:0 0 180px;background:#fff;border:1px solid #e4e4e4;border-radius:14px;padding:24px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.uq-store-badge{display:inline-block;background:#eee;color:#555;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:.02em}
+.uq-store-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.uq-store-icon svg{width:40px;height:40px}
+.uq-store-label{font-size:13.5px;font-weight:700;color:#333;text-align:center}
+
+.uq-arrow{flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#06C167;font-size:26px;font-weight:300;align-self:center}
+
+.uq-panel{flex:1;background:#fff;border:1.5px solid #06C167;border-radius:16px;padding:28px 24px 24px;box-shadow:0 4px 20px rgba(6,193,103,.08)}
+.uq-panel-badge{display:block;text-align:center;background:#06C167;color:#fff;font-size:13px;font-weight:700;padding:7px 20px;border-radius:20px;letter-spacing:.02em;max-width:180px;margin:0 auto 22px}
+.uq-items{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.uq-item{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;background:#F7FDFA;border:1px solid #e4f1e9;border-radius:12px;padding:16px 10px}
+.uq-item-icon{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.uq-item-icon svg{width:30px;height:30px}
+.uq-item-label{font-size:12.5px;font-weight:700;color:#222;line-height:1.5}
+
+.uq-open{flex:0 0 190px;background:#06C167;border-radius:14px;padding:24px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 22px rgba(6,193,103,.28)}
+.uq-open-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.uq-open-icon svg{width:44px;height:44px}
+.uq-open-text{color:#fff;font-size:15px;font-weight:700;text-align:center;line-height:1.6}
+
+@media(max-width:768px){
+  .uq{padding:44px 16px 48px}
+  .uq-lead{margin-bottom:28px}
+  .uq-flow{flex-direction:column;gap:10px}
+  .uq-arrow{transform:rotate(90deg);height:24px}
+  .uq-store,.uq-open{flex:none;width:100%}
+  .uq-items{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ============================================================
    STATS + CTA
    ============================================================ */
 .cs{background:#fff;padding:64px 24px 72px}
@@ -1807,6 +1846,59 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ============================================================
+     UNIQUENESS（FlagK独自性：専任担当のサポート内容）
+     ============================================================ -->
+<section class="uq" id="uniqueness" data-section="uniqueness">
+  <h2 class="uq-title">FlagKの専任担当が、出店準備をサポート</h2>
+  <p class="uq-lead">店舗様はご相談・確認を中心に。申請から掲載後まで、必要な準備を一緒に進めます。</p>
+
+  <div class="uq-flow">
+
+    <div class="uq-store">
+      <span class="uq-store-badge">店舗様</span>
+      <span class="uq-store-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l1-5h14l1 5"/><path d="M4 10a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span>
+      <span class="uq-store-label">ご相談・確認</span>
+    </div>
+
+    <span class="uq-arrow">›</span>
+
+    <div class="uq-panel">
+      <span class="uq-panel-badge">FlagK専任担当</span>
+      <ul class="uq-items">
+        <li class="uq-item">
+          <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="uq-item-label">申請手続き・登録</span>
+        </li>
+        <li class="uq-item">
+          <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></span>
+          <span class="uq-item-label">メニューシート作成</span>
+        </li>
+        <li class="uq-item">
+          <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l4.5-4.5a2 2 0 012.8 0L15 15"/><path d="M13.5 13.5L15 12a2 2 0 012.8 0L21 15"/><circle cx="8" cy="9" r="1.3"/></svg></span>
+          <span class="uq-item-label">写真サイズの調整</span>
+        </li>
+        <li class="uq-item">
+          <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h9l7 7v9H4z"/><path d="M13 4v7h7"/><path d="M8 13h5M8 16.5h8"/></svg></span>
+          <span class="uq-item-label">掲載メニューの選定</span>
+        </li>
+        <li class="uq-item">
+          <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-12.9 7.3L4 20l1.2-4.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></span>
+          <span class="uq-item-label">掲載後の質問対応</span>
+        </li>
+      </ul>
+    </div>
+
+    <span class="uq-arrow">›</span>
+
+    <div class="uq-open">
+      <span class="uq-open-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l1-5h14l1 5"/><path d="M4 10a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span>
+      <p class="uq-open-text">Uber Eats（ウーバーイーツ）<br>出店開始へ</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
      STATS + CTA
      ============================================================ -->
 <section class="cs" data-section="partner_banner">
@@ -2769,6 +2861,8 @@ a{text-decoration:none;color:inherit}
     flow:          '出店までの流れ',
     reasons:       'はじめてでも安心な3つの理由',
     mobile_form:   'モバイル用フォーム',
+    compare:       '公式との違い（比較表）',
+    uniqueness:    'FlagK独自性（サポート内容）',
     partner_banner:'パートナーバナー',
     support:       '専任スタッフサポート',
     resource:      '資料請求',
