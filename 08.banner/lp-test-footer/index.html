@@ -478,23 +478,21 @@ a{text-decoration:none;color:inherit}
 .uq-panel-badge{display:block;text-align:center;background:#06C167;color:#fff;font-size:13px;font-weight:700;padding:7px 20px;border-radius:20px;letter-spacing:.02em;max-width:180px;margin:0 auto 22px}
 
 /* 円形（放射状）配置：中央アイコンから4隅＋下1個のカードへ点線でつなぐ */
-.uq-diagram{position:relative;width:100%;aspect-ratio:600/370;max-width:600px;margin:0 auto}
-.uq-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.uq-lines line{stroke:#8fd6ae;stroke-width:.6;stroke-dasharray:2.2 2.2}
+.uq-diagram{position:relative;width:100%;aspect-ratio:1100/795;max-width:600px;margin:0 auto}
+.uq-diagram-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
 
-.uq-node{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e4f1e9;border-radius:12px;padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.05);width:44%}
-.uq-node--tl{left:0;top:4%}
-.uq-node--tr{right:0;top:4%}
-.uq-node--bl{left:0;top:56%}
-.uq-node--br{right:0;top:56%}
-.uq-node--bottom{left:50%;top:87%;transform:translateX(-50%);width:46%}
+.uq-label{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12.5px;font-weight:700;color:#222;line-height:1.35;padding:0 6px}
+.uq-label--tl{left:7.05%;top:22.89%;width:24.66%;height:16.14%}
+.uq-label--tr{left:67.75%;top:23.26%;width:25.20%;height:16.14%}
+.uq-label--bl{left:6.23%;top:53.28%;width:23.58%;height:15.76%}
+.uq-label--br{left:69.92%;top:53.28%;width:23.31%;height:16.14%}
+.uq-label--bottom{left:34.69%;top:76.17%;width:28.73%;height:15.38%}
 
+.uq-mobile-list{display:none}
+.uq-node{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e4f1e9;border-radius:12px;padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .uq-item-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .uq-item-icon svg{width:28px;height:28px}
 .uq-item-label{font-size:12.5px;font-weight:700;color:#222;line-height:1.4;text-align:left}
-
-.uq-center{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:170px;height:170px;display:flex;align-items:center;justify-content:center}
-.uq-center img{width:125px;height:auto;object-fit:contain}
 
 .uq-open{flex:0 0 190px;background:#06C167;border-radius:14px;padding:24px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 22px rgba(6,193,103,.28)}
 .uq-open-icon{width:120px;display:flex;align-items:center;justify-content:center}
@@ -509,10 +507,8 @@ a{text-decoration:none;color:inherit}
   .uq-store,.uq-open{flex:none;width:100%}
 
   /* モバイルでは放射状配置をやめ、縦積みの通常リストに切り替える */
-  .uq-lines{display:none}
-  .uq-center{display:none}
-  .uq-diagram{aspect-ratio:auto;max-width:none;display:flex;flex-direction:column;gap:10px}
-  .uq-node{position:static;width:100%;transform:none}
+  .uq-diagram{display:none}
+  .uq-mobile-list{display:flex;flex-direction:column;gap:10px}
 }
 
 /* ============================================================
@@ -1885,39 +1881,32 @@ a{text-decoration:none;color:inherit}
       <span class="uq-panel-badge">FlagK専任担当</span>
 
       <div class="uq-diagram">
-        <svg class="uq-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="34" y1="22" x2="50" y2="42"/>
-          <line x1="66" y1="22" x2="50" y2="42"/>
-          <line x1="34" y1="65" x2="50" y2="42"/>
-          <line x1="66" y1="65" x2="50" y2="42"/>
-          <line x1="50" y1="87" x2="50" y2="42"/>
-        </svg>
+        <img class="uq-diagram-bg" src="images/ubereats-support/uq-diagram-bg.webp" alt="FlagK専任担当のサポート内容の図" width="1100" height="795" loading="lazy" decoding="async">
+        <span class="uq-label uq-label--tl">申請手続き<br>・登録</span>
+        <span class="uq-label uq-label--tr">掲載メニュー<br>の選定</span>
+        <span class="uq-label uq-label--bl">メニュー<br>シート作成</span>
+        <span class="uq-label uq-label--br">掲載後の<br>質問対応</span>
+        <span class="uq-label uq-label--bottom">写真サイズの調整</span>
+      </div>
 
-        <div class="uq-center">
-          <img src="images/ubereats-support/uq-center.webp" alt="" width="220" height="246">
-        </div>
-
-        <div class="uq-node uq-node--tl">
+      <div class="uq-mobile-list">
+        <div class="uq-node">
           <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"/><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <span class="uq-item-label">申請手続き<br>・登録</span>
+          <span class="uq-item-label">申請手続き・登録</span>
         </div>
-
-        <div class="uq-node uq-node--tr">
+        <div class="uq-node">
           <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h9l7 7v9H4z"/><path d="M13 4v7h7"/><path d="M8 13h5M8 16.5h8"/></svg></span>
-          <span class="uq-item-label">掲載メニュー<br>の選定</span>
+          <span class="uq-item-label">掲載メニューの選定</span>
         </div>
-
-        <div class="uq-node uq-node--bl">
+        <div class="uq-node">
           <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></span>
-          <span class="uq-item-label">メニュー<br>シート作成</span>
+          <span class="uq-item-label">メニューシート作成</span>
         </div>
-
-        <div class="uq-node uq-node--br">
+        <div class="uq-node">
           <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-12.9 7.3L4 20l1.2-4.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></span>
-          <span class="uq-item-label">掲載後の<br>質問対応</span>
+          <span class="uq-item-label">掲載後の質問対応</span>
         </div>
-
-        <div class="uq-node uq-node--bottom">
+        <div class="uq-node">
           <span class="uq-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l4.5-4.5a2 2 0 012.8 0L15 15"/><path d="M13.5 13.5L15 12a2 2 0 012.8 0L21 15"/><circle cx="8" cy="9" r="1.3"/></svg></span>
           <span class="uq-item-label">写真サイズの調整</span>
         </div>
