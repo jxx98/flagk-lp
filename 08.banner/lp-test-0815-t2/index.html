@@ -344,8 +344,7 @@ a{text-decoration:none;color:inherit}
   .hv2-pc-banner{
     display:block;
     max-width:520px;
-    margin-top:auto;              /* 右カラム（フォーム）の下端に揃える */
-    padding-top:20px;
+    margin-top:20px;
     border-radius:10px;
     overflow:hidden;
     box-shadow:0 4px 16px rgba(0,0,0,.18);
@@ -962,7 +961,7 @@ a{text-decoration:none;color:inherit}
     display:grid;
     grid-template-columns:1fr 380px;
     gap:40px;
-    align-items:stretch;          /* 左右カラムの高さを揃える */
+    align-items:start;            /* 上端揃え */
     min-height:600px;
     padding:32px 48px 32px 60px;
     max-width:1240px;
@@ -970,7 +969,7 @@ a{text-decoration:none;color:inherit}
     width:100%;
     box-sizing:border-box;
   }
-  .hv2-left{min-width:0;display:flex;flex-direction:column}
+  .hv2-left{min-width:0;align-self:start}
   /* 右フォーム: ビューポート内に収まるよう最大高さを設定 */
   .hv2-right{
     display:block;
