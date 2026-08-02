@@ -889,6 +889,39 @@ a{text-decoration:none;color:inherit}
   .cp-mfloat-close:hover{background:#f0f0f0}
 }
 
+/* ===== 8/15〜キャンペーン フローティング（PC・ヒーロー通過後） ===== */
+.cp-float{display:none}
+@media(min-width:900px){
+  .cp-float{
+    display:block;
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:200px;
+    z-index:900;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 28px rgba(0,0,0,.28);
+    opacity:0;
+    transform:translateY(16px);
+    pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease;
+  }
+  .cp-float.cp-float-show{opacity:1;transform:translateY(0);pointer-events:auto}
+  .cp-float:hover{transform:translateY(-4px)}
+  .cp-float img{width:100%;height:auto;display:block}
+  .cp-float-close{
+    position:absolute; top:8px; right:8px;
+    width:26px; height:26px; border-radius:50%;
+    border:none; background:#fff; color:#333;
+    font-size:14px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+    z-index:1; transition:background .2s;
+  }
+  .cp-float-close:hover{background:#f0f0f0}
+}
+
 
 /* ============================================================
    HERO FORM (右カラム / PC専用)
@@ -2920,6 +2953,47 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
+<!-- ===== 8/15〜キャンペーン フローティング（PC・ヒーロー通過後に右下表示） ===== -->
+<div class="cp-float" id="cp-float">
+  <button class="cp-float-close" id="cp-float-close-btn" aria-label="閉じる">✕</button>
+  <a href="campaign-check/">
+    <img src="images/campaign/banner-0815-t4.webp" alt="初期費用最大38,000円が実質無料になるUber Eats出店キャンペーン" loading="lazy" decoding="async" width="640" height="376">
+  </a>
+</div>
+<script>
+(function(){
+  var floatEl = document.getElementById('cp-float');
+  var closeBtn = document.getElementById('cp-float-close-btn');
+  var hero = document.querySelector('[data-section="hero"]');
+  if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
+
+  var DISMISSED_KEY = 'lp_campaign_float_dismissed';
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch(e){}
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        floatEl.classList.remove('cp-float-show');
+      } else if (entry.boundingClientRect.top < 0 && !dismissed) {
+        // ヒーローを下にスクロールして通り過ぎた場合のみ表示（閉じた後は再表示しない）
+        floatEl.classList.add('cp-float-show');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(hero);
+
+  closeBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    dismissed = true;
+    try { sessionStorage.setItem(DISMISSED_KEY, '1'); } catch(e){}
+    floatEl.classList.remove('cp-float-show');
+  });
+})();
+</script>
+
 <!-- ===== 8/15〜キャンペーン モバイル用フローティング（フォーム通過後、LINE相談バーの上に表示） ===== -->
 <div class="cp-mfloat" id="cp-mfloat">
   <button class="cp-mfloat-close" id="cp-mfloat-close-btn" aria-label="閉じる">✕</button>
@@ -2993,6 +3067,7 @@ a{text-decoration:none;color:inherit}
   var CTA_MAP = [
     /* ▼ 8/15〜キャンペーン系（今回いちばん知りたいところ） */
     ['.hv2-pc-banner',                 'pc_banner_0815',      'PCヒーローバナー（8/15〜）'],
+    ['#cp-float a',                    'pc_float_0815',       'PC右下フローティング（8/15〜）'],
     ['#cp-mfloat a',                   'mobile_float_0815',   'モバイルフローティング（8/15〜）'],
     /* ▼ 通常CTA */
     ['.hd-tel-link',                   'header_tel',          'ヘッダー：電話相談予約'],
@@ -3011,6 +3086,7 @@ a{text-decoration:none;color:inherit}
   /* 閉じるボタン：CVには繋がらないので流入元としては保存しない。
      「表示されたが閉じられた」回数を見るためにイベントのみ送る。 */
   var CLOSE_MAP = [
+    ['#cp-float-close-btn',   'pc_float_0815_close',      'PC右下フローティング（8/15〜）を閉じた'],
     ['#cp-mfloat-close-btn',  'mobile_float_0815_close',  'モバイルフローティング（8/15〜）を閉じた']
   ];
 
