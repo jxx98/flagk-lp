@@ -344,7 +344,8 @@ a{text-decoration:none;color:inherit}
   .hv2-pc-banner{
     display:block;
     max-width:520px;
-    margin-top:20px;
+    margin-top:auto;              /* 右カラム（フォーム）の下端に揃える */
+    padding-top:20px;
     border-radius:10px;
     overflow:hidden;
     box-shadow:0 4px 16px rgba(0,0,0,.18);
@@ -961,7 +962,7 @@ a{text-decoration:none;color:inherit}
     display:grid;
     grid-template-columns:1fr 380px;
     gap:40px;
-    align-items:start;            /* 上端揃え */
+    align-items:stretch;          /* 左右カラムの高さを揃える */
     min-height:600px;
     padding:32px 48px 32px 60px;
     max-width:1240px;
@@ -969,7 +970,7 @@ a{text-decoration:none;color:inherit}
     width:100%;
     box-sizing:border-box;
   }
-  .hv2-left{min-width:0;align-self:start}
+  .hv2-left{min-width:0;display:flex;flex-direction:column}
   /* 右フォーム: ビューポート内に収まるよう最大高さを設定 */
   .hv2-right{
     display:block;
@@ -1383,7 +1384,7 @@ a{text-decoration:none;color:inherit}
 
     <!-- 8/15〜キャンペーンバナー（PCヒーロー左カラム下部の余白に表示） -->
     <a href="campaign-check/" class="hv2-pc-banner">
-      <img src="images/campaign/banner-0815-t1.webp" alt="初期費用最大38,000円が実質無料になるUber Eats出店キャンペーン" loading="lazy" decoding="async" width="1100" height="497">
+      <img src="images/campaign/banner-0815-t3.webp" alt="初期費用最大38,000円が実質無料になるUber Eats出店キャンペーン" loading="lazy" decoding="async" width="1100" height="508">
     </a>
 
   </div><!-- /hv2-left -->
