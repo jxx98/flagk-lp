@@ -22,6 +22,11 @@ deploy/phpmailer/
 # 例外：lp-32.svg（Uber Eatsロゴ）はWebP変換せず直接配信しているため追跡対象にする
 !**/lp-32.svg
 
+# 例外：lp-03/04/17.png（ヘッダーロゴ・LINEアイコン）もWebP変換せず直接配信しているため追跡対象にする
+!**/lp-03.png
+!**/lp-04.png
+!**/lp-17.png
+
 # macOS
 .DS_Store
 **/.DS_Store
