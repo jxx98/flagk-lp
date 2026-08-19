@@ -530,7 +530,7 @@ a{text-decoration:none;color:inherit}
 }
 .ac-eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;color:#06C167;margin-bottom:14px}
 .ac-title{text-align:center;font-size:clamp(21px,3vw,36px);font-weight:700;color:#111;line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
-.ac-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:40px}
+.ac-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:6px}
 
 .ac-kpis{max-width:1100px;margin:0 auto 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .ac-kpi{background:#f0faf5;border:1.5px solid rgba(6,193,103,.4);border-radius:14px;padding:26px 20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
@@ -541,8 +541,7 @@ a{text-decoration:none;color:inherit}
 .ac-kpi-num strong{font-size:1.25em}
 .ac-kpi-note{font-size:11.5px;line-height:1.7;color:#777}
 
-.ac-tags{max-width:1100px;margin:0 auto 48px;background:#f0faf5;border-radius:14px;padding:20px 24px}
-.ac-tags-line{text-align:center;font-size:14px;font-weight:700;color:#333;line-height:1.8}
+.ac-tags-line{max-width:1100px;margin:0 auto 40px;text-align:center;font-size:14px;font-weight:700;color:#333;line-height:1.8}
 .ac-tags-title{color:#222;letter-spacing:.02em}
 
 .ac-cta-wrap{text-align:center}
@@ -552,7 +551,8 @@ a{text-decoration:none;color:inherit}
 
 @media(max-width:768px){
   .ac{padding:44px 16px 48px}
-  .ac-lead{margin-bottom:28px}
+  .ac-lead{margin-bottom:6px}
+  .ac-tags-line{margin-bottom:28px}
   .ac-kpis{grid-template-columns:1fr;gap:12px}
 }
 
@@ -1778,6 +1778,7 @@ a{text-decoration:none;color:inherit}
   <p class="ac-eyebrow">ACHIEVEMENTS</p>
   <h2 class="ac-title">選ばれ続けるUber Eats出店サポート実績</h2>
   <p class="ac-lead">北海道から沖縄まで。店舗のエリア・業態に合わせて、出店申請から掲載準備までご案内します。</p>
+  <p class="ac-tags-line"><span class="ac-tags-title">対応業態の例：</span>ラーメン、カフェ、居酒屋、焼肉、弁当・惣菜、パン屋、中華、イタリアンなど</p>
 
   <div class="ac-kpis">
     <div class="ac-kpi">
@@ -1798,10 +1799,6 @@ a{text-decoration:none;color:inherit}
       <span class="ac-kpi-num">オールジャンル対応</span>
       <p class="ac-kpi-note">※営業許可・業態ごとの条件を<br>個別に確認</p>
     </div>
-  </div>
-
-  <div class="ac-tags">
-    <p class="ac-tags-line"><span class="ac-tags-title">対応業態の例：</span>ラーメン、カフェ、居酒屋、焼肉、弁当・惣菜、パン屋、中華、イタリアンなど</p>
   </div>
 
   <div class="ac-cta-wrap">
