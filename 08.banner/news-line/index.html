@@ -460,6 +460,10 @@
       margin-top: 6px;
     }
 
+    .service-panel__trigger[aria-expanded="true"] .service-panel__summary {
+      display: none;
+    }
+
     .service-panel__icon {
       display: grid;
       place-items: center;
@@ -485,6 +489,10 @@
       gap: 48px;
       padding: 0 0 40px 84px;
       text-align: left;
+    }
+
+    .service-panel__content[hidden] {
+      display: none;
     }
 
     .service-panel__img {
