@@ -442,12 +442,22 @@
     }
 
     .service-panel__title {
+      display: block;
       font-size: var(--fs-md);
       font-weight: var(--fw-bold);
       color: var(--color-text);
       line-height: var(--lh-tight);
       margin: 0;
       transition: color 0.2s ease;
+    }
+
+    .service-panel__summary {
+      display: block;
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-normal);
+      line-height: 1.7;
+      color: var(--color-text-sub);
+      margin-top: 6px;
     }
 
     .service-panel__icon {
@@ -513,6 +523,10 @@
         grid-template-columns: 42px 1fr auto;
         gap: 12px;
         padding: 22px 0;
+      }
+
+      .service-panel__summary {
+        margin-top: 4px;
       }
 
       .service-panel__content {
@@ -1084,7 +1098,10 @@
       <article class="service-panel">
         <button class="service-panel__trigger" type="button" aria-expanded="true" aria-controls="service-panel-01" id="service-trigger-01">
           <span class="service-panel__number">01</span>
-          <span class="service-panel__title">フードデリバリー新規加盟店開拓・出店支援事業</span>
+          <span>
+            <span class="service-panel__title">フードデリバリー新規加盟店開拓・出店支援事業</span>
+            <span class="service-panel__summary">Uber Eatsの一次代理店として、新規加盟から出店・掲載までを一貫して支援します。</span>
+          </span>
           <span class="service-panel__icon" aria-hidden="true">＋</span>
         </button>
         <div class="service-panel__content" id="service-panel-01" role="region" aria-labelledby="service-trigger-01">
@@ -1108,7 +1125,10 @@
       <article class="service-panel">
         <button class="service-panel__trigger" type="button" aria-expanded="false" aria-controls="service-panel-02" id="service-trigger-02">
           <span class="service-panel__number">02</span>
-          <span class="service-panel__title">完全リモート営業支援</span>
+          <span>
+            <span class="service-panel__title">完全リモート営業支援</span>
+            <span class="service-panel__summary">全国で活動できる、成果型の営業支援サービスです。</span>
+          </span>
           <span class="service-panel__icon" aria-hidden="true">＋</span>
         </button>
         <div class="service-panel__content" id="service-panel-02" role="region" aria-labelledby="service-trigger-02" hidden>
