@@ -876,6 +876,24 @@
       border-color: var(--color-accent);
     }
 
+    .form-input[aria-invalid="true"],
+    .form-textarea[aria-invalid="true"] {
+      border-color: #bd3d34;
+      background: #fffafa;
+    }
+
+    .form-error {
+      display: none;
+      margin: 8px 0 0;
+      color: #b5342d;
+      font-size: var(--fs-sm);
+      line-height: 1.65;
+    }
+
+    .form-error.is-visible {
+      display: block;
+    }
+
     .form-textarea {
       min-height: 160px;
       resize: vertical;
@@ -906,6 +924,10 @@
     .form-privacy label a {
       color: var(--color-text);
       text-decoration: underline;
+    }
+
+    .form-privacy.is-invalid label {
+      color: #b5342d;
     }
 
     .form-privacy-note {
@@ -1081,7 +1103,7 @@
 
   <p class="about-body">
     私たちFlagKは<br>
-    社会に必要な"歯車"として<br>
+    社会に必要な&quot;歯車&quot;として<br>
     ビジネスを通じ<br>
     正しい情報が正しい場所で力を<br>
     発揮する仕組みをつくります
@@ -1115,7 +1137,7 @@
         <div class="service-panel__content" id="service-panel-01" role="region" aria-labelledby="service-trigger-01" hidden>
           <img
             class="service-panel__img"
-            src="images/service-1.jpg"
+            src="service01-young-v2.png"
             alt="フードデリバリー新規加盟店開拓・出店支援事業"
             loading="lazy"
             decoding="async"
@@ -1224,37 +1246,43 @@
       通常2営業日以内にご返信しておりますが、稼働状況によりお時間をいただく場合がございます。
     </p>
 
-    <form action="contact.php" method="post">
+    <form action="contact.php" method="post" novalidate id="contact-form">
 
       <div class="form-group">
         <label class="form-label" for="company">会社名 <span class="form-required">*</span></label>
-        <input class="form-input" type="text" id="company" name="company" placeholder="個人の方は「個人」とご入力ください" required>
+        <input class="form-input" type="text" id="company" name="company" placeholder="個人の方は「個人」とご入力ください" autocomplete="organization" aria-describedby="company-error" required>
+        <p class="form-error" id="company-error" aria-live="polite"></p>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="name">お名前 <span class="form-required">*</span></label>
-        <input class="form-input" type="text" id="name" name="name" placeholder="田中太郎" required>
+        <label class="form-label" for="contact-name">お名前 <span class="form-required">*</span></label>
+        <input class="form-input" type="text" id="contact-name" name="name" placeholder="田中太郎" autocomplete="name" aria-describedby="contact-name-error" required>
+        <p class="form-error" id="contact-name-error" aria-live="polite"></p>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="tel">電話番号 <span class="form-required">*</span></label>
-        <input class="form-input" type="tel" id="tel" name="tel" placeholder="000-0000-0000" required>
+        <input class="form-input" type="tel" id="tel" name="tel" placeholder="000-0000-0000" autocomplete="tel" inputmode="tel" pattern="[0-9０-９ー－\s-]+" aria-describedby="tel-error" required>
+        <p class="form-error" id="tel-error" aria-live="polite"></p>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="email">メールアドレス <span class="form-required">*</span></label>
-        <input class="form-input" type="email" id="email" name="email" placeholder="info@example.com" required>
+        <input class="form-input" type="email" id="email" name="email" placeholder="info@example.com" autocomplete="email" aria-describedby="email-error" required>
+        <p class="form-error" id="email-error" aria-live="polite"></p>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="message">お問い合わせ内容 <span class="form-required">*</span></label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="お問い合わせ内容をご入力ください" required></textarea>
+        <textarea class="form-textarea" id="message" name="message" placeholder="お問い合わせ内容をご入力ください" aria-describedby="message-error" required></textarea>
+        <p class="form-error" id="message-error" aria-live="polite"></p>
       </div>
 
-      <div class="form-privacy">
-        <input type="checkbox" id="privacy" name="privacy" required>
+      <div class="form-privacy" id="privacy-group">
+        <input type="checkbox" id="privacy" name="privacy" aria-describedby="privacy-error" required>
         <label for="privacy"><a href="privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
       </div>
+      <p class="form-error" id="privacy-error" aria-live="polite"></p>
       <p class="form-privacy-note">
         当社の個人情報の取扱いについては、個人情報保護委員会のガイドラインに準拠しています。
       </p>
@@ -1331,6 +1359,66 @@
       const isOpen = trigger.getAttribute('aria-expanded') === 'true';
       setServicePanel(trigger, !isOpen);
     });
+  });
+
+  const contactForm = document.getElementById('contact-form');
+  const validationFields = [
+    { id: 'company', requiredMessage: '会社名を入力してください。個人の方は「個人」と入力してください。' },
+    { id: 'contact-name', requiredMessage: 'お名前を入力してください。' },
+    { id: 'tel', requiredMessage: '電話番号を入力してください。', patternMessage: '電話番号は半角数字とハイフンで入力してください。' },
+    { id: 'email', requiredMessage: 'メールアドレスを入力してください。', typeMessage: 'メールアドレスの形式で入力してください。' },
+    { id: 'message', requiredMessage: 'お問い合わせ内容を入力してください。' }
+  ];
+
+  function setFieldError(field, message) {
+    const error = document.getElementById(`${field.id}-error`);
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+    error.textContent = message || '';
+    error.classList.toggle('is-visible', Boolean(message));
+  }
+
+  function validateField(fieldConfig) {
+    const field = document.getElementById(fieldConfig.id);
+    let message = '';
+
+    if (field.validity.valueMissing) message = fieldConfig.requiredMessage;
+    else if (field.validity.typeMismatch) message = fieldConfig.typeMessage;
+    else if (field.validity.patternMismatch) message = fieldConfig.patternMessage;
+
+    setFieldError(field, message);
+    return !message;
+  }
+
+  function validatePrivacy() {
+    const privacy = document.getElementById('privacy');
+    const group = document.getElementById('privacy-group');
+    const error = document.getElementById('privacy-error');
+    const message = privacy.checked ? '' : '送信にはプライバシーポリシーへの同意が必要です。';
+
+    privacy.setAttribute('aria-invalid', String(Boolean(message)));
+    group.classList.toggle('is-invalid', Boolean(message));
+    error.textContent = message;
+    error.classList.toggle('is-visible', Boolean(message));
+    return !message;
+  }
+
+  validationFields.forEach(fieldConfig => {
+    const field = document.getElementById(fieldConfig.id);
+    field.addEventListener('input', () => validateField(fieldConfig));
+    field.addEventListener('blur', () => validateField(fieldConfig));
+  });
+
+  document.getElementById('privacy').addEventListener('change', validatePrivacy);
+
+  contactForm.addEventListener('submit', event => {
+    const fieldsAreValid = validationFields.map(validateField).every(Boolean);
+    const privacyIsValid = validatePrivacy();
+
+    if (fieldsAreValid && privacyIsValid) return;
+
+    event.preventDefault();
+    const firstInvalidField = contactForm.querySelector('[aria-invalid="true"]');
+    firstInvalidField?.focus();
   });
 
   const lineUrl = 'https://lin.ee/RhSAYu3';
