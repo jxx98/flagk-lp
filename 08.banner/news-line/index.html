@@ -1329,8 +1329,7 @@
   serviceTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
       const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      serviceTriggers.forEach(item => setServicePanel(item, false));
-      if (!isOpen) setServicePanel(trigger, true);
+      setServicePanel(trigger, !isOpen);
     });
   });
 
