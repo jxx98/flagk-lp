@@ -400,24 +400,84 @@
       display: block;
     }
 
-    .service-item {
+    .service-accordion {
+      margin-top: 48px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .service-panel {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .service-panel__trigger {
+      width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 64px 1fr auto;
+      gap: 20px;
       align-items: center;
-      margin-bottom: 80px;
+      padding: 28px 0;
+      border: 0;
+      background: transparent;
+      color: var(--color-text);
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
     }
 
-    .service-item:last-child {
-      margin-bottom: 0;
+    .service-panel__trigger:hover .service-panel__title,
+    .service-panel__trigger[aria-expanded="true"] .service-panel__title {
+      color: var(--color-accent);
     }
 
-    /* Alternate: odd items image-left, even items image-right */
-    .service-item--reverse .service-item__text {
-      order: -1;
+    .service-panel__trigger:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: -2px;
     }
 
-    .service-item__img {
+    .service-panel__number {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      color: var(--color-accent);
+      letter-spacing: 0.1em;
+    }
+
+    .service-panel__title {
+      font-size: var(--fs-md);
+      font-weight: var(--fw-bold);
+      color: var(--color-text);
+      line-height: var(--lh-tight);
+      margin: 0;
+      transition: color 0.2s ease;
+    }
+
+    .service-panel__icon {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--color-accent);
+      color: var(--color-accent);
+      font-size: 1.25rem;
+      font-weight: var(--fw-normal);
+      line-height: 1;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .service-panel__trigger[aria-expanded="true"] .service-panel__icon {
+      background: var(--color-accent);
+      color: #ffffff;
+      transform: rotate(45deg);
+    }
+
+    .service-panel__content {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+      gap: 48px;
+      padding: 0 0 40px 84px;
+      text-align: left;
+    }
+
+    .service-panel__img {
       width: 100%;
       aspect-ratio: 3 / 2;
       object-fit: cover;
@@ -425,25 +485,14 @@
       border-radius: 2px;
     }
 
-    .service-item__text {
-      text-align: left;
-    }
-
-    .service-item__title {
-      font-size: var(--fs-md);
-      font-weight: var(--fw-bold);
-      color: var(--color-text);
-      margin-bottom: 16px;
-      line-height: var(--lh-tight);
-    }
-
-    .service-item__body {
+    .service-panel__body {
       font-size: var(--fs-base);
       line-height: var(--lh-body);
       color: var(--color-text-sub);
+      text-align: left;
     }
 
-    .service-item__body p + p {
+    .service-panel__body p + p {
       margin-top: 1em;
     }
 
@@ -456,19 +505,24 @@
         padding: 0 28px;
       }
 
-      .service-item {
+      .service-accordion {
+        margin-top: 36px;
+      }
+
+      .service-panel__trigger {
+        grid-template-columns: 42px 1fr auto;
+        gap: 12px;
+        padding: 22px 0;
+      }
+
+      .service-panel__content {
         grid-template-columns: 1fr;
         gap: 20px;
-        margin-bottom: 48px;
+        padding: 0 0 28px;
       }
 
-      .service-item__img {
-        aspect-ratio: auto;
+      .service-panel__img {
         height: 180px;
-      }
-
-      .service-item--reverse .service-item__text {
-        order: 0;
       }
     }
 
@@ -1026,40 +1080,50 @@
     <span class="section-label">Service</span>
     <span class="section-rule"></span>
 
-    <!-- Item 1: image left, text right -->
-    <div class="service-item">
-      <img
-        class="service-item__img"
-        src="images/service-1.jpg"
-        alt="フードデリバリー新規加盟店開拓・出店支援事業"
-        loading="lazy"
-        decoding="async"
-      >
-      <div class="service-item__text">
-        <h3 class="service-item__title">フードデリバリー新規加盟店開拓・出店支援事業</h3>
-        <div class="service-item__body">
-          <p>FlagKは、Uber Eatsの一次代理店として、飲食店様への新規加盟のご案内から出店・掲載までを一貫してサポートしています。</p>
-          <p>私たちが大切にしているのは、ただ加盟をご案内するのではなく、一店舗一店舗の業態や課題に向き合い、Uber Eatsを新たな販路として活かしていただくことです。</p>
-          <p>日々レストラン様へ直接ご案内を行う営業組織だからこそ、現場の声やニーズを捉え、わかりやすく、誠実なご提案を徹底しています。</p>
-          <p>さらに、AIを活用したメニュー構成や商品情報の最適化など、テクノロジーを積極的に取り入れながら、より魅力が伝わる掲載方法をご提案。</p>
-          <p>「加盟して終わり」ではなく、その先の店舗様の売上機会まで見据えた、新しい加盟店開拓のあり方を追求しています。</p>
+    <div class="service-accordion">
+      <article class="service-panel">
+        <button class="service-panel__trigger" type="button" aria-expanded="true" aria-controls="service-panel-01" id="service-trigger-01">
+          <span class="service-panel__number">01</span>
+          <span class="service-panel__title">フードデリバリー新規加盟店開拓・出店支援事業</span>
+          <span class="service-panel__icon" aria-hidden="true">＋</span>
+        </button>
+        <div class="service-panel__content" id="service-panel-01" role="region" aria-labelledby="service-trigger-01">
+          <img
+            class="service-panel__img"
+            src="images/service-1.jpg"
+            alt="フードデリバリー新規加盟店開拓・出店支援事業"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="service-panel__body">
+            <p>FlagKは、Uber Eatsの一次代理店として、飲食店様への新規加盟のご案内から出店・掲載までを一貫してサポートしています。</p>
+            <p>私たちが大切にしているのは、ただ加盟をご案内するのではなく、一店舗一店舗の業態や課題に向き合い、Uber Eatsを新たな販路として活かしていただくことです。</p>
+            <p>日々レストラン様へ直接ご案内を行う営業組織だからこそ、現場の声やニーズを捉え、わかりやすく、誠実なご提案を徹底しています。</p>
+            <p>さらに、AIを活用したメニュー構成や商品情報の最適化など、テクノロジーを積極的に取り入れながら、より魅力が伝わる掲載方法をご提案。</p>
+            <p>「加盟して終わり」ではなく、その先の店舗様の売上機会まで見据えた、新しい加盟店開拓のあり方を追求しています。</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <!-- Item 2: text left, image right -->
-    <div class="service-item service-item--reverse">
-      <img
-        class="service-item__img"
-        src="images/service-2.jpg"
-        alt="完全リモート営業支援"
-        loading="lazy"
-        decoding="async"
-      >
-      <div class="service-item__text">
-        <h3 class="service-item__title">完全リモート営業支援</h3>
-        <p class="service-item__body">全国どこからでも在宅で活動できる成果型の営業支援サービスです。<br>弊社が用意するリストをもとにアポイント獲得を担当。<br>クロージングや取次などの後工程は弊社がフォローし、スムーズな成果創出をサポートします。</p>
-      </div>
+      <article class="service-panel">
+        <button class="service-panel__trigger" type="button" aria-expanded="false" aria-controls="service-panel-02" id="service-trigger-02">
+          <span class="service-panel__number">02</span>
+          <span class="service-panel__title">完全リモート営業支援</span>
+          <span class="service-panel__icon" aria-hidden="true">＋</span>
+        </button>
+        <div class="service-panel__content" id="service-panel-02" role="region" aria-labelledby="service-trigger-02" hidden>
+          <img
+            class="service-panel__img"
+            src="images/service-2.jpg"
+            alt="完全リモート営業支援"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="service-panel__body">
+            <p>全国どこからでも在宅で活動できる成果型の営業支援サービスです。<br>弊社が用意するリストをもとにアポイント獲得を担当。<br>クロージングや取次などの後工程は弊社がフォローし、スムーズな成果創出をサポートします。</p>
+          </div>
+        </div>
+      </article>
     </div>
 
   </div>
@@ -1174,7 +1238,6 @@
     <aside class="line-contact" aria-label="公式LINE">
       <div class="line-contact__content">
         <h3 class="line-contact__title">Uber Eatsの店舗登録・出店申請は公式LINEでも受け付けています</h3>
-        <p class="line-contact__lead">Uber Eatsへの店舗登録・出店申請はこちらからお気軽にご相談ください。</p>
       </div>
       <button class="line-action" type="button" data-line-open>LINEで相談</button>
     </aside>
@@ -1225,6 +1288,22 @@
         !btn.contains(e.target)) {
       closeMenu();
     }
+  });
+
+  const serviceTriggers = document.querySelectorAll('.service-panel__trigger');
+
+  function setServicePanel(trigger, isOpen) {
+    const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    trigger.setAttribute('aria-expanded', String(isOpen));
+    panel.hidden = !isOpen;
+  }
+
+  serviceTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      serviceTriggers.forEach(item => setServicePanel(item, false));
+      if (!isOpen) setServicePanel(trigger, true);
+    });
   });
 
   const lineUrl = 'https://lin.ee/RhSAYu3';
