@@ -256,6 +256,7 @@ button,input,textarea,select{font-family:inherit}
 /* ── モバイル ── */
 @media(max-width:899px){
   .hd-divider,.hd-brand{display:none}
+  .hero-title{font-size:23px;letter-spacing:0}
   .hero-inner{
     flex-direction:row;
     align-items:flex-start;
@@ -473,6 +474,18 @@ button,input,textarea,select{font-family:inherit}
 
 <script>
 (function(){
+  // 外部ページから #form に遷移した際、画像の読み込みによるレイアウト変動後にも
+  // フォーム見出しが固定ヘッダーの直下に来るよう位置を補正する。
+  function scrollToFormTop(){
+    if (location.hash !== '#form') return;
+    var formSection = document.getElementById('form');
+    if (!formSection) return;
+    var top = window.scrollY + formSection.getBoundingClientRect().top - 72;
+    window.scrollTo(0, Math.max(0, top));
+  }
+  window.addEventListener('load', function(){ setTimeout(scrollToFormTop, 150); });
+  window.addEventListener('pageshow', function(){ setTimeout(scrollToFormTop, 150); });
+
   var form    = document.getElementById('tel-form');
   var btn     = document.getElementById('submit-btn');
   var btnText = document.getElementById('btn-text');
