@@ -57,7 +57,7 @@
       "name": "売上の入金は振込ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "銀行振り込みになります。対応銀行かどうかはご案内できますので、お気軽にお問い合わせください。"
+        "text": "売上金は銀行振込にてお支払いします。毎週月曜日〜日曜日の売上を締め、翌週の火曜日または水曜日にご指定の口座へ入金されます。"
       }
     }
   ]
@@ -80,9 +80,9 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 最初の表示に使うメイン画像を、CSS解析より先に取得する -->
+<!-- モバイルでは最初の表示に使う軽量版ヒーロー画像を、CSS解析より先に取得する -->
 <link rel="preload" as="image"
-      href="images/ubereats-support/lp-15.webp"
+      href="images/ubereats-support/lp-15-mobile.webp"
       media="(max-width: 768px)"
       fetchpriority="high">
 <!-- Google tag (gtag.js)：メイン画像の優先取得後に非同期で読み込む -->
@@ -161,8 +161,8 @@ a{text-decoration:none;color:inherit}
 }
 
 /* 背景画像 — gridで同セルに積む（iOS Safariでも確実に表示） */
+.hv2-picture{grid-area:1/1;display:block;min-width:0;min-height:0}
 .hv2-bg{
-  grid-area:1/1;
   width:100%;height:100%;
   object-fit:cover;object-position:center;
   max-width:none;
@@ -417,9 +417,11 @@ a{text-decoration:none;color:inherit}
 .cmp-title-green{color:#06C167}
 .cmp-title-small{font-size:.6em}
 .cmp-title-sm{font-size:.82em}
+.cmp-br-sp{display:none}
 .cmp-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:32px}
 @media(max-width:768px){
   .cmp-br-pc{display:none}
+  .cmp-br-sp{display:block}
   .cmp-title{font-size:19px;line-height:1.5}
   .cmp-lead{font-size:13.5px;margin-bottom:24px;text-align:left}
 }
@@ -456,8 +458,7 @@ a{text-decoration:none;color:inherit}
   .cmp-c-label{display:inline-block;flex-shrink:0;width:70px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 0;text-align:center;border-radius:4px}
   .cmp-c--off .cmp-c-label{background:#f2f2f2;color:#666}
   .cmp-c--fk .cmp-c-label{background:#fff;color:#067F41}
-  .cmp-check{width:20px;height:20px}
-  .cmp-check svg{width:11px;height:11px}
+  .cmp-check{display:none}
 }
 
 .cmp-note{max-width:920px;margin:26px auto 0;background:#f4fbf7;border:1px solid #d6ebdd;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:22px}
@@ -522,7 +523,7 @@ a{text-decoration:none;color:inherit}
 
 @media(max-width:768px){
   .uq{padding:44px 16px 48px}
-  .uq-lead{margin-bottom:28px}
+  .uq-lead{margin-bottom:28px;text-align:left}
   .uq-flow{flex-direction:column;gap:10px}
   .uq-arrow{transform:rotate(90deg);height:24px}
   .uq-store,.uq-open{flex:none;width:100%}
@@ -548,6 +549,7 @@ a{text-decoration:none;color:inherit}
 }
 .ac-eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;color:#06C167;margin-bottom:14px}
 .ac-title{text-align:center;font-size:clamp(21px,3vw,36px);font-weight:700;color:#111;line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
+.ac-br-sp{display:none}
 .ac-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:6px}
 
 .ac-kpis{max-width:1100px;margin:0 auto 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -569,8 +571,8 @@ a{text-decoration:none;color:inherit}
 
 @media(max-width:768px){
   .ac{padding:44px 16px 48px}
-  .ac-lead{margin-bottom:6px}
-  .ac-tags-line{margin-bottom:28px}
+  .ac-lead{margin-bottom:6px;text-align:left}
+  .ac-tags-line{margin-bottom:28px;text-align:left}
   .ac-kpis{grid-template-columns:1fr;gap:12px}
 }
 
@@ -616,6 +618,8 @@ a{text-decoration:none;color:inherit}
 .cs-cta-yb{display:flex;align-items:center;justify-content:center;gap:10px;background:#FFD600;color:#222;border-radius:8px;padding:16px 20px;font-size:17px;font-weight:700;text-decoration:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .cs-cta-yb:hover{opacity:.85}
 .cs-cta-yb-arrow{font-size:14px;margin-left:4px}
+.cs-cta-yb--desktop{display:none}
+@media(min-width:769px){.cs-cta-yb--mobile{display:none}.cs-cta-yb--desktop{display:flex}}
 .cs-banner{margin-bottom:40px;padding:16px 24px;border-bottom:2px solid #06C167;text-align:center}
 .cs-banner-inner{display:flex;align-items:center;justify-content:center;gap:14px;max-width:900px;margin:0 auto;flex-wrap:nowrap}
 @media(max-width:768px){
@@ -675,6 +679,7 @@ a{text-decoration:none;color:inherit}
 .sp-note{font-size:11px;color:#888;line-height:1.7;padding-left:1.5em;text-indent:-1.5em;max-width:1020px;margin:8px auto 0}
 @media(max-width:768px){
   .sp{background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('images/ubereats-support/lp-36.webp') center/cover no-repeat,#fff}
+  .sp-subtitle{text-align:left}
   .sp-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px;gap:16px;margin:0 -24px;padding-left:24px;padding-right:24px}
   .sp-grid::-webkit-scrollbar{display:none}
   .sp-col{flex:0 0 calc(100% - 24px);scroll-snap-align:center}
@@ -688,51 +693,12 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ============================================================
-   RESOURCE
-   ============================================================ */
-.rm{
-  background:
-    linear-gradient(rgba(234,245,238,.80),rgba(234,245,238,.80)),
-    url('images/ubereats-support/lp-31.webp') center/cover no-repeat;
-  padding:64px 24px 72px;text-align:center;
-}
-@media(max-width:768px){
-  .rm{background:linear-gradient(rgba(234,245,238,.80),rgba(234,245,238,.80)),url('images/ubereats-support/lp-31.webp') center/cover no-repeat;padding:48px 20px 56px}
-}
-.rm-title-wrap{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px}
-.rm-badge{background:#06C167;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:4px;flex-shrink:0}
-.rm-title{font-size:clamp(22px,3vw,36px);font-weight:700;color:#111;letter-spacing:.04em;line-height:1}
-.rm-sub{font-size:16px;color:#444;line-height:1.9;margin-bottom:40px}
-.rm-scene{position:relative;display:inline-block;margin-bottom:40px}
-.rm-scene::before{
-  content:'';position:absolute;inset:0;
-  background:#06C167;border-radius:12px;transform:rotate(-4deg) translate(-6px,6px);z-index:0;
-}
-.rm-card{
-  position:relative;z-index:1;
-  background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.82)),url('images/ubereats-support/lp-09.webp') center/contain no-repeat,#fff;
-  border-radius:12px;padding:28px 32px 22px;
-  box-shadow:0 6px 24px rgba(0,0,0,.14);width:320px;max-width:90vw;
-  transform:rotate(-1.5deg);text-align:left;
-}
-.rm-card-title{font-size:24px;font-weight:700;color:#111;margin-bottom:10px;line-height:1.3}
-.rm-card-desc{font-size:15px;font-weight:700;color:#111;line-height:1.7;margin-bottom:16px}
-.rm-card-logo{text-align:right;font-size:16px;font-weight:700;letter-spacing:.02em;color:#333}
-.rm-btn{
-  display:inline-flex;align-items:stretch;background:#111;color:#fff;
-  border-radius:6px;overflow:hidden;min-width:260px;transition:background .2s;
-}
-.rm-btn:hover{background:#2a2a2a}
-.rm-btn-badge{background:#FFD600;color:#222;font-size:11px;font-weight:700;padding:0 14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rm-btn-text{flex:1;padding:15px 16px;font-size:17px;font-weight:700;text-align:center;letter-spacing:.04em}
-.rm-btn-arrow{padding:15px 16px 15px 0;opacity:.6;display:flex;align-items:center;font-size:17px}
-
-/* ============================================================
    FAQ
    ============================================================ */
 .fq{
   background:url('images/ubereats-support/lp-37.webp') center/cover no-repeat #fff;
   padding:64px 24px 72px;
+  border-bottom:1px solid #e5e5e5;
 }
 @media(max-width:768px){
   .fq{background:url('images/ubereats-support/lp-30.webp') center/cover no-repeat #fff;padding:48px 20px 56px}
@@ -766,6 +732,7 @@ a{text-decoration:none;color:inherit}
 .ft-info-row + .ft-info-row{border-top:1px solid rgba(255,255,255,.07)}
 .ft-info-label{flex:0 0 64px;color:rgba(255,255,255,.45);font-size:11px;font-weight:700;letter-spacing:.08em}
 .ft-info-value{color:#fff;font-size:13px;line-height:1.6}
+.ft-info-note{display:block;color:rgba(255,255,255,.65);font-size:11px;margin-top:2px}
 .ft-info-value a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ft-info-value a:hover{color:#06C167}
 .ft-trust-tag{display:inline-block;color:#06C167;font-size:11px;font-weight:700;border:1px solid rgba(6,193,103,.5);border-radius:4px;padding:1px 7px;letter-spacing:.02em;margin-left:8px;vertical-align:1px}
@@ -839,9 +806,9 @@ a{text-decoration:none;color:inherit}
     position:fixed;
     left:12px; right:12px;
     z-index:99991;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 6px 24px rgba(0,0,0,.28);
+    border-radius:0;
+    overflow:visible;
+    box-shadow:none;
     opacity:0;
     transform:translateY(12px);
     pointer-events:none;
@@ -997,7 +964,6 @@ a{text-decoration:none;color:inherit}
   .cs-card-desc{font-size:15px}
   .fq-a p{font-size:14px}
   .sp-item-desc{font-size:14px}
-  .rm-card-desc{font-size:15px}
   .cs-cta-sub{font-size:15px}
 }
 
@@ -1034,19 +1000,6 @@ a{text-decoration:none;color:inherit}
   }
   .cp-float-close:hover{background:#f0f0f0}
 }
-
-/* ===== 資料申し込みモーダル ===== */
-.md-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99995;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
-.md-overlay.md-open{opacity:1;visibility:visible}
-.md-box{background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 12px 48px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
-.md-overlay.md-open .md-box{transform:translateY(0)}
-.md-head{padding:24px 24px 16px;border-bottom:2px solid #e8faf2;text-align:center}
-.md-title{font-size:18px;font-weight:700;color:#111;display:inline-flex;align-items:center;gap:8px}
-.md-title-icon{color:#06C167}
-.md-sub{font-size:13px;color:#06C167;font-weight:700;margin-top:4px}
-.md-close{position:absolute;top:14px;right:16px;width:32px;height:32px;border:none;background:none;font-size:22px;cursor:pointer;color:#888;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
-.md-close:hover{background:#f0f0f0}
-.md-body{padding:20px 24px 24px}
 
 /* ===== LINE QRモーダル（PC専用） ===== */
 .lq-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99995;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
@@ -1088,7 +1041,7 @@ a{text-decoration:none;color:inherit}
 .cookie-banner-btn:hover{background:#04a857}
 
 /* ===== パフォーマンステスト：非本質のモーションを停止 ===== */
-.cp-float,.cp-mfloat,.md-overlay,.md-box,.lq-overlay,.lq-box,.cookie-banner{transition:none!important}
+.cp-float,.cp-mfloat,.lq-overlay,.lq-box,.cookie-banner{transition:none!important}
 .cp-float:hover{transform:translateY(0)}
 
 /* ============================================================
@@ -1103,7 +1056,7 @@ a{text-decoration:none;color:inherit}
 .fl-title-pc{display:none}
 @media(min-width:769px){.fl-title-sp{display:none}.fl-title-pc{display:inline}}
 .fl-title-bar{width:40px;height:3px;background:#06C167;margin:0 auto 12px;border-radius:2px}
-.fl-sub{text-align:center;font-size:13px;color:#555;margin-bottom:28px;line-height:1.7}
+.fl-sub{text-align:left;font-size:13px;color:#555;margin-bottom:28px;line-height:1.7}
 .fl-steps{display:flex;flex-direction:column;gap:0;margin:0 0 0}
 .fl-step{background:#fff;border:1px solid #e4e4e4;border-radius:12px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .fl-arrow{display:flex;align-items:center;justify-content:center;color:#06C167;font-size:22px;height:28px;line-height:1;transform:rotate(90deg)}
@@ -1112,6 +1065,9 @@ a{text-decoration:none;color:inherit}
 .fl-step-title{font-size:15px;font-weight:700;color:#111;margin-bottom:8px}
 .fl-step-sep{width:28px;height:2px;background:#06C167;border-radius:1px;margin:0 auto 10px}
 .fl-step-desc{font-size:13px;line-height:1.75;color:#555}
+.fl-cta{display:flex;align-items:center;justify-content:center;gap:8px;max-width:360px;margin:28px auto 0;background:#06C167;color:#fff;border-radius:8px;padding:16px 20px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(6,193,103,.22);transition:opacity .2s}
+.fl-cta:hover{opacity:.85}
+.fl-cta-arrow{font-size:20px;font-weight:400;line-height:1}
 @media(min-width:769px){
   .fl{display:block;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('images/ubereats-support/lp-24.webp') center/cover no-repeat,#fff;padding:64px 24px 56px;border-bottom:1px solid #f0f0f0}
   .fl-eyebrow{text-align:center;font-size:13px;font-weight:700;color:#06C167;letter-spacing:.12em;margin-bottom:14px}
@@ -1129,6 +1085,7 @@ a{text-decoration:none;color:inherit}
   .fl-step-title{font-size:17px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:.02em}
   .fl-step-sep{width:32px;height:2px;background:#06C167;border-radius:1px;margin:0 auto 14px}
   .fl-step-desc{font-size:14px;line-height:1.9;color:#555}
+  .fl-cta{max-width:420px;margin-top:34px;font-size:17px}
 }
 /* ============================================================
    FINAL CTA SECTION
@@ -1176,12 +1133,12 @@ a{text-decoration:none;color:inherit}
     <div class="hd-tel">
       <a href="tel-reservation/" class="hd-tel-link">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        無料相談予約
+        お電話で出店申込
       </a>
     </div>
     <div class="hd-btns">
       <a href="https://lin.ee/RhSAYu3" class="hd-btn" target="_blank" rel="noopener">
-        <img class="hd-line-icon" src="images/ubereats-support/lp-03.webp" alt="LINE" width="96" height="96"> LINE相談
+        <img class="hd-line-icon" src="images/ubereats-support/lp-03.webp" alt="LINE" width="96" height="96"> 公式LINEで出店申込
       </a>
     </div>
   </div>
@@ -1191,10 +1148,13 @@ a{text-decoration:none;color:inherit}
 
 
 <section class="hv2" data-section="hero">
-  <img class="hv2-bg"
-       src="images/ubereats-support/lp-15.webp"
-       fetchpriority="high"
-       alt="" width="1448" height="1086">
+  <picture class="hv2-picture">
+    <source media="(max-width: 768px)" srcset="images/ubereats-support/lp-15-mobile.webp">
+    <img class="hv2-bg"
+         src="images/ubereats-support/lp-15.webp"
+         fetchpriority="high"
+         alt="" width="1448" height="1086">
+  </picture>
   <div class="hv2-overlay"></div>
   <div class="hv2-inner">
 
@@ -1272,20 +1232,20 @@ a{text-decoration:none;color:inherit}
     <!-- 注釈 -->
     <p class="hv2-note">※ 適用キャンペーンは地域・時期により異なります。<br>詳しくはお問い合わせ時にご案内いたします。</p>
 
-    <!-- キャンペーン確認 CTA ボタン (SP のみ表示) -->
-    <a href="campaign-check/" class="hv2-cta">
+    <!-- 出店申込 CTA ボタン (SP のみ表示) -->
+    <a href="#mobile-form" class="hv2-cta">
       <span class="hv2-cta-icon-wrap">
         <img src="images/ubereats-support/lp-26.webp" alt="" loading="lazy" decoding="async" width="104" height="70">
       </span>
       <span class="hv2-cta-body">
-        <span class="hv2-cta-title">対象キャンペーンを確認</span>
+        <span class="hv2-cta-title">Uber Eatsの出店申込</span>
       </span>
       <span class="hv2-cta-arrow">›</span>
     </a>
 
     <!-- 8/14キャンペーンバナー（PCヒーロー左カラム下部の余白に表示） -->
-    <a href="campaign-check/" class="hv2-pc-banner">
-      <img src="images/campaign/banner-0831.webp" sizes="520px" srcset="images/campaign/banner-0831-720.webp 720w, images/campaign/banner-0831.webp 1040w" alt="8/31までのお問い合わせ限定！初期費用0円キャンペーン" loading="lazy" decoding="async" width="1040" height="249">
+    <a href="tel-reservation/" class="hv2-pc-banner">
+      <img src="images/campaign/banner-campaign-site-benefit.webp" alt="当サイト限定特典で初期費用0円・無料で出店申込み" loading="lazy" decoding="async" width="1040" height="249">
     </a>
 
   </div><!-- /hv2-left -->
@@ -1301,10 +1261,10 @@ a{text-decoration:none;color:inherit}
 
         <!-- 新規出店確認 -->
         <div class="f-row">
-          <label class="f-lbl">
+          <div class="f-lbl" id="h-new-store-label">
             新規出店をご検討中ですか？<span class="f-req">必須</span>
-          </label>
-          <div class="f-radio-group">
+          </div>
+          <div class="f-radio-group" role="radiogroup" aria-labelledby="h-new-store-label">
             <label class="f-radio-label">
               <input type="radio" name="h_new_store" value="yes" required> はい
             </label>
@@ -1327,7 +1287,7 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
             店舗名<span class="f-req">必須</span>
           </label>
-          <input class="f-input" type="text" id="h-shop_name" name="shop_name" placeholder="例）ラーメン○○ 新宿店" required>
+          <input class="f-input" type="text" id="h-shop_name" name="shop_name" placeholder="例）ラーメン○○ 新宿店" autocomplete="organization" required>
         </div>
 
         <!-- 担当者名 -->
@@ -1336,7 +1296,7 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
             担当者名<span class="f-req">必須</span>
           </label>
-          <input class="f-input" type="text" id="h-contact_name" name="contact_name" placeholder="例）山田 太郎" required>
+          <input class="f-input" type="text" id="h-contact_name" name="contact_name" placeholder="例）山田 太郎" autocomplete="name" required>
         </div>
 
         <!-- 郵便番号 -->
@@ -1345,15 +1305,15 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             郵便番号<span class="f-req">必須</span>
           </label>
-          <input class="f-input" type="text" id="h-zip" name="zip" placeholder="例）160-0000" maxlength="8" required>
+          <input class="f-input" type="text" id="h-zip" name="zip" placeholder="例）160-0000" autocomplete="postal-code" inputmode="numeric" maxlength="8" required>
           <div class="f-addr-row">
             <div class="f-addr-col">
-              <label class="f-addr-lbl">都道府県</label>
-              <input class="f-input f-input-auto" type="text" id="h-pref" name="pref" placeholder="都道府県" readonly tabindex="-1">
+              <label class="f-addr-lbl" for="h-pref">都道府県</label>
+              <input class="f-input f-input-auto" type="text" id="h-pref" name="pref" placeholder="都道府県" autocomplete="address-level1" readonly tabindex="-1">
             </div>
             <div class="f-addr-col">
-              <label class="f-addr-lbl">市区町村</label>
-              <input class="f-input f-input-auto" type="text" id="h-city" name="city" placeholder="市区町村" readonly tabindex="-1">
+              <label class="f-addr-lbl" for="h-city">市区町村</label>
+              <input class="f-input f-input-auto" type="text" id="h-city" name="city" placeholder="市区町村" autocomplete="address-level2" readonly tabindex="-1">
             </div>
           </div>
         </div>
@@ -1364,7 +1324,7 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
             丁目・番地<span class="f-req">必須</span>
           </label>
-          <input class="f-input" type="text" id="h-address2" name="address2" placeholder="例）1-2-3" required>
+          <input class="f-input" type="text" id="h-address2" name="address2" placeholder="例）1-2-3" autocomplete="address-line1" required>
         </div>
 
         <!-- 電話番号 -->
@@ -1373,7 +1333,7 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
             電話番号<span class="f-req">必須</span>
           </label>
-          <input class="f-input" type="tel" id="h-tel" name="tel" placeholder="例）09012345678" required>
+          <input class="f-input" type="tel" id="h-tel" name="tel" placeholder="例）09012345678" autocomplete="tel" required>
         </div>
 
         <!-- メールアドレス -->
@@ -1382,7 +1342,7 @@ a{text-decoration:none;color:inherit}
             <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
             メールアドレス<span class="f-opt">任意</span>
           </label>
-          <input class="f-input" type="email" id="h-email" name="email" placeholder="例）shinjukuRahmen@co.jp">
+          <input class="f-input" type="email" id="h-email" name="email" placeholder="例）shinjukuRahmen@co.jp" autocomplete="email">
         </div>
 
         <!-- プライバシーポリシー -->
@@ -1423,10 +1383,10 @@ a{text-decoration:none;color:inherit}
 
       <!-- 新規出店確認 -->
       <div class="f-row">
-        <label class="f-lbl">
+        <div class="f-lbl" id="m-new-store-label">
           新規出店をご検討中ですか？<span class="f-req">必須</span>
-        </label>
-        <div class="f-radio-group">
+        </div>
+        <div class="f-radio-group" role="radiogroup" aria-labelledby="m-new-store-label">
           <label class="f-radio-label">
             <input type="radio" name="m_new_store" value="yes" required> はい
           </label>
@@ -1449,7 +1409,7 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
           店舗名<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="text" id="m-shop_name" name="shop_name" placeholder="例）ラーメン○○ 新宿店" required>
+        <input class="f-input" type="text" id="m-shop_name" name="shop_name" placeholder="例）ラーメン○○ 新宿店" autocomplete="organization" required>
       </div>
 
       <!-- 担当者名 -->
@@ -1458,7 +1418,7 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
           担当者名<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="text" id="m-contact_name" name="contact_name" placeholder="例）山田 太郎" required>
+        <input class="f-input" type="text" id="m-contact_name" name="contact_name" placeholder="例）山田 太郎" autocomplete="name" required>
       </div>
 
       <!-- 郵便番号 -->
@@ -1467,15 +1427,15 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           郵便番号<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="text" id="m-zip" name="zip" placeholder="例）160-0000" maxlength="8" required>
+        <input class="f-input" type="text" id="m-zip" name="zip" placeholder="例）160-0000" autocomplete="postal-code" inputmode="numeric" maxlength="8" required>
         <div class="f-addr-row">
           <div class="f-addr-col">
-            <label class="f-addr-lbl">都道府県</label>
-            <input class="f-input f-input-auto" type="text" id="m-pref" name="pref" placeholder="都道府県" readonly tabindex="-1">
+            <label class="f-addr-lbl" for="m-pref">都道府県</label>
+            <input class="f-input f-input-auto" type="text" id="m-pref" name="pref" placeholder="都道府県" autocomplete="address-level1" readonly tabindex="-1">
           </div>
           <div class="f-addr-col">
-            <label class="f-addr-lbl">市区町村</label>
-            <input class="f-input f-input-auto" type="text" id="m-city" name="city" placeholder="市区町村" readonly tabindex="-1">
+            <label class="f-addr-lbl" for="m-city">市区町村</label>
+            <input class="f-input f-input-auto" type="text" id="m-city" name="city" placeholder="市区町村" autocomplete="address-level2" readonly tabindex="-1">
           </div>
         </div>
       </div>
@@ -1486,7 +1446,7 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
           丁目・番地<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="text" id="m-address2" name="address2" placeholder="例）1-2-3" required>
+        <input class="f-input" type="text" id="m-address2" name="address2" placeholder="例）1-2-3" autocomplete="address-line1" required>
       </div>
 
       <!-- 電話番号 -->
@@ -1495,7 +1455,7 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
           電話番号<span class="f-req">必須</span>
         </label>
-        <input class="f-input" type="tel" id="m-tel" name="tel" placeholder="例）09012345678" required>
+        <input class="f-input" type="tel" id="m-tel" name="tel" placeholder="例）09012345678" autocomplete="tel" required>
       </div>
 
       <!-- メールアドレス -->
@@ -1504,7 +1464,7 @@ a{text-decoration:none;color:inherit}
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
           メールアドレス<span class="f-opt">任意</span>
         </label>
-        <input class="f-input" type="email" id="m-email" name="email" placeholder="例）shinjukuRahmen@co.jp">
+        <input class="f-input" type="email" id="m-email" name="email" placeholder="例）shinjukuRahmen@co.jp" autocomplete="email">
       </div>
 
       <!-- プライバシーポリシー -->
@@ -1584,6 +1544,10 @@ a{text-decoration:none;color:inherit}
 
   </div><!-- /fl-steps -->
 
+  <a href="tel-reservation/" class="fl-cta">
+    出店について問い合わせる<span class="fl-cta-arrow">›</span>
+  </a>
+
 
 </section>
 
@@ -1639,7 +1603,7 @@ a{text-decoration:none;color:inherit}
      ============================================================ -->
 <section class="cmp" id="compare" data-section="compare">
   <p class="cmp-eyebrow">OFFICIAL VS FLAGK</p>
-  <h2 class="cmp-title"><span class="cmp-title-sm">Uber Eatsの出店申込・店舗登録は</span><br><span class="cmp-title-green">一次代理店</span>のFlagK<span class="cmp-title-small">（弊社）</span>にお任せください</h2>
+  <h2 class="cmp-title"><span class="cmp-title-sm">Uber Eatsの出店申込・店舗登録は</span><br><span class="cmp-title-green">一次代理店</span>のFlagK<span class="cmp-title-small">（弊社）</span>に<br class="cmp-br-sp">お任せください</h2>
   <p class="cmp-lead">ご契約はUber Eats公式との直接契約です。<br class="cmp-br-pc">FlagKなら、出店準備・キャンペーンの確認・申請後の疑問まで、専任担当がサポートします。</p>
 
   <div class="cmp-table">
@@ -1792,7 +1756,7 @@ a{text-decoration:none;color:inherit}
      ============================================================ -->
 <section class="ac" id="achievements" data-section="achievements">
   <p class="ac-eyebrow">ACHIEVEMENTS</p>
-  <h2 class="ac-title">選ばれ続けるUber Eats出店サポート実績</h2>
+  <h2 class="ac-title">選ばれ続ける<br class="ac-br-sp">Uber Eats出店サポート実績</h2>
   <p class="ac-lead">Uber Eats（ウーバーイーツ）は北海道から沖縄まで。店舗のエリア・業態に合わせて、出店申請から掲載準備までご案内します。</p>
   <p class="ac-tags-line"><span class="ac-tags-title">対応業態の例：</span>ラーメン、カフェ、居酒屋、焼肉、弁当・惣菜、パン屋、中華、イタリアンなど</p>
 
@@ -1818,7 +1782,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="ac-cta-wrap">
-    <a href="campaign-check/" class="ac-cta">お店の出店条件・特典を確認する<span class="ac-cta-arrow">→</span></a>
+    <a href="tel-reservation/" class="ac-cta">お店の出店条件・特典を確認する<span class="ac-cta-arrow">→</span></a>
   </div>
 </section>
 
@@ -1880,7 +1844,10 @@ a{text-decoration:none;color:inherit}
       <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でお申し込み</p>
       <div class="cs-cta-divider"><span class="cs-cta-divider-v">∨</span></div>
       <p class="cs-cta-sub">出店費用や利用可能な特典など、<br>お気軽にご相談ください。</p>
-      <a href="tel-reservation/" class="cs-cta-yb">
+      <a href="#mobile-form" class="cs-cta-yb cs-cta-yb--mobile">
+        出店申込フォームへ<span class="cs-cta-yb-arrow">›</span>
+      </a>
+      <a href="tel-reservation/" class="cs-cta-yb cs-cta-yb--desktop">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
         出店申込フォームへ<span class="cs-cta-yb-arrow">›</span>
       </a>
@@ -2007,33 +1974,6 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ============================================================
-     RESOURCE
-     ============================================================ -->
-<section class="rm" id="resource" data-section="resource">
-  <div class="rm-title-wrap">
-    <span class="rm-badge">無料</span>
-    <h2 class="rm-title">資料を申し込む</h2>
-  </div>
-  <p class="rm-sub">
-    Uber Eats ってなに？<br>
-    Uber Eats加盟後の使い方やノウハウが満載！
-  </p>
-  <div class="rm-scene">
-    <div class="rm-card">
-      <p class="rm-card-title">基本情報ガイド</p>
-      <p class="rm-card-desc">まずは、この資料で<br> Uber Eats を知ろう！</p>
-      <p class="rm-card-logo">Uber Eats</p>
-    </div>
-  </div>
-  <br>
-  <button type="button" class="rm-btn" id="rm-modal-open-btn">
-    <span class="rm-btn-badge">無料</span>
-    <span class="rm-btn-text">資料請求</span>
-    <span class="rm-btn-arrow">→</span>
-  </button>
-</section>
-
-<!-- ============================================================
      FAQ
      ============================================================ -->
 <section class="fq" id="faq" data-section="faq">
@@ -2107,7 +2047,7 @@ a{text-decoration:none;color:inherit}
       <details class="fq-item">
         <summary id="faq-payment"><span class="fq-q">売上の入金は振込ですか？</span><span class="fq-icon"></span></summary>
         <div class="fq-a">
-          <p>銀行振り込みになります。入金サイクルは月末締め翌月〇日払いとなります。<small>※対応銀行・詳細は個別にご案内いたしますので、お気軽にお問い合わせください。</small></p>
+          <p>売上金は銀行振込にてお支払いします。<br>毎週月曜日〜日曜日の売上を締め、翌週の火曜日または水曜日にご指定の口座へ入金されます。<small>※対応銀行・詳細は個別にご案内いたしますので、お気軽にお問い合わせください。</small></p>
         </div>
       </details>
     </li>
@@ -2144,16 +2084,16 @@ a{text-decoration:none;color:inherit}
 
   <div class="fc-cards">
 
-    <!-- 電話相談予約 -->
+    <!-- 出店相談予約 -->
     <div class="fc-card">
       <div class="fc-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
       </div>
-      <p class="fc-card-title">電話相談予約</p>
+      <p class="fc-card-title">出店相談予約</p>
       <hr class="fc-card-sep">
       <p class="fc-card-desc">出店方法や費用について<br>担当者がご案内します。</p>
       <a href="tel-reservation/" class="fc-btn">
-        電話相談を予約する
+        出店相談を予約する
         <span class="fc-btn-arrow">›</span>
       </a>
     </div>
@@ -2166,7 +2106,7 @@ a{text-decoration:none;color:inherit}
       <p class="fc-card-title">お得な特典を確認</p>
       <hr class="fc-card-sep">
       <p class="fc-card-desc">対象キャンペーンや<br>適用条件をご案内します。</p>
-      <a href="campaign-check/" class="fc-btn fc-btn--featured">
+      <a href="tel-reservation/" class="fc-btn fc-btn--featured">
         無料で確認する
         <span class="fc-btn-arrow">›</span>
       </a>
@@ -2177,11 +2117,11 @@ a{text-decoration:none;color:inherit}
       <div class="fc-card-icon">
         <img src="images/ubereats-support/lp-03.webp" alt="LINE" style="width:42px;height:42px;object-fit:contain;display:block" loading="lazy" decoding="async" width="96" height="96">
       </div>
-      <p class="fc-card-title">LINEで出店相談</p>
+      <p class="fc-card-title">公式LINEで出店申込</p>
       <hr class="fc-card-sep">
-      <p class="fc-card-desc">出店に関するご相談や<br>お申し込みを承ります。</p>
+      <p class="fc-card-desc">公式LINEから出店申込・<br>ご相談を受け付けています。</p>
       <a href="https://lin.ee/RhSAYu3" class="fc-btn" target="_blank" rel="noopener">
-        LINEで相談を始める
+        公式LINEで出店申込を始める
         <span class="fc-btn-arrow">›</span>
       </a>
     </div>
@@ -2196,15 +2136,15 @@ a{text-decoration:none;color:inherit}
   <dl class="ft-info">
     <div class="ft-info-row">
       <dt class="ft-info-label">運営会社</dt>
-      <dd class="ft-info-value">株式会社FlagK<span class="ft-trust-tag">Uber Eats 一次代理店</span></dd>
+      <dd class="ft-info-value">株式会社FlagK<span class="ft-trust-tag">Uber Eats 一次代理店</span><span class="ft-info-note">当サイトは株式会社FlagKが運営しており、Uber Technologies, Inc.が直接運営するサイトではありません。</span></dd>
     </div>
     <div class="ft-info-row">
       <dt class="ft-info-label">HP</dt>
       <dd class="ft-info-value"><a href="https://flagk-co.jp/" target="_blank" rel="noopener">flagk-co.jp</a></dd>
     </div>
     <div class="ft-info-row">
-      <dt class="ft-info-label">住所</dt>
-      <dd class="ft-info-value">〒101-0052 東京都千代田区神田小川町3-20 302</dd>
+      <dt class="ft-info-label">本社所在地</dt>
+      <dd class="ft-info-value">〒101-0052 東京都千代田区神田小川町3丁目20番地　越後屋ビル302号室</dd>
     </div>
     <div class="ft-info-row">
       <dt class="ft-info-label">メール</dt>
@@ -2223,15 +2163,15 @@ a{text-decoration:none;color:inherit}
 <!-- モバイル固定底バー -->
 <div class="mb-bar">
 
-  <!-- 電話相談予約フォーム -->
+  <!-- 出店相談予約フォーム -->
   <a href="tel-reservation/" class="mb-col mb-col--tel">
     <span class="mb-icon-wrap"><img src="images/ubereats-support/lp-28.webp" alt="" class="mb-icon-img" loading="lazy" decoding="async" width="148" height="99"></span>
-    <span class="mb-title">電話相談予約</span>
+    <span class="mb-title">出店相談予約</span>
     <span class="mb-sub">無料で相談する<span class="mb-arrow"> ›</span></span>
   </a>
 
-  <!-- キャンペーン確認フォーム -->
-  <a href="campaign-check/" class="mb-col mb-col--camp">
+  <!-- 出店相談予約フォーム -->
+  <a href="tel-reservation/" class="mb-col mb-col--camp">
     <span class="mb-icon-wrap"><span class="mb-icon">🎁</span></span>
     <span class="mb-title">特典確認</span>
     <span class="mb-sub">特典を確認する<span class="mb-arrow"> ›</span></span>
@@ -2240,7 +2180,7 @@ a{text-decoration:none;color:inherit}
   <!-- LINEで相談する -->
   <a href="https://lin.ee/RhSAYu3" class="mb-col mb-col--line" target="_blank" rel="noopener">
     <span class="mb-icon-wrap"><img src="images/ubereats-support/lp-03.webp" alt="LINE" class="mb-icon-img mb-icon-img--line" loading="lazy" decoding="async" width="96" height="96"></span>
-    <span class="mb-title">LINE相談</span>
+    <span class="mb-title">LINEで申込</span>
     <span class="mb-sub">24時間受付中<span class="mb-arrow"> ›</span></span>
   </a>
 
@@ -2429,14 +2369,14 @@ a{text-decoration:none;color:inherit}
 <!-- Cookie同意バナー -->
 
 <!-- ===== LINE QRモーダル（PC専用） ===== -->
-<div id="line-qr-modal" class="lq-overlay" role="dialog" aria-modal="true" aria-label="LINEで出店相談">
+<div id="line-qr-modal" class="lq-overlay" role="dialog" aria-modal="true" aria-label="公式LINEで出店申込">
   <div class="lq-box">
     <button class="lq-close" id="lq-close-btn" aria-label="閉じる">✕</button>
     <div class="lq-icon">
       <img src="images/ubereats-support/lp-03.webp" alt="LINE" loading="lazy" decoding="async" width="96" height="96">
     </div>
-    <p class="lq-title">LINEで出店相談</p>
-    <p class="lq-sub">QRコードをカメラで読み取って<br>LINEから無料相談を始めましょう</p>
+    <p class="lq-title">公式LINEで出店申込</p>
+    <p class="lq-sub">QRコードをカメラで読み取って<br>公式LINEから出店申込・ご相談を始めましょう</p>
     <div class="lq-qr-wrap">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&data=https://lin.ee/RhSAYu3" alt="LINE QRコード" loading="lazy" decoding="async" width="180" height="180">
     </div>
@@ -2444,78 +2384,6 @@ a{text-decoration:none;color:inherit}
       <img class="lq-btn-icon" src="images/ubereats-support/lp-03.webp" alt="" loading="lazy" decoding="async" width="96" height="96">
       このデバイスでLINEを開く
     </a>
-  </div>
-</div>
-
-<!-- ===== 資料申し込みモーダル ===== -->
-<div id="rm-modal" class="md-overlay" role="dialog" aria-modal="true" aria-label="資料申し込みフォーム">
-  <div class="md-box">
-    <button class="md-close" id="rm-modal-close" aria-label="閉じる">✕</button>
-    <div class="md-head">
-      <p class="md-title">
-        <span class="md-title-icon">📄</span>
-        資料申し込みフォーム
-      </p>
-      <p class="md-sub">30秒で入力完了！</p>
-    </div>
-    <div class="md-body">
-      <form id="rm-form" action="mail.php" method="post">
-        <input type="hidden" name="form_type" value="resource">
-
-        <!-- お店の名前 -->
-        <div class="f-row">
-          <label class="f-lbl" for="md_shop_name">
-            お店の名前<span class="f-req">必須</span>
-          </label>
-          <input class="f-input" type="text" id="md_shop_name" name="shop_name"
-                 placeholder="例）〇〇食堂" required>
-        </div>
-
-        <!-- 担当者名 -->
-        <div class="f-row">
-          <label class="f-lbl" for="md_contact_name">
-            担当者名<span class="f-req">必須</span>
-          </label>
-          <input class="f-input" type="text" id="md_contact_name" name="contact_name"
-                 placeholder="例）田中 太郎" required>
-        </div>
-
-        <!-- 電話番号 -->
-        <div class="f-row">
-          <label class="f-lbl" for="md_tel">
-            ご連絡先（電話番号）<span class="f-req">必須</span>
-          </label>
-          <input class="f-input" type="tel" id="md_tel" name="tel"
-                 placeholder="例）090-1234-5678" required>
-        </div>
-
-        <!-- メールアドレス -->
-        <div class="f-row">
-          <label class="f-lbl" for="md_email">
-            メールアドレス<span class="f-req">必須</span>
-          </label>
-          <input class="f-input" type="email" id="md_email" name="email"
-                 placeholder="例）info@example.com" required>
-        </div>
-
-        <!-- プライバシーポリシー -->
-        <div class="f-privacy">
-          <input type="checkbox" id="md_privacy" required>
-          <label for="md_privacy">
-            <a href="https://flagk-co.jp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
-          </label>
-        </div>
-
-        <!-- 送信ボタン -->
-        <div class="f-submit-wrap">
-          <button type="submit" class="f-submit" id="md-submit-btn" disabled>
-            <span id="md-btn-text">未入力の項目があります</span>
-            <span class="f-submit-arrow">→</span>
-          </button>
-        </div>
-
-      </form>
-    </div>
   </div>
 </div>
 
@@ -2593,53 +2461,6 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
-<script>
-/* ===== 資料申し込みモーダル ===== */
-(function(){
-  var overlay = document.getElementById('rm-modal');
-  var openBtn = document.getElementById('rm-modal-open-btn');
-  var closeBtn = document.getElementById('rm-modal-close');
-  var form = document.getElementById('rm-form');
-  var submitBtn = document.getElementById('md-submit-btn');
-  var btnText = document.getElementById('md-btn-text');
-
-  /* 開く */
-  openBtn.addEventListener('click', function(){
-    overlay.classList.add('md-open');
-    document.body.style.overflow = 'hidden';
-  });
-
-  /* 閉じる */
-  function closeModal(){
-    overlay.classList.remove('md-open');
-    document.body.style.overflow = '';
-  }
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
-
-  /* バリデーション */
-  var required = form.querySelectorAll('[required]');
-  function validate(){
-    var ok = Array.prototype.every.call(required, function(el){
-      return el.type === 'checkbox' ? el.checked : el.value.trim() !== '';
-    });
-    submitBtn.disabled = !ok;
-    btnText.textContent = ok ? '資料を申し込む（無料）' : '未入力の項目があります';
-  }
-  form.addEventListener('input', validate);
-  form.addEventListener('change', validate);
-  validate();
-
-  /* モーダルを閉じてから汎用ハンドラが送信する */
-  form.addEventListener('submit', function(){
-    closeModal();
-  }, true);
-})();
-</script>
-
-
-
 <!-- ─── 送信完了モーダル ─── -->
 <div id="lp-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;padding:24px;">
   <div style="background:#fff;border-radius:16px;max-width:560px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.2);">
@@ -2655,8 +2476,7 @@ a{text-decoration:none;color:inherit}
 (function(){
   var messages = {
     hero:     '担当者より平日9:30〜18:30の営業時間内に順次ご連絡いたします。\n土日・祝日にいただいたお問い合わせは、翌営業日より順次ご連絡いたします。',
-    mobile:   '担当者より平日9:30〜18:30の営業時間内に順次ご連絡いたします。\n土日・祝日にいただいたお問い合わせは、翌営業日より順次ご連絡いたします。',
-    resource: '担当者より平日9:30〜18:30の営業時間内に順次ご連絡いたします。\n土日・祝日にいただいたお問い合わせは、翌営業日より順次ご連絡いたします。'
+    mobile:   '担当者より平日9:30〜18:30の営業時間内に順次ご連絡いたします。\n土日・祝日にいただいたお問い合わせは、翌営業日より順次ご連絡いたします。'
   };
   var sent = new URLSearchParams(location.search).get('sent');
   if (sent && messages[sent]) {
@@ -2688,7 +2508,6 @@ a{text-decoration:none;color:inherit}
     achievements:  'FlagKの出店サポート実績',
     partner_banner:'パートナーバナー',
     support:       '専任スタッフサポート',
-    resource:      '資料請求',
     faq:           'よくあるお問合せ',
     final_cta:     '最終CTA'
   };
@@ -2759,8 +2578,8 @@ a{text-decoration:none;color:inherit}
 <!-- ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後に右下表示） ===== -->
 <div class="cp-float" id="cp-float">
   <button class="cp-float-close" id="cp-float-close-btn" aria-label="閉じる">✕</button>
-  <a href="campaign-check/">
-    <img src="images/campaign/popup-0831.webp" alt="8月31日23時59分59秒までのお問い合わせで初期費用0円" loading="lazy" decoding="async" width="1280" height="801">
+  <a href="tel-reservation/">
+    <img src="images/campaign/popup-campaign-no-deadline.webp" alt="初期費用最大38,000円が初期費用0円の期間限定キャンペーン" loading="lazy" decoding="async" width="1280" height="801">
   </a>
 </div>
 <script>
@@ -2800,8 +2619,8 @@ a{text-decoration:none;color:inherit}
 <!-- ===== 8/14キャンペーン モバイル用フローティング（LINE相談バーの上に表示） ===== -->
 <div class="cp-mfloat" id="cp-mfloat">
   <button class="cp-mfloat-close" id="cp-mfloat-close-btn" aria-label="閉じる">✕</button>
-  <a href="campaign-check/">
-    <img src="images/campaign/banner-0831-720.webp" alt="8/31までのお問い合わせ限定！初期費用0円キャンペーン" loading="lazy" decoding="async" width="720" height="172">
+  <a href="tel-reservation/">
+    <img src="images/campaign/banner-campaign-site-benefit-720.webp" alt="当サイト限定特典で初期費用0円・無料で出店申込み" loading="lazy" decoding="async" width="720" height="172">
   </a>
 </div>
 <script>
@@ -2873,14 +2692,15 @@ a{text-decoration:none;color:inherit}
     ['#cp-float a',                    'pc_float_0814',       'PC右下フローティング（8/14）'],
     ['#cp-mfloat a',                   'mobile_float_0814',   'モバイルフローティング（8/14）'],
     /* ▼ 通常CTA */
-    ['.hd-tel-link',                   'header_tel',          'ヘッダー：電話相談予約'],
+    ['.hd-tel-link',                   'header_tel',          'ヘッダー：お電話で出店申込'],
     ['.hd-btn',                        'header_line',         'ヘッダー：LINE相談'],
-    ['.hv2-cta',                       'hero_campaign',       'ヒーロー：対象キャンペーンを確認'],
+    ['.hv2-cta',                       'hero_apply',          'ヒーロー：Uber Eatsの出店申込'],
+    ['.fl-cta',                        'flow_contact',        '出店申込から店舗登録までの流れ：問い合わせる'],
     ['.cs-cta-yb',                     'stats_tel',           '実績セクション：出店申込フォームへ'],
     ['.fc-btn--featured',              'final_campaign',      '最終CTA：キャンペーン確認'],
-    ['.fc-btn[href="tel-reservation/"]','final_tel',           '最終CTA：電話相談予約'],
+    ['.fc-btn[href="tel-reservation/"]','final_tel',           '最終CTA：出店相談予約'],
     ['.fc-btn[href*="lin.ee"]',        'final_line',          '最終CTA：LINE相談'],
-    ['.mb-col--tel',                   'mobile_bar_tel',      'モバイル下部バー：電話相談予約'],
+    ['.mb-col--tel',                   'mobile_bar_tel',      'モバイル下部バー：出店相談予約'],
     ['.mb-col--camp',                  'mobile_bar_campaign', 'モバイル下部バー：特典確認'],
     ['.mb-col--line',                  'mobile_bar_line',     'モバイル下部バー：LINE相談'],
     ['.lq-btn',                        'line_qr',             'LINE QRセクション：LINEで相談']
