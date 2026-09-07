@@ -12,8 +12,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>電話相談予約 | Uber Eats 出店登録サポート | FlagK</title>
-<meta name="description" content="Uber Eats（ウーバーイーツ）導入前の疑問をお電話で解決。加盟・出店・申込に関するご相談を無料で承ります。ご都合の良い日時をお選びください。">
+<title>出店相談予約 | Uber Eats 出店登録サポート | FlagK</title>
+<meta name="description" content="Uber Eats（ウーバーイーツ）の出店申込・店舗登録について、無料でご相談いただけます。出店条件や適用キャンペーン、費用などを担当者がご案内します。">
 <link rel="canonical" href="https://flagk-co.jp/ubereats-support/tel-reservation/">
 <link rel="icon" type="image/png" href="../..images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -367,7 +367,7 @@ button,input,textarea,select{font-family:inherit}
   <div class="form-card">
     <h2 class="form-title">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-      電話相談予約
+      出店相談予約フォーム
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3"/><circle cx="18.5" cy="17.5" r="3"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z" fill="#06C167" stroke="none"/><path d="M12 17.5L9 10.5l3-3h4l2.5 3.5"/><path d="M5.5 17.5L9 10.5"/></svg>
     </h2>
     <p class="form-sub">30秒で入力完了！</p>
@@ -379,7 +379,7 @@ button,input,textarea,select{font-family:inherit}
       <div class="f-row">
         <div class="f-lbl">
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-          お店の名前<span class="f-req">必須</span>
+          店舗名・会社名<span class="f-req">必須</span>
         </div>
         <input class="f-input" type="text" name="shop_name" placeholder="例）〇〇食堂" required>
       </div>
@@ -395,36 +395,50 @@ button,input,textarea,select{font-family:inherit}
       <div class="f-row">
         <div class="f-lbl">
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
-          ご連絡先（電話番号）<span class="f-req">必須</span>
+          ご連絡先電話番号<span class="f-req">必須</span>
         </div>
-        <input class="f-input" type="tel" name="tel" placeholder="例）090-1234-5678" required>
+        <input class="f-input" type="tel" name="tel" placeholder="例）090-1234-5678" autocomplete="tel" required>
+      </div>
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          メールアドレス<span class="f-opt">任意</span>
+        </div>
+        <input class="f-input" type="email" name="email" placeholder="例）example@flagk.com" autocomplete="email">
       </div>
 
       <div class="f-row">
         <div class="f-lbl">
           <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-          連絡希望時間<span class="f-req">必須</span>
+          連絡希望時間帯<span class="f-opt">任意</span>
         </div>
         <div class="f-time-grid">
           <label class="f-time-label">
-            <input type="checkbox" name="contact_time[]" value="10:00〜12:00">
-            <span class="f-time-name">午前</span>
-            <span class="f-time-sep">｜</span>
-            <span class="f-time-range">10:00〜12:00</span>
+            <input type="checkbox" name="contact_time[]" value="9:00〜11:00">
+            <span class="f-time-range">9:00〜11:00</span>
           </label>
           <label class="f-time-label">
-            <input type="checkbox" name="contact_time[]" value="13:00〜15:00">
-            <span class="f-time-name">午後</span>
-            <span class="f-time-sep">｜</span>
-            <span class="f-time-range">13:00〜15:00</span>
+            <input type="checkbox" name="contact_time[]" value="11:00〜14:00">
+            <span class="f-time-range">11:00〜14:00</span>
           </label>
           <label class="f-time-label">
-            <input type="checkbox" name="contact_time[]" value="15:00〜18:00">
-            <span class="f-time-name">夕方</span>
-            <span class="f-time-sep">｜</span>
-            <span class="f-time-range">15:00〜18:00</span>
+            <input type="checkbox" name="contact_time[]" value="14:00〜17:00">
+            <span class="f-time-range">14:00〜17:00</span>
+          </label>
+          <label class="f-time-label">
+            <input type="checkbox" name="contact_time[]" value="17:00〜">
+            <span class="f-time-range">17:00〜</span>
           </label>
         </div>
+      </div>
+
+      <div class="f-row">
+        <div class="f-lbl">
+          <span class="f-lbl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+          質問・備考<span class="f-opt">任意</span>
+        </div>
+        <textarea class="f-textarea" name="message" placeholder="ご質問やご要望があればご記載ください"></textarea>
       </div>
 
       <div class="f-privacy">
@@ -454,10 +468,9 @@ button,input,textarea,select{font-family:inherit}
   var btn     = document.getElementById('submit-btn');
   var btnText = document.getElementById('btn-text');
   function check(){
-    var timeChecked = form.querySelectorAll('input[name="contact_time[]"]:checked').length > 0;
-    var ok = form.checkValidity() && timeChecked;
+    var ok = form.checkValidity();
     btn.disabled        = !ok;
-    btnText.textContent = ok ? '電話相談予約を申し込む' : '未入力の項目があります';
+    btnText.textContent = ok ? '出店相談を申し込む' : '未入力の項目があります';
   }
   form.addEventListener('input',  check);
   form.addEventListener('change', check);
