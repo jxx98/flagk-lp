@@ -6,3 +6,9 @@
 .section-label.light,
 .final-grid span,
 .visual-story figcaption span { color: #fff; }
+
+/* 写真帯とキャンペーン訴求の開始を分け、視線に余白をつくる */
+.visual-story { margin-bottom: 88px; }
+@media (max-width: 860px) {
+  .visual-story { margin-bottom: 52px; }
+}
