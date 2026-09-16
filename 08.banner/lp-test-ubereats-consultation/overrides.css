@@ -1,0 +1,8 @@
+/* ヒーロー上の文字は白で統一し、淡いグリーン文字を使わない */
+.brand b { display: inline; }
+.hero h1 em,
+.hero-benefits strong,
+.eyebrow,
+.section-label.light,
+.final-grid span,
+.visual-story figcaption span { color: #fff; }
