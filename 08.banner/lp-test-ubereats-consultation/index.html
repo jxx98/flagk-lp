@@ -30,18 +30,43 @@
           <h1 id="hero-title">Uber Eats の出店、<br><em>まずは無料で</em>ご相談ください。</h1>
           <p class="hero-lead">お店で使えるキャンペーンや、出店にかかる費用をご案内します。<br>「始めてみたい」と思ったら、面倒な出店手続きも弊社にお任せください。無料でサポートします。</p>
           <ul class="hero-benefits" aria-label="無料サポートの内容">
-            <li>出店費用<br><strong>無料</strong></li>
-            <li>出店サポート<br><strong>無料</strong></li>
-            <li>面倒な申請手続き<br><strong>お任せOK</strong></li>
+            <li><span>出店費用</span><strong>無料</strong></li>
+            <li><span>出店サポート</span><strong>無料</strong></li>
+            <li><span>面倒な申請手続き</span><strong>お任せOK</strong></li>
           </ul>
           <p class="hero-note">「まずは費用だけ知りたい」「対象のキャンペーンを確認したい」<br>そんなご相談も歓迎です。出店を決める前に、お気軽にお問い合わせください。</p>
-          <div class="hero-actions">
-            <a class="button button-primary button-large" href="campaign-check.html">対象キャンペーンを確認する</a>
-            <a class="button button-outline button-large" href="tel-reservation.html">無料の電話相談を予約する</a>
-          </div>
           <p class="under-button">ご相談・キャンペーン確認は無料です。</p>
         </div>
-
+        <aside class="hero-step-card" aria-labelledby="hero-step-title">
+          <p class="hero-step-kicker">STEP 1</p>
+          <h2 id="hero-step-title">まずは現在の状況を<br>お選びください</h2>
+          <p class="hero-step-lead">選択後、対象のキャンペーン確認へお進みいただけます。</p>
+          <div class="hero-status-options" role="radiogroup" aria-label="Uber Eats のご利用状況">
+            <label><input type="radio" name="hero-status" value="new">まだ出店していない<br><small>（新規出店を検討中）</small></label>
+            <label><input type="radio" name="hero-status" value="progress">現在出店手続き中</label>
+            <label><input type="radio" name="hero-status" value="using">すでに利用している</label>
+          </div>
+          <form class="contact-form hero-detail-form" hidden novalidate>
+            <input type="hidden" name="status" value="new">
+            <p class="hero-form-heading">対象キャンペーンの確認に必要な情報をご入力ください</p>
+            <label>店舗名 <span>必須</span><input name="store_name" placeholder="例）〇〇食堂" required></label>
+            <label>ご担当者名 <span>必須</span><input name="contact_name" placeholder="例）山田 太郎" required></label>
+            <label>店舗の郵便番号 <span>必須</span><input name="zip" inputmode="numeric" placeholder="例）160-0000" required></label>
+            <label>店舗の住所 <span>必須</span><input name="address" placeholder="例）〇〇区〇〇1-2-3" required></label>
+            <label>電話番号 <span>必須</span><input type="tel" name="phone" inputmode="tel" placeholder="例）09012345678" required></label>
+            <label>メールアドレス <small>任意</small><input type="email" name="email" placeholder="例）info@example.com"></label>
+            <label>ご連絡希望時間 <small>任意・複数選択可</small></label>
+            <div class="checkbox-list"><label><input type="checkbox" name="time" value="9:00〜11:00">9:00〜11:00</label><label><input type="checkbox" name="time" value="11:00〜14:00">11:00〜14:00</label><label><input type="checkbox" name="time" value="14:00〜17:00">14:00〜17:00</label><label><input type="checkbox" name="time" value="17:00〜">17:00〜</label></div>
+            <label>お問い合わせ内容 <small>任意</small><textarea name="message" rows="4" placeholder="費用やキャンペーンについて、気になることをご記入ください。"></textarea></label>
+            <label class="consent"><input type="checkbox" name="privacy" required><span><a href="privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する <b>必須</b></span></label>
+            <button class="button button-primary button-submit" type="submit">キャンペーンの確認を依頼する（無料）</button>
+            <p class="form-caption">送信後、担当者よりご連絡します。<br>このフォームの送信だけで、出店契約が成立することはありません。</p>
+            <div class="form-complete" hidden role="status"><strong>お問い合わせありがとうございます。</strong><br>店舗情報を確認のうえ、担当者より対象キャンペーンと出店条件をご案内します。</div>
+          </form>
+          <p class="hero-status-notice" hidden aria-live="polite">当窓口は新規出店をご検討中の店舗様向けです。現在手続き中・すでにご利用中の場合は、お問い合わせいただいてもご返信いたしかねる場合があります。手続きを進めている窓口または Uber Eats のサポート窓口へお問い合わせください。</p>
+          <a class="button button-primary hero-next-button" href="campaign-check.html?status=new" hidden>対象キャンペーンを確認する</a>
+          <a class="hero-phone-link" href="tel-reservation.html">電話で相談したい方はこちら</a>
+        </aside>
       </div>
     </section>
 
@@ -67,23 +92,10 @@
         <p class="section-label">REASON</p>
         <h2 id="reasons-title">はじめての出店でも安心な3つの理由</h2>
         <div class="reason-grid">
-          <article class="reason-card"><span class="reason-number">01</span><h3>費用や条件を確認してから、<br>出店を決められる</h3><p>出店費用や注文手数料、利用できるキャンペーンを事前にご案内します。「自分のお店ではいくらかかるのか」を確認してから、出店を検討できます。</p></article>
-          <article class="reason-card"><span class="reason-number">02</span><h3>面倒な出店手続きは、<br>丸投げ可能</h3><p>必要書類や店舗情報をご用意いただければ、申請に必要な情報の整理や登録作業を弊社が無料でサポート。本業でお忙しい店舗様も、担当者に相談しながら出店準備を進められます。</p><small>※ 店舗様ご本人による確認・同意など、一部ご対応いただく手続きがあります。</small></article>
-          <article class="reason-card"><span class="reason-number">03</span><h3>配達スタッフや車両を<br>自店で用意せずに始められる</h3><p>Uber Eats の配達サービスを利用することで、店舗様は調理と商品のお渡しに集中できます。注文受付に必要な端末やデリバリー用の容器など、営業開始までに準備するものもご案内します。</p></article>
+          <article class="reason-card"><span class="reason-number">01</span><img class="reason-photo" src="images/restaurant-cost-check.png" alt="飲食店オーナーが出店費用や条件を確認している様子" loading="lazy" width="1448" height="1086"><h3>費用や条件を確認してから、<br>出店を決められる</h3><p>出店費用や注文手数料、利用できるキャンペーンを事前にご案内します。「自分のお店ではいくらかかるのか」を確認してから、出店を検討できます。</p></article>
+          <article class="reason-card"><span class="reason-number">02</span><img class="reason-photo" src="images/restaurant-menu-prep.png" alt="飲食店スタッフがタブレットでデリバリー用メニューを確認している様子" loading="lazy" width="1448" height="1086"><h3>面倒な出店手続きは、<br>丸投げ可能</h3><p>必要書類や店舗情報をご用意いただければ、申請に必要な情報の整理や登録作業を弊社が無料でサポート。本業でお忙しい店舗様も、担当者に相談しながら出店準備を進められます。</p><small>※ 店舗様ご本人による確認・同意など、一部ご対応いただく手続きがあります。</small></article>
+          <article class="reason-card"><span class="reason-number">03</span><img class="reason-photo" src="images/restaurant-delivery-pickup.png" alt="飲食店の店頭で自転車配達員が商品を受け取る様子" loading="lazy" width="1448" height="1086"><h3>配達スタッフや車両を<br>自店で用意せずに始められる</h3><p>Uber Eats の配達サービスを利用することで、店舗様は調理と商品のお渡しに集中できます。注文受付に必要な端末やデリバリー用の容器など、営業開始までに準備するものもご案内します。</p></article>
         </div>
-      </div>
-    </section>
-
-    <section class="visual-story" aria-label="出店準備と配達のイメージ">
-      <div class="visual-story-grid">
-        <figure>
-          <img src="images/restaurant-menu-prep.png" alt="飲食店スタッフがタブレットでデリバリー用メニューを確認している様子" loading="lazy" width="1448" height="1086">
-          <figcaption><span>SUPPORT</span><strong>お店の準備に集中できるよう、<br>出店手続きをサポートします。</strong></figcaption>
-        </figure>
-        <figure>
-          <img src="images/restaurant-delivery-pickup.png" alt="飲食店の店頭で自転車配達員が商品を受け取る様子" loading="lazy" width="1448" height="1086">
-          <figcaption><span>DELIVERY</span><strong>調理と商品のお渡しに<br>集中できるデリバリーの仕組み。</strong></figcaption>
-        </figure>
       </div>
     </section>
 
@@ -142,7 +154,8 @@
     </div><small>新規出店をご検討中の店舗様が対象です。<br>現在出店手続き中・すでにご利用中のサービスに関するお問い合わせには対応しておりません。</small></div></section>
   </main>
 
-  <footer><div class="container footer-inner"><a class="brand footer-brand" href="#top"><img src="images/flagk-logo.webp" width="50" height="50" alt="FlagK"><span><b>Uber Eats</b> 新規出店相談窓口<br><small>運営：株式会社FlagK</small></span></a><nav><a href="https://flagk-co.jp/" target="_blank" rel="noopener">会社概要</a><a href="privacy-policy.html">プライバシーポリシー</a></nav><p>© 2026 FlagK Co., Ltd.</p></div></footer>
+  <div class="footer-trust"><dl class="footer-info"><div class="footer-info-row"><dt>運営会社</dt><dd>株式会社FlagK <span>Uber Eats 一次代理店</span><small>当サイトは株式会社FlagKが運営しており、Uber Technologies, Inc.が直接運営するサイトではありません。</small></dd></div><div class="footer-info-row"><dt>HP</dt><dd><a href="https://flagk-co.jp/" target="_blank" rel="noopener">flagk-co.jp</a></dd></div><div class="footer-info-row"><dt>本社所在地</dt><dd>〒101-0052 東京都千代田区神田小川町3丁目20番地　越後屋ビル302号室</dd></div><div class="footer-info-row"><dt>メール</dt><dd><a href="mailto:info@flagk-co.jp">info@flagk-co.jp</a></dd></div><div class="footer-info-row"><dt></dt><dd><a href="https://flagk-co.jp/privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a></dd></div></dl></div>
+  <footer class="footer-copyright"><p>© 2026 FlagK Co., Ltd.</p></footer>
   <nav class="mobile-bar" aria-label="モバイル用お問い合わせ導線"><a href="campaign-check.html">キャンペーン確認</a><a href="tel-reservation.html">無料電話相談</a></nav>
   <script src="app.js"></script>
 </body>
