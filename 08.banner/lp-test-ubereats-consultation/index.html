@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uber Eats 新規出店相談窓口 | 株式会社FlagK</title>
+  <style>
+    :root {
+      --ink: #1f2522;
+      --muted: #68716c;
+      --line: #e3e7e4;
+      --brand: #06c167;
+      --brand-dark: #049b52;
+      --surface: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #f7f9f8;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      width: 100%;
+      background: rgba(255, 255, 255, .98);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(26, 42, 33, .04);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      min-height: 82px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      gap: 13px;
+    }
+    .brand-logo {
+      display: block;
+      width: 61px;
+      height: 61px;
+      object-fit: contain;
+    }
+    .brand-copy {
+      padding-left: 16px;
+      border-left: 1px solid #d9dedb;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+    .brand-copy strong { display: block; font-size: 15px; }
+
+    .header-actions {
+      display: flex;
+      align-items: stretch;
+      flex: 0 0 auto;
+      gap: 10px;
+    }
+    .header-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 1px solid var(--brand);
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.35;
+      text-align: center;
+      white-space: nowrap;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .header-actions .action-campaign {
+      color: var(--brand-dark);
+      background: #fff;
+    }
+    .header-actions .action-campaign:hover {
+      color: #fff;
+      background: var(--brand-dark);
+      border-color: var(--brand-dark);
+    }
+    .header-actions .action-tel {
+      color: #fff;
+      background: var(--brand);
+    }
+    .header-actions .action-tel:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+
+    .page-placeholder { min-height: calc(100vh - 82px); }
+
+    @media (max-width: 700px) {
+      .header-inner { min-height: 70px; padding: 0 16px; gap: 12px; }
+      .brand { gap: 9px; }
+      .brand-logo { width: 48px; height: 48px; }
+      .brand-copy { padding-left: 10px; font-size: 10px; }
+      .brand-copy strong { font-size: 12px; }
+      .header-actions { gap: 6px; }
+      .header-actions a { min-width: 75px; min-height: 40px; padding: 0 8px; font-size: 11px; white-space: normal; }
+      .page-placeholder { min-height: calc(100vh - 70px); }
+    }
+
+    @media (max-width: 390px) {
+      .header-inner { padding: 0 10px; gap: 8px; }
+      .brand-logo { width: 43px; height: 43px; }
+      .brand-copy { padding-left: 8px; font-size: 9px; }
+      .brand-copy strong { font-size: 11px; }
+      .header-actions { gap: 4px; }
+      .header-actions a { min-width: 68px; padding: 0 5px; font-size: 10px; }
+    }
+
+    /* 後続セクションを実装するまで、ヘッダーの検証領域として余白を確保 */
+    .page-placeholder { background: #f7f9f8; }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Uber Eats 新規出店相談窓口の先頭へ">
+        <img class="brand-logo" src="images/flagk-logo.webp" alt="FlagK">
+        <span class="brand-copy"><strong>Uber Eats</strong>新規出店相談窓口</span>
+      </a>
+
+      <div class="header-actions" aria-label="お問い合わせ導線">
+        <a class="action-campaign" href="campaign-check/">対象キャンペーンを確認</a>
+        <a class="action-tel" href="tel-reservation/">電話相談を予約する</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-placeholder" aria-label="Uber Eats 新規出店相談窓口の制作領域"></main>
+</body>
+</html>
