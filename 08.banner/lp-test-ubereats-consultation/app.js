@@ -13,28 +13,19 @@
   };
 
   const heroStatus = document.querySelectorAll('input[name="hero-status"]');
-  const heroNextButton = document.querySelector('.hero-next-button');
+  const heroStatusOptions = document.querySelector('.hero-status-options');
   const heroStatusNotice = document.querySelector('.hero-status-notice');
   const heroDetailForm = document.querySelector('.hero-detail-form');
   const updateHeroStatus = () => {
     const selected = document.querySelector('input[name="hero-status"]:checked');
     const eligible = selected && selected.value === 'new';
     const ineligible = selected && !eligible;
-    if (heroNextButton) {
-      heroNextButton.hidden = !selected || eligible;
-      heroNextButton.classList.toggle('is-disabled', ineligible);
-      heroNextButton.setAttribute('aria-disabled', ineligible ? 'true' : 'false');
-      heroNextButton.tabIndex = ineligible ? -1 : 0;
-    }
     if (heroStatusNotice) heroStatusNotice.hidden = !ineligible;
-    if (heroDetailForm) heroDetailForm.hidden = !eligible;
+    // 相談意欲を逃さないよう、入力欄は初期状態から表示する。
+    // 対象外を選んだ場合だけ、案内文へ切り替える。
+    if (heroDetailForm) heroDetailForm.hidden = Boolean(ineligible);
   };
   heroStatus.forEach((radio) => radio.addEventListener('change', updateHeroStatus));
-  if (heroNextButton) {
-    heroNextButton.addEventListener('click', (event) => {
-      if (heroNextButton.getAttribute('aria-disabled') === 'true') event.preventDefault();
-    });
-  }
   updateHeroStatus();
 
   const enableZipAutofill = (form) => {
@@ -64,6 +55,15 @@
       enableZipAutofill(form);
       form.addEventListener('submit', (event) => {
         event.preventDefault();
+        const selected = document.querySelector('input[name="hero-status"]:checked');
+        if (!selected) {
+          heroStatusOptions?.querySelector('input')?.focus();
+          return;
+        }
+        if (selected.value !== 'new') {
+          updateHeroStatus();
+          return;
+        }
         if (!form.checkValidity()) { form.reportValidity(); return; }
         form.querySelectorAll(':scope > :not(.form-complete)').forEach((field) => { field.hidden = true; });
         const complete = form.querySelector('.form-complete');
@@ -84,7 +84,7 @@
       syncEmbeddedHeight();
     };
     const initialStatus = searchParams.get('status');
-    if (['new', 'progress', 'using'].includes(initialStatus)) {
+    if (['new', 'ineligible'].includes(initialStatus)) {
       const radio = form.querySelector(`input[name="status"][value="${initialStatus}"]`);
       if (radio) radio.checked = true;
     }
