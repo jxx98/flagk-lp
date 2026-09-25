@@ -7,6 +7,11 @@
   <title>店頭価格プロモーション出店相談予約 | Uber Eats 新規出店相談窓口</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="overrides.css">
+  <script>
+    // 過去に開いた際のスクロール位置を復元せず、常にフォーム先頭から表示する
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  </script>
 </head>
 <body class="form-page">
   <header class="site-header">
@@ -65,5 +70,18 @@
   </div>
   <footer class="footer-copyright"><p>© 2026 FlagK Co., Ltd.</p></footer>
   <script src="app.js"></script>
+  <script>
+    (function () {
+      function scrollToFormTop() { window.scrollTo(0, 0); }
+      scrollToFormTop();
+      requestAnimationFrame(scrollToFormTop);
+      // Safari の戻る操作・ページキャッシュからの復帰時も先頭に固定する
+      window.addEventListener('pageshow', function () {
+        scrollToFormTop();
+        requestAnimationFrame(scrollToFormTop);
+        setTimeout(scrollToFormTop, 0);
+      });
+    }());
+  </script>
 </body>
 </html>
