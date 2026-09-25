@@ -16,6 +16,9 @@
   const heroStatusOptions = document.querySelector('.hero-status-options');
   const heroStatusNotice = document.querySelector('.hero-status-notice');
   const heroDetailForm = document.querySelector('.hero-detail-form');
+  const heroFormSubmitDock = document.querySelector('.hero-form-submit-dock');
+  const hero = document.querySelector('.hero');
+  const heroFormScroll = document.querySelector('.hero-form-scroll');
   const updateHeroStatus = () => {
     const selected = document.querySelector('input[name="hero-status"]:checked');
     const eligible = selected && selected.value === 'new';
@@ -24,9 +27,27 @@
     // 相談意欲を逃さないよう、入力欄は初期状態から表示する。
     // 対象外を選んだ場合だけ、案内文へ切り替える。
     if (heroDetailForm) heroDetailForm.hidden = Boolean(ineligible);
+    if (heroFormSubmitDock) heroFormSubmitDock.hidden = Boolean(ineligible);
   };
   heroStatus.forEach((radio) => radio.addEventListener('change', updateHeroStatus));
   updateHeroStatus();
+
+  // PCではヒーロー上のホイール操作をフォームへ渡す。
+  // 入力欄の末尾に着いたら、以降は通常どおり次のセクションへスクロールする。
+  if (hero && heroFormScroll) {
+    hero.addEventListener('wheel', (event) => {
+      if (!window.matchMedia('(min-width: 861px)').matches || event.ctrlKey) return;
+      const maxScroll = heroFormScroll.scrollHeight - heroFormScroll.clientHeight;
+      if (maxScroll <= 0 || event.deltaY === 0) return;
+      const movingDown = event.deltaY > 0;
+      const canScrollForm = movingDown
+        ? heroFormScroll.scrollTop < maxScroll - 1
+        : heroFormScroll.scrollTop > 1;
+      if (!canScrollForm) return;
+      event.preventDefault();
+      heroFormScroll.scrollTop = Math.max(0, Math.min(maxScroll, heroFormScroll.scrollTop + event.deltaY));
+    }, { passive: false });
+  }
 
   const enableZipAutofill = (form) => {
     const zip = form.querySelector('input[name="zip"]');
@@ -68,6 +89,7 @@
         form.querySelectorAll(':scope > :not(.form-complete)').forEach((field) => { field.hidden = true; });
         const complete = form.querySelector('.form-complete');
         if (complete) complete.hidden = false;
+        if (heroFormSubmitDock) heroFormSubmitDock.hidden = true;
       });
       return;
     }

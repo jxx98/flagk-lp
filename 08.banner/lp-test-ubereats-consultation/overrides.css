@@ -249,9 +249,9 @@
 .campaign-free-cta .button-free-badge {
   right: 62px;
   color: #173020;
-  background: #fff2b9;
+  background: #ffdf00;
 }
-.campaign-free-cta .button-free-badge::after { background: #fff2b9; }
+.campaign-free-cta .button-free-badge::after { background: #ffdf00; }
 .final-grid .button-free-badge { color: #fff; }
 .contact-form > label.consent > span {
   margin-left: 0;
@@ -477,12 +477,47 @@ body.is-embedded .standalone-contact { max-width: none; }
     grid-template-columns: minmax(0, 1fr) minmax(370px, 410px);
     align-items: start;
     gap: 46px;
+    height: max(740px, calc(100dvh - 82px));
     min-height: 740px;
     padding-top: 56px;
     padding-bottom: 56px;
   }
   .hero-copy { width: auto; }
-  .hero-step-card { align-self: center; }
+  .hero-step-card {
+    align-self: start;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    max-height: calc(100dvh - 170px);
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero-form-intro {
+    position: relative;
+    z-index: 1;
+    padding: 31px 30px 8px;
+    background: rgba(255, 255, 255, .98);
+  }
+  .hero-form-scroll {
+    min-height: 0;
+    padding: 8px 22px 20px 30px;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hero-form-scroll::-webkit-scrollbar { display: none; }
+  .hero-form-submit-dock {
+    position: relative;
+    z-index: 1;
+    padding: 25px 30px 24px;
+    background: #fff5cf;
+    border-top: 1px solid #efd268;
+    box-shadow: 0 -8px 16px rgba(92, 75, 18, .08);
+  }
+  .hero-form-submit-dock .button {
+    width: 100%;
+    margin: 0;
+  }
 }
 .final-grid article {
   display: flex;
@@ -801,6 +836,12 @@ body.is-embedded .standalone-contact { max-width: none; }
   .contact-form textarea { font-size: 14px; }
   .checkbox-list label { font-size: 12px; }
   .form-caption { font-size: 11px; }
+  .hero-form-submit-dock {
+    margin-top: 18px;
+  }
+  .hero-form-submit-dock .button {
+    width: 100%;
+  }
 }
 
 /* PCは大きな余白に対して本文が小さく見えないよう、説明・表の文字を補正 */
@@ -837,4 +878,156 @@ body.is-embedded .standalone-contact { max-width: none; }
   .final-lead { font-size: 16px; }
   .final-grid p { font-size: 15px; }
   .final-cta > .container > small { font-size: 12px; }
+}
+
+/* 問い合わせ導線は「キャンペーン確認」「電話相談」を同じ主CTA色で統一 */
+.header-actions .button-outline,
+.final-grid .button-outline {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  box-shadow: 0 7px 16px rgba(127, 87, 5, .18);
+}
+.header-actions .button-outline:hover,
+.final-grid .button-outline:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+@media (max-width: 860px) {
+  .mobile-bar a + a {
+    color: #202822;
+    background: #ffdf00;
+    border-left: 1px solid rgba(32, 40, 34, .16);
+  }
+}
+
+/* フォームのご案内も主CTAのイエローとつながる、やわらかい案内色に */
+.target-notice {
+  color: #4f451d;
+  background: #fff9e3;
+  border-left-color: #ffcf00;
+}
+.hero-status-notice,
+.ineligible-message {
+  color: #5e4d16;
+  background: #fff9e8;
+  border-color: #efcf62;
+  border-left-color: #e7b900;
+}
+.form-caption {
+  color: #665e3e;
+}
+
+/* キャンペーン確認はイエロー、電話相談は従来のグリーンで役割を分ける */
+.header-actions a[href="tel-reservation.html"],
+.final-grid a[href="tel-reservation.html"] {
+  color: #fff;
+  background: #06c167;
+  border-color: #06c167;
+  box-shadow: 0 7px 16px rgba(4, 116, 61, .18);
+}
+.header-actions a[href="tel-reservation.html"]:hover,
+.final-grid a[href="tel-reservation.html"]:hover {
+  color: #fff;
+  background: #048c4c;
+  border-color: #048c4c;
+}
+body.form-page:has([data-form-kind="telephone"]) .button-primary {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  box-shadow: 0 7px 16px rgba(127, 87, 5, .18);
+}
+body.form-page:has([data-form-kind="telephone"]) .button-primary:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+body.form-page:has([data-form-kind="telephone"]) .target-notice {
+  color: #315943;
+  background: #effaf3;
+  border-left-color: #06c167;
+}
+body.form-page:has([data-form-kind="telephone"]) .form-caption {
+  color: #4f6b5a;
+}
+
+/* 吹き出しは配置ごとに指定する：電話相談カードはイエロー、ヒーロー送信はグリーン */
+.final-grid a[href="tel-reservation.html"] .button-free-badge {
+  color: #202822;
+  background: #ffdf00;
+}
+.final-grid a[href="tel-reservation.html"] .button-free-badge::after {
+  background: #ffdf00;
+}
+@media (max-width: 860px) {
+  .mobile-bar a[href="tel-reservation.html"] {
+    color: #fff;
+    background: #06c167;
+    border-left-color: rgba(255, 255, 255, .28);
+  }
+}
+
+/* PCの独立フォームは画面内に収め、展開後はカードの中だけをスクロールする */
+@media (min-width: 861px) {
+  body.form-page:has(.standalone-contact) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+  body.form-page:has(.standalone-contact) .form-page-main {
+    display: flex;
+    align-items: center;
+    height: calc(100dvh - 82px);
+    min-height: 0;
+    padding: 34px 16px;
+    overflow: hidden;
+  }
+  body.form-page:has(.standalone-contact) .standalone-form {
+    max-height: 100%;
+    background: #fff;
+    border-color: transparent;
+    background-clip: padding-box;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body.form-page:has(.standalone-contact) .standalone-form::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 対象外の方への案内は、通常の補足と区別できる警告色を使う */
+.hero-status-notice,
+.ineligible-message {
+  color: #a34335;
+  background: #fff4f1;
+  border-color: #f0c8bf;
+  border-left-color: #ef674f;
+}
+
+/* フォームの入力項目は、専門知識のない方にも読み取りやすい文字サイズに */
+.form-fieldset legend,
+.contact-form label,
+.hero-status-options label {
+  font-size: 14px;
+}
+.radio-option,
+.checkbox-list label {
+  font-size: 13px;
+}
+.contact-form input:not([type="checkbox"]):not([type="radio"]),
+.contact-form select,
+.contact-form textarea {
+  font-size: 15px;
+}
+.contact-form small,
+.hero-status-options small {
+  font-size: 11px;
+}
+.consent { font-size: 13px !important; }
+.checkbox-list label:has(input[name="time"]) {
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 600;
 }

@@ -38,13 +38,16 @@
           <p class="under-button">ご相談・キャンペーン確認は無料です。</p>
         </div>
         <aside class="hero-step-card" aria-labelledby="hero-step-title">
-          <h2 id="hero-step-title">まずは、現在の状況を<br>お聞かせください</h2>
-          <p class="hero-step-lead">当てはまるものをお選びください。</p>
-          <div class="hero-status-options" role="radiogroup" aria-label="Uber Eats のご利用状況">
-            <label><input type="radio" name="hero-status" value="new">まだ出店していない<br><small>（新規出店を検討中）</small></label>
-            <label><input type="radio" name="hero-status" value="ineligible">現在出店手続き中／すでに利用している</label>
+          <div class="hero-form-intro">
+            <h2 id="hero-step-title">まずは、現在の状況を<br>お聞かせください</h2>
+            <p class="hero-step-lead">当てはまるものをお選びください。</p>
           </div>
-          <form class="contact-form hero-detail-form" hidden novalidate>
+          <div class="hero-form-scroll">
+            <div class="hero-status-options" role="radiogroup" aria-label="Uber Eats のご利用状況">
+              <label><input type="radio" name="hero-status" value="new">まだ出店していない<br><small>（新規出店を検討中）</small></label>
+              <label><input type="radio" name="hero-status" value="ineligible">現在出店手続き中／すでに利用している</label>
+            </div>
+          <form id="hero-campaign-form" class="contact-form hero-detail-form" hidden novalidate>
             <input type="hidden" name="status" value="new">
             <p class="hero-form-heading">対象キャンペーンの確認に必要な情報をご入力ください</p>
             <label>店舗名 <span>必須</span><input name="store_name" placeholder="例）〇〇食堂" required></label>
@@ -57,11 +60,14 @@
             <div class="checkbox-list"><label><input type="checkbox" name="time" value="9:00〜11:00">9:00〜11:00</label><label><input type="checkbox" name="time" value="11:00〜14:00">11:00〜14:00</label><label><input type="checkbox" name="time" value="14:00〜17:00">14:00〜17:00</label><label><input type="checkbox" name="time" value="17:00〜">17:00〜</label></div>
             <label>お問い合わせ内容 <small>任意</small><textarea name="message" rows="4" placeholder="費用やキャンペーンについて、気になることをご記入ください。"></textarea></label>
             <label class="consent"><input type="checkbox" name="privacy" required><span><a href="privacy-policy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する <b>必須</b></span></label>
-            <button class="button button-primary button-submit has-free-badge" type="submit">キャンペーンの確認を依頼する<span class="button-free-badge">無料</span></button>
             <p class="form-caption">送信後、担当者よりご連絡します。<br>このフォームの送信だけで、出店契約が成立することはありません。</p>
             <div class="form-complete" hidden role="status"><strong>お問い合わせありがとうございます。</strong><br>店舗情報を確認のうえ、担当者より対象キャンペーンと出店条件をご案内します。</div>
           </form>
           <p class="hero-status-notice" hidden aria-live="polite">当窓口は新規出店をご検討中の店舗様向けです。現在手続き中・すでにご利用中の場合は、お問い合わせいただいてもご返信いたしかねる場合があります。手続きを進めている窓口または Uber Eats のサポート窓口へお問い合わせください。</p>
+          </div>
+          <div class="hero-form-submit-dock">
+            <button class="button button-primary button-submit has-free-badge" type="submit" form="hero-campaign-form">キャンペーンの確認を依頼する<span class="button-free-badge">無料</span></button>
+          </div>
         </aside>
       </div>
     </section>
