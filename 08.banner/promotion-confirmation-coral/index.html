@@ -77,10 +77,9 @@
 }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="..images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- モバイルでは最初の表示に使う軽量版ヒーロー画像を、CSS解析より先に取得する -->
 <link rel="preload" as="image"
       href="images/ubereats-support/lp-15-mobile.webp"
       media="(max-width: 768px)"
@@ -798,7 +797,7 @@ a{text-decoration:none;color:inherit}
   .ft{padding-bottom:calc(12px + 82px + env(safe-area-inset-bottom,0px))!important}
 }
 
-/* ===== 8/14キャンペーン モバイル用フローティング（LINE相談バーの上に表示） ===== */
+/* ===== 店頭価格プロモーション モバイル用フローティング（LINE相談バーの上に表示） ===== */
 .cp-mfloat{display:none}
 @media(max-width:768px){
   .cp-mfloat{
@@ -815,7 +814,9 @@ a{text-decoration:none;color:inherit}
     transition:opacity .3s ease,transform .3s ease;
   }
   .cp-mfloat.cp-mfloat-show{opacity:1;transform:translateY(0);pointer-events:auto}
-  .cp-mfloat img{width:100%;height:auto;display:block}
+  /* バナー画像の白い余白を隠し、チケット部分だけを自然に見せる */
+  .cp-mfloat a{display:block;overflow:hidden;border-radius:22px;line-height:0}
+  .cp-mfloat img{width:100%;height:auto;display:block;transform:scale(1.05);transform-origin:center}
   .cp-mfloat-close{
     position:absolute; top:8px; right:8px;
     width:26px; height:26px; border-radius:50%;
@@ -1040,7 +1041,7 @@ a{text-decoration:none;color:inherit}
 }
 .cookie-banner-btn:hover{background:#04a857}
 
-/* ===== パフォーマンステスト：非本質のモーションを停止 ===== */
+/* パフォーマンステスト：非本質のモーションを停止 */
 .cp-float,.cp-mfloat,.lq-overlay,.lq-box,.cookie-banner{transition:none!important}
 .cp-float:hover{transform:translateY(0)}
 
@@ -1711,7 +1712,7 @@ a{text-decoration:none;color:inherit}
         </svg>
 
         <div class="uq-center">
-          <img src="images/ubereats-support/uq-center.webp" alt="" width="220" height="246" loading="lazy" decoding="async">
+          <img src="images/ubereats-support/uq-center.webp" alt="" width="220" height="246">
         </div>
 
         <div class="uq-node uq-node--tl">
@@ -2378,7 +2379,7 @@ a{text-decoration:none;color:inherit}
     <p class="lq-title">公式LINEで出店申込</p>
     <p class="lq-sub">QRコードをカメラで読み取って<br>公式LINEから出店申込・ご相談を始めましょう</p>
     <div class="lq-qr-wrap">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&data=https://lin.ee/RhSAYu3" alt="LINE QRコード" loading="lazy" decoding="async" width="180" height="180">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&data=https://lin.ee/RhSAYu3" alt="LINE QRコード" loading="lazy" decoding="async">
     </div>
     <a href="https://lin.ee/RhSAYu3" class="lq-btn" target="_blank" rel="noopener">
       <img class="lq-btn-icon" src="images/ubereats-support/lp-03.webp" alt="" loading="lazy" decoding="async" width="96" height="96">
@@ -2616,11 +2617,11 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
-<!-- ===== プロモーション確認用 モバイルフローティング（LINE相談バーの上に表示） ===== -->
+<!-- ===== 店頭価格プロモーション モバイル用フローティング（LINE相談バーの上に表示） ===== -->
 <div class="cp-mfloat" id="cp-mfloat">
   <button class="cp-mfloat-close" id="cp-mfloat-close-btn" aria-label="閉じる">✕</button>
-  <a href="tel-reservation/#form">
-    <img src="images/campaign/promotion-banner-mobile-coral-d1-natural-wide-ticket-1440x344.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="eager" decoding="async" width="720" height="172">
+  <a href="store-price-promotion.html">
+    <img src="images/campaign/promotion-banner-mobile-coral-d1-extended-topright-readable-720x172.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="eager" decoding="async" width="720" height="172">
   </a>
 </div>
 <script>
@@ -2631,8 +2632,9 @@ a{text-decoration:none;color:inherit}
   var bar = document.querySelector('.mb-bar');
   if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
 
-  // 確認環境では、再読み込みのたびにバナーを再表示する。
+  var DISMISSED_KEY = 'lp_promotion_coral_mfloat_dismissed';
   var dismissed = false;
+  try { dismissed = sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch(e){}
 
   // モバイル下部固定バー（電話相談予約／特典確認／LINE相談）の直上に重ねて配置
   function positionAboveBar(){
@@ -2665,6 +2667,7 @@ a{text-decoration:none;color:inherit}
     e.preventDefault();
     e.stopPropagation();
     dismissed = true;
+    try { sessionStorage.setItem(DISMISSED_KEY, '1'); } catch(e){}
     floatEl.classList.remove('cp-mfloat-show');
   });
 })();
@@ -2759,7 +2762,7 @@ a{text-decoration:none;color:inherit}
 </script>
 
 <script>
-/* ===== 二重送信防止：送信は遅らせず、押下直後にボタンだけをロック ===== */
+/* 二重送信防止：送信は遅らせず、押下直後にボタンだけをロック */
 (function(){
   var forms = document.querySelectorAll('form[action$="mail.php"]');
 
@@ -2800,9 +2803,33 @@ a{text-decoration:none;color:inherit}
     });
   });
 
-  /* 戻る操作などで同じページが復元された場合は、再入力・再送信できる状態に戻す */
   window.addEventListener('pageshow', function(){
     Array.prototype.forEach.call(forms, resetForm);
+  });
+})();
+</script>
+
+<!-- Google Ads：公式LINEへの実際の遷移をコンバージョンとして計測 -->
+<script>
+(function(){
+  var LINE_CONVERSION_SEND_TO = 'AW-18173726920/h1tZCMCfuOIcEMih9NlD';
+
+  function sendLineConversion(){
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'conversion', {
+      'send_to': LINE_CONVERSION_SEND_TO,
+      'value': 1.0,
+      'currency': 'JPY'
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('a[href*="lin.ee"]'), function(link){
+    link.addEventListener('click', function(){
+      /* PCではヘッダー／最終CTAはQRモーダルを開くだけのため、実際のLINE遷移は計測しない。 */
+      if (link.classList.contains('lq-btn') || window.innerWidth < 769) {
+        sendLineConversion();
+      }
+    });
   });
 })();
 </script>

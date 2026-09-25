@@ -1,0 +1,1033 @@
+/* ヒーロー上の文字は白で統一し、淡いグリーン文字を使わない */
+.brand b { display: inline; }
+.hero h1 em,
+.hero-benefits strong,
+.eyebrow,
+.section-label.light,
+.final-grid span { color: #fff; }
+.visual-story {
+  background: transparent;
+  margin-top: 48px;
+  margin-bottom: 0;
+}
+.visual-story-grid {
+  gap: 24px;
+  max-width: none;
+}
+.visual-story figure {
+  min-height: 0;
+}
+.visual-story figure::after { display: none; }
+.visual-story img {
+  height: 260px;
+  filter: saturate(.88);
+}
+.visual-story figcaption {
+  position: static;
+  padding: 15px 0 0;
+  color: #202822;
+}
+.visual-story figcaption span {
+  display: block;
+  margin-bottom: 5px;
+  color: #048c4c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.visual-story figcaption strong {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ヒーローの強調語は背景写真でも判読できる暖色にする */
+.hero h1 em { color: #ffd36e; }
+
+/* キャンペーンは薄い色面ではなく、デリバリーの情景を背景にする */
+.campaign-band {
+  color: #fff;
+  background-image:
+    linear-gradient(100deg, rgba(5, 34, 21, .94) 0%, rgba(5, 34, 21, .86) 47%, rgba(5, 34, 21, .67) 100%),
+    url("images/restaurant-delivery-pickup.png");
+  background-position: center;
+  background-size: cover;
+  border: 0;
+}
+.campaign-band .section-label.light { color: #bfffd9; }
+.campaign-band h2 { color: #fff; }
+.campaign-band .campaign-grid > div > p { color: #edf6f0; }
+.campaign-band .campaign-highlight {
+  position: relative;
+  padding: 34px 38px 30px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(4, 29, 18, .66), rgba(4, 29, 18, .30));
+  border: 1px solid rgba(255, 255, 255, .23);
+  border-left: 4px solid #ffd36e;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .15);
+}
+.campaign-band .campaign-highlight::before {
+  display: inline-flex;
+  align-items: center;
+  height: 23px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  color: #173020;
+  background: #ffd36e;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  content: "CAMPAIGN BENEFIT";
+}
+.campaign-band .campaign-highlight::after {
+  position: absolute;
+  top: -44px;
+  right: -20px;
+  width: 145px;
+  height: 145px;
+  border: 1px solid rgba(255, 211, 110, .32);
+  border-radius: 50%;
+  content: "";
+}
+.campaign-band .campaign-highlight p { color: #fff; }
+.campaign-band .campaign-highlight strong {
+  position: relative;
+  z-index: 1;
+  color: #ffd36e;
+  font-size: clamp(29px, 2.5vw, 39px);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .24);
+}
+.campaign-band .campaign-highlight small,
+.campaign-band .campaign-highlight em { color: #dceae1; }
+.campaign-band .campaign-highlight .button-white {
+  position: relative;
+  min-width: min(100%, 390px);
+  color: #fff;
+  background: #06c167;
+  border-color: #06c167;
+}
+.campaign-band .campaign-highlight .button-white::after {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 400;
+  content: "→";
+}
+.campaign-band .campaign-highlight .button-white:hover {
+  background: #048c4c;
+  border-color: #048c4c;
+}
+
+/* 3つの理由それぞれに対応する写真を置く */
+.reason-card .reason-number { margin-bottom: 14px; }
+.reason-photo {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 22px;
+  object-fit: cover;
+}
+
+/* ヒーローは利用状況だけを確認する、負担の少ない1ステップ目にする */
+.hero-step-card {
+  width: 100%;
+  padding: 31px 30px 26px;
+  color: #202822;
+  background: rgba(255, 255, 255, .98);
+  border-radius: 6px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
+}
+.hero-step-kicker {
+  margin: 0;
+  color: #048c4c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.hero-step-card h2 {
+  margin: 5px 0 0;
+  font-size: 23px;
+  letter-spacing: .02em;
+  line-height: 1.45;
+}
+.hero-step-lead {
+  margin: 9px 0 17px;
+  color: #657169;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.hero-status-options {
+  display: grid;
+  gap: 10px;
+}
+.hero-status-options label {
+  display: block;
+  padding: 9px 11px;
+  color: #26352d;
+  background: #f5f8f6;
+  border: 1px solid #e1e8e3;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.hero-status-options label:has(input:checked) {
+  color: #046738;
+  background: #eaf9f0;
+  border-color: #06c167;
+}
+.hero-status-options input {
+  margin: 0 7px 0 0;
+  accent-color: #06c167;
+}
+.hero-status-options small { font-size: 11px; }
+.hero-status-notice {
+  margin: 13px 0 0;
+  padding: 10px 11px;
+  color: #9b493c;
+  background: #fff4f1;
+  border-left: 3px solid #ef674f;
+  font-size: 11px;
+  line-height: 1.65;
+}
+.hero-detail-form {
+  display: grid;
+  gap: 17px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #dce6df;
+}
+.hero-detail-form[hidden] { display: none; }
+.contact-form .form-body[hidden] { display: none; }
+.hero-detail-form > label { line-height: 1.55; }
+.hero-detail-form input:not([type="checkbox"]):not([type="radio"]),
+.hero-detail-form textarea { margin-top: 7px; }
+.hero-form-heading {
+  margin: 0 0 3px;
+  color: #263c30;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+.hero-detail-form .checkbox-list label {
+  padding: 6px 8px;
+  font-size: 11px;
+}
+.hero-detail-form .button-submit { margin-top: 4px; }
+.hero-detail-form .form-caption { margin-top: 0; }
+.has-free-badge {
+  position: relative;
+  overflow: visible;
+}
+.button-submit.has-free-badge {
+  margin-top: 14px;
+}
+.button-free-badge {
+  position: absolute;
+  top: -16px;
+  right: 18px;
+  padding: 3px 10px;
+  color: #fff;
+  background: #048c4c;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(4, 80, 43, .18);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  line-height: 1.35;
+}
+.button-free-badge::after {
+  position: absolute;
+  right: 12px;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  background: #048c4c;
+  content: "";
+  transform: rotate(45deg);
+}
+.campaign-free-cta .button-free-badge {
+  right: 62px;
+  color: #173020;
+  background: #ffdf00;
+}
+.campaign-free-cta .button-free-badge::after { background: #ffdf00; }
+.final-grid .button-free-badge { color: #fff; }
+.contact-form > label.consent > span {
+  margin-left: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.consent b {
+  margin-left: 4px;
+  padding: 0;
+  color: #e05447;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* 費用・支援内容を、写真上で読みやすい小さなインフォパネルとして見せる */
+.hero-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  max-width: 590px;
+}
+.hero-benefits li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 25px auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  align-content: center;
+  justify-content: center;
+  min-height: 75px;
+  padding: 12px 16px;
+  color: #f4f8f5;
+  background: rgba(9, 28, 18, .48);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1.45;
+  backdrop-filter: blur(4px);
+}
+.hero-benefits li + li { padding: 12px 16px; }
+.hero-benefits li > span { grid-column: 2; grid-row: 1; font-weight: 700; }
+.hero-benefits li + li::before {
+  display: flex;
+  position: static;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  color: #253a2d;
+  background: #ffd36e;
+  border: 0;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  content: "✓";
+}
+.hero-benefits li:first-child::before {
+  display: flex;
+  position: static;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  color: #253a2d;
+  background: #ffd36e;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  content: "¥";
+}
+.hero-benefits li:nth-child(3)::before { content: "→"; }
+.hero-benefits li::before { transform: none; }
+.hero-benefits strong {
+  display: block;
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 1px;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: .01em;
+  line-height: 1.2;
+}
+
+/* 現行LPと同じ、運営情報を明示するフッター */
+.footer-trust {
+  padding: 28px 24px 20px;
+  color: #fff;
+  background: #1a1a1a;
+}
+.footer-info {
+  max-width: 640px;
+  margin: 0;
+}
+.footer-info-row {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 7px 0;
+}
+.footer-info-row + .footer-info-row { border-top: 1px solid rgba(255, 255, 255, .07); }
+.footer-info-row dt,
+.footer-info-row dd { margin: 0; }
+.footer-info-row dt {
+  flex: 0 0 64px;
+  color: rgba(255, 255, 255, .45);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.footer-info-row dd {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.footer-info-row dd > span {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  color: #06c167;
+  border: 1px solid rgba(6, 193, 103, .5);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  vertical-align: 1px;
+}
+.footer-info-row dd > small {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, .65);
+  font-size: 11px;
+}
+.footer-info-row a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-info-row a:hover { color: #06c167; }
+footer.footer-copyright {
+  padding: 16px 24px 20px;
+  color: #fff;
+  background: #1a1a1a;
+}
+.footer-copyright p {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  opacity: .85;
+  text-align: center;
+}
+
+/* 予約フォームごとに異なる、主張しすぎない背景写真を添える */
+.form-page-main {
+  position: relative;
+  background: #f5f8f6;
+}
+.form-page-main:has(.campaign-form) {
+  background-image:
+    linear-gradient(rgba(245, 250, 247, .88), rgba(245, 250, 247, .91)),
+    url("images/form-campaign-food-bg.png");
+}
+.form-page-main:has([data-form-kind="telephone"]) {
+  background-image:
+    linear-gradient(rgba(245, 250, 247, .88), rgba(245, 250, 247, .91)),
+    url("images/form-phone-delivery-bg.png");
+}
+.form-page-main:has([data-form-kind="promotion"]) {
+  background-image:
+    linear-gradient(rgba(245, 250, 247, .88), rgba(245, 250, 247, .91)),
+    url("images/form-campaign-food-bg.png");
+}
+.form-page-main:has(.campaign-form),
+.form-page-main:has([data-form-kind="telephone"]),
+.form-page-main:has([data-form-kind="promotion"]) {
+  background-position: center;
+  background-size: cover;
+}
+.form-page:has(.campaign-form) .site-header .button-outline,
+.form-page:has([data-form-kind="telephone"]) .site-header .button-outline { display: none; }
+.form-page-main .standalone-form { position: relative; }
+body.is-embedded .site-header,
+body.is-embedded footer { display: none; }
+body.is-embedded .form-page-main { padding: 0; }
+body.is-embedded .standalone-form {
+  width: 100%;
+  padding: 22px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.is-embedded .target-notice { display: none; }
+body.is-embedded .standalone-form > .section-label {
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+body.is-embedded .standalone-form > h1 {
+  margin-bottom: 7px;
+  font-size: 22px;
+}
+body.is-embedded .standalone-lead {
+  margin: 0 0 16px;
+  font-size: 11px;
+}
+body.is-embedded .standalone-contact { max-width: none; }
+@media (min-width: 861px) {
+  .hero-title-line {
+    display: inline-block;
+    font-size: .83em;
+    white-space: nowrap;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(370px, 410px);
+    align-items: start;
+    gap: 46px;
+    height: max(740px, calc(100dvh - 82px));
+    min-height: 740px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .hero-copy { width: auto; }
+  .hero-step-card {
+    align-self: start;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    max-height: calc(100dvh - 170px);
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero-form-intro {
+    position: relative;
+    z-index: 1;
+    padding: 31px 30px 8px;
+    background: rgba(255, 255, 255, .98);
+  }
+  .hero-form-scroll {
+    min-height: 0;
+    padding: 8px 22px 20px 30px;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hero-form-scroll::-webkit-scrollbar { display: none; }
+  .hero-form-submit-dock {
+    position: relative;
+    z-index: 1;
+    padding: 25px 30px 24px;
+    background: #fff5cf;
+    border-top: 1px solid #efd268;
+    box-shadow: 0 -8px 16px rgba(92, 75, 18, .08);
+  }
+  .hero-form-submit-dock .button {
+    width: 100%;
+    margin: 0;
+  }
+}
+.final-grid article {
+  display: flex;
+  flex-direction: column;
+}
+.final-grid .button {
+  min-height: 64px;
+  height: 64px;
+  margin-top: 30px;
+}
+.final-grid h3 {
+  min-height: 61px;
+}
+/* 最終CTAは白地に料理の情景を淡く重ね、選択カードを際立たせる */
+.final-cta {
+  color: #202822;
+  background-image:
+    linear-gradient(rgba(232, 247, 237, .90), rgba(232, 247, 237, .93)),
+    url("images/restaurant-menu-prep.png");
+  background-position: center;
+  background-size: cover;
+}
+.final-cta > .container > p { color: #048c4c; }
+.final-cta h2 { color: #202822; }
+.final-cta .final-lead { color: #4a574f; }
+.final-cta > .container > small {
+  color: #405148;
+  font-weight: 600;
+}
+.final-grid article {
+  background: rgba(255, 255, 255, .96);
+  border-color: #b9cabf;
+}
+@media (min-width: 861px) {
+  .final-grid {
+    position: relative;
+  }
+  .final-grid::after {
+    position: absolute;
+    top: 34px;
+    bottom: 34px;
+    left: 50%;
+    width: 1px;
+    background: #d6e3da;
+    content: "";
+    transform: translateX(-50%);
+  }
+}
+.final-grid span { color: #048c4c; }
+.final-grid h3,
+.final-grid p { color: #202822; }
+.final-grid .button-outline {
+  color: #048c4c;
+  background: #fff;
+  border-color: #048c4c;
+}
+.final-grid .button-outline:hover {
+  color: #fff;
+  background: #048c4c;
+}
+
+/* 行動を促す主CTAは、背景のUberグリーンとコントラストが出るイエローに */
+.button {
+  font-size: 16px;
+}
+.button-primary {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  border-radius: 999px;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(127, 87, 5, .18);
+}
+.button-primary:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+.campaign-band .button-white {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  border-radius: 999px;
+  font-size: 16px;
+}
+.campaign-band .button-white:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+
+/* ヘッダーは本文CTAよりもコンパクトな元のサイズを維持 */
+.header-actions .button {
+  min-height: 44px;
+  padding: 9px 18px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* 入力項目の必須表示を、利用状況のバッジと同じ見た目に統一 */
+.contact-form .form-body > label:not(.consent) > span {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 5px;
+  color: #fff;
+  background: #ef674f;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: 1px;
+}
+.mobile-break { display: none; }
+.desktop-break { display: block; }
+@media (max-width: 860px) {
+  /* ヘッダーの2導線とブランド名を、狭い画面でも1行に収める */
+  .header-actions .button {
+    min-height: 39px;
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+  .hero-title-line {
+    display: block;
+    font-size: .9em;
+  }
+  .hero-title-tail { white-space: nowrap; }
+  .mobile-break { display: block; }
+  .desktop-break { display: none; }
+  /* 固定のモバイル導線がフッターや最終CTAを覆わないようにする */
+  body:has(.mobile-bar) { padding-bottom: 58px; }
+  .visual-story { margin-top: 32px; }
+  .visual-story-grid { gap: 30px; }
+  .visual-story figure { min-height: 0; }
+  .visual-story img { height: 220px; }
+  .reason-photo {
+    height: 160px;
+    margin-bottom: 16px;
+  }
+  .hero-step-card {
+    margin-top: 36px;
+    padding: 26px 22px 22px;
+    border-radius: 4px;
+  }
+  .hero-step-card h2 { font-size: 20px; }
+  .hero-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    max-width: none;
+  }
+  .hero-benefits li {
+    grid-template-columns: 19px minmax(0, 1fr);
+    column-gap: 8px;
+    min-height: 70px;
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+  .hero-benefits li + li { padding: 11px 12px; }
+  .hero-benefits li:nth-child(3) {
+    grid-column: 1 / -1;
+    grid-template-columns: 19px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+  .hero-benefits li:nth-child(3) > span {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .hero-benefits li:nth-child(3) strong {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+  .hero-benefits li:nth-child(3)::after {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    width: 62px;
+    height: 38px;
+    background: url("images/icon-delivery-bike.svg") center / contain no-repeat;
+    content: "";
+    opacity: .7;
+    transform: translateY(-50%);
+  }
+  .prep-grid article {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
+  }
+  .prep-grid article > span {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .prep-grid article > h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 2px 0 0;
+  }
+  .prep-grid article > p {
+    grid-column: 1 / -1;
+    margin-top: 13px;
+  }
+  .hero-benefits li:first-child::before,
+  .hero-benefits li + li::before {
+    width: 19px;
+    height: 19px;
+    font-size: 11px;
+  }
+  .hero-benefits strong { font-size: 18px; }
+  /* 最終CTAは、スマホでは2つの選択肢を独立したカードとして見せる */
+  .final-grid {
+    gap: 14px;
+    border: 0;
+  }
+  .final-grid article {
+    padding: 26px 22px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid #b9cabf;
+  }
+  .final-grid article + article {
+    border-top: 1px solid #b9cabf;
+    border-left: 1px solid #b9cabf;
+  }
+  .final-grid h3 { min-height: 0; }
+  .final-grid .button { margin-top: 24px; }
+  .footer-trust { padding: 22px 20px 16px; }
+  .footer-info-row {
+    flex-direction: column;
+    gap: 3px;
+    padding: 9px 0;
+  }
+  .footer-info-row dt { flex: none; }
+  .footer-info-row:nth-child(3) dd {
+    font-size: 0;
+  }
+  .footer-info-row:nth-child(3) dd::after {
+    display: block;
+    color: #fff;
+    content: "〒101-0052\A東京都千代田区神田小川町3丁目20番地\A越後屋ビル302号室";
+    font-size: 13px;
+    line-height: 1.65;
+    white-space: pre-line;
+  }
+  .campaign-band .campaign-highlight {
+    padding: 26px 20px 22px;
+    border: 1px solid rgba(255, 255, 255, .23);
+    border-top: 3px solid #ffd36e;
+  }
+  .campaign-band .campaign-highlight::before {
+    margin-bottom: 11px;
+  }
+}
+
+@media (max-width: 390px) {
+  .header-actions .button {
+    min-height: 37px;
+    padding: 5px 5px;
+    font-size: 9px;
+  }
+  .hero-title-line { font-size: .86em; }
+  .hero-step-card { padding-right: 18px; padding-left: 18px; }
+  .hero-status-options label { font-size: 12px; }
+}
+
+@media (max-width: 600px) {
+  /* スマホでは常時表示の下部CTAに役割を寄せ、ヘッダーの横あふれを防ぐ */
+  .site-header:has(.header-actions) .header-actions { display: none; }
+  .header-inner { min-height: 76px; }
+  .brand img { width: 52px; height: 52px; }
+  .brand > span {
+    padding-left: 11px;
+    font-size: 12px;
+  }
+  .brand b { font-size: 14px; }
+  .mobile-bar a:first-child {
+    color: #202822;
+    background: #ffdf00;
+    border-color: #ffdf00;
+  }
+}
+
+/* スマホで読む前提の文字サイズへ統一：表・補足・フォームを優先して拡大 */
+@media (max-width: 860px) {
+  .section-lead {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .hero-note,
+  .under-button { font-size: 12px; }
+  .cost-table b,
+  .cost-table > div > strong,
+  .cost-table > div > span {
+    font-size: 13px;
+  }
+  .cost-table strong,
+  .cost-table span strong { font-size: 20px; }
+  .cost-table span small { font-size: 12px; }
+  .cost-message {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .annotation { font-size: 12px; }
+  .prep-grid p,
+  .flow-list p,
+  .faq-list details p { font-size: 13px; }
+  .final-lead { font-size: 13px; }
+  .final-cta > .container > small { font-size: 12px; }
+  .standalone-lead,
+  .target-notice { font-size: 13px; }
+  .form-fieldset legend,
+  .contact-form label { font-size: 13px; }
+  .radio-option { font-size: 13px; }
+  .contact-form input:not([type="checkbox"]):not([type="radio"]),
+  .contact-form select,
+  .contact-form textarea { font-size: 14px; }
+  .checkbox-list label { font-size: 12px; }
+  .form-caption { font-size: 11px; }
+  .hero-form-submit-dock {
+    margin-top: 18px;
+  }
+  .hero-form-submit-dock .button {
+    width: 100%;
+  }
+}
+
+/* PCは大きな余白に対して本文が小さく見えないよう、説明・表の文字を補正 */
+@media (min-width: 861px) {
+  .section-lead { font-size: 17px; }
+  .cost-table b {
+    padding: 24px 32px;
+    font-size: 17px;
+  }
+  .cost-table > div > strong,
+  .cost-table > div > span {
+    padding: 22px 32px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .cost-table strong,
+  .cost-table span strong { font-size: 30px; }
+  .cost-table span small {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  .cost-message {
+    padding: 24px 30px;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .annotation { font-size: 13px; }
+  .reason-card p { font-size: 15px; }
+  .reason-card small { font-size: 12px; }
+  .prep-grid p { font-size: 14px; }
+  .flow-list p,
+  .faq-list details p { font-size: 15px; }
+  .faq-list summary { font-size: 16px; }
+  .final-lead { font-size: 16px; }
+  .final-grid p { font-size: 15px; }
+  .final-cta > .container > small { font-size: 12px; }
+}
+
+/* 問い合わせ導線は「キャンペーン確認」「電話相談」を同じ主CTA色で統一 */
+.header-actions .button-outline,
+.final-grid .button-outline {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  box-shadow: 0 7px 16px rgba(127, 87, 5, .18);
+}
+.header-actions .button-outline:hover,
+.final-grid .button-outline:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+@media (max-width: 860px) {
+  .mobile-bar a + a {
+    color: #202822;
+    background: #ffdf00;
+    border-left: 1px solid rgba(32, 40, 34, .16);
+  }
+}
+
+/* フォームのご案内も主CTAのイエローとつながる、やわらかい案内色に */
+.target-notice {
+  color: #4f451d;
+  background: #fff9e3;
+  border-left-color: #ffcf00;
+}
+.hero-status-notice,
+.ineligible-message {
+  color: #5e4d16;
+  background: #fff9e8;
+  border-color: #efcf62;
+  border-left-color: #e7b900;
+}
+.form-caption {
+  color: #665e3e;
+}
+
+/* キャンペーン確認はイエロー、電話相談は従来のグリーンで役割を分ける */
+.header-actions a[href="tel-reservation.html"],
+.final-grid a[href="tel-reservation.html"] {
+  color: #fff;
+  background: #06c167;
+  border-color: #06c167;
+  box-shadow: 0 7px 16px rgba(4, 116, 61, .18);
+}
+.header-actions a[href="tel-reservation.html"]:hover,
+.final-grid a[href="tel-reservation.html"]:hover {
+  color: #fff;
+  background: #048c4c;
+  border-color: #048c4c;
+}
+body.form-page:has([data-form-kind="telephone"]) .button-primary {
+  color: #202822;
+  background: #ffdf00;
+  border-color: #ffdf00;
+  box-shadow: 0 7px 16px rgba(127, 87, 5, .18);
+}
+body.form-page:has([data-form-kind="telephone"]) .button-primary:hover {
+  color: #202822;
+  background: #ffcf00;
+  border-color: #ffcf00;
+}
+body.form-page:has([data-form-kind="telephone"]) .target-notice {
+  color: #315943;
+  background: #effaf3;
+  border-left-color: #06c167;
+}
+body.form-page:has([data-form-kind="telephone"]) .form-caption {
+  color: #4f6b5a;
+}
+
+/* 吹き出しは配置ごとに指定する：電話相談カードはイエロー、ヒーロー送信はグリーン */
+.final-grid a[href="tel-reservation.html"] .button-free-badge {
+  color: #202822;
+  background: #ffdf00;
+}
+.final-grid a[href="tel-reservation.html"] .button-free-badge::after {
+  background: #ffdf00;
+}
+@media (max-width: 860px) {
+  .mobile-bar a[href="tel-reservation.html"] {
+    color: #fff;
+    background: #06c167;
+    border-left-color: rgba(255, 255, 255, .28);
+  }
+}
+
+/* PCの独立フォームは画面内に収め、展開後はカードの中だけをスクロールする */
+@media (min-width: 861px) {
+  body.form-page:has(.standalone-contact) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+  body.form-page:has(.standalone-contact) .form-page-main {
+    display: flex;
+    align-items: center;
+    height: calc(100dvh - 82px);
+    min-height: 0;
+    padding: 34px 16px;
+    overflow: hidden;
+  }
+  body.form-page:has(.standalone-contact) .standalone-form {
+    max-height: 100%;
+    background: #fff;
+    border-color: transparent;
+    background-clip: padding-box;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body.form-page:has(.standalone-contact) .standalone-form::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 対象外の方への案内は、通常の補足と区別できる警告色を使う */
+.hero-status-notice,
+.ineligible-message {
+  color: #a34335;
+  background: #fff4f1;
+  border-color: #f0c8bf;
+  border-left-color: #ef674f;
+}
+
+/* フォームの入力項目は、専門知識のない方にも読み取りやすい文字サイズに */
+.form-fieldset legend,
+.contact-form label,
+.hero-status-options label {
+  font-size: 14px;
+}
+.radio-option,
+.checkbox-list label {
+  font-size: 13px;
+}
+.contact-form input:not([type="checkbox"]):not([type="radio"]),
+.contact-form select,
+.contact-form textarea {
+  font-size: 15px;
+}
+.contact-form small,
+.hero-status-options small {
+  font-size: 11px;
+}
+.consent { font-size: 13px !important; }
+.checkbox-list label:has(input[name="time"]) {
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
