@@ -518,6 +518,9 @@ body.is-embedded .standalone-contact { max-width: none; }
     width: 100%;
     margin: 0;
   }
+  .hero-form-submit-dock .hero-form-caption {
+    margin: 12px 0 0;
+  }
 }
 .final-grid article {
   display: flex;
@@ -1087,6 +1090,9 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
 }
 .form-caption {
   text-align: left;
+}
+.hero-form-submit-dock .hero-form-caption {
+  margin: 12px 0 0;
 }
 @media (min-width: 861px) {
   .cost-table > div > strong {
