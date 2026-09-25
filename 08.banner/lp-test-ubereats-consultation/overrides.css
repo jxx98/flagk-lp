@@ -1126,4 +1126,27 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
     margin-top: .7em;
   }
   .hero .eyebrow > span { grid-column: 2; }
+
+  /* モバイルの本文は、中央寄せや任意の改行をせず自然に読み進められるようにする */
+  .hero-lead,
+  .hero-note,
+  .form-caption,
+  .ineligible-message,
+  .faq-list details p,
+  .thanks-card p {
+    text-align: left;
+  }
+  .hero-lead br,
+  .hero-note br,
+  .cost-message br,
+  .annotation br,
+  .campaign-grid > div:first-child > p br,
+  .section-lead br,
+  .final-lead br,
+  .final-cta > .container > small br,
+  .form-caption br,
+  .ineligible-message br,
+  .faq-list details p > br {
+    display: none;
+  }
 }
