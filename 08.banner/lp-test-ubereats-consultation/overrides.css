@@ -1031,3 +1031,16 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   font-size: 14px;
   font-weight: 600;
 }
+
+/* モバイルでは見出しを中心に、見出し下の説明文は読み進めやすく左揃えにする */
+@media (max-width: 860px) {
+  .section-lead,
+  .cost-message,
+  .annotation,
+  .campaign-grid > div:first-child > p,
+  .final-lead,
+  .final-cta > .container > small {
+    text-align: left;
+  }
+  .final-cta > .container > small { display: block; }
+}

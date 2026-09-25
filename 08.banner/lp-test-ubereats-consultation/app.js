@@ -4,6 +4,20 @@
     document.body.classList.add('is-embedded');
   }
 
+  const resetFormPageScroll = () => {
+    if (!document.body.classList.contains('form-page')) return;
+    window.scrollTo(0, 0);
+    document.querySelector('.standalone-form')?.scrollTo(0, 0);
+  };
+
+  if (document.body.classList.contains('form-page') && 'scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  resetFormPageScroll();
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(resetFormPageScroll);
+  });
+
   const syncEmbeddedHeight = () => {
     const frame = window.frameElement;
     if (!frame) return;
@@ -19,6 +33,14 @@
   const heroFormSubmitDock = document.querySelector('.hero-form-submit-dock');
   const hero = document.querySelector('.hero');
   const heroFormScroll = document.querySelector('.hero-form-scroll');
+  const disableSubmitButton = (form) => {
+    const id = form.id;
+    const submit = form.querySelector('button[type="submit"]')
+      || (id ? document.querySelector(`button[form="${id}"][type="submit"]`) : null);
+    if (!submit) return;
+    submit.disabled = true;
+    submit.setAttribute('aria-disabled', 'true');
+  };
   const updateHeroStatus = () => {
     const selected = document.querySelector('input[name="hero-status"]:checked');
     const eligible = selected && selected.value === 'new';
@@ -86,6 +108,7 @@
           return;
         }
         if (!form.checkValidity()) { form.reportValidity(); return; }
+        disableSubmitButton(form);
         form.querySelectorAll(':scope > :not(.form-complete)').forEach((field) => { field.hidden = true; });
         const complete = form.querySelector('.form-complete');
         if (complete) complete.hidden = false;
@@ -120,6 +143,7 @@
       const selected = form.querySelector('input[name="status"]:checked');
       if (!selected || selected.value !== 'new') { updateEligibility(); return; }
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      disableSubmitButton(form);
       form.querySelector('.form-fieldset').hidden = true;
       if (body) body.hidden = true;
       if (notice) notice.hidden = true;
