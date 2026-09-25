@@ -1037,7 +1037,8 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   display: block;
   width: 180px;
   height: auto;
-  margin: 0 0 18px;
+  /* ロゴの「U」の高さを下回らないクリアスペースを確保 */
+  margin: 0 0 32px;
 }
 
 /* モバイルでは見出しを中心に、見出し下の説明文は読み進めやすく左揃えにする */
@@ -1053,6 +1054,6 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   .final-cta > .container > small { display: block; }
   .hero-uber-eats-logo {
     width: 142px;
-    margin-bottom: 14px;
+    margin-bottom: 24px;
   }
 }
