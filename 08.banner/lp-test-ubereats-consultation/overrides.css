@@ -1083,6 +1083,7 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   content: "";
 }
 .hero .eyebrow > span + span { margin-left: 0; }
+.hero-note > span { display: block; }
 
 /* 費用表の「無料」も、注文手数料と同じレベルで費用の結論を伝える */
 .cost-table > div > strong {
@@ -1135,6 +1136,18 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
     margin-top: .7em;
   }
   .hero .eyebrow > span { grid-column: 2; }
+  .hero .eyebrow > span:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero .eyebrow > span:nth-of-type(2)::after {
+    flex: 1 1 auto;
+    min-width: 22px;
+    height: 2px;
+    background: #06c167;
+    content: "";
+  }
 
   /* モバイルの本文は、中央寄せや任意の改行をせず自然に読み進められるようにする */
   .hero-lead,
@@ -1157,5 +1170,23 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   .ineligible-message br,
   .faq-list details p > br {
     display: none;
+  }
+  .hero-form-caption br {
+    display: initial;
+  }
+  .cost-annotation br {
+    display: initial;
+  }
+  .fees .section-cta .mobile-break {
+    display: initial;
+  }
+  .reason-card h3 br {
+    display: none;
+  }
+  .final-cta > .container > small br {
+    display: initial;
+  }
+  body.form-page .form-caption br {
+    display: initial;
   }
 }
