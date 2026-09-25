@@ -1112,14 +1112,18 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
     margin-bottom: 40px;
   }
   .hero .eyebrow {
-    align-items: flex-start;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: start;
     margin-bottom: 22px;
     font-size: 13px;
     line-height: 1.5;
   }
   .hero .eyebrow::before {
+    grid-row: 1 / span 2;
     width: 25px;
     margin-top: .7em;
   }
+  .hero .eyebrow > span { grid-column: 2; }
 }
