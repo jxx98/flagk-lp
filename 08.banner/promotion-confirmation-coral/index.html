@@ -371,7 +371,8 @@ a{text-decoration:none;color:inherit}
     overflow:hidden;
     box-shadow:0 4px 16px rgba(0,0,0,.18);
   }
-  .hv2-pc-banner img{width:100%;height:auto;display:block}
+  /* 画像ファイル外周の白い余白をトリミングして表示 */
+  .hv2-pc-banner img{width:100%;height:auto;display:block;transform:scale(1.06);transform-origin:center}
 }
 .hv2-cta-icon-wrap{
   width:52px;height:52px;
@@ -814,9 +815,9 @@ a{text-decoration:none;color:inherit}
     transition:opacity .3s ease,transform .3s ease;
   }
   .cp-mfloat.cp-mfloat-show{opacity:1;transform:translateY(0);pointer-events:auto}
-  /* バナー画像の白い余白を隠し、チケット部分だけを自然に見せる */
-  .cp-mfloat a{display:block;overflow:hidden;border-radius:22px;line-height:0}
-  .cp-mfloat img{width:100%;height:auto;display:block;transform:scale(1.05);transform-origin:center}
+  /* 透過余白付きのチケット画像を、切り取らずそのまま表示する */
+  .cp-mfloat a{display:block;line-height:0}
+  .cp-mfloat img{width:100%;height:auto;display:block}
   .cp-mfloat-close{
     position:absolute; top:8px; right:8px;
     width:26px; height:26px; border-radius:50%;
@@ -886,8 +887,7 @@ a{text-decoration:none;color:inherit}
   .hv2{margin-top:76px}
 
   /* 2-column hero layout (left content + right form) */
-  /* ヒーローをビューポート高さに固定 */
-  .hv2{min-height:680px}
+  /* 高さは左右コンテンツの量に合わせる */
   .hv2-bg{height:100%}
   .hv2-overlay{height:100%}
   .hv2-inner{
@@ -895,7 +895,6 @@ a{text-decoration:none;color:inherit}
     grid-template-columns:1fr 380px;
     gap:40px;
     align-items:start;            /* 上端揃え */
-    min-height:600px;
     padding:32px 48px 32px 60px;
     max-width:1240px;
     margin:0 auto;
@@ -1244,9 +1243,9 @@ a{text-decoration:none;color:inherit}
       <span class="hv2-cta-arrow">›</span>
     </a>
 
-    <!-- 8/14キャンペーンバナー（PCヒーロー左カラム下部の余白に表示） -->
-    <a href="tel-reservation/#form" class="hv2-pc-banner">
-      <img src="images/campaign/banner-campaign-site-benefit.webp" alt="当サイト限定特典で初期費用0円・無料で出店申込み" loading="lazy" decoding="async" width="1040" height="249">
+    <!-- 店頭価格プロモーションバナー（PCヒーロー左カラム下部の余白に表示） -->
+    <a href="store-price-promotion.html" class="hv2-pc-banner">
+      <img src="images/campaign/promotion-banner-mobile-coral-d1-ticket-transparent-margin-1440x344.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="eager" decoding="async" width="1440" height="344">
     </a>
 
   </div><!-- /hv2-left -->
@@ -2579,8 +2578,8 @@ a{text-decoration:none;color:inherit}
 <!-- ===== 8/14キャンペーン フローティング（PC・ヒーロー通過後に右下表示） ===== -->
 <div class="cp-float" id="cp-float">
   <button class="cp-float-close" id="cp-float-close-btn" aria-label="閉じる">✕</button>
-  <a href="tel-reservation/#form">
-    <img src="images/campaign/popup-campaign-no-deadline.webp" alt="初期費用最大38,000円が初期費用0円の期間限定キャンペーン" loading="lazy" decoding="async" width="1280" height="801">
+  <a href="store-price-promotion.html">
+    <img src="images/campaign/promotion-popup-pc-a-large-1120x700.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="lazy" decoding="async" width="1120" height="700">
   </a>
 </div>
 <script>
@@ -2621,18 +2620,17 @@ a{text-decoration:none;color:inherit}
 <div class="cp-mfloat" id="cp-mfloat">
   <button class="cp-mfloat-close" id="cp-mfloat-close-btn" aria-label="閉じる">✕</button>
   <a href="store-price-promotion.html">
-    <img src="images/campaign/promotion-banner-mobile-coral-d1-extended-topright-readable-720x172.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="eager" decoding="async" width="720" height="172">
+    <img src="images/campaign/promotion-banner-mobile-coral-d1-ticket-transparent-margin-1440x344.png" alt="当サイト限定の店頭価格プロモーション。注文時のサービス手数料50%OFF。適用には条件があります。" loading="eager" decoding="async" width="720" height="172">
   </a>
 </div>
 <script>
 (function(){
   var floatEl = document.getElementById('cp-mfloat');
   var closeBtn = document.getElementById('cp-mfloat-close-btn');
-  var hero = document.querySelector('[data-section="hero"]');
   var bar = document.querySelector('.mb-bar');
-  if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
+  if (!floatEl) return;
 
-  var DISMISSED_KEY = 'lp_promotion_coral_mfloat_dismissed';
+  var DISMISSED_KEY = 'lp_promotion_coral_mfloat_always_dismissed';
   var dismissed = false;
   try { dismissed = sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch(e){}
 
@@ -2648,20 +2646,8 @@ a{text-decoration:none;color:inherit}
 
   positionAboveBar();
   window.addEventListener('resize', positionAboveBar);
-
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        floatEl.classList.remove('cp-mfloat-show');
-      } else if (entry.boundingClientRect.top < 0 && !dismissed) {
-        // ヒーローを下にスクロールして通り過ぎた場合のみ表示（閉じた後は再表示しない）
-        positionAboveBar();
-        floatEl.classList.add('cp-mfloat-show');
-      }
-    });
-  }, { threshold: 0 });
-
-  observer.observe(hero);
+  // モバイルではページ表示直後から常時表示する（閉じた後を除く）
+  if (!dismissed) floatEl.classList.add('cp-mfloat-show');
 
   closeBtn.addEventListener('click', function(e){
     e.preventDefault();
