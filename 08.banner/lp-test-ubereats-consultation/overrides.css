@@ -1056,6 +1056,41 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   margin: 0 0 32px;
 }
 
+/* ヒーローの対象者表記は、カプセルではなくアクセントライン付きの補足情報として見せる */
+.hero .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 24px;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .025em;
+  line-height: 1.55;
+}
+.hero .eyebrow::before {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 2px;
+  background: #06c167;
+  content: "";
+}
+.hero .eyebrow > span + span { margin-left: 0; }
+
+/* 費用表の「無料」も、注文手数料と同じレベルで費用の結論を伝える */
+.cost-table > div > strong {
+  font-size: 20px;
+}
+@media (min-width: 861px) {
+  .cost-table > div > strong {
+    font-size: 30px;
+  }
+}
+
 /* モバイルでは見出しを中心に、見出し下の説明文は読み進めやすく左揃えにする */
 @media (max-width: 860px) {
   .section-lead,
@@ -1067,10 +1102,24 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
   .final-cta > .container > small {
     text-align: left;
   }
+  body.form-page .standalone-form .standalone-lead {
+    text-align: left !important;
+  }
   .standalone-lead br { display: none; }
   .final-cta > .container > small { display: block; }
   .hero-uber-eats-logo {
     width: 142px;
     margin-bottom: 40px;
+  }
+  .hero .eyebrow {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .hero .eyebrow::before {
+    width: 25px;
+    margin-top: .7em;
   }
 }

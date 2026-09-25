@@ -109,17 +109,13 @@
         }
         if (!form.checkValidity()) { form.reportValidity(); return; }
         disableSubmitButton(form);
-        form.querySelectorAll(':scope > :not(.form-complete)').forEach((field) => { field.hidden = true; });
-        const complete = form.querySelector('.form-complete');
-        if (complete) complete.hidden = false;
-        if (heroFormSubmitDock) heroFormSubmitDock.hidden = true;
+        window.location.assign('thanks.html?type=campaign');
       });
       return;
     }
     const radios = form.querySelectorAll('input[name="status"]');
     const body = form.querySelector('.form-body');
     const notice = form.querySelector('.ineligible-message');
-    const complete = form.querySelector('.form-complete');
     const updateEligibility = () => {
       const selected = form.querySelector('input[name="status"]:checked');
       const eligible = selected && selected.value === 'new';
@@ -144,11 +140,7 @@
       if (!selected || selected.value !== 'new') { updateEligibility(); return; }
       if (!form.checkValidity()) { form.reportValidity(); return; }
       disableSubmitButton(form);
-      form.querySelector('.form-fieldset').hidden = true;
-      if (body) body.hidden = true;
-      if (notice) notice.hidden = true;
-      if (complete) complete.hidden = false;
-      syncEmbeddedHeight();
+      window.location.assign(`thanks.html?type=${encodeURIComponent(form.dataset.formKind || 'contact')}`);
     });
   });
 })();
