@@ -908,6 +908,12 @@ body.is-embedded .standalone-contact { max-width: none; }
   background: #fff9e3;
   border-left-color: #ffcf00;
 }
+
+/* 店頭価格プロモーションのフォーム説明：PCは中央、モバイルは読みやすく左揃え */
+.promotion-lead { text-align: center; }
+@media (max-width: 860px) {
+  .promotion-lead { text-align: left; }
+}
 .hero-status-notice,
 .ineligible-message {
   color: #5e4d16;
