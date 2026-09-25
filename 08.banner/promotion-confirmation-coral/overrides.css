@@ -910,9 +910,9 @@ body.is-embedded .standalone-contact { max-width: none; }
 }
 
 /* 店頭価格プロモーションのフォーム説明：PCは中央、モバイルは読みやすく左揃え */
-.promotion-lead { text-align: center; }
+.standalone-form .promotion-lead { text-align: center; }
 @media (max-width: 860px) {
-  .promotion-lead { text-align: left; }
+  .standalone-form .promotion-lead { text-align: left !important; }
 }
 .hero-status-notice,
 .ineligible-message {
