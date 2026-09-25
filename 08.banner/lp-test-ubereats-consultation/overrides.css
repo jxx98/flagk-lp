@@ -1085,6 +1085,9 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
 .cost-table > div > strong {
   font-size: 20px;
 }
+.form-caption {
+  text-align: left;
+}
 @media (min-width: 861px) {
   .cost-table > div > strong {
     font-size: 30px;
