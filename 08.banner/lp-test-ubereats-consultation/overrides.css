@@ -1095,6 +1095,24 @@ body.form-page:has([data-form-kind="telephone"]) .form-caption {
 .hero-form-submit-dock .hero-form-caption {
   margin: 12px 0 0;
 }
+.contact-form input.is-invalid {
+  border-color: #d04d3b;
+  background: #fff7f5;
+}
+.field-error {
+  display: block;
+  margin: 5px 0 0;
+  color: #bc3e30;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.contact-form input:disabled {
+  color: #8c9890;
+  background: #eef2ef;
+  border-color: #d9e1db;
+  cursor: not-allowed;
+}
 @media (min-width: 861px) {
   .cost-table > div > strong {
     font-size: 30px;
