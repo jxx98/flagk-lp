@@ -39,7 +39,8 @@
     const labelText = storeLabel ? [...storeLabel.childNodes].filter(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim()) : [];
     const storeRow = store?.closest('.f-row') || store?.closest('label');
     if (storeRow) storeRow.after(desiredLabel);
-    const originalSubmitText = submit?.textContent;
+    const originalSubmitHTML = submit?.innerHTML;
+    const originalFreeBadge = submit?.classList.contains('has-free-badge');
     const originalText = labelText.map(n => n.textContent);
     const heading = form.querySelector('.hero-form-heading');
     const originalHeading = heading?.textContent;
@@ -76,7 +77,13 @@
       if (inquiry && nameChange) inquiry.value = '屋号・店舗名変更';
       if (inquiry && previousState==='name_change' && !nameChange) inquiry.value = '';
       previousState = value;
-      if (submit) { if (nameChange) submit.textContent = '店舗名変更を相談する'; else if (originalSubmitText) submit.textContent = originalSubmitText; submit.hidden = rejected; submit.disabled = !eligible || !form.checkValidity(); }
+      if (submit) {
+        if (nameChange) submit.textContent = '店舗名変更を相談する';
+        else if (originalSubmitHTML) submit.innerHTML = originalSubmitHTML;
+        submit.classList.toggle('has-free-badge', !nameChange && originalFreeBadge);
+        submit.hidden = rejected;
+        submit.disabled = !eligible || !form.checkValidity();
+      }
       if (window.frameElement) window.frameElement.style.height = `${Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)}px`;
     };
     radios.forEach(radio => radio.addEventListener('change', update));
