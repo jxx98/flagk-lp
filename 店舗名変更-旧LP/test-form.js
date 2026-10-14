@@ -6,12 +6,19 @@
   const noticeText = '屋号・店舗名変更以外の、ご利用中・手続き中のご相談は受け付けておりません。Uber Eatsのサポート窓口へお問い合わせください。';
   const strip = document.createElement('div');
   strip.className = 'test-environment-label';
+  strip.hidden = true;
   strip.textContent = '確認用テスト環境｜送信は模擬動作です（メール・マスタ・本番計測なし）';
   document.body.prepend(strip);
   const fixedHeader = document.querySelector('.hd');
   if (fixedHeader && getComputedStyle(fixedHeader).position === 'fixed') {
     document.body.classList.add('has-test-fixed-header');
-    const syncHeaderSpace = () => { strip.style.marginTop = `${fixedHeader.getBoundingClientRect().height}px`; };
+    const syncHeaderSpace = () => {
+      const headerHeight = fixedHeader.getBoundingClientRect().height;
+      strip.style.marginTop = `${headerHeight}px`;
+      if (strip.hidden) document.body.style.paddingTop = `${headerHeight}px`;
+      document.documentElement.style.setProperty('--test-header-height', `${headerHeight}px`);
+      document.documentElement.style.setProperty('--test-notice-height', `${strip.getBoundingClientRect().height}px`);
+    };
     syncHeaderSpace();
     window.addEventListener('resize', syncHeaderSpace);
     if (typeof ResizeObserver === 'function') new ResizeObserver(syncHeaderSpace).observe(fixedHeader);
