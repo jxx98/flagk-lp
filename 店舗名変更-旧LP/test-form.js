@@ -29,7 +29,7 @@
     const radios = hero ? [...document.querySelectorAll('input[name="hero-status"]')] : [...form.querySelectorAll('input[type="radio"]')].filter(r => formTypes.includes(r.name));
     const body = form.querySelector('.form-body, .f-form-body');
     const submit = form.querySelector('button[type="submit"]') || document.querySelector(`button[form="${form.id}"]`);
-    const dock = hero ? document.querySelector('.hero-form-submit-dock') : null;
+    const dock = form.closest('.hv2-form-panel')?.querySelector('.old-hero-submit-dock') || (hero ? document.querySelector('.hero-form-submit-dock') : null);
     let notice = form.querySelector('.ineligible-message, .f-no-msg');
     if (hero) notice = document.querySelector('.hero-status-notice');
     if (!notice) {
@@ -64,7 +64,8 @@
       consultation.value = nameChange ? 'store_name_change' : eligible ? 'new_store' : '';
       notice.hidden = !rejected; notice.classList.toggle('is-shown', rejected);
       if (body) { body.hidden = !eligible; body.classList.toggle('is-hidden', !eligible); }
-      if (hero) { form.hidden = !eligible; if (dock) dock.hidden = !eligible; }
+      if (hero) form.hidden = !eligible;
+      if (dock) dock.hidden = !eligible;
       const group = form.querySelector('.consultation-options');
       form.querySelectorAll('input,select,textarea').forEach(input => {
         if (radios.includes(input) || group?.contains(input) || input.type === 'hidden') return;
@@ -129,8 +130,23 @@
         if (!field) { field = document.createElement('input'); field.type = 'hidden'; field.name = name; form.append(field); }
         field.value = 'support_name_change_banner';
       });
-      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const panel = form.closest('.hv2-form-panel');
+      (panel || form).scrollIntoView({ behavior: 'smooth', block: panel ? 'nearest' : 'center' });
+      const inputScroll = panel?.querySelector('.old-hero-form-scroll');
+      if (inputScroll) inputScroll.scrollTop = 0;
       radio.focus({ preventScroll: true });
     });
   });
+  // 新LPと同じく、PCヒーロー上のホイールを入力欄へ渡す。
+  const oldHero = document.querySelector('.hv2');
+  const oldHeroScroll = document.querySelector('.old-hero-form-scroll');
+  if (oldHero && oldHeroScroll) oldHero.addEventListener('wheel', event => {
+    if (!window.matchMedia('(min-width: 900px)').matches || event.ctrlKey) return;
+    const limit = oldHeroScroll.scrollHeight - oldHeroScroll.clientHeight;
+    if (limit <= 0 || event.deltaY === 0) return;
+    const canScroll = event.deltaY > 0 ? oldHeroScroll.scrollTop < limit - 1 : oldHeroScroll.scrollTop > 1;
+    if (!canScroll) return;
+    event.preventDefault();
+    oldHeroScroll.scrollTop = Math.max(0, Math.min(limit, oldHeroScroll.scrollTop + event.deltaY));
+  }, { passive: false });
 })();

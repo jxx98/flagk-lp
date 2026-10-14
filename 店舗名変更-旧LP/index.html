@@ -1280,19 +1280,14 @@ a{text-decoration:none;color:inherit}
     </a>
 
     <!-- 屋号・店舗名変更の相談バナー（PCヒーロー左カラム下部） -->
-    <a href="#mobile-form" class="hv2-pc-banner" data-name-change-entry="true">
-      <img src="images/campaign/store-name-change-banner-mobile-realfont-v10.png" alt="屋号・店舗名変更のご相談はこちら" loading="lazy" decoding="async">
-    </a>
-
-  </div><!-- /hv2-left -->
+    </div><!-- /hv2-left -->
 
   <!-- ── 右カラム：キャンペーン確認フォーム（PC専用） ── -->
   <div class="hv2-right">
     <div class="hv2-form-panel">
-      <div class="hv2-form-top">
-        <p class="hv2-form-title">Uber Eats 出店申込・店舗登録<br>無料サポートフォーム</p>
-      </div>
-      <form id="hero-cf-form" action="mail.php" method="post" data-test-form="true">
+      <div class="hv2-form-top old-hero-form-intro">
+        <h2>ご相談内容を<br>お選びください</h2><p class="old-hero-form-lead">当てはまるものをお選びください。</p></div>
+      <div class="old-hero-form-scroll"><form id="hero-cf-form" action="mail.php" method="post" data-test-form="true">
         <input type="hidden" name="form_type" value="hero">
 
         <!-- 新規出店確認 -->
@@ -1377,17 +1372,21 @@ a{text-decoration:none;color:inherit}
         </div>
 
         <!-- 送信ボタン -->
-        <div class="f-submit-wrap">
-          <button type="submit" class="f-submit" id="hero-submit-btn" disabled>
-            <span id="hero-btn-text">無料で出店を申し込む</span>
-            <span class="f-submit-arrow">›</span>
-          </button>
-        </div>
-
         </div><!-- /f-form-body -->
 
       <input type="hidden" name="consultation_type" value=""></form>
-    </div>
+    </div><div class="f-submit-wrap old-hero-submit-dock" hidden="hidden">
+          <button type="submit" class="f-submit" id="hero-submit-btn" disabled form="hero-cf-form">
+            <span id="hero-btn-text">無料で出店を申し込む</span>
+            <span class="f-submit-arrow">›</span>
+          </button>
+        <p class="old-hero-form-caption">送信後、担当者よりご連絡します。</p></div>
+
+        </div>
+  <a href="#mobile-form" class="hv2-pc-banner" data-name-change-entry="true">
+      <img src="images/campaign/store-name-change-banner-mobile-realfont-v10.png" alt="屋号・店舗名変更のご相談はこちら" loading="lazy" decoding="async">
+    </a>
+
   </div><!-- /hv2-right -->
 
   </div>
