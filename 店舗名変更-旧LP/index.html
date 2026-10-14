@@ -1383,9 +1383,7 @@ a{text-decoration:none;color:inherit}
         <p class="old-hero-form-caption">送信後、担当者よりご連絡します。</p></div>
 
         </div>
-  <a href="#mobile-form" class="hv2-pc-banner" data-name-change-entry="true">
-      <img src="images/campaign/store-name-change-banner-mobile-realfont-v10.png" alt="屋号・店舗名変更のご相談はこちら" loading="lazy" decoding="async">
-    </a>
+
 
   </div><!-- /hv2-right -->
 
@@ -2582,7 +2580,7 @@ a{text-decoration:none;color:inherit}
 })();
 </script>
 
-<!-- ===== 屋号・店舗名変更の相談 フローティング（PC・ヒーロー通過後に右下表示） ===== -->
+<!-- ===== 屋号・店舗名変更の相談 フローティング（PC・ページ表示直後から右下表示） ===== -->
 <div class="cp-float" id="cp-float">
   <button class="cp-float-close" id="cp-float-close-btn" aria-label="閉じる">✕</button>
   <a href="#mobile-form" data-name-change-entry="true">
@@ -2593,25 +2591,13 @@ a{text-decoration:none;color:inherit}
 (function(){
   var floatEl = document.getElementById('cp-float');
   var closeBtn = document.getElementById('cp-float-close-btn');
-  var hero = document.querySelector('[data-section="hero"]');
-  if (!floatEl || !hero || typeof IntersectionObserver !== 'function') return;
+  if (!floatEl || !closeBtn) return;
 
   var DISMISSED_KEY = 'lp_promotion_pc_float_dismissed';
   var dismissed = false;
   try { dismissed = sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch(e){}
 
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        floatEl.classList.remove('cp-float-show');
-      } else if (entry.boundingClientRect.top < 0 && !dismissed) {
-        // ヒーローを下にスクロールして通り過ぎた場合のみ表示（閉じた後は再表示しない）
-        floatEl.classList.add('cp-float-show');
-      }
-    });
-  }, { threshold: 0 });
-
-  observer.observe(hero);
+  if (!dismissed) floatEl.classList.add('cp-float-show');
 
   closeBtn.addEventListener('click', function(e){
     e.preventDefault();
