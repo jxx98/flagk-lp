@@ -1,0 +1,1 @@
+<?php http_response_code(403); header("Content-Type: text/plain; charset=UTF-8"); echo "この環境は確認専用です。メール・マスタへの送信は行いません。JavaScriptを有効にして模擬送信をお試しください。";
