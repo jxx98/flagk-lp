@@ -6,6 +6,7 @@
   const noticeText = '屋号・店舗名変更以外の、ご利用中・手続き中のご相談は受け付けておりません。Uber Eatsのサポート窓口へお問い合わせください。';
   const strip = document.createElement('div');
   strip.className = 'test-environment-label';
+  strip.hidden = true;
   strip.textContent = '確認用テスト環境｜送信は模擬動作です（メール・マスタ・本番計測なし）';
   document.body.prepend(strip);
   const fixedHeader = document.querySelector('.hd');
