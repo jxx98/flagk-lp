@@ -33,7 +33,7 @@
 /* 周囲のヒーロー案内文と揃えた店舗名変更の案内。 */
 .hv2-name-change-note{max-width:calc(100vw - 44px);margin:8px 0 0;color:#fff;font-size:clamp(16px,3.5vw,18px);font-weight:700;line-height:1.7;letter-spacing:normal;text-align:left;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .hv2-name-change-note strong{color:inherit;font-weight:inherit}
-@media(max-width:768px){.hv2-name-change-note{font-size:clamp(11px,3.3vw,13px);margin-top:8px;text-align:center}}
+@media(max-width:768px){.hv2-name-change-note{font-size:clamp(11px,3.3vw,13px);margin-top:8px;text-align:left}}
 
 /* v10画像下端の白い余白を表示枠で切り取り、CTA下の白い縁を除く。 */
 .hv2-pc-banner,.cp-float a,.cp-mfloat a{
@@ -221,3 +221,15 @@ form[data-test-form] textarea::placeholder{font-family:inherit;font-weight:400}
 /* ヘッダーの電話申込ボタン。 */
 .hd .hd-tel-link{background:#ffd600;color:#111}
 .hd .hd-tel-link:hover{background:#f2ca00}
+
+/* 連絡希望時間帯も、他の選択肢と同じ文字組みにする。 */
+form[data-test-form] .f-time-label,
+form[data-test-form] .f-time-name,
+form[data-test-form] .f-time-range{
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.6;
+  letter-spacing:0;
+  color:#202822;
+}
