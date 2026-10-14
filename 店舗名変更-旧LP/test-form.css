@@ -30,6 +30,15 @@
 @media(max-width:768px){.cp-mfloat{width:calc(100vw - 24px)!important;left:50%!important;right:auto!important;translate:-50% 0}}
 
 /* 周囲のヒーロー案内文と揃えた店舗名変更の案内。 */
-.hv2-name-change-note{max-width:calc(100vw - 44px);margin:8px 0 0;color:#fff;font-size:clamp(16px,3.5vw,18px);font-weight:700;line-height:1.7;letter-spacing:normal;text-align:center;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hv2-name-change-note{max-width:calc(100vw - 44px);margin:8px 0 0;color:#fff;font-size:clamp(16px,3.5vw,18px);font-weight:700;line-height:1.7;letter-spacing:normal;text-align:left;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .hv2-name-change-note strong{color:inherit;font-weight:inherit}
-@media(max-width:768px){.hv2-name-change-note{font-size:clamp(11px,3.3vw,13px);margin-top:8px}}
+@media(max-width:768px){.hv2-name-change-note{font-size:clamp(11px,3.3vw,13px);margin-top:8px;text-align:center}}
+
+/* v10画像下端の白い余白を表示枠で切り取り、CTA下の白い縁を除く。 */
+.hv2-pc-banner,.cp-float a,.cp-mfloat a{
+  position:relative;aspect-ratio:1774 / 475;overflow:hidden;line-height:0;
+}
+.cp-float a,.cp-mfloat a{display:block;border-radius:inherit}
+.hv2-pc-banner img,.cp-float a img,.cp-mfloat a img{
+  position:absolute;top:0;left:0;width:100%;height:auto;transform:scale(1.06)!important;transform-origin:center;
+}
