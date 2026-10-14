@@ -28,3 +28,8 @@
 .cp-float-close,.cp-mfloat-close{top:-38px!important;right:0!important;width:30px!important;height:30px!important}
 .cp-mfloat img{transform:none!important;aspect-ratio:auto!important;max-height:none!important}
 @media(max-width:768px){.cp-mfloat{width:calc(100vw - 24px)!important;left:50%!important;right:auto!important;translate:-50% 0}}
+
+/* 周囲のヒーロー案内文と揃えた店舗名変更の案内。 */
+.hv2-name-change-note{max-width:calc(100vw - 44px);margin:8px 0 0;color:#fff;font-size:clamp(16px,3.5vw,18px);font-weight:700;line-height:1.7;letter-spacing:normal;text-align:center;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hv2-name-change-note strong{color:inherit;font-weight:inherit}
+@media(max-width:768px){.hv2-name-change-note{font-size:clamp(11px,3.3vw,13px);margin-top:8px}}
