@@ -206,3 +206,18 @@ form[data-test-form] textarea::placeholder{font-family:inherit;font-weight:400}
   .hv2-name-change-note{margin-top:4px}
   .hv2-box{padding-block:8px;gap:4px 14px;margin-bottom:8px}
 }
+
+/* PCフォームの横位置・上余白を新LPの1160pxコンテナに合わせる。 */
+@media(min-width:900px){
+  .hv2{height:max(740px,calc(100svh - var(--test-header-height,79px)))}
+  .hv2-inner{width:min(1160px,calc(100% - 48px));max-width:1160px;grid-template-columns:minmax(0,1fr) minmax(370px,410px);gap:46px;padding:calc(139px - var(--test-header-height,79px)) 0 56px}
+  .hv2-form-panel{max-height:calc(100dvh - 170px);scrollbar-gutter:auto}
+  .old-hero-form-intro{padding:31px 30px 8px}
+  .old-hero-form-intro h2{margin-top:5px;font-size:23px}
+  .old-hero-form-lead{margin-bottom:17px}
+  .old-hero-form-scroll{padding-left:30px}
+}
+
+/* ヘッダーの電話申込ボタン。 */
+.hd .hd-tel-link{background:#ffd600;color:#111}
+.hd .hd-tel-link:hover{background:#f2ca00}
