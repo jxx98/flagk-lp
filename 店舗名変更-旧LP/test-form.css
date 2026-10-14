@@ -159,3 +159,50 @@ form[data-test-form] textarea::placeholder{font-family:inherit;font-weight:400}
   .old-hero-form-intro h2{font-size:21px}
   .old-hero-submit-dock{padding-block:14px}
 }
+
+/* 左の案内は読みやすい文字サイズと余白を保ち、画面の中央に配置する。 */
+@media(min-width:900px){
+  .hv2-left{align-self:center}
+  .hv2-tag{margin-bottom:12px}
+  .hv2-ue-logo{height:36px;margin-bottom:14px}
+  .hv2-h1{font-size:44px;line-height:1.15;margin-bottom:14px}
+  .hv2-callout{font-size:14px;line-height:1.75;margin-bottom:16px}
+  .hv2-callout em{font-size:16px}
+  .hv2-circles{gap:12px;margin-bottom:20px}
+  .hv2-circle{width:100px;height:100px;padding-top:10px}
+  .hv2-circle-icon{width:62px;max-height:42px}
+  .hv2-circle-label{font-size:11px;bottom:29px}
+  .hv2-circle-num{font-size:16px;bottom:10px}
+  .hv2-circle-num--sm{font-size:11px;bottom:13px}
+  .hv2-sub{margin-bottom:16px}
+  .hv2-sub-main{font-size:16px;line-height:1.7}
+  .hv2-sub-note,.hv2-name-change-note{font-size:14px;line-height:1.7}
+  .hv2-name-change-note{margin-top:10px}
+  .hv2-box{padding:14px 16px;gap:10px 14px;margin-bottom:14px}
+  .hv2-box-item{font-size:14px;line-height:1.5}
+  .hv2-note{font-size:11px;line-height:1.7}
+}
+@media(min-width:900px) and (max-height:760px){
+  .hv2-inner{padding-block:18px}
+  .hv2-tag{margin-bottom:8px}
+  .hv2-ue-logo{height:30px;margin-bottom:10px}
+  .hv2-h1{font-size:40px;margin-bottom:10px}
+  .hv2-callout{margin-bottom:12px}
+  .hv2-circles{margin-bottom:14px}
+  .hv2-sub{margin-bottom:12px}
+  .hv2-name-change-note{margin-top:6px}
+  .hv2-box{margin-bottom:10px;padding-block:10px;gap:6px 14px}
+}
+@media(min-width:900px) and (max-height:680px){
+  .hv2-inner{padding-block:12px}
+  .hv2-tag{margin-bottom:6px}
+  .hv2-ue-logo{margin-bottom:8px}
+  .hv2-h1{margin-bottom:8px}
+  .hv2-callout{margin-bottom:10px}
+  .hv2-circle{width:88px;height:88px;padding-top:7px}
+  .hv2-circle-icon{width:54px;max-height:36px}
+  .hv2-circle-label{bottom:26px}
+  .hv2-circles,.hv2-sub{margin-bottom:10px}
+  .hv2-name-change-note{margin-top:4px}
+  .hv2-box{padding-block:8px;gap:4px 14px;margin-bottom:8px}
+}
