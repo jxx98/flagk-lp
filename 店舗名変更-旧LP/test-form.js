@@ -90,6 +90,9 @@
     form.addEventListener('input', update); form.addEventListener('change', update);
     if (params.get('status') === 'name_change') {
       const radio = radios.find(r => r.value==='name_change'); if (radio) radio.checked = true;
+    } else if (form.id === 'hero-cf-form' && window.matchMedia('(min-width: 900px)').matches && !state()) {
+      const radio = radios.find(r => r.value === 'yes');
+      if (radio) radio.checked = true;
     }
     update();
     // Capture before the legacy submit handlers: never send to production or PHP.
