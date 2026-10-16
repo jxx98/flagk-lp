@@ -1266,6 +1266,22 @@ a{text-decoration:none;color:inherit}
   .hv2-sub .hv2-name-change-note strong{font-size:inherit;font-weight:inherit}
 }
 
+
+/* 実機確認：見出しの改行と強調、出店開始のお祝い表現。 */
+@media(max-width:768px){
+  .rs-title-line,.ac-title-line{display:block}
+  .rs-title-line{white-space:nowrap}
+  .ac-title{letter-spacing:0}
+  .support-highlight{text-decoration:underline;text-decoration-color:#06C167;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-skip-ink:none}
+  .support-mobile-item:first-child h3{line-height:1.85}
+  .uq-open{position:relative;isolation:isolate;overflow:hidden;background:#fff;border:1px solid #ead9a6;box-shadow:0 3px 16px rgba(178,145,45,.10)}
+  .uq-open-text{color:#222;padding-right:12px}
+  .uq-open::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 95% 21%,#f3cf5b 0 2px,transparent 3px),radial-gradient(circle at 91% 35%,#06C167 0 1.5px,transparent 2.5px),radial-gradient(circle at 96% 75%,#f3cf5b 0 2px,transparent 3px),radial-gradient(circle at 89% 83%,#b8dfc9 0 1.5px,transparent 2.5px)}
+  .uq-open::after{content:'✦';position:absolute;right:14px;top:46%;font-size:16px;color:#d9ad2a;line-height:1;pointer-events:none}
+  .fc-title{font-size:24px;line-height:1.55;letter-spacing:0;margin-bottom:12px}
+  .fc-sub{margin-bottom:56px}
+}
+
 </style>
 <link rel="stylesheet" href="test-form.css"></head>
 <body>
@@ -1400,7 +1416,7 @@ a{text-decoration:none;color:inherit}
 
         <!-- 新規出店確認 -->
         <div class="f-row">
-          <div class="f-lbl" id="h-new-store-label">ご相談内容をお選びください（必須）</div>
+          <div class="f-lbl" id="h-new-store-label">ご相談内容をお選びください<span class="f-req">必須</span></div>
           <div class="f-radio-group consultation-options" role="radiogroup" aria-labelledby="h-new-store-label"><label class="consultation-option"><input type="radio" name="h_new_store" value="yes" required="required">新規出店を検討している</label><label class="consultation-option"><input type="radio" name="h_new_store" value="name_change" required="required">登録済み店舗の屋号・店舗名を変更したい</label><label class="consultation-option"><input type="radio" name="h_new_store" value="no" required="required">その他の利用中・手続き中の相談</label></div>
           <div class="f-no-msg" id="h-no-msg">屋号・店舗名変更以外の、ご利用中・手続き中のご相談は受け付けておりません。Uber Eatsのサポート窓口、または手続きを進めている窓口へお問い合わせください。</div>
         </div>
@@ -1511,7 +1527,7 @@ a{text-decoration:none;color:inherit}
 
       <!-- 新規出店確認 -->
       <div class="f-row">
-        <div class="f-lbl" id="m-new-store-label">ご相談内容をお選びください（必須）</div>
+        <div class="f-lbl" id="m-new-store-label">ご相談内容をお選びください<span class="f-req">必須</span></div>
         <div class="f-radio-group consultation-options" role="radiogroup" aria-labelledby="m-new-store-label"><label class="consultation-option"><input type="radio" name="m_new_store" value="yes" required="required">新規出店を検討している</label><label class="consultation-option"><input type="radio" name="m_new_store" value="name_change" required="required">登録済み店舗の屋号・店舗名を変更したい</label><label class="consultation-option"><input type="radio" name="m_new_store" value="no" required="required">その他の利用中・手続き中の相談</label></div>
         <div class="f-no-msg" id="m-no-msg">屋号・店舗名変更以外の、ご利用中・手続き中のご相談は受け付けておりません。Uber Eatsのサポート窓口、または手続きを進めている窓口へお問い合わせください。</div>
       </div>
@@ -1673,7 +1689,7 @@ a{text-decoration:none;color:inherit}
      REASONS
      ============================================================ -->
 <section class="rs" id="reasons" data-section="reasons">
-  <h2 class="rs-title">Uber Eatsへのはじめての出店でも<br class="rs-br-sp">安心な3つの理由</h2>
+  <h2 class="rs-title"><span class="rs-title-line">Uber Eatsへの</span><span class="rs-title-line">はじめての出店でも</span><span class="rs-title-line">安心な3つの理由</span></h2>
   <ul class="rs-list">
 
     <li class="rs-card">
@@ -1727,7 +1743,7 @@ a{text-decoration:none;color:inherit}
     </div>
     <ul class="support-mobile-list">
       <li class="support-mobile-item">
-        <div><h3>出店準備・登録手続きをまとめて代行</h3><p>必要な情報・書類の確認から店舗登録まで、専任担当が対応します。</p></div>
+        <div><h3><span class="support-highlight">出店準備・登録手続きをまとめて代行</span></h3><p>必要な情報・書類の確認から店舗登録まで、専任担当が対応します。</p></div>
       </li>
       <li class="support-mobile-item">
         <div><h3>キャンペーンの確認もお任せ</h3><p>お申し込み内容に合わせて、利用できるキャンペーンと適用条件を担当者が確認します。</p></div>
@@ -1899,7 +1915,7 @@ a{text-decoration:none;color:inherit}
      ============================================================ -->
 <section class="ac" id="achievements" data-section="achievements">
   <p class="ac-eyebrow">ACHIEVEMENTS</p>
-  <h2 class="ac-title">選ばれ続ける<br class="ac-br-sp">Uber Eats出店サポート実績</h2>
+  <h2 class="ac-title"><span class="ac-title-line">選ばれ続ける</span><span class="ac-title-line">Uber Eats出店サポート実績</span></h2>
   <p class="ac-lead">Uber Eats（ウーバーイーツ）は北海道から沖縄まで。店舗のエリア・業態に合わせて、出店申請から掲載準備までご案内します。</p>
   <div class="ac-industry-examples">
     <p class="ac-industry-label">対応業態の例</p>
@@ -2227,9 +2243,8 @@ a{text-decoration:none;color:inherit}
 
   <p class="fc-eyebrow">＼ 無料相談受付中 ／</p>
 
-  <h2 class="fc-title">出店申込・店舗登録のことは<br>まずはお気軽にご相談ください</h2>
-  <p class="fc-title-sub">お店に合ったUber Eats出店方法をご案内します</p>
-  <p class="fc-sub">エリアや業態に応じて、<br>利用可能なキャンペーンや出店条件をご案内いたします。</p>
+  <h2 class="fc-title">Uber Eatsの出店は<br>お気軽にご相談ください</h2>
+  <p class="fc-sub">お店に合う出店条件・特典をご案内します。</p>
 
   <div class="fc-cards">
 
