@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
+.test-environment-label{position:relative;z-index:11000;background:#fff2c7;color:#543800;padding:10px 16px;font:600 12px/1.5 sans-serif;text-align:center}
+.consultation-options{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;border:0;padding:0;margin:16px 0;min-width:0}
+.consultation-options legend{font-weight:700;font-size:16px;margin-bottom:12px}
+.consultation-option{display:flex!important;align-items:center!important;gap:10px!important;padding:13px 14px!important;background:#f6faf7;border:1px solid #d7e5dc!important;border-radius:10px!important;font-size:14px!important;line-height:1.6!important;text-align:left!important;cursor:pointer;min-height:52px}
+.consultation-option:has(input:checked){background:#e9f8ef;border-color:#06a95b!important;color:#006738}
+.consultation-option input{appearance:auto!important;-webkit-appearance:radio!important;flex:0 0 20px!important;width:20px!important;height:20px!important;margin:0!important;accent-color:#06a95b}
+.name-change-field{display:block;margin:14px 0;font-weight:700;font-size:14px;line-height:1.8}
+.name-change-field small{font-size:12px;color:#66766c;font-weight:400}
+.name-change-field input{box-sizing:border-box;display:block;width:100%;background:#fff;border:1px solid #d7e5dc;border-radius:8px;padding:13px;font:inherit;font-weight:400}
+[hidden]{display:none!important}
+.test-ineligible-notice{background:#fff3ef;border-left:4px solid #d75e45;padding:18px;color:#a03d28;font-size:14px;line-height:1.8}
+.hero-status-options{grid-template-columns:1fr!important}
+.test-result{max-width:760px;margin:40px auto;padding:24px;font-family:sans-serif;line-height:1.7}
+.test-result pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:20px;background:#f3f7f4;border-radius:12px}
+@media(max-width:860px){.consultation-option{font-size:13px!important}}
+
+.consultation-option,.name-change-field{color:#17261d!important}.consultation-option:has(input:checked){color:#006738!important}
+
+.test-consent{display:flex;gap:10px;align-items:center;font-size:14px;color:#17261d;margin:16px 0}.test-consent input{width:20px;height:20px;accent-color:#06a95b}
+
+/* 旧LPのヘッダーは本来どおり画面上端に固定する。 */
+.has-test-fixed-header .hd{top:0!important}
+.has-test-fixed-header .hv2{margin-top:0!important}
+
+/* 新旧LP共通のフォーム文字組み。 */
+html,body,button,input,select,textarea{
+  font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+.consultation-option{font-weight:700!important;letter-spacing:0!important;font-size:14px!important;line-height:1.6!important}
+.consultation-options legend{font-size:14px;font-weight:700;line-height:1.6}
+form[data-test-form] .f-lbl,
+form[data-test-form] .form-body > label,
+form[data-test-form].hero-detail-form > label,
+form[data-test-form] .name-change-field{font-size:13px;font-weight:700;line-height:1.6;letter-spacing:0}
+form[data-test-form] input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]),
+form[data-test-form] select,
+form[data-test-form] textarea{font-size:14px;font-weight:400;line-height:1.6;letter-spacing:0}
+form[data-test-form] input::placeholder,
+form[data-test-form] textarea::placeholder{font-family:inherit;font-weight:400}
+@media(max-width:860px){
+  .consultation-option{font-size:14px!important}
+  form[data-test-form] .f-lbl,
+  form[data-test-form] .form-body > label,
+  form[data-test-form].hero-detail-form > label{font-size:14px}
+  form[data-test-form] input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]),
+  form[data-test-form] select,
+  form[data-test-form] textarea{font-size:16px}
+}

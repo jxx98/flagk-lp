@@ -1,0 +1,94 @@
+.ng-entry{padding:16px 20px;background:#fff;border-bottom:1px solid #e1e9e3;text-align:center}
+.ng-entry a{display:inline-flex;align-items:center;justify-content:center;gap:14px;color:#167342;text-decoration:none;font-size:14px;font-weight:700;line-height:1.7}
+.ng-entry a span{font-size:12px;color:#66726a;font-weight:500}
+.ng-guide{padding:80px 24px;background:#fff;scroll-margin-top:100px;color:#202822;font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif}
+.ng-inner{max-width:1160px;margin:0 auto}
+.ng-shell{display:grid;grid-template-columns:.92fr 1.08fr;background:#f5f8f5;border:1px solid #e2e9e3;overflow:hidden}
+.ng-visual{position:relative;margin:0;min-height:640px;background:#1a3527;overflow:hidden}
+.ng-visual img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:57% center}
+.ng-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,31,19,.08) 35%,rgba(5,31,19,.88) 100%)}
+.ng-visual figcaption{position:absolute;z-index:1;bottom:40px;left:36px;right:30px;color:#fff;font-size:24px;font-weight:700;line-height:1.7}
+.ng-visual figcaption small{display:block;color:#ffd36e;font-size:11px;font-weight:700;letter-spacing:.16em;margin-bottom:12px}
+.ng-content{padding:40px 40px 32px}
+.ng-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;color:#048c4c;font-size:12px;font-weight:700;line-height:1.6;letter-spacing:.04em}
+.ng-eyebrow::before{content:'';display:block;width:22px;height:2px;background:#06c167}
+.ng-guide h2{margin:0 0 18px;color:#202822;font-size:28px;font-weight:700;line-height:1.6;letter-spacing:0;text-align:left}
+.ng-guide h2 span{display:block}
+.ng-guide h2 em{font-style:normal;color:#048c4c}
+.ng-lead{margin:0 0 22px;color:#59685f;font-size:14px;font-weight:400;line-height:1.9;text-align:left}
+.ng-lead strong{color:#202822;font-weight:700;background:linear-gradient(transparent 66%,#fff0b8 66%)}
+.ng-services{display:block;list-style:none;margin:0 0 20px;padding:0;border-top:1px solid #d7e3da}
+.ng-services li{display:grid;grid-template-columns:28px 1fr;column-gap:10px;align-items:baseline;border-bottom:1px solid #d7e3da;padding:12px 0}
+.ng-step-number{grid-column:1;grid-row:1/3;color:#048c4c;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.ng-services h3{grid-column:2;margin:0;color:#202822;font-size:16px;font-weight:700;line-height:1.7}
+.ng-services p{grid-column:2;margin:3px 0 0;color:#66726a;font-size:12px;font-weight:400;line-height:1.8}
+.ng-details{border:0;border-bottom:1px solid #d7e3da;margin:0 0 20px;background:transparent}
+.ng-details summary{display:flex;align-items:center;justify-content:space-between;gap:10px;list-style:none;cursor:pointer;padding:0 0 14px;color:#43594b;font-size:13px;font-weight:700;line-height:1.7}
+.ng-details summary::-webkit-details-marker{display:none}
+.ng-details summary::after{content:'＋';flex:none;color:#048c4c;font-size:17px;font-weight:400}
+.ng-details[open] summary::after{content:'−'}
+.ng-detail-body{padding:0 0 16px}
+.ng-detail-body h3{margin:0 0 8px;font-size:13px;font-weight:700;line-height:1.8}
+.ng-detail-body ul{margin:0;padding-left:1.4em;font-size:13px;color:#59685f;line-height:1.9}
+.ng-notes{margin-top:12px!important;padding:0!important;list-style:none;font-size:12px!important}
+.ng-notes li{padding-left:1em;text-indent:-1em}
+.ng-actions{text-align:left}
+.ng-cta{display:flex;align-items:center;justify-content:center;gap:16px;padding:15px 18px;width:100%;min-height:54px;border:0;border-radius:4px;background:#ffd600;color:#202822!important;font-family:inherit;font-size:15px;font-weight:700;line-height:1.7;text-decoration:none;cursor:pointer;transition:filter .15s}
+.ng-cta:hover{filter:brightness(.95)}
+.ng-cta:focus-visible,.ng-details summary:focus-visible,.ng-entry a:focus-visible{outline:3px solid #06c167;outline-offset:4px}
+.ng-chevron{display:inline-block;flex:none;width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.ng-caption{margin:10px 0 0;color:#66726a;font-size:11px;font-weight:400;line-height:1.8}
+.ng-guide--application{background:#f0faf4;padding-block:64px}
+.ng-guide--application .ng-shell{background:#fff;border-color:#d6ebdd;border-radius:18px;box-shadow:0 8px 28px rgba(18,61,34,.05)}
+.ng-guide--application .ng-content{padding:40px}
+.ng-guide--application .ng-cta{background:#06c167;color:#fff!important;border-radius:8px}
+@media(max-width:1000px) and (min-width:769px){
+ .ng-shell{grid-template-columns:.8fr 1.2fr}
+ .ng-content,.ng-guide--application .ng-content{padding:30px 26px}
+ .ng-guide h2{font-size:25px}
+ .ng-visual figcaption{left:24px;font-size:21px}
+}
+@media(max-width:768px){
+ .ng-entry{padding:14px 16px;text-align:left}
+ .ng-entry a{display:grid;grid-template-columns:1fr 12px;gap:3px 8px;width:100%;max-width:520px;margin:auto;font-size:14px}
+ .ng-entry a span,.ng-entry a b{grid-column:1}
+ .ng-entry a i{grid-column:2;grid-row:1/3}
+ .ng-guide,.ng-guide--application{padding:40px 16px 44px}
+ .ng-shell{display:flex;flex-direction:column;max-width:520px;margin:auto}
+ .ng-visual{min-height:0;height:170px;flex:none}
+ .ng-visual img{object-position:center 43%}
+ .ng-visual::after{background:linear-gradient(90deg,rgba(5,31,19,.67),rgba(5,31,19,.08))}
+ .ng-visual figcaption{bottom:22px;left:22px;right:22px;font-size:19px;line-height:1.6}
+ .ng-visual figcaption small{font-size:9px;letter-spacing:.12em;margin-bottom:7px}
+ .ng-content,.ng-guide--application .ng-content{padding:25px 22px}
+ .ng-eyebrow{font-size:11px;margin-bottom:12px;gap:8px}
+ .ng-guide h2{font-size:23px;margin-bottom:14px;line-height:1.6}
+ .ng-lead{font-size:15px;line-height:1.8;margin-bottom:20px}
+ .ng-services h3{font-size:17px}
+ .ng-services p{font-size:12px}
+ .ng-services li{padding:12px 0}
+ .ng-cta{font-size:15px;padding-inline:12px;gap:10px}
+ .ng-caption{font-size:12px}
+ .ng-guide--application .ng-shell{border-radius:14px}
+}
+@media(max-width:359px){
+ .ng-content,.ng-guide--application .ng-content{padding-inline:18px}
+ .ng-guide h2{font-size:21px}
+ .ng-cta{font-size:13px}
+}
+
+/* ご提示の10/13業務フロー変更資料に基づく案内。 */
+.ng-detail-body .ng-detail-subtitle{margin-top:18px}
+.ng-visual{min-height:640px}
+@media(max-width:768px){.ng-visual{min-height:0}}
+
+.ng-notice{margin:0 0 20px;padding:0 0 0 1em;text-indent:-1em;background:none;border:0;color:#66726a;font-size:12px;font-weight:400;line-height:1.8}
+
+/* 代行の見出しを写真上に集約する。 */
+.ng-guide .ng-visual h2{margin:0;color:#fff;font-size:24px;font-weight:700;line-height:1.7;letter-spacing:0;text-align:left}
+@media(max-width:1000px) and (min-width:769px){.ng-guide .ng-visual h2{font-size:21px}}
+@media(max-width:768px){.ng-guide .ng-visual h2{font-size:19px;line-height:1.6}}
+
+/* 新LP用の看板掛け替え写真。 */
+.ng-guide--consideration .ng-visual img{object-position:55% center}
+@media(max-width:768px){.ng-guide--consideration .ng-visual img{object-position:50% 32%}}
