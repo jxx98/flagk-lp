@@ -314,7 +314,7 @@ a{text-decoration:none;color:inherit}
   line-height:1.4;
 }
 .hv2-box-check{
-  color:#06C167;
+  color:#048c4c;
   font-weight:700;
   font-size:13px;
   flex-shrink:0;
@@ -365,7 +365,7 @@ a{text-decoration:none;color:inherit}
 }
 .hv2-cta-icon-wrap{
   width:52px;height:52px;
-  background:#e8faf2;border-radius:50%;
+  background:transparent;border-radius:0;
   display:flex;align-items:center;justify-content:center;
   flex-shrink:0;
 }
@@ -389,7 +389,7 @@ a{text-decoration:none;color:inherit}
 @media(min-width:769px){.rs-img{min-height:unset}}
 .rs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rs-body{padding:24px 28px 28px;flex:1;display:flex;flex-direction:column;justify-content:center}
-.rs-badge{display:inline-block;background:none;color:#06C167;font-size:13px;font-weight:700;letter-spacing:.1em;padding:3px 0;margin-bottom:12px}
+.rs-badge{display:inline-block;background:none;color:#048c4c;font-size:13px;font-weight:700;letter-spacing:.1em;padding:3px 0;margin-bottom:12px}
 .rs-heading{font-size:clamp(15px,2.2vw,23px);font-weight:700;line-height:1.55;color:#111;margin-bottom:12px}
 .rs-desc{font-size:14px;line-height:1.9;color:#444}
 .rs-desc small{font-size:11px;color:#666}
@@ -400,10 +400,10 @@ a{text-decoration:none;color:inherit}
    ============================================================ */
 .cmp{background:#fff;padding:64px 24px 72px}
 @media(max-width:768px){.cmp{padding:44px 16px 48px}}
-.cmp-eyebrow{display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#06C167;margin-bottom:14px}
+.cmp-eyebrow{display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#048c4c;margin-bottom:14px}
 .cmp-eyebrow::before,.cmp-eyebrow::after{content:'';display:block;width:5px;height:5px;border-radius:50%;background:#06C167}
 .cmp-title{text-align:center;font-size:clamp(21px,3vw,36px);font-weight:700;color:#111;line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
-.cmp-title-green{color:#06C167}
+.cmp-title-green{color:#048c4c}
 .cmp-title-small{font-size:.6em}
 .cmp-title-sm{font-size:.82em}
 .cmp-br-sp{display:none}
@@ -446,7 +446,7 @@ a{text-decoration:none;color:inherit}
   .cmp-ic svg{width:26px;height:26px}
   .cmp-c-label{display:inline-block;flex-shrink:0;width:70px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 0;text-align:center;border-radius:4px}
   .cmp-c--off .cmp-c-label{background:#f2f2f2;color:#666}
-  .cmp-c--fk .cmp-c-label{background:#fff;color:#067F41}
+  .cmp-c--fk .cmp-c-label{background:#fff;color:#048c4c}
   .cmp-check{display:none}
 }
 
@@ -455,7 +455,7 @@ a{text-decoration:none;color:inherit}
 .cmp-note-icon svg{width:32px;height:32px}
 .cmp-note-body{flex:1;text-align:center}
 .cmp-note-title{font-size:clamp(16px,1.9vw,23px);font-weight:700;color:#111;line-height:1.5;padding-bottom:12px;border-bottom:2px dotted #b9ddc8;margin-bottom:12px}
-.cmp-note-title em{font-style:normal;color:#06C167}
+.cmp-note-title em{font-style:normal;color:#048c4c}
 .cmp-note-text{font-size:14px;line-height:1.8;color:#444}
 @media(max-width:768px){
   .cmp-note{flex-direction:column;gap:14px;padding:20px 18px;margin-top:20px}
@@ -481,7 +481,7 @@ a{text-decoration:none;color:inherit}
 .uq-store-icon img{width:100%;height:100%;object-fit:contain}
 .uq-store-label{font-size:13.5px;font-weight:700;color:#333;text-align:center;line-height:1.6}
 
-.uq-arrow{flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#06C167;font-size:26px;font-weight:300;align-self:center}
+.uq-arrow{flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#048c4c;font-size:26px;font-weight:300;align-self:center}
 
 .uq-panel{position:relative;flex:1;background:#fff;border-radius:24px;padding:36px 24px 24px;box-shadow:0 4px 20px rgba(6,193,103,.06)}
 .uq-panel-badge{position:absolute;left:50%;top:-16px;transform:translateX(-50%);text-align:center;background:#06C167;color:#fff;font-size:14px;font-weight:700;padding:8px 26px;border-radius:20px;letter-spacing:.02em;white-space:nowrap;box-shadow:0 4px 12px rgba(6,193,103,.35)}
@@ -530,13 +530,12 @@ a{text-decoration:none;color:inherit}
    ACHIEVEMENTS（FlagKの出店サポート実績）
    ============================================================ */
 .ac{
-  background:
-    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+  background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
     url('images/ubereats-support/lp-18.webp') center/cover no-repeat,
     #fff;
   padding:64px 24px 72px;
 }
-.ac-eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;color:#06C167;margin-bottom:14px}
+.ac-eyebrow{text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;color:#048c4c;margin-bottom:14px}
 .ac-title{text-align:center;font-size:clamp(21px,3vw,36px);font-weight:700;color:#111;line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
 .ac-br-sp{display:none}
 .ac-lead{text-align:center;font-size:15px;line-height:1.85;color:#555;margin-bottom:6px}
@@ -545,7 +544,7 @@ a{text-decoration:none;color:inherit}
 .ac-kpi{background:#f0faf5;border:1.5px solid rgba(6,193,103,.4);border-radius:14px;padding:26px 20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .ac-kpi-icon{display:flex;align-items:center;justify-content:center;width:72px;height:72px;margin:0 auto 12px}
 .ac-kpi-icon img{width:100%;height:100%;object-fit:contain}
-.ac-kpi-label{display:block;font-size:12.5px;font-weight:700;color:#06C167;letter-spacing:.02em;margin-bottom:8px}
+.ac-kpi-label{display:block;font-size:12.5px;font-weight:700;color:#048c4c;letter-spacing:.02em;margin-bottom:8px}
 .ac-kpi-num{display:block;font-size:clamp(22px,4vw,28px);font-weight:700;color:#111;margin-bottom:10px}
 .ac-kpi-num strong{font-size:1.25em}
 .ac-kpi-note{font-size:11.5px;line-height:1.7;color:#777}
@@ -579,7 +578,7 @@ a{text-decoration:none;color:inherit}
 .cs-card-icon img{width:80px;height:80px;object-fit:contain}
 .cs-card-label{font-size:11px;font-weight:700;color:#666;display:none} /* PC:非表示 */
 .cs-card-num{font-size:20px;font-weight:700;white-space:nowrap;line-height:1.3;color:#111}
-.cs-card-right{flex:1;min-width:0;color:#111;padding-left:22px}
+.cs-card-right{flex:1;min-width:0;color:#111;padding-left:0}
 .cs-card-title{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;color:#111}
 .cs-card-desc{font-size:14px;line-height:1.85;color:#555}
 .cs-cta{background:#f0faf5;border-radius:18px;border:1.5px solid rgba(6,193,103,.4);padding:36px 28px 32px;flex:0 0 310px;max-width:100%;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);display:flex;flex-direction:column;justify-content:center}
@@ -599,10 +598,10 @@ a{text-decoration:none;color:inherit}
 .cs-cta-icon-ring{width:72px;height:72px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(6,193,103,.35)}
 .cs-cta-icon-ring svg{display:block;flex-shrink:0}
 .cs-cta-title{font-size:clamp(22px,3vw,30px);font-weight:700;color:#111;margin-bottom:0;line-height:1.4}
-.cs-cta-title-green{color:#06C167}
+.cs-cta-title-green{color:#048c4c}
 .cs-cta-divider{display:flex;align-items:center;gap:8px;margin:14px 0 12px}
 .cs-cta-divider::before,.cs-cta-divider::after{content:'';flex:1;height:1px;background:#ddd}
-.cs-cta-divider-v{font-size:18px;color:#06C167;line-height:1}
+.cs-cta-divider-v{font-size:18px;color:#048c4c;line-height:1}
 .cs-cta-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:24px}
 .cs-cta-yb{display:flex;align-items:center;justify-content:center;gap:10px;background:#FFD600;color:#222;border-radius:8px;padding:16px 20px;font-size:17px;font-weight:700;text-decoration:none;transition:opacity .2s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .cs-cta-yb:hover{opacity:.85}
@@ -637,13 +636,12 @@ a{text-decoration:none;color:inherit}
    SUPPORT
    ============================================================ */
 .sp{
-  background:
-    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+  background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
     url('images/ubereats-support/lp-36.webp') center/cover no-repeat,
     #fff;
   padding:64px 24px 72px;
 }
-.sp-eyebrow{display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#06C167;margin-bottom:16px}
+.sp-eyebrow{display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#048c4c;margin-bottom:16px}
 .sp-eyebrow::before,.sp-eyebrow::after{content:'';display:block;width:36px;height:1px;background:#06C167}
 .sp-title{text-align:center;font-size:clamp(22px,3vw,36px);font-weight:700;color:#222;margin-bottom:12px;letter-spacing:.04em}
 .sp-subtitle{text-align:center;font-size:15px;color:#555;margin-bottom:20px;line-height:1.7}
@@ -655,7 +653,7 @@ a{text-decoration:none;color:inherit}
 .sp-col-icon{width:52px;height:52px;background:#e6f4ee;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sp-col-icon svg{width:26px;height:26px}
 .sp-col-title{font-size:16px;font-weight:700;color:#222;line-height:1.4}
-.sp-col-title em{font-style:normal;color:#06C167}
+.sp-col-title em{font-style:normal;color:#048c4c}
 .sp-col-sep{height:2px;background:#06C167;margin:16px 22px 0;border-radius:1px}
 .sp-items{display:flex;flex-direction:column;padding:10px 22px 22px;flex:1}
 .sp-item{padding:14px 0;border-bottom:1px solid #f0f0f0}
@@ -703,10 +701,11 @@ a{text-decoration:none;color:inherit}
 .fq-item summary::-webkit-details-marker{display:none}
 .fq-item summary:hover{background:#f0faf5}
 .fq-q{font-size:15px;font-weight:700;color:#111;flex:1;line-height:1.6}
-.fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#06C167;line-height:1}
+.fq-icon{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#048c4c;line-height:1}
 .fq-icon::before{content:'+'}
 .fq-item[open] .fq-icon::before{content:'−'}
-.fq-a{background:#fff;padding:20px 24px 22px}
+.fq-a{position:relative;background:#fff;padding:20px 24px 22px}
+.fq-item[open] .fq-a::before{content:"";position:absolute;top:0;left:24px;right:24px;border-top:1px solid #dcece4}
 .fq-a p{font-size:14px;line-height:1.95;color:#333}
 .fq-a small{font-size:13px;color:#666;line-height:1.8;display:block;margin-top:8px}
 
@@ -723,8 +722,8 @@ a{text-decoration:none;color:inherit}
 .ft-info-value{color:#fff;font-size:13px;line-height:1.6}
 .ft-info-note{display:block;color:rgba(255,255,255,.65);font-size:11px;margin-top:2px}
 .ft-info-value a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-.ft-info-value a:hover{color:#06C167}
-.ft-trust-tag{display:inline-block;color:#06C167;font-size:11px;font-weight:700;border:1px solid rgba(6,193,103,.5);border-radius:4px;padding:1px 7px;letter-spacing:.02em;margin-left:8px;vertical-align:1px}
+.ft-info-value a:hover{color:#048c4c}
+.ft-trust-tag{display:inline-block;color:#048c4c;font-size:11px;font-weight:700;border:1px solid rgba(6,193,103,.5);border-radius:4px;padding:1px 7px;letter-spacing:.02em;margin-left:8px;vertical-align:1px}
 @media(max-width:600px){
   .ft-trust{padding:22px 20px 16px}
   .ft-info-row{flex-direction:column;gap:3px;padding:9px 0}
@@ -854,7 +853,7 @@ a{text-decoration:none;color:inherit}
 .f-input::placeholder{color:#ccc}
 .f-privacy{display:flex;align-items:flex-start;gap:7px;margin:18px 0 16px;font-size:12px;color:#555;line-height:1.75}
 .f-privacy input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:3px;accent-color:#06C167;cursor:pointer}
-.f-privacy a{color:#06C167;text-decoration:underline}
+.f-privacy a{color:#048c4c;text-decoration:underline}
 
 /* iPhone Safari は入力欄の文字が16px未満だと、フォーカス時にページを自動拡大する。 */
 @media(max-width:899px){
@@ -871,7 +870,7 @@ a{text-decoration:none;color:inherit}
 .f-submit-arrow{font-size:18px;font-weight:400;flex-shrink:0}
 .f-radio-group{display:flex;gap:10px}
 .f-radio-label{display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;background:#f5f5f5;border:1.5px solid #e0e0e0;border-radius:8px;padding:11px 14px;font-size:14px;font-weight:600;color:#333;transition:border-color .18s,background .18s;flex:1}
-.f-radio-label:has(input:checked){border-color:#06C167;background:#e8faf2;color:#06C167}
+.f-radio-label:has(input:checked){border-color:#06C167;background:#e8faf2;color:#048c4c}
 .f-radio-label.is-no:has(input:checked){border-color:#e74c3c;background:#fff3f3;color:#c0392b}
 .f-radio-label input[type=radio]{accent-color:#06C167;width:16px;height:16px;cursor:pointer;flex-shrink:0}
 .f-radio-label.is-no input[type=radio]{accent-color:#e74c3c}
@@ -1037,7 +1036,7 @@ a{text-decoration:none;color:inherit}
 .cookie-banner-text{
   font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);flex:1;min-width:200px;
 }
-.cookie-banner-text a{color:#06C167;text-decoration:underline}
+.cookie-banner-text a{color:#048c4c;text-decoration:underline}
 .cookie-banner-btn{
   background:#06C167;color:#fff;border:none;border-radius:6px;
   padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;
@@ -1054,7 +1053,7 @@ a{text-decoration:none;color:inherit}
    FLOW SECTION
    ============================================================ */
 .fl{display:block;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('images/ubereats-support/lp-24.webp') center/cover no-repeat,#fff;padding:40px 20px 48px;border-bottom:1px solid #f0f0f0}
-.fl-eyebrow{text-align:center;font-size:12px;font-weight:700;color:#06C167;letter-spacing:.12em;margin-bottom:12px}
+.fl-eyebrow{text-align:center;font-size:12px;font-weight:700;color:#048c4c;letter-spacing:.12em;margin-bottom:12px}
 .fl-eyebrow-inner{display:inline-flex;align-items:center;gap:8px}
 .fl-eyebrow-inner::before{content:'\\';font-weight:300;opacity:.7}
 .fl-eyebrow-inner::after{content:'/';font-weight:300;opacity:.7}
@@ -1065,7 +1064,7 @@ a{text-decoration:none;color:inherit}
 .fl-sub{text-align:left;font-size:13px;color:#555;margin-bottom:28px;line-height:1.7}
 .fl-steps{display:flex;flex-direction:column;gap:0;margin:0 0 0}
 .fl-step{background:#fff;border:1px solid #e4e4e4;border-radius:12px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.fl-arrow{display:flex;align-items:center;justify-content:center;color:#06C167;font-size:22px;height:28px;line-height:1;transform:rotate(90deg)}
+.fl-arrow{display:flex;align-items:center;justify-content:center;color:#048c4c;font-size:22px;height:28px;line-height:1;transform:rotate(90deg)}
 .fl-icon-wrap{width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
 .fl-icon-wrap img{width:64px!important;height:64px!important;object-fit:contain}
 .fl-step-title{font-size:15px;font-weight:700;color:#111;margin-bottom:8px}
@@ -1076,7 +1075,7 @@ a{text-decoration:none;color:inherit}
 .fl-cta-arrow{font-size:20px;font-weight:400;line-height:1}
 @media(min-width:769px){
   .fl{display:block;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('images/ubereats-support/lp-24.webp') center/cover no-repeat,#fff;padding:64px 24px 56px;border-bottom:1px solid #f0f0f0}
-  .fl-eyebrow{text-align:center;font-size:13px;font-weight:700;color:#06C167;letter-spacing:.12em;margin-bottom:14px}
+  .fl-eyebrow{text-align:center;font-size:13px;font-weight:700;color:#048c4c;letter-spacing:.12em;margin-bottom:14px}
   .fl-eyebrow-inner{display:inline-flex;align-items:center;gap:8px}
   .fl-eyebrow-inner::before{content:'\\';font-weight:300;opacity:.7}
   .fl-eyebrow-inner::after{content:'/';font-weight:300;opacity:.7}
@@ -1085,7 +1084,7 @@ a{text-decoration:none;color:inherit}
   .fl-sub{text-align:center;font-size:15px;color:#555;margin-bottom:40px;line-height:1.7}
   .fl-steps{display:flex;flex-direction:row;align-items:stretch;gap:0;max-width:1280px;margin:0 auto 32px}
   .fl-step{flex:1;background:#fff;border:1px solid #e4e4e4;border-radius:16px;padding:36px 24px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.06);position:relative}
-  .fl-arrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:36px;color:#06C167;font-size:26px;font-weight:300;padding:0 4px;align-self:center;transform:none}
+  .fl-arrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:36px;color:#048c4c;font-size:26px;font-weight:300;padding:0 4px;align-self:center;transform:none}
   .fl-icon-wrap{width:80px;height:80px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
   .fl-icon-wrap svg{width:36px;height:36px;display:block}
   .fl-step-title{font-size:17px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:.02em}
@@ -1098,9 +1097,9 @@ a{text-decoration:none;color:inherit}
    ============================================================ */
 .fc{background:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('images/ubereats-support/lp-16.webp') center/cover no-repeat,#fff;padding:72px 24px 80px;text-align:center}
 @media(max-width:768px){.fc{padding:48px 16px 56px}}
-.fc-eyebrow{font-size:14px;font-weight:700;color:#06C167;letter-spacing:.1em;margin-bottom:12px}
+.fc-eyebrow{font-size:14px;font-weight:700;color:#048c4c;letter-spacing:.1em;margin-bottom:12px}
 .fc-title{font-size:clamp(24px,4vw,42px);font-weight:700;color:#111;line-height:1.3;margin-bottom:10px;letter-spacing:.02em}
-.fc-title-sub{font-size:clamp(15px,2vw,20px);font-weight:700;color:#06C167;margin-bottom:14px;letter-spacing:.02em}
+.fc-title-sub{font-size:clamp(15px,2vw,20px);font-weight:700;color:#048c4c;margin-bottom:14px;letter-spacing:.02em}
 .fc-sub{font-size:15px;color:#555;line-height:1.8;margin-bottom:72px}
 .fc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
 @media(max-width:768px){.fc-cards{grid-template-columns:1fr;max-width:420px;gap:56px}}
@@ -1166,7 +1165,7 @@ a{text-decoration:none;color:inherit}
   #compare{padding:40px 20px 44px}
   #compare .support-mobile{display:block;max-width:520px;margin:0 auto}
   .support-mobile h2{font-size:24px;line-height:1.55;font-weight:700;letter-spacing:0;text-align:center;margin:0 0 14px;color:#111}
-  .support-mobile h2 span{color:#06C167}
+  .support-mobile h2 span{color:#048c4c}
   .support-mobile-lead{font-size:16px;line-height:1.8;text-align:center;color:#555;margin:0 0 24px}
   .support-mobile-trust{display:flex;align-items:center;gap:10px;background:#f0faf4;border:1px solid #d6ebdd;border-radius:10px;padding:15px 12px;margin-bottom:24px}
   .support-mobile-trust>span{flex:none;display:flex;width:26px}
@@ -1189,7 +1188,7 @@ a{text-decoration:none;color:inherit}
 
 
 /* 本文と区別して、対応業態の一例を表示する。 */
-.ac-industry-examples{max-width:1100px;margin:0 auto 40px;padding:20px 24px;border:1px solid #e3e3e3;border-radius:12px;background:#f6f6f6;text-align:left}
+.ac-industry-examples{max-width:1100px;margin:0 auto 40px;padding:20px 24px;border:0;border-radius:0;background:transparent;text-align:left}
 .ac-industry-label{font-size:14px;font-weight:700;line-height:1.6;color:#333;margin:0 0 12px}
 .ac-industry-examples ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
 .ac-industry-examples li{font-size:14px;line-height:1.5;color:#333;background:#fff;border:1px solid #ddd;border-radius:6px;padding:5px 12px}
@@ -1208,13 +1207,13 @@ a{text-decoration:none;color:inherit}
   .uq-store-label{grid-column:2;font-size:14px;text-align:left;line-height:1.7}
   .uq-panel{border:1px solid #ccebd8;border-radius:16px;padding:24px 20px 12px;box-shadow:none}
   .uq-panel-badge{display:none}
-  .uq-role-label{font-size:13px;font-weight:700;color:#008c49;margin:0 0 8px;line-height:1.6}
+  .uq-role-label{font-size:13px;font-weight:700;color:#048c4c;margin:0 0 8px;line-height:1.6}
   .uq-mobile-role h3{font-size:21px;font-weight:700;line-height:1.6;color:#111;margin:0 0 8px}
   .uq-role-note{font-size:14px;color:#555;line-height:1.8;margin:0 0 14px}
   .uq-diagram{gap:0}
   .uq-node{border:0;border-top:1px solid #e2eee7;border-radius:0;box-shadow:none;padding:13px 0;gap:10px;align-items:flex-start}
   .uq-item-icon{display:none}
-  .uq-node::before{content:'✓';color:#06C167;font-size:17px;font-weight:700;line-height:1.6}
+  .uq-node::before{content:'✓';color:#048c4c;font-size:17px;font-weight:700;line-height:1.6}
   .uq-item-label{font-size:16px;line-height:1.7}
   .ac-kpi{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:14px;row-gap:5px;align-items:center;text-align:left;padding:20px 18px}
   .ac-kpi-icon{grid-column:1;grid-row:1/4;width:56px;height:56px;margin:0;align-self:center}
@@ -1292,8 +1291,320 @@ a{text-decoration:none;color:inherit}
 @media(min-width:769px){
   .ac-industry-examples{width:fit-content;max-width:100%;padding:16px 20px;margin-bottom:28px}
 }
+
+/* スマホのサポート内容は、時期と順序が分かる縦のフローにする。 */
+@media(max-width:768px){
+  #compare .support-mobile-list{list-style:none;margin:0;padding:0;border:0;border-radius:0;background:transparent}
+  #compare .support-mobile-item{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;padding:0;margin:0 0 24px;border:0}
+  #compare .support-mobile-item:last-child{margin-bottom:0}
+  #compare .support-mobile-item:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:-24px;width:2px;background:#b8e5cd}
+  #compare .support-mobile-item:not(:last-child)::after{content:'';position:absolute;left:12px;bottom:-13px;width:8px;height:8px;border-right:2px solid #06c167;border-bottom:2px solid #06c167;transform:rotate(45deg)}
+  #compare .support-flow-step{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#06c167;color:#fff;font-size:12px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+  #compare .support-flow-content{padding:16px;background:#fff;border:1px solid #d6ebdd;border-radius:10px;min-width:0}
+  #compare .support-flow-content .support-flow-phase{margin:0 0 8px;color:#048c4c;font-size:12px;font-weight:700;line-height:1.6}
+  #compare .support-flow-content h3{margin:0 0 10px;font-size:17px;line-height:1.8}
+  #compare .support-flow-content>p:last-child{margin:0;font-size:15px;line-height:1.8}
+}
+@media(max-width:359px){#compare .support-mobile-item{gap:10px}#compare .support-flow-content{padding:14px}}
+
+
+/* スマホの実務代行：店舗様→FlagKの実務→出店開始の役割フロー。 */
+.uq-mobile-process{display:none}
+@media(max-width:768px){
+  #uniqueness .uq-flow{display:none}
+  .uq-mobile-process{display:block;max-width:520px;margin:0 auto}
+  .uq-process-list{list-style:none;margin:0;padding:0}
+  .uq-process-step{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;margin:0 0 24px;padding:0}
+  .uq-process-step:last-child{margin-bottom:0}
+  .uq-process-step:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:-24px;width:2px;background:#b8e5cd}
+  .uq-process-step:not(:last-child)::after{content:'';position:absolute;left:12px;bottom:-13px;width:8px;height:8px;border-right:2px solid #06c167;border-bottom:2px solid #06c167;transform:rotate(45deg)}
+  .uq-process-number{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#06c167;color:#fff;font-size:12px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums}
+  .uq-process-card{min-width:0;border:1px solid #dce5df;border-radius:12px;background:#fff;padding:18px}
+  .uq-process-card .uq-process-owner{font-size:12px;font-weight:700;line-height:1.7;color:#66726a;margin:0 0 8px}
+  .uq-process-card h3,.uq-process-after h3{font-size:17px;font-weight:700;line-height:1.7;color:#111;margin:0 0 10px}
+  .uq-process-card>p:not(.uq-process-owner),.uq-process-work p,.uq-process-after>p:last-child{font-size:15px;line-height:1.8;color:#555;margin:0}
+  .uq-process-delegation{border-color:#a9d9be}
+  .uq-process-delegation .uq-process-owner{color:#048c4c}
+  .uq-process-work{margin-top:16px;padding-left:14px;border-left:2px solid #c4e7d3}
+  .uq-process-work-block+.uq-process-work-block{margin-top:16px}
+  .uq-process-work h4{display:inline-block;margin:0 0 6px;padding:2px 8px;background:#edf8f1;border-radius:4px;font-size:13px;font-weight:700;line-height:1.7;color:#048c4c}
+  .uq-process-start{display:flex;align-items:center;gap:12px;border-color:#ead9a6;background:#fffdf6}
+  .uq-process-start>img{display:block;flex:none;width:40px;height:40px;object-fit:contain}
+  .uq-process-start>div{min-width:0}
+  .uq-process-start .uq-process-owner{margin-bottom:4px}
+  .uq-process-start h3{margin:0}
+  .uq-process-after{margin:20px 0 0 44px;padding:16px 0 0;border-top:1px solid #cce7d7}
+  .uq-process-after .uq-process-after-label{font-size:12px;font-weight:700;color:#048c4c;line-height:1.6;margin:0 0 6px}
+}
+@media(max-width:359px){.uq-process-step{gap:10px}.uq-process-card{padding:14px}.uq-process-start{gap:8px}.uq-process-start>img{width:32px;height:32px}.uq-process-after{margin-left:42px}}
+
+
+/* 時系列のサポートとは区別し、店舗様とFlagKの役割分担を図で示す。 */
+@media(max-width:768px){
+  .uq-map-customer{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #dce5df;border-radius:10px;padding:16px}
+  .uq-map-role{flex:none;display:flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;border-radius:50%;background:#f0f2f1;color:#555;font-size:12px;font-weight:700}
+  .uq-map-customer>div{min-width:0}
+  .uq-map-customer p{font-size:12px;color:#66726a;line-height:1.6;margin:0 0 3px}
+  .uq-map-customer h3{font-size:17px;font-weight:700;line-height:1.7;color:#111;margin:0}
+  .uq-map-handoff{display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px 0 18px;color:#048c4c}
+  .uq-map-handoff span{font-size:12px;font-weight:700;line-height:1.6}
+  .uq-map-handoff i{display:block;width:10px;height:10px;border-right:2px solid #06c167;border-bottom:2px solid #06c167;transform:rotate(45deg)}
+  .uq-map-team{border:2px solid #06c167;border-radius:14px;overflow:hidden;background:#fff}
+  .uq-map-team-head{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;background:#eaf8f0;border-bottom:1px solid #cce8d8}
+  .uq-map-team-head>img{display:block;flex:none;width:64px;height:72px;object-fit:contain}
+  .uq-map-team-head p{color:#048c4c;font-size:12px;font-weight:700;line-height:1.6;margin:0 0 5px}
+  .uq-map-team-head h3{color:#111;font-size:21px;font-weight:700;line-height:1.6;margin:0}
+  .uq-map-workareas{display:grid;grid-template-columns:1fr 1fr;padding:20px 16px 16px;gap:14px}
+  .uq-map-workarea{min-width:0}
+  .uq-map-workarea+.uq-map-workarea{border-left:1px solid #dcebe2;padding-left:14px}
+  .uq-map-workarea h4{margin:0 0 12px;color:#048c4c;font-size:17px;font-weight:700;line-height:1.6;text-align:center}
+  .uq-map-workarea ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .uq-map-workarea li{border:1px solid #e2ece6;border-radius:6px;background:#f7faf8;padding:9px 6px;color:#333;font-size:13px;font-weight:500;line-height:1.7;text-align:center;overflow-wrap:anywhere}
+  .uq-map-team-note{margin:0;padding:0 16px 18px;font-size:13px;line-height:1.8;text-align:center;color:#555}
+  .uq-map-result{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px;margin-top:14px;border-radius:10px;background:#fffdf6;border:1px solid #ead9a6}
+  .uq-map-result>img{display:block;flex:none;width:40px;height:40px;object-fit:contain}
+  .uq-map-result>div{min-width:0}
+  .uq-map-result p{font-size:12px;line-height:1.6;color:#66726a;margin:0 0 4px}
+  .uq-map-result h3{font-size:17px;line-height:1.7;font-weight:700;color:#111;margin:0}
+  .uq-map-after p{margin:14px 0 0;color:#555;font-size:15px;line-height:1.8}
+  .uq-map-after strong{color:#333;font-weight:700}
+}
+@media(max-width:359px){
+ .uq-map-customer{padding:14px;gap:10px}
+ .uq-map-role{min-width:42px;min-height:42px}
+ .uq-map-team-head{gap:12px;padding:18px 14px}
+ .uq-map-team-head h3{font-size:20px}
+ .uq-map-workareas{padding:16px 12px 14px;gap:10px}
+ .uq-map-workarea+.uq-map-workarea{padding-left:10px}
+ .uq-map-workarea li{padding-inline:4px;font-size:12px}
+}
+
+
+/* Generated delegation icons, 2026-10-18 */
+.uq-title-emphasis{color:#048c4c}
+@media(max-width:768px){
+ .uq-map-team-head>img{width:80px;height:80px}
+ .uq-map-result{gap:14px;padding:18px 14px}
+ .uq-map-result>img{width:80px;height:80px}
+ .uq-map-result h3{font-size:17px;line-height:1.6}
+}
+@media(max-width:359px){
+ .uq-map-team-head>img{width:72px;height:72px}
+ .uq-map-result{gap:10px;padding:16px 10px}
+ .uq-map-result>img{width:72px;height:72px}
+ .uq-map-result h3{font-size:16px}
+}
+
+/* Matching generated illustration set, 2026-10-18 */
+@media(max-width:768px){.uq-map-result{background:#fffbe0;border-color:#f3d329}}
+.ac-kpi-icon img,.cs-card-icon img{object-fit:contain}
+.cs-cta-icon-ring{width:72px;height:72px;background:#06C167;box-shadow:0 4px 16px rgba(6,193,103,.35);border-radius:50%}
+.cs-cta-icon-ring>img{display:block;width:88px;height:88px;object-fit:contain}
+.hv2-cta-icon-wrap img{width:56px;height:56px}
+
+/* Simplify selected cards after icon removal */
+.uq-map-team-head{text-align:center}
+@media(max-width:768px){
+ .cs-card{grid-template-columns:1fr}
+ .cs-card-title{grid-column:1;min-width:0}
+}
+
+@media(max-width:768px){.uq-map-team-head h3{font-size:clamp(17px,4.8vw,21px);white-space:nowrap}}
+
+/* Subtle generated cafe background for FAQ */
+.fq{background:linear-gradient(rgba(245,250,247,.92),rgba(245,250,247,.92)),url('images/faq-generated/cafe-consultation-background-v1.png') center center/cover no-repeat #f5faf7}
+@media(max-width:768px){.fq{background:linear-gradient(rgba(245,250,247,.94),rgba(245,250,247,.94)),url('images/faq-generated/cafe-consultation-background-v1.png') 58% center/cover no-repeat #f5faf7}}
+
+/* Desktop delegation: clear responsibility columns with restrained styling. */
+@media(min-width:769px){
+ #uniqueness .uq-flow{display:none}
+ #uniqueness .uq-delegation-map{display:grid;grid-template-columns:190px 32px minmax(0,1fr) 220px;gap:0 24px;max-width:1100px;margin:0 auto;align-items:stretch}
+ .uq-map-customer{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:25px;padding:30px 24px;background:#fff;border:1px solid #dce8e0;border-radius:12px}
+ .uq-map-role{display:inline-block;font-size:14px;font-weight:700;line-height:1.6;color:#555;border-bottom:2px solid #cbd9d0;padding:0 0 8px;min-width:50px}
+ .uq-map-customer p{font-size:12px;color:#66726a;line-height:1.7;margin:0 0 8px}
+ .uq-map-customer h3{font-size:20px;line-height:1.9;font-weight:700;color:#202822;margin:0;word-break:normal;overflow-wrap:anywhere}
+ .uq-map-handoff{display:flex;align-items:center;justify-content:center}
+ .uq-map-handoff span{display:none}
+ .uq-map-handoff i{display:block;position:relative;width:27px;height:1px;background:#8fc4a5}
+ .uq-map-handoff i::after{content:'';position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1px solid #8fc4a5;border-right:1px solid #8fc4a5;transform:rotate(45deg)}
+ .uq-map-team{background:#fff;border:1px solid #9cdbb8;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(23,75,43,.035)}
+ .uq-map-team-head{padding:26px 26px 21px;background:#fff;border-bottom:1px solid #e3eee7;text-align:left}
+ .uq-map-team-head p{color:#048c4c;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1.7;margin:0 0 7px}
+ .uq-map-team-head h3{font-size:23px;line-height:1.7;font-weight:700;color:#202822;margin:0;white-space:nowrap}
+ .uq-map-workareas{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:24px 26px}
+ .uq-map-workarea{min-width:0}
+ .uq-map-workarea+.uq-map-workarea{padding-left:22px;border-left:1px solid #e2ebe5}
+ .uq-map-workarea h4{font-size:15px;font-weight:700;line-height:1.6;color:#048c4c;margin:0 0 13px}
+ .uq-map-workarea ul{padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+ .uq-map-workarea li{font-size:13px;line-height:1.7;color:#46564c;padding-left:13px;position:relative}
+ .uq-map-workarea li::before{content:'';position:absolute;top:.7em;left:0;width:4px;height:4px;border-radius:50%;background:#9bc8ae}
+ .uq-map-team-note{margin:0 26px;padding:17px 0 23px;border-top:1px solid #edf2ef;color:#66726a;font-size:12px;line-height:1.9;text-align:left}
+ .uq-map-team-note br{display:none}
+ .uq-map-result{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:23px;padding:28px 20px;background:#fffdf0;border:1px solid #e9e2b9;border-radius:12px;text-align:center}
+ .uq-map-result>img{display:block;width:92px;height:92px;object-fit:contain}
+ .uq-map-result p{font-size:12px;line-height:1.7;color:#66726a;margin:0 0 9px}
+ .uq-map-result h3{font-size:21px;line-height:1.8;color:#202822;font-weight:700;margin:0;text-wrap:balance}
+ .uq-map-after{grid-column:1/-1;margin-top:26px;padding-top:20px;border-top:1px solid #d8e9df;text-align:center}
+ .uq-map-after p{font-size:13px;line-height:1.9;color:#66726a;margin:0}
+ .uq-map-after strong{font-weight:700;color:#43564b;margin-right:12px}
+ .uq-map-after br{display:none}
+}
+@media(min-width:769px) and (max-width:1100px){
+ #uniqueness .uq-delegation-map{grid-template-columns:150px 22px minmax(0,1fr) 175px;column-gap:14px}
+ .uq-map-customer{padding:24px 18px}.uq-map-customer h3{font-size:18px}
+ .uq-map-team-head{padding:22px 18px 18px}.uq-map-team-head h3{font-size:19px}
+ .uq-map-workareas{padding:20px 18px;gap:15px}.uq-map-workarea+.uq-map-workarea{padding-left:14px}
+ .uq-map-team-note{margin-inline:18px}.uq-map-result{padding:24px 14px}.uq-map-result h3{font-size:19px}
+}
+
+/* Desktop composition is independent from the mobile role diagram. */
+.uq-desktop-editorial{display:none}
+@media(min-width:769px){
+ #uniqueness .uq-delegation-map{display:none}
+ #uniqueness .uq-title,#uniqueness .uq-lead{max-width:1100px;margin-inline:auto;text-align:left}
+ #uniqueness .uq-title{margin-bottom:20px}
+ #uniqueness .uq-lead{margin-bottom:44px}
+ .uq-desktop-editorial{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.65fr);gap:24px 56px;max-width:1100px;margin:auto;align-items:start}
+ .uq-desktop-label{font-size:13px;line-height:1.7;font-weight:700;letter-spacing:.04em;color:#048c4c;margin:0 0 17px}
+ .uq-desktop-owner{padding:30px 0}
+ .uq-desktop-owner h3{font-size:25px;line-height:1.85;font-weight:700;color:#202822;margin:0 0 22px;letter-spacing:.01em}
+ .uq-desktop-owner>p:not(.uq-desktop-label){font-size:14px;line-height:1.95;color:#5b695f;margin:0}
+ .uq-desktop-owner .uq-desktop-owner-note{margin-top:24px!important;color:#048c4c!important;font-weight:700}
+ .uq-desktop-service{padding:30px 34px;background:#fff;border-radius:8px;border-top:3px solid #06c167}
+ .uq-desktop-service>.uq-desktop-label{margin-bottom:10px}
+ .uq-desktop-service>h3{font-size:25px;line-height:1.7;font-weight:700;color:#202822;margin:0 0 25px}
+ .uq-desktop-service-columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+ .uq-desktop-service-columns>div{min-width:0}
+ .uq-desktop-service-columns h4{font-size:14px;font-weight:700;color:#048c4c;padding-bottom:12px;margin:0 0 14px;border-bottom:1px solid #dae9e0}
+ .uq-desktop-service-columns ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+ .uq-desktop-service-columns li{font-size:14px;line-height:1.8;color:#46564c}
+ .uq-desktop-completion{margin-top:30px;padding-top:20px;border-top:1px solid #e3ece6;display:flex;align-items:baseline;gap:10px}
+ .uq-desktop-completion>span{width:6px;height:6px;background:#06c167;border-radius:50%;flex:none;align-self:center}
+ .uq-desktop-completion p{font-size:13px;color:#66726a;line-height:1.9;margin:0}
+ .uq-desktop-completion strong{color:#202822;font-weight:700}
+ .uq-desktop-followup{grid-column:1/-1;border-top:1px solid #d4e7db;padding-top:24px;display:flex;align-items:baseline;gap:24px}
+ .uq-desktop-followup strong{color:#048c4c;font-size:14px;line-height:1.8;flex:none}
+ .uq-desktop-followup p{font-size:14px;line-height:1.8;color:#5b695f;margin:0}
+}
+@media(min-width:769px) and (max-width:1000px){
+ .uq-desktop-editorial{column-gap:28px;grid-template-columns:.85fr 1.5fr}
+ .uq-desktop-owner h3,.uq-desktop-service>h3{font-size:21px}
+ .uq-desktop-service{padding:26px 24px}.uq-desktop-service-columns{gap:20px}
+ .uq-desktop-service-columns li{font-size:13px}
+}
+
+@media(min-width:769px){
+ .uq-desktop-owner{padding-top:26px}
+ .uq-desktop-owner>.uq-desktop-label{margin-bottom:6px}
+ .uq-desktop-owner h3{font-size:31px;line-height:1.65;margin-bottom:22px}
+ .uq-desktop-owner h3 span{color:#048c4c;font-size:1.3em;margin-inline:3px}
+ .uq-desktop-owner-actions{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px}
+ .uq-desktop-owner-actions li{position:relative;padding-left:27px}
+ .uq-desktop-owner-actions li::before{content:'';position:absolute;left:2px;top:6px;width:9px;height:15px;border-right:2px solid #06c167;border-bottom:2px solid #06c167;transform:rotate(40deg)}
+ .uq-desktop-owner-actions strong{display:block;font-size:18px;line-height:1.7;font-weight:700;color:#202822}
+ .uq-desktop-owner-actions small{display:block;font-size:12px;line-height:1.8;color:#66726a;margin-top:2px}
+ .uq-desktop-owner .uq-desktop-owner-note{padding-top:20px;border-top:1px solid #d4e7db;margin-top:24px!important}
+}
+
+/* Show the customer's small contribution within the whole scope of work. */
+@media(min-width:769px){
+ .uq-desktop-editorial{background:#fff;border:1px solid #dce9e1;border-radius:12px;padding:30px;grid-template-columns:minmax(240px,.8fr) minmax(0,1.6fr);gap:26px 34px;max-width:1100px}
+ .uq-desktop-overview{grid-column:1/-1;padding-bottom:22px;border-bottom:1px solid #e4ece7;display:flex;align-items:baseline;gap:25px}
+ .uq-desktop-overview>p{font-size:18px;color:#202822;line-height:1.7;font-weight:700;margin:0;flex:none}
+ .uq-desktop-overview>span{font-size:13px;color:#66726a;line-height:1.8}
+ .uq-desktop-owner{background:#f0faf4;border:1px solid #b7dfc8;border-radius:8px;padding:24px;align-self:stretch}
+ .uq-desktop-owner h3{font-size:28px;margin-bottom:21px}
+ .uq-desktop-owner-actions{gap:20px}
+ .uq-desktop-service{padding:22px 0 12px;border:0;border-radius:0;background:transparent}
+ .uq-desktop-service>h3{font-size:23px}
+ .uq-desktop-service-columns{gap:24px}
+ .uq-desktop-followup{margin:0;padding-top:20px;border-color:#e4ece7;gap:20px}
+}
+@media(min-width:769px) and (max-width:1000px){
+ .uq-desktop-editorial{padding:24px;grid-template-columns:220px minmax(0,1fr);column-gap:26px}
+ .uq-desktop-overview{display:block}.uq-desktop-overview>span{display:block;margin-top:5px}
+ .uq-desktop-owner{padding:22px 18px}.uq-desktop-owner h3{font-size:25px}
+ .uq-desktop-service>h3{font-size:20px}.uq-desktop-service-columns{gap:18px}
+ .uq-desktop-followup{align-items:flex-start;gap:14px}
+}
+
+/* Desktop responsibility tree */
+.uq-desktop-tree{display:none}
+@media(min-width:769px){
+ .uq-desktop-tree{display:block;max-width:1100px;margin:auto;padding:32px 34px 24px;background:#fff;border:1px solid #dce9e1;border-radius:12px}
+ .uq-tree-root{position:relative;width:fit-content;margin:0 auto;padding:14px 36px;border-radius:6px;background:#f0f6f2;border:1px solid #c7ddcf;font-size:19px;font-weight:700;line-height:1.7;color:#202822;text-align:center}
+ .uq-tree-root::after{content:'';position:absolute;left:50%;top:100%;height:29px;border-left:2px solid #b0d9c1}
+ .uq-tree-branches{position:relative;display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-top:28px;padding-top:28px}
+ .uq-tree-branches::before{content:'';position:absolute;top:0;left:calc(16.6667% - 8px);right:calc(33.3333% - 16px);border-top:2px solid #b0d9c1}
+ .uq-tree-branch{position:relative;min-width:0}
+ .uq-tree-branch::before{content:'';position:absolute;left:50%;top:-28px;height:28px;border-left:2px solid #b0d9c1}
+ .uq-tree-heading{text-align:center;border:1px solid #dce9e1;border-radius:7px;padding:15px 16px;background:#f8faf9}
+ .uq-tree-heading p{font-size:12px;line-height:1.6;color:#66726a;font-weight:500;margin:0 0 3px}
+ .uq-tree-heading h3{font-size:20px;font-weight:700;line-height:1.7;color:#202822;margin:0}
+ .uq-tree-owner .uq-tree-heading{background:#e8f8ef;border:2px solid #06c167;padding:12px 14px}
+ .uq-tree-owner .uq-tree-heading h3{color:#048c4c;font-size:25px}
+ .uq-tree-owner .uq-tree-heading h3 span{font-size:1.2em;margin-inline:2px}
+ .uq-tree-owner-tasks{position:relative;display:flex;flex-direction:column;gap:12px;padding-top:18px}
+ .uq-tree-owner-tasks::before{content:'';position:absolute;left:50%;top:0;bottom:20px;border-left:1px solid #c6e2d2}
+ .uq-tree-owner-tasks>div{position:relative;background:#fff;border:1px solid #a7ddbf;border-radius:6px;padding:15px 18px;text-align:center}
+ .uq-tree-owner-tasks h4{font-size:17px;font-weight:700;line-height:1.7;color:#202822;margin:0 0 3px}
+ .uq-tree-owner-tasks p{font-size:12px;line-height:1.7;color:#66726a;margin:0}
+ .uq-tree-workgroups{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative;padding-top:26px}
+ .uq-tree-workgroups::before{content:'';position:absolute;left:calc(25% - 5.5px);right:calc(25% - 5.5px);top:13px;border-top:1px solid #d5e3db}
+ .uq-tree-team>.uq-tree-heading::after{content:'';position:absolute;top:100%;left:50%;height:13px;border-left:1px solid #d5e3db}
+ .uq-tree-team>.uq-tree-heading{position:relative}
+ .uq-tree-workgroups>div{position:relative;min-width:0}
+ .uq-tree-workgroups>div::before{content:'';position:absolute;left:50%;top:-13px;height:13px;border-left:1px solid #d5e3db}
+ .uq-tree-workgroups h4{text-align:center;padding:9px 12px;background:#f0f6f2;border-radius:4px;font-size:14px;font-weight:700;color:#048c4c;line-height:1.7;margin:0 0 10px}
+ .uq-tree-workgroups ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+ .uq-tree-workgroups li{padding:12px 13px;border:1px solid #e1e9e4;border-radius:5px;font-size:13px;color:#46564c;line-height:1.7;background:#fff;text-align:center}
+ .uq-tree-completion{display:flex;justify-content:center;align-items:baseline;gap:18px;margin-top:27px;padding:17px 20px;background:#fffdf0;border-radius:6px}
+ .uq-tree-completion p{font-size:12px;line-height:1.8;color:#66726a;margin:0}.uq-tree-completion strong{font-size:18px;line-height:1.8;color:#202822;font-weight:700}
+ .uq-tree-after{display:flex;justify-content:center;align-items:baseline;gap:20px;margin-top:19px}
+ .uq-tree-after strong{font-size:12px;color:#048c4c;line-height:1.8;flex:none}.uq-tree-after p{font-size:12px;line-height:1.8;color:#66726a;margin:0}
+}
+@media(min-width:769px) and (max-width:1000px){
+ .uq-desktop-tree{padding:26px 22px 22px}.uq-tree-branches{gap:28px;grid-template-columns:1fr 1.8fr}
+ .uq-tree-branches::before{left:calc(17.857% - 5px);right:calc(32.143% - 9px)}
+ .uq-tree-heading h3{font-size:18px}.uq-tree-owner .uq-tree-heading h3{font-size:22px}.uq-tree-workgroups{gap:12px}.uq-tree-workgroups::before{left:calc(25% - 3px);right:calc(25% - 3px)}
+ .uq-tree-workgroups li{padding:10px 7px;font-size:12px}.uq-tree-owner-tasks>div{padding:15px 10px}.uq-tree-owner-tasks h4{font-size:16px}
+ .uq-tree-after{gap:12px}
+}
+
+/* A single readable handoff, highlighting the customer's two actions. */
+.uq-desktop-scope{display:none}
+@media(min-width:769px){
+ .uq-desktop-scope{display:block;max-width:1100px;margin:auto;padding:30px;background:#fff;border:1px solid #dce9e1;border-radius:12px}
+ .uq-desktop-scope>h3{text-align:center;font-size:23px;line-height:1.8;color:#202822;font-weight:700;margin:0 0 28px}
+ .uq-desktop-scope>h3>span{color:#048c4c}
+ .uq-scope-flow{display:grid;grid-template-columns:190px minmax(0,1fr) 190px;gap:38px;align-items:stretch}
+ .uq-scope-owner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px 15px;background:#eaf8f0;border:2px solid #06c167;border-radius:8px;position:relative}
+ .uq-scope-who{font-size:12px;font-weight:700;color:#048c4c;line-height:1.7;margin:0 0 14px}
+ .uq-scope-owner .uq-scope-who{border-bottom:1px solid #b7ddc7;padding-bottom:8px;min-width:64px}
+ .uq-scope-owner h4{font-size:21px;font-weight:700;line-height:1.7;color:#202822;margin:0 0 12px}
+ .uq-scope-owner>p:last-child{font-size:13px;color:#5d6c62;line-height:1.9;margin:0}
+ .uq-scope-work{position:relative;padding:26px;background:#f8faf9;border:1px solid #dce7e0;border-radius:8px}
+ .uq-scope-work::before,.uq-scope-work::after{content:'';position:absolute;top:50%;width:10px;height:10px;border-top:2px solid #87b89a;border-right:2px solid #87b89a;transform:translateY(-50%) rotate(45deg)}
+ .uq-scope-work::before{left:-27px}.uq-scope-work::after{right:-25px}
+ .uq-scope-work .uq-scope-who{margin-bottom:7px}
+ .uq-scope-work h4{font-size:21px;line-height:1.7;color:#202822;font-weight:700;margin:0 0 21px}
+ .uq-scope-work ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;list-style:none;padding:18px 0 0;margin:0;border-top:1px solid #dce7e0}
+ .uq-scope-work li{position:relative;padding-left:13px;color:#46564c;font-size:13px;line-height:1.8}
+ .uq-scope-work li::before{content:'';position:absolute;left:0;top:.7em;width:4px;height:4px;border-radius:50%;background:#98c4aa}
+ .uq-scope-open{display:flex;align-items:baseline;justify-content:center;gap:18px;padding:18px 20px;margin-top:26px;background:#fffdf0;border-radius:6px}
+ .uq-scope-open span{font-size:12px;line-height:1.8;color:#66726a}.uq-scope-open strong{font-size:18px;line-height:1.8;color:#202822}
+ .uq-scope-after{text-align:center;font-size:12px;line-height:1.9;color:#66726a;margin:19px 0 0}
+ .uq-scope-after strong{color:#048c4c;margin-right:18px}
+}
+@media(min-width:769px) and (max-width:1100px){
+ .uq-desktop-scope{padding:25px}.uq-desktop-scope>h3{font-size:20px}
+ .uq-scope-flow{grid-template-columns:155px minmax(0,1fr) 155px;gap:28px}
+ .uq-scope-owner{padding:22px 10px}.uq-scope-owner h4{font-size:18px}
+ .uq-scope-work{padding:22px 18px}.uq-scope-work h4{font-size:18px}.uq-scope-work ul{grid-template-columns:1fr;gap:7px}
+ .uq-scope-work::before{left:-22px}.uq-scope-work::after{right:-20px}
+}
 </style>
-<link rel="stylesheet" href="test-form.css"><link rel="stylesheet" href="name-change-guide.css?v=9"></head>
+<link rel="stylesheet" href="test-form.css?v=green-text-2"><link rel="stylesheet" href="name-change-guide.css?v=green-text-2"></head>
 <body>
 
 <!-- HEADER -->
@@ -1405,7 +1716,7 @@ a{text-decoration:none;color:inherit}
     <!-- 出店申込 CTA ボタン (SP のみ表示) -->
     <a href="#mobile-form" class="hv2-cta">
       <span class="hv2-cta-icon-wrap">
-        <img src="images/ubereats-support/lp-26.webp" alt="" loading="lazy" decoding="async" width="104" height="70">
+        <img src="images/lp-icons-generated/campaign-gift-yellow-v2.png" alt="" loading="lazy" decoding="async" width="104" height="70">
       </span>
       <span class="hv2-cta-body">
         <span class="hv2-cta-title">Uber Eatsの出店申込に進む</span>
@@ -1523,11 +1834,6 @@ a{text-decoration:none;color:inherit}
 
   </div>
 </section>
-<nav class="ng-entry" aria-label="ご利用中の店舗様へのご案内">
-  <a href="#name-change-guide"><span>Uber Eatsをご利用中の店舗様へ</span><b>店舗名・屋号の変更手続きはこちら</b><i class="ng-chevron" aria-hidden="true"></i></a>
-</nav>
-
-
 <!-- ============================================================
      MOBILE FORM (モバイル限定：ヒーロー直下)
      ============================================================ -->
@@ -1708,7 +2014,7 @@ a{text-decoration:none;color:inherit}
 
     <li class="rs-card">
       <div class="rs-img">
-        <img src="images/ubereats-support/lp-38.webp" alt="REASON 1" loading="lazy" decoding="async" width="728" height="408">
+        <img src="images/reasons-generated/reason-01-pay-as-you-sell.png" alt="注文商品を店頭で受け渡す飲食店のスタッフ" loading="lazy" decoding="async" width="1672" height="941" style="object-position:45% center">
       </div>
       <div class="rs-body">
         <span class="rs-badge">理由1</span>
@@ -1719,7 +2025,7 @@ a{text-decoration:none;color:inherit}
 
     <li class="rs-card">
       <div class="rs-img">
-        <img src="images/ubereats-support/lp-02.webp" alt="REASON 2" loading="lazy" decoding="async" width="682" height="455">
+        <img src="images/reasons-generated/reason-02-flexible-start.png" alt="担当者と契約条件を確認する飲食店のオーナー" loading="lazy" decoding="async" width="1672" height="941" style="object-position:50% center">
       </div>
       <div class="rs-body">
         <span class="rs-badge">理由2</span>
@@ -1730,7 +2036,7 @@ a{text-decoration:none;color:inherit}
 
     <li class="rs-card">
       <div class="rs-img">
-        <img src="images/ubereats-support/lp-01.webp" alt="REASON 3" loading="lazy" decoding="async" width="682" height="455">
+        <img src="images/reasons-generated/reason-03-tablet-orders.png" alt="タブレットで注文を確認する飲食店のオーナー" loading="lazy" decoding="async" width="1672" height="941" style="object-position:60% center">
       </div>
       <div class="rs-body">
         <span class="rs-badge">理由3</span>
@@ -1755,17 +2061,32 @@ a{text-decoration:none;color:inherit}
       <span aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3v6c0 4.6-3.2 8.4-7.5 10-4.3-1.6-7.5-5.4-7.5-10v-6z"></path><path d="M8.8 12.2l2.2 2.2 4.2-4.4"></path></svg></span>
       <div><p>ご契約先はUber Eats公式です</p><small>FlagK（弊社）が出店手続きをサポートします。</small></div>
     </div>
-    <ul class="support-mobile-list">
+    <ol class="support-mobile-list" aria-label="出店サポートの流れ">
       <li class="support-mobile-item">
-        <div><h3><span class="support-highlight">出店準備・登録手続きをまとめて代行</span></h3><p>必要な情報・書類の確認から店舗登録まで、専任担当が対応します。</p></div>
+        <span class="support-flow-step" aria-label="ステップ1">01</span>
+        <div class="support-flow-content">
+          <p class="support-flow-phase">出店前の確認</p>
+          <h3>キャンペーンの確認もお任せ</h3>
+          <p>必要な情報・書類と、キャンペーンの適用条件を確認します。</p>
+        </div>
       </li>
       <li class="support-mobile-item">
-        <div><h3><span class="support-highlight">キャンペーンの確認もお任せ</span></h3><p>お申し込み内容に合わせて、利用できるキャンペーンと適用条件を担当者が確認します。</p></div>
+        <span class="support-flow-step" aria-label="ステップ2">02</span>
+        <div class="support-flow-content">
+          <p class="support-flow-phase">申込・店舗登録</p>
+          <h3>出店準備・登録手続きをまとめて代行</h3>
+          <p>必要な準備を整え、専任担当が申請手続きから店舗登録まで対応します。</p>
+        </div>
       </li>
       <li class="support-mobile-item">
-        <div><h3><span class="support-highlight">困ったときに相談できる</span></h3><p>申込中の疑問や、掲載開始後の登録内容に関する簡単なご質問に、専任担当がお答えします。</p></div>
+        <span class="support-flow-step" aria-label="ステップ3">03</span>
+        <div class="support-flow-content">
+          <p class="support-flow-phase">掲載開始後もサポート</p>
+          <h3>困ったときに相談できる</h3>
+          <p>掲載開始後の登録内容に関する簡単なご質問にも、専任担当がお答えします。</p>
+        </div>
       </li>
-    </ul>
+    </ol>
   </div>
   <div class="cmp-desktop">
 
@@ -1783,7 +2104,6 @@ a{text-decoration:none;color:inherit}
 
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
-        <span class="cmp-ic"><svg viewbox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z"></path><path d="M16 5h2a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2"></path><path d="M8.5 11h5M8.5 14.5h3"></path></svg></span>
         <span class="cmp-item-label">出店申請の準備</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>必要な情報・書類を自分で確認</div>
@@ -1796,7 +2116,6 @@ a{text-decoration:none;color:inherit}
 
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
-        <span class="cmp-ic"><svg viewbox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"></path><path d="M6 14v4a1 1 0 001 1h1.5"></path><path d="M15 9.5a3.5 3.5 0 010 5"></path><path d="M17.5 7a7 7 0 010 10"></path></svg></span>
         <span class="cmp-item-label">キャンペーン</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>適用条件を自分で確認</div>
@@ -1809,7 +2128,6 @@ a{text-decoration:none;color:inherit}
 
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
-        <span class="cmp-ic"><svg viewbox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 10-3.2 6.4L21 20l-.6-3.1A7.9 7.9 0 0021 12z"></path><path d="M9.7 9.6a2.4 2.4 0 014.6.8c0 1.6-2.3 2-2.3 3.4"></path><path d="M12 16.2h.01"></path></svg></span>
         <span class="cmp-item-label">不明点への対応</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>自分で調査</div>
@@ -1824,7 +2142,6 @@ a{text-decoration:none;color:inherit}
          提供しない方針に変わった場合はこの .cmp-row ブロックごと削除すれば3行になる -->
     <div class="cmp-row">
       <div class="cmp-c cmp-c--item">
-        <span class="cmp-ic"><svg viewbox="0 0 24 24" fill="none" stroke="#06C167" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1116 0v4.5a2.5 2.5 0 01-2.5 2.5H15"></path><path d="M4 12.5v2a1.5 1.5 0 001.5 1.5H7v-5H5.5A1.5 1.5 0 004 12.5z"></path><path d="M20 12.5v2a1.5 1.5 0 01-1.5 1.5H17v-5h1.5a1.5 1.5 0 011.5 1.5z"></path><path d="M12.5 19h-1a1 1 0 100 2h1a1 1 0 100-2z"></path></svg></span>
         <span class="cmp-item-label">掲載開始後の質問</span>
       </div>
       <div class="cmp-c cmp-c--off"><span class="cmp-c-label">公式</span>問い合わせ先を自分で確認</div>
@@ -1853,7 +2170,7 @@ a{text-decoration:none;color:inherit}
      UNIQUENESS（FlagK独自性：専任担当のサポート内容）
      ============================================================ -->
 <section class="uq" id="uniqueness" data-section="uniqueness">
-  <h2 class="uq-title"><span class="uq-title-sm">出店申請の面倒な実務は</span><br>FlagK<span class="cmp-title-small">（弊社）</span>がまるごと代行</h2>
+  <h2 class="uq-title"><span class="uq-title-sm">出店申請の面倒な実務は</span><br><span class="uq-title-emphasis">FlagK<span class="cmp-title-small">（弊社）</span>がまるごと代行</span></h2>
   <p class="uq-lead">店舗様には、必要な情報のご提供と内容のご確認をお願いします。<br>書類準備から店舗登録・掲載後の対応まで、専任担当がサポートします。</p>
 
   <div class="uq-flow">
@@ -1922,13 +2239,67 @@ a{text-decoration:none;color:inherit}
     </div>
 
   </div>
+
+
+  <div class="uq-desktop-scope">
+    <h3>店舗様は<span>「情報のご提供」</span>と<span>「内容のご確認」</span>だけ。</h3>
+    <div class="uq-scope-flow">
+      <div class="uq-scope-owner">
+        <p class="uq-scope-who">店舗様</p>
+        <h4>情報のご提供</h4>
+        <p>店舗情報・必要書類を<br>ご用意ください。</p>
+      </div>
+      <div class="uq-scope-work">
+        <p class="uq-scope-who">FlagK（弊社）が代行</p>
+        <h4>申請・登録から、掲載準備まで。</h4>
+        <ul><li>店舗情報・必要書類の確認</li><li>申請・店舗登録の手続き</li><li>掲載メニューの選定</li><li>メニューシートの作成</li><li>写真サイズの調整</li></ul>
+      </div>
+      <div class="uq-scope-owner">
+        <p class="uq-scope-who">店舗様</p>
+        <h4>内容のご確認</h4>
+        <p>申請内容を<br>ご確認ください。</p>
+      </div>
+    </div>
+    <div class="uq-scope-open"><span>準備・登録が完了したら</span><strong>Uber Eatsで出店開始へ</strong></div>
+    <p class="uq-scope-after"><strong>掲載開始後もサポート</strong>登録内容に関する簡単なご質問にも、専任担当がお答えします。</p>
+  </div>
+
+  <div class="uq-mobile-process uq-delegation-map">
+    <div class="uq-map-customer">
+      <span class="uq-map-role">店舗様</span>
+      <div><p>お願いするのは</p><h3>情報のご提供・内容のご確認</h3></div>
+    </div>
+    <div class="uq-map-handoff" aria-hidden="true"><span>あとの実務はFlagKへ</span><i></i></div>
+    <div class="uq-map-team">
+      <div class="uq-map-team-head">
+        <div><p>FlagK（弊社）が担当</p><h3>面倒な実務をまとめて代行</h3></div>
+      </div>
+      <div class="uq-map-workareas">
+        <div class="uq-map-workarea">
+          <h4>申請・登録</h4>
+          <ul><li>店舗情報の確認</li><li>申請・登録手続き</li></ul>
+        </div>
+        <div class="uq-map-workarea">
+          <h4>掲載準備</h4>
+          <ul><li>掲載メニュー選定</li><li>メニューシート作成</li><li>写真サイズの調整</li></ul>
+        </div>
+      </div>
+      <p class="uq-map-team-note">手続きも、掲載に必要な準備も、<br>FlagKにお任せいただけます。</p>
+    </div>
+    <div class="uq-map-result">
+      <img src="images/delegation-generated/uber-eats-launch-v1.png" width="80" height="80" alt="" loading="lazy">
+      <div><p>準備・登録が完了したら</p><h3>Uber Eatsで出店開始へ</h3></div>
+    </div>
+    <aside class="uq-map-after" aria-label="掲載開始後のサポート">
+      <p><strong>掲載開始後もご相談いただけます。</strong><br>登録内容に関する簡単なご質問にも、専任担当がお答えします。</p>
+    </aside>
+  </div>
 </section>
 
 <!-- ============================================================
      ACHIEVEMENTS（FlagKの出店サポート実績）
      ============================================================ -->
 <section class="ac" id="achievements" data-section="achievements">
-  <p class="ac-eyebrow">ACHIEVEMENTS</p>
   <h2 class="ac-title"><span class="ac-title-line">選ばれ続ける</span><span class="ac-title-line">Uber Eats出店サポート実績</span></h2>
   <p class="ac-lead">Uber Eats（ウーバーイーツ）は北海道から沖縄まで。店舗のエリア・業態に合わせて、出店申請から掲載準備までご案内します。</p>
   <div class="ac-industry-examples">
@@ -1941,19 +2312,19 @@ a{text-decoration:none;color:inherit}
 
   <div class="ac-kpis">
     <div class="ac-kpi">
-      <span class="ac-kpi-icon"><img src="images/achievements/japan-map-location.webp" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
+      <span class="ac-kpi-icon"><img src="images/lp-icons-generated/nationwide-v1.png" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
       <span class="ac-kpi-label">対応エリア</span>
       <span class="ac-kpi-num">全国対応</span>
       <p class="ac-kpi-note">エリア・店舗形態に応じて出店条件を確認します。</p>
     </div>
     <div class="ac-kpi">
-      <span class="ac-kpi-icon"><img src="images/achievements/handshake-check.webp" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
+      <span class="ac-kpi-icon"><img src="images/lp-icons-generated/partnership-v1.png" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
       <span class="ac-kpi-label">Uber Eats加盟サポート実績</span>
       <span class="ac-kpi-num">約<strong>600</strong>店舗</span>
       <p class="ac-kpi-note">※Uber Eats加盟サポート実績<br>（2026年8月時点）</p>
     </div>
     <div class="ac-kpi">
-      <span class="ac-kpi-icon"><img src="images/achievements/restaurant-storefront.webp" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
+      <span class="ac-kpi-icon"><img src="images/lp-icons-generated/all-cuisines-v1.png" alt="" width="200" height="200" loading="lazy" decoding="async"></span>
       <span class="ac-kpi-label">対応業態</span>
       <span class="ac-kpi-num">オールジャンル対応</span>
       <p class="ac-kpi-note">※営業許可・業態ごとの条件を個別に確認します。</p>
@@ -1980,33 +2351,18 @@ a{text-decoration:none;color:inherit}
 
     <div class="cs-stats">
       <div class="cs-card">
-        <div class="cs-card-left">
-          <span class="cs-card-icon"><img src="images/ubereats-support/lp-27.webp" alt="登録店舗数" loading="lazy" decoding="async" width="160" height="107"></span>
-          <span class="cs-card-label">登録店舗数</span>
-          <span class="cs-card-num">約11万店舗</span>
-        </div>
         <div class="cs-card-right">
           <p class="cs-card-title">多くの飲食店に選ばれているサービス</p>
           <p class="cs-card-desc"><strong>全国約11万以上</strong>の飲食店が導入。<br>多くの店舗に選ばれているサービスだからこそ、<br>初めてのデリバリー導入でも安心して始められます。</p>
         </div>
       </div>
       <div class="cs-card">
-        <div class="cs-card-left">
-          <span class="cs-card-icon"><img src="images/ubereats-support/lp-25.webp" alt="登録ユーザー数" loading="lazy" decoding="async" width="160" height="107"></span>
-          <span class="cs-card-label">月間注文者数</span>
-          <span class="cs-card-num">400万人</span>
-        </div>
         <div class="cs-card-right">
           <p class="cs-card-title">新しいお客様との接点を拡大</p>
           <p class="cs-card-desc">月間注文者数400万人。<br>店舗の認知拡大や新規顧客の獲得など、<br>集客機会の拡大が期待できます。</p>
         </div>
       </div>
       <div class="cs-card">
-        <div class="cs-card-left">
-          <span class="cs-card-icon"><img src="images/ubereats-support/lp-23.webp" alt="全国対応" loading="lazy" decoding="async" width="160" height="107"></span>
-          <span class="cs-card-label">対応エリア</span>
-          <span class="cs-card-num">全国対応</span>
-        </div>
         <div class="cs-card-right">
           <p class="cs-card-title">あなたのお店も対象か確認可能</p>
           <p class="cs-card-desc">Uber Eats は全国でサービスを展開しています。<br>エリアや店舗形態に応じて条件が異なるため、<br>店舗情報をもとにご案内いたします。</p>
@@ -2016,8 +2372,7 @@ a{text-decoration:none;color:inherit}
 
     <div class="cs-cta">
       <div class="cs-cta-icon-outer">
-        <div class="cs-cta-icon-ring">
-          <svg width="32" height="32" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+        <div class="cs-cta-icon-ring"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.69a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
         </div>
       </div>
       <p class="cs-cta-title"><span class="cs-cta-title-green">最短5分</span>でお申し込み</p>
@@ -2678,12 +3033,12 @@ a{text-decoration:none;color:inherit}
 <!-- ─── 送信完了モーダル ─── -->
 <div id="lp-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;padding:24px;">
   <div style="background:#fff;border-radius:16px;max-width:560px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.2);">
-    <div style="width:56px;height:56px;background:#06C167;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+    <div style="width:56px;height:56px;background:#048c4c;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
       <svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
     </div>
     <p style="font-size:1.1rem;font-weight:700;color:#111;margin-bottom:16px;">お問い合わせありがとうございました。</p>
     <p id="lp-modal-msg" style="font-size:.9rem;color:#555;line-height:1.8;margin-bottom:32px;"></p>
-    <button onclick="document.getElementById('lp-modal').style.display='none';history.replaceState(null,'',location.pathname);" style="background:#06C167;color:#fff;border:none;border-radius:50px;padding:14px 40px;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:.04em;">閉じる</button>
+    <button onclick="document.getElementById('lp-modal').style.display='none';history.replaceState(null,'',location.pathname);" style="background:#048c4c;color:#fff;border:none;border-radius:50px;padding:14px 40px;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:.04em;">閉じる</button>
   </div>
 </div>
 <script>
