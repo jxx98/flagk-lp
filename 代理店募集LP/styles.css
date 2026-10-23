@@ -420,3 +420,14 @@ input:not([type=checkbox]):focus-visible,textarea:focus-visible{outline-color:va
  .roles>.handoff::before{content:"";position:absolute;top:0;bottom:7px;left:8px;width:1px;background:currentColor}
  .roles>.handoff::after{content:"";position:absolute;bottom:7px;left:5px;width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)}
 }
+
+/* 2026-10-23: 募集見出し・日本語の折り返し・年号の行位置を調整 */
+.hero h1 .marked{display:inline-block;white-space:nowrap;font-size:.88em}
+.reference-problems>.section-heading h2>span{display:inline-block;white-space:nowrap}
+.expansion-evidence>div{display:grid;grid-template-columns:4.5em minmax(0,1fr);align-items:baseline;column-gap:14px}
+.expansion-evidence strong,.expansion-evidence span{line-height:1.8}
+@media(max-width:700px){
+ .hero h1{font-size:clamp(28px,7.8vw,46px)}
+ .hero h1 .marked{font-size:1em}
+ .reference-problems>.section-heading h2{font-size:clamp(24px,6.75vw,27px)}
+}
