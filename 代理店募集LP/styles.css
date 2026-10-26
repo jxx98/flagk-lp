@@ -1014,3 +1014,39 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
 }
 
 #top.hero-full-photo .hero-lead>span{display:inline-block;white-space:nowrap}
+
+/* CTAは白文字、FAQと問い合わせはPCも縦一列に */
+.button,.button:visited,.button:hover,.callout .button{color:#fff}
+#faq.faq{display:block;padding-top:64px}
+#faq>.section-heading{display:block;text-align:center;border-left:0;padding-left:0;margin-bottom:28px}
+#faq .faq-list{width:100%;min-width:0}
+#contact.contact{display:block}
+#contact .contact-heading{width:100%;max-width:900px;margin:0 auto 32px}
+#contact .contact-heading h2{text-align:center}
+#contact .contact-heading>.tag{display:table;margin:0 auto 18px}
+#contact .contact-heading>p{margin-left:auto;margin-right:auto;text-align:center}
+#contact .contact-points{max-width:760px;margin:22px auto 0;text-align:left}
+#contact #partner-form{width:100%;max-width:900px;margin:0 auto}
+#partner-form .form-grid{grid-template-columns:minmax(0,1fr)}
+#partner-form .form-grid>.full{grid-column:auto}
+@media(max-width:700px){#faq.faq{padding-top:44px}#contact .contact-heading{margin-bottom:26px}#contact .contact-heading h2,#contact .contact-heading>p{text-align:left}#contact .contact-heading>.tag{margin-left:0}}
+
+/* 白文字の読みやすさに合わせ、CTAの緑だけ深める */
+:root{--cta-green:#008548}
+.button,.button:visited{background:#008548;border-color:#008548;color:#fff}
+.button:hover{background:#29486b;border-color:#29486b;color:#fff}
+
+/* 写真背景上のヒーローCTAだけ、細い白枠で輪郭を出す */
+#top.hero-full-photo .hero-actions>.button{border-color:#fff}
+
+/* メリットの番号色と、カード内の各段の位置を統一 */
+.merit-category>b{color:#fff}
+@media(min-width:701px){
+ .merit-grid-clear>.merit-card-clear{display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0}
+ .merit-grid-clear .merit-card-top{grid-row:1}
+ .merit-grid-clear .merit-card-clear>h3{grid-row:2}
+ .merit-grid-clear .merit-body{grid-row:3}
+ .merit-grid-clear .merit-card-diagram{grid-row:4;margin-top:0}
+ .merit-grid-clear .merit-terms-note,.merit-grid-clear .merit-extra-note{grid-row:5;margin-top:14px;margin-bottom:0}
+}
+@media(min-width:1001px){#business-model-heading{white-space:nowrap}}
