@@ -1065,3 +1065,45 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
  #company .company-intro>p:last-of-type{grid-column:1;grid-row:4;margin:0}
  #company .company-team{grid-column:2;grid-row:4}
 }
+
+/* モバイルは要点を優先し、同じ説明を繰り返すブロックを省く */
+.mobile-summary{display:none!important}
+@media(max-width:700px){
+ .desktop-detail{display:none!important}
+ .mobile-summary{display:inline!important}
+ #opportunity .problem-list>li:nth-child(4),#opportunity .problem-resolution{display:none}
+ #benefits .merit-intro,#benefits .merit-card-diagram,#benefits .merit-terms-note{display:none}
+ .merit-grid-clear>.merit-card-clear{padding:20px;gap:0}
+ .merit-grid-clear .merit-card-top{margin-bottom:12px}
+ .merit-grid-clear .merit-card-clear>h3{margin-bottom:12px}
+ .merit-grid-clear .merit-body{margin-bottom:0}
+ .merit-grid-clear .merit-rate-inline{margin-top:14px}
+ #area-expansion .expansion-copy>p:not(.expansion-note),#area-expansion .expansion-evidence{display:none}
+ #area-expansion .expansion-copy h3{margin-bottom:10px}
+ #model-cases .model-cases-heading>p:last-child,#model-cases .model-case-story,#model-cases .case-outcome-inline{display:none}
+ #model-cases .case-introduction{margin-bottom:16px;padding-bottom:0;border-bottom:0}
+ #model-cases .confirmed-case-chart{margin-bottom:0}
+ #partnership .support-summary,#partnership>.roles,#partnership>.footnote{display:none}
+ #partnership>.section-heading{display:block;text-align:center;margin-bottom:24px}
+ #sales-support{margin-top:0}
+ #sales-support>h3,#sales-support>.support-tools-lead{display:none}
+ #sales-support .support-tool-name{display:none}
+ #sales-support .support-tools-visual>article{grid-template-columns:48px minmax(0,1fr);gap:12px;padding:16px}
+ #sales-support .support-tool-icon{width:48px;height:48px}
+ #sales-support .support-tool-heading h4{font-size:20px!important}
+ #sales-support .support-tool-description{grid-column:1/-1}
+ #stepup .stepup-stairs>li{padding:16px}
+ #stepup .stepup-stairs>li>p{display:none}
+ #stepup .stepup-stairs h4{margin:8px 0 0}
+ #stepup .stepup-number>b{font-size:20px}
+ #conditions .agency-partnership,#conditions .pricing-features>article:not(.pricing-cost){display:none}
+ #conditions .pricing-features{display:block;margin:20px 0}
+ #conditions .pricing-cost{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:22px;border-bottom:0;padding:0}
+ #conditions .pricing-zero{margin:0;font-size:56px}
+ #company .company-intro>h3{display:none}
+ #contact .contact-points{display:none}
+}
+
+@media(max-width:700px){#sales-support .support-tools-visual .support-tool-description{grid-column:1/-1}}
+
+@media(max-width:700px){#stepup .stepup-label{display:none}.mobile-heading-phrase{display:inline-block}}
