@@ -124,3 +124,13 @@
     form.addEventListener('focusout', () => requestAnimationFrame(refresh));
   }
 })();
+
+// Keep anchor destinations below the fixed header.
+(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const syncHeaderHeight = () => document.documentElement.style.setProperty('--header-height', Math.ceil(header.getBoundingClientRect().height) + 'px');
+  syncHeaderHeight();
+  if ('ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(header);
+  else window.addEventListener('resize', syncHeaderHeight);
+})();

@@ -431,3 +431,512 @@ input:not([type=checkbox]):focus-visible,textarea:focus-visible{outline-color:va
  .hero h1 .marked{font-size:1em}
  .reference-problems>.section-heading h2{font-size:clamp(24px,6.75vw,27px)}
 }
+
+/* 募集条件はLP共通のブルー・グリーンでコンパクトに示す */
+.partner-pricing{margin-top:32px;padding:32px;background:#f4f7fb;border:1px solid #d7e1ee;border-radius:5px;color:var(--ink)}
+.pricing-heading>p{margin:0 0 12px;padding-left:12px;border-left:3px solid var(--uber);font-size:14px;font-weight:700;color:#36557f;line-height:1.6}
+.partner-pricing #partner-pricing-heading{margin:0;font-size:30px;line-height:1.6;letter-spacing:-.025em}
+.partner-pricing #partner-pricing-heading>span{display:inline-block}
+.pricing-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:30px 0 28px}
+.pricing-features>article{min-width:0;padding:8px 28px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.pricing-features>article+article{border-left:1px solid #cad6e6}
+.pricing-feature-label{margin:0;font-size:15px;font-weight:500;color:var(--muted);line-height:1.7}
+.pricing-cost .pricing-feature-label{font-weight:700;font-size:17px;color:#36557f}
+.pricing-zero{font-size:76px;font-weight:900;letter-spacing:-.05em;line-height:1.25;color:#36557f;margin-top:6px}
+.pricing-zero>span{font-size:30px;letter-spacing:0;margin-left:6px}
+.pricing-feature-icon{width:64px;height:48px;margin:0 0 12px;color:#5577a8}.pricing-feature-icon svg{display:block;width:100%;height:100%}
+.pricing-features h3{font-size:21px;line-height:1.55;margin:6px 0 0;font-weight:700;color:var(--ink)}
+.pricing-action{display:flex;justify-content:center}.pricing-action>.button{width:100%;max-width:360px;justify-content:center}
+@media(max-width:700px){.partner-pricing{margin-top:24px;padding:26px 20px}.partner-pricing #partner-pricing-heading{font-size:25px}.pricing-features{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px;margin:24px 0}.pricing-features>article{padding:0 10px}.pricing-features>.pricing-cost{grid-column:1/-1;display:flex;flex-direction:row;gap:24px;padding:0 0 22px;border-bottom:1px solid #cad6e6}.pricing-zero{font-size:64px;margin:0}.pricing-zero>span{font-size:26px}.pricing-cost .pricing-feature-label{font-size:16px}.pricing-features>article:nth-child(2){border-left:0}.pricing-features h3{font-size:18px}.pricing-feature-label{font-size:13px}.pricing-feature-icon{width:56px;height:42px;margin-bottom:10px}.pricing-action>.button{font-size:17px}}
+
+/* 掲載許可を得たフードデリバリー商材の活動実績 */
+.partner-results{background:#f4f7fb;border-top:1px solid var(--line)}
+.partner-results>.section-heading{margin-bottom:32px}
+.results-eyebrow{font-size:15px;font-weight:700;color:#36557f;margin:0 0 14px;padding-left:12px;border-left:3px solid var(--uber)}
+.partner-results h2{font-size:30px;line-height:1.65;margin:0}.partner-results h2>span{color:#36557f}
+.results-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:center}
+.results-company{display:flex;align-items:center;flex-wrap:wrap;gap:14px;font-size:18px;font-weight:700;color:#36557f;margin:0 0 20px}
+.results-company>span{display:inline-block;background:#172635;color:white;padding:4px 12px;border-radius:4px;font-size:15px}
+.results-context h3{font-size:24px;line-height:1.6;margin:0 0 18px}.results-context>p:not(.results-company){font-size:16px;line-height:1.85;color:var(--muted);margin:0 0 14px}
+.results-chart{min-width:0;background:white;border:1px solid #ccd8e7;border-radius:5px;padding:28px}
+.results-chart h3{font-size:21px;line-height:1.6;margin:0 0 24px}.results-chart ol{padding:0;margin:0;list-style:none;display:grid;gap:22px}
+.results-chart li{display:grid;grid-template-columns:4.5em minmax(0,1fr) 5em;gap:12px;align-items:center;font-size:16px;font-weight:700}
+.results-track{height:30px;background:#edf2f8;border-radius:4px;overflow:hidden}.results-track>span{display:block;height:100%;background:#5577a8;border-radius:4px}
+.results-chart strong{text-align:right;font-size:18px;white-space:nowrap}.results-chart li:last-child .results-track>span{background:var(--uber)}.results-chart li:last-child strong{color:#12804b}
+.results-note{margin:24px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+@media(max-width:1000px){.results-layout{gap:24px}.results-chart{padding:24px 20px}.results-chart li{gap:8px;font-size:15px}.results-chart strong{font-size:16px}}
+@media(max-width:700px){.partner-results h2{font-size:25px}.results-layout{display:block}.results-context{margin-bottom:24px}.results-context h3{font-size:22px}.results-chart{padding:24px 16px}.results-chart li{grid-template-columns:4.2em minmax(0,1fr) 4.5em;font-size:14px;gap:8px}.results-chart strong{font-size:16px}.results-track{height:26px}}
+
+.partner-results h2>.results-heading-phrase{display:inline-block;white-space:nowrap;color:var(--ink)}
+
+/* 参考LPと同じ順序：募集条件→悩み→メリット→事例→支援→流れ */
+.pricing-overview{padding-top:32px;padding-bottom:42px}.pricing-overview>.partner-pricing{margin-top:0}
+.support-details{max-width:1120px;margin:42px auto 0}.support-details>h3{font-size:26px;line-height:1.6;margin:0 0 24px}
+.support-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.support-tools article{background:#fff;border:1px solid #ccd8e7;border-top:3px solid #5577a8;border-radius:5px;padding:22px 18px}
+.support-tools h4{font-size:18px;line-height:1.65;margin:0 0 12px;color:#29486b}.support-tools p{font-size:15px;line-height:1.85;color:var(--muted);margin:0}
+.partner-stepup{margin-top:32px;background:#fff;padding:30px;border:1px solid #ccd8e7;border-radius:5px}.stepup-label{font-size:14px;font-weight:700;color:#36557f;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--uber)}
+.partner-stepup>h3{font-size:25px;line-height:1.6;margin:0 0 24px}.partner-stepup>h3 br{display:none}
+.partner-stepup ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:0}.partner-stepup li{padding:20px;background:#f0f4f9;border-radius:4px;border-top:2px solid #5577a8}.partner-stepup li>span{font-size:15px;font-weight:700;color:#36557f}.partner-stepup h4{font-size:20px;line-height:1.6;margin:10px 0}.partner-stepup li p{font-size:15px;color:var(--muted);margin:0}
+.partner-stepup .stepup-note{font-size:14px;line-height:1.85;color:var(--muted);margin:22px 0 0}.flow-list{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}
+@media(min-width:701px) and (max-width:1000px){.support-tools{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-list{gap:16px}.flow-list h3{font-size:17px}}
+@media(max-width:700px){.pricing-overview{padding-top:24px;padding-bottom:16px}.support-details{margin-top:32px}.support-details>h3{font-size:23px}.support-tools{grid-template-columns:1fr;gap:14px}.support-tools article{padding:22px}.partner-stepup{padding:24px 20px;margin-top:24px}.partner-stepup>h3{font-size:23px}.partner-stepup>h3 br{display:block}.partner-stepup ol{grid-template-columns:1fr;gap:14px}.partner-stepup li{padding:18px 20px}.partner-stepup h4{font-size:19px;margin:6px 0 10px}}
+
+/* 資料記載の取次成果率を確認用LPに仮反映 */
+.benefit-rate{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin:0 0 16px;color:#36557f}
+.benefit-rate>span{font-size:17px;font-weight:700}.benefit-rate>strong{font-size:52px;font-weight:900;line-height:1.2;letter-spacing:-.04em}.benefit-rate>strong>span{font-size:28px;margin-left:3px}
+
+.pricing-feature-label>span{display:inline-block}
+
+/* 悩みからメリットへつなぐ、参考LPと同じ問いかけ */
+.problem-resolution{position:relative;text-align:center;font-size:clamp(24px,2.6vw,32px);font-weight:800;line-height:1.75;color:var(--ink);margin:38px 0 0;padding-bottom:44px}
+.problem-resolution>span{display:inline-block}
+.problem-resolution::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:27px solid transparent;border-right:27px solid transparent;border-top:22px solid #5577a8}
+@media(max-width:700px){.problem-resolution{font-size:clamp(20px,5.4vw,23px);text-align:center;line-height:1.8;margin-top:30px;padding-bottom:36px}.problem-resolution::after{border-left-width:22px;border-right-width:22px;border-top-width:18px}}
+
+/* 参考画像のMERIT見出しと、追加提案・新規開拓のPOINT 01 */
+.reasons>.merit-heading{display:block;text-align:center;margin-bottom:36px}
+.reasons>.merit-heading::after{display:none}.merit-heading .merit-eyebrow{margin:0 0 16px;font-size:14px;font-weight:800;letter-spacing:.18em;color:#36557f}
+.reasons>.merit-heading h2{margin:0;font-size:34px;line-height:1.6}
+.reasons>.merit-heading h2::after{content:"";display:block;width:64px;height:4px;background:#5577a8;border-radius:3px;margin:20px auto 0}
+.merit-heading .merit-intro{margin:22px 0 0;font-size:18px;color:var(--muted)}
+.benefit-featured{grid-column:1/-1;width:100%;max-width:900px;margin:0 auto 8px;padding:30px;display:block}
+.benefit-featured .benefit-number{font-size:16px;letter-spacing:.1em;margin-bottom:20px}
+.merit-outreach-visual{background:#edf2f8;border-radius:5px;display:flex;align-items:center;justify-content:center;height:250px;margin:0 0 24px}
+.merit-outreach-visual svg{display:block;width:360px;max-width:90%;height:90%}
+.benefit-featured h3{font-size:27px;line-height:1.6;margin:0 0 22px}
+.merit-usecases{display:grid;gap:22px}.merit-usecases>div>p{font-size:18px;line-height:1.8;font-weight:700;margin:10px 0 0}
+.merit-usecases .merit-case-label{display:inline-block;margin:0;padding:5px 12px;background:#e8f8ef;border-left:3px solid #06c167;border-radius:2px;font-size:16px;color:#1d5139}
+.merit-usecases .merit-case-label.secondary{background:#f0f4f9;border-color:#5577a8;color:#36557f}
+@media(max-width:700px){.reasons>.merit-heading{margin-bottom:28px}.reasons>.merit-heading h2{font-size:28px}.merit-heading .merit-intro{font-size:16px}.benefit-featured{padding:24px;margin-bottom:0}.benefit-featured .benefit-number{font-size:14px;margin-bottom:18px}.merit-outreach-visual{height:170px;margin-bottom:22px}.benefit-featured h3{font-size:23px;margin-bottom:20px}.merit-usecases{gap:22px}.merit-usecases>div>p{font-size:16px}.merit-usecases .merit-case-label{font-size:14px;padding:5px 9px}}
+
+/* FlagK向けに生成した説明用イラスト */
+.pricing-feature-icon{width:132px;height:88px;margin-bottom:12px}.pricing-feature-icon img{display:block;width:100%;height:100%;object-fit:contain}
+.merit-outreach-visual img{display:block;width:100%;max-width:490px;height:100%;object-fit:contain}
+.benefit-network img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:700px){.pricing-feature-icon{width:112px;height:76px}.merit-outreach-visual{height:200px}}
+
+/* POINT 01〜04を同じ優先度・大きさに統一 */
+.benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:24px}
+.benefit-grid>.benefit-card{padding:28px;display:flex;flex-direction:column;min-width:0;margin:0}
+.benefit-grid .benefit-number{font-size:16px;letter-spacing:.1em;margin-bottom:18px}
+.benefit-grid .benefit-visual{height:210px;flex-shrink:0;margin-bottom:24px}
+.benefit-grid .benefit-card h3{font-size:24px;line-height:1.6;margin:0 0 18px}
+.benefit-outreach .merit-usecases{gap:20px;margin-bottom:24px}
+.benefit-outreach .merit-usecases>div>p{font-size:16px;font-weight:500;line-height:1.85;text-wrap:pretty}
+.benefit-outreach .merit-usecases .merit-case-label{font-size:14px;font-weight:700}
+@media(max-width:700px){.benefit-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:22px}.benefit-grid>.benefit-card{padding:24px}.benefit-grid .benefit-number{font-size:14px}.benefit-grid .benefit-visual{height:190px}.benefit-grid .benefit-card h3{font-size:23px}}
+
+/* 白を基調に、導入・実績・問い合わせの背景にだけ役割を持たせる */
+:root{--surface-neutral:#f7f7f5;--border-neutral:#e2e5e3}
+.hero-visual{background:#fff}.hero-strip{background:#fff}
+.partner-pricing{background:#fff;border-color:var(--border-neutral);border-top:3px solid #5577a8}
+.pricing-zero{color:#12804b}.pricing-features>article+article{border-left-color:var(--border-neutral)}
+.benefit-grid .benefit-visual{background:transparent}
+.benefit-card{border-color:var(--border-neutral);border-top-color:#5577a8}
+.benefit-expansion{background:#fff;border-left:0;border-top:1px solid var(--border-neutral);border-bottom:1px solid var(--border-neutral);padding:30px 0}
+.expansion-evidence>div{border-bottom-color:var(--border-neutral)}
+.partner-results{background:var(--surface-neutral);border-top-color:var(--border-neutral)}
+.results-chart{border-color:var(--border-neutral)}.results-track{background:#eceeeb}
+.partnership{background:#fff;border-top:1px solid var(--border-neutral)}
+.support-tools article{border-color:var(--border-neutral);border-top-color:#5577a8}
+.partner-stepup{background:var(--surface-neutral);border-color:var(--border-neutral)}
+.partner-stepup li{background:#fff;border:1px solid var(--border-neutral);border-top:2px solid #5577a8}
+.flow-list>li>span{background:#fff}.flow-list>li:last-child>span{background:#12804b;border-color:#12804b;color:#fff}
+.merit-usecases .merit-case-label.secondary{background:transparent}
+.contact{background:#f0f8f3;border-top:3px solid #06c167}
+@media(max-width:700px){.hero-visual{background:#fff}.pricing-features>.pricing-cost{border-bottom-color:var(--border-neutral)}.pricing-features>article:nth-child(2){border-left:0}.benefit-expansion{padding:24px 0}}
+
+/* 青を主軸に、濃い面・白い余白・淡い補助面で強弱をつける */
+:root{--ink:#172a3b;--muted:#56636e;--blue-deep:#29486b;--blue:#5577a8;--surface-neutral:#f2f5f9;--border-neutral:#d9e1e9}
+body{color:var(--ink)}h1,h2,h3,h4{color:var(--ink)}
+.hero{background:#fff;background-image:none}
+.hero h1{color:var(--blue-deep)}.hero h1 .marked{background:linear-gradient(transparent 89%,#06c167 89%,#06c167 96%,transparent 96%)}
+.hero-copy .tag{background:#fff;border-color:#9ab0cb;color:#36557f}
+.hero-lead{color:#36557f}.hero-description{color:#37485b}
+.hero-visual{background:#f0f4f9;border-color:#b8c9dc}.visual-step.yours{background:#fff}.visual-step.flagk{background:#29486b;border-color:#29486b}
+.hero-strip{background:#fff}.hero-strip b{color:#36557f}
+.partner-pricing{background:#fff;border-color:#ccd8e7;border-top:0;overflow:hidden}
+.pricing-heading{background:#29486b;margin:-32px -32px 28px;padding:24px 32px}
+.pricing-heading>p{color:#e4edf7;border-left-color:#06c167}.partner-pricing .pricing-heading #partner-pricing-heading{color:#fff}
+.benefit-grid .benefit-visual{background:transparent}
+.benefit-key{background:#e8f8ef;color:#1d5139;border-left:3px solid #06c167}
+.merit-usecases .merit-case-label{background:#e8f8ef;color:#1d5139;border-left-color:#06c167}
+.merit-usecases .merit-case-label.secondary{background:#fff;color:#36557f;border:1px solid #9ab0cb;border-left-width:3px}
+.partner-results{background:#29486b;color:#fff;border:0}
+.partner-results h2,.partner-results h2>.results-heading-phrase{color:#fff}
+.partner-results h2>span:not(.results-heading-phrase){color:#70e1a9}
+.partner-results .results-eyebrow{color:#e4edf7;border-left-color:#70e1a9}
+.partner-results .results-company{color:#fff}.results-company>span{background:transparent;border:1px solid #8ea7c2;color:#fff}
+.partner-results .results-context h3{color:#fff}.partner-results .results-context>p:not(.results-company){color:#e4edf7}
+.partner-results .results-note{color:#d2dfec}.results-chart{background:#fff;color:#172a3b;border:0}.results-chart h3{color:#172a3b}
+.results-track{background:#edf2f8}.results-track>span{background:#5577a8}
+.partnership{background:#fff}.our-role{background:#29486b;border-color:#29486b}.our-role h3{color:#fff}
+.partner-stepup{background:#f2f5f9;border-color:#d9e1e9}.partner-stepup li{background:#fff}
+.flow-list>li>span{background:#fff;border-color:#9ab0cb}.flow-list>li:last-child>span{background:#29486b;border-color:#29486b;box-shadow:none;color:#fff}
+.contact{background:#fff;border-top:2px solid #29486b}
+.contact-heading{background:#29486b;color:#fff;padding:30px;border-radius:5px}
+.contact-heading h2{color:#fff}.contact-heading>p,.contact-heading .contact-points{color:#e4edf7}
+.contact-heading .tag{background:transparent;border-color:#8ea7c2;color:#fff}
+.contact-heading .contact-points li::before{color:#70e1a9}
+#form-result{background:#f2f5f9}
+@media(max-width:700px){.hero{background:#fff;background-image:none}.hero-visual{background:#f0f4f9}.pricing-heading{margin:-26px -20px 24px;padding:24px 20px}.contact-heading{padding:26px 22px}.hero-strip b{color:#36557f}}
+
+.header-label{color:var(--ink)}
+
+/* 問い合わせ案内はフォームとの対応が分かる白背景に戻す */
+.contact-heading{background:transparent;color:var(--ink);padding:0;border-radius:0}
+.contact-heading h2{color:var(--blue-deep)}
+.contact-heading>p,.contact-heading .contact-points{color:var(--muted)}
+.contact-heading .tag{background:#fff;border-color:#9ab0cb;color:#36557f}
+.contact-heading .contact-points li::before{color:#12804b}
+@media(max-width:700px){.contact-heading{padding:0}}
+
+/* 提供資料に基づく4つのメリットと、紹介業務の収益モデル */
+.benefit-card>.merit-terms-note{font-size:14px;line-height:1.8;color:var(--muted);margin-top:-8px}
+.revenue-model{background:#29486b;color:#fff}
+.revenue-model>.section-heading{margin-bottom:32px}
+.model-eyebrow{margin:0 0 14px;padding-left:12px;border-left:3px solid #70e1a9;color:#e4edf7;font-size:14px;font-weight:700;letter-spacing:.12em}
+.revenue-model h2{color:#fff;font-size:32px;line-height:1.6;margin:0 0 20px}.revenue-model h2>span{color:#fff}
+.revenue-model .model-lead{color:#e4edf7;font-size:16px;line-height:1.85;margin:0;max-width:850px}
+.revenue-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;margin:32px 0 0;padding:0}
+.revenue-steps>li{position:relative;min-width:0;display:flex;flex-direction:column;background:#fff;border-radius:5px;padding:22px 18px;color:#172a3b;border-top:4px solid #9ab0cb}
+.revenue-steps>li:not(:last-child)::after{content:"";position:absolute;right:-18px;top:calc(50% - 7px);width:12px;height:12px;border-right:2px solid #a8bfd8;border-top:2px solid #a8bfd8;transform:rotate(45deg)}
+.model-step-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px}
+.model-step-number{font-size:22px;font-weight:800;color:#36557f;line-height:1.3}
+.model-owner{font-size:12px;font-weight:700;border:1px solid #c5d2e2;border-radius:3px;padding:3px 6px;color:#36557f;line-height:1.6}
+.revenue-steps h3{font-size:19px;line-height:1.6;color:#172a3b;margin:0 0 14px}
+.revenue-steps p{font-size:15px;line-height:1.85;color:var(--muted);margin:0}
+.revenue-steps>.model-payment{border-top-color:#06c167}.model-payment .model-step-number{color:#12804b}.model-payment .model-owner{border-color:#06c167;color:#12804b}
+.model-note{color:#d2dfec;font-size:13px;line-height:1.8;margin:24px 0 0}
+@media(min-width:701px) and (max-width:1000px){.revenue-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.revenue-steps>li:nth-child(2)::after{display:none}}
+@media(max-width:700px){.revenue-model h2{font-size:28px}.revenue-steps{grid-template-columns:1fr;gap:24px;margin-top:26px}.revenue-steps>li{padding:22px}.revenue-steps h3{font-size:20px}.revenue-steps h3 br{display:none}.model-step-top{margin-bottom:12px}.revenue-steps>li:not(:last-child)::after{right:calc(50% - 6px);top:auto;bottom:-17px;transform:rotate(135deg);width:10px;height:10px}.revenue-model .model-lead br{display:none}}
+
+.revenue-model>.section-heading>.model-lead{color:#e4edf7}.revenue-steps h3>span{display:inline-block}
+
+.support-summary-line{display:block;text-wrap:pretty}.support-summary-line+.support-summary-line{margin-top:4px}.support-keep{white-space:nowrap}
+
+/* 担当範囲の拡大を、上へ伸びる3段の階段と濃淡で表現 */
+.partner-stepup{background:#fff}
+.partner-stepup .stepup-stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:end;margin-top:28px}
+.partner-stepup .stepup-stairs>li{position:relative;padding:24px 22px;border:1px solid #9ab0cb;border-top:4px solid #5577a8;border-radius:5px 5px 0 0;display:flex;flex-direction:column;justify-content:flex-start;background:#fff;box-shadow:0 5px 0 #d9e3ef}
+.partner-stepup .stepup-stairs>li:nth-child(1){min-height:210px}
+.partner-stepup .stepup-stairs>li:nth-child(2){min-height:254px;background:#5577a8;border-color:#5577a8;box-shadow:0 5px 0 #36557f}
+.partner-stepup .stepup-stairs>li:nth-child(3){min-height:298px;background:#29486b;border-color:#29486b;box-shadow:0 5px 0 #172a3b}
+.partner-stepup .stepup-stairs>li:not(:last-child)::after{content:"↗";position:absolute;top:-27px;right:-31px;font-size:32px;font-weight:500;line-height:1;color:#5577a8}
+.partner-stepup .stepup-stairs .stepup-number{display:flex;align-items:baseline;gap:7px;font-size:12px;letter-spacing:.06em;font-weight:700;color:#36557f;line-height:1.3}
+.stepup-number>b{font-size:28px;font-weight:800;letter-spacing:0}
+.partner-stepup .stepup-stairs h4{font-size:22px;line-height:1.6;margin:18px 0 12px}
+.partner-stepup .stepup-stairs p{font-size:15px;line-height:1.85;margin:0}
+.partner-stepup .stepup-stairs>li:nth-child(n+2) .stepup-number,.partner-stepup .stepup-stairs>li:nth-child(n+2) h4{color:#fff}
+.partner-stepup .stepup-stairs>li:nth-child(n+2) p{color:#f0f5fa}
+.partner-stepup .stepup-note{margin-top:30px}
+@media(min-width:701px) and (max-width:900px){.partner-stepup .stepup-stairs{gap:24px}.partner-stepup .stepup-stairs>li{padding:20px 16px}.partner-stepup .stepup-stairs h4{font-size:20px}.partner-stepup .stepup-stairs>li:not(:last-child)::after{right:-26px;font-size:27px}}
+@media(max-width:700px){.partner-stepup .stepup-stairs{grid-template-columns:1fr;gap:30px;margin-top:24px}.partner-stepup .stepup-stairs>li{padding:22px;min-height:0!important;border-radius:5px;box-shadow:none!important}.partner-stepup .stepup-stairs>li:not(:last-child)::after{content:"↓";top:auto;bottom:-25px;right:calc(50% - 9px);font-size:24px;line-height:1;color:#5577a8}.partner-stepup .stepup-stairs h4{font-size:21px;margin:12px 0 10px}.stepup-number>b{font-size:26px}}
+
+.stepup-stairs p>span{display:inline-block}
+
+/* 入力エリアのみ水色で区切り、入力欄は白を維持 */
+#partner-form{background:#f1f4f8;border-color:var(--border-neutral)}
+
+/* 主要項目の固定ヘッダーナビ */
+html{scroll-padding-top:calc(var(--header-height) + 16px)}
+.site-header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;min-height:88px}
+.site-header .header-label{font-size:16px;padding-left:16px;min-width:0}
+.site-header .header-nav{display:flex;align-items:center;gap:17px;margin:0;font-size:14px}
+.site-header .header-nav>a:not(.button){display:inline-flex;min-height:44px}
+.site-header .header-nav>.button{font-size:14px;padding:12px 16px;gap:14px;min-height:48px}
+@media(max-width:1180px){.site-header .header-nav>a:not(.button){display:none}}
+@media(max-width:700px){.site-header{grid-template-columns:auto minmax(0,1fr);gap:10px;min-height:76px;padding:10px 16px}.site-header .brand img{width:44px;height:44px}.site-header .header-label{font-size:13px;line-height:1.6;padding-left:10px}.site-header .header-nav{display:none}}
+
+/* 1次代理店からの直接提供を主役にする */
+.pricing-heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:36px;padding-top:32px;padding-bottom:32px}
+.pricing-eyebrow{margin:0 0 16px;padding-left:12px;border-left:3px solid #06c167;color:#e4edf7;font-size:14px;font-weight:700}
+.partner-pricing .pricing-heading #partner-pricing-heading{font-size:clamp(25px,2.7vw,36px);line-height:1.7}
+.partner-pricing #partner-pricing-heading>.pricing-primary{background:#fff;color:#29486b;padding:0 12px;margin-right:8px;border-radius:3px}
+.pricing-direct-note{margin:16px 0 0;color:#e4edf7;font-size:14px;line-height:1.9}
+.pricing-direct-flow{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;text-align:center;min-width:0}
+.pricing-source,.pricing-recipient{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:112px;padding:16px 10px;border:1px solid #b8c9dc;border-radius:5px;color:#fff}
+.pricing-source{background:#fff;color:#29486b;border:2px solid #fff}
+.pricing-direct-flow strong{font-size:25px;line-height:1.5;margin-top:8px;white-space:nowrap}
+.pricing-source-label,.pricing-recipient>span{font-size:12px;font-weight:700;line-height:1.6}
+.pricing-connection{padding:0 9px;color:#fff}
+.pricing-connection>span{display:block;font-size:11px;font-weight:700;white-space:nowrap}
+.pricing-connection>i{display:block;position:relative;height:2px;background:#fff;margin:12px 3px 0 0}
+.pricing-connection>i:after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:2px solid #fff;border-right:2px solid #fff;transform:rotate(45deg)}
+@media(max-width:1000px){.pricing-heading{grid-template-columns:1fr;gap:26px}.pricing-direct-flow{max-width:520px;width:100%}.pricing-direct-note br{display:none}}
+@media(max-width:700px){.pricing-heading{padding:26px 20px;gap:24px}.partner-pricing .pricing-heading #partner-pricing-heading{font-size:25px}.pricing-direct-flow{grid-template-columns:minmax(0,1fr) 76px minmax(0,1fr)}.pricing-source,.pricing-recipient{min-height:100px;padding:12px 6px}.pricing-direct-flow strong{font-size:22px}.pricing-source-label,.pricing-recipient>span{font-size:10px}.pricing-connection{padding:0 5px}.pricing-connection>span{font-size:10px}.pricing-direct-note{font-size:13px}}
+
+@media(max-width:400px){.pricing-direct-flow strong{font-size:18px}.pricing-connection>span{font-size:9px}.pricing-source-label,.pricing-recipient>span{font-size:9px}}
+
+/* メリットは結論 → 説明 → 関係図の順に統一 */
+.reasons>.merit-heading h2>span{display:inline-block}
+.reasons .merit-grid-clear{grid-auto-rows:auto;gap:24px}
+.merit-grid-clear>.merit-card-clear{padding:28px;border:1px solid #ccd8e7;border-top:4px solid #5577a8;border-radius:5px;background:#fff;box-shadow:none}
+.merit-card-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;min-height:76px}
+.merit-category{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:800;color:#36557f;line-height:1.5}
+.merit-category>b{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:#29486b;color:#fff;font-size:19px;border-radius:50%;flex-shrink:0}
+.merit-card-top>img{display:block;width:108px;height:76px;object-fit:contain;flex-shrink:0}
+.merit-grid-clear .merit-card-clear h3{font-size:clamp(21px,2vw,26px);line-height:1.6;color:#29486b;margin:0 0 16px;letter-spacing:-.02em}
+.merit-grid-clear .merit-body{font-size:16px;line-height:1.9;color:#56636e;margin:0 0 24px}
+.merit-card-diagram{margin-top:auto;border-top:1px solid #d9e1e9;padding-top:22px}
+.merit-path{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);gap:8px;align-items:center;text-align:center}
+.merit-path>span{display:flex;flex-direction:column;justify-content:center;min-height:82px;padding:12px 6px;border:1px solid #9ab0cb;border-radius:4px;color:#29486b;font-weight:800;font-size:16px;line-height:1.6;background:#fff}
+.merit-path small{display:block;font-size:13px;font-weight:500;margin-top:4px;color:#56636e}
+.merit-path>b{font-size:22px;color:#5577a8}
+.merit-direct>span:first-child,.merit-roles>span:last-child{background:#29486b;border-color:#29486b;color:#fff}
+.merit-direct>span:first-child small,.merit-roles>span:last-child small{color:#fff}
+.merit-mini-steps{display:flex;align-items:flex-end;gap:6px;min-height:82px}
+.merit-mini-steps>span{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;min-width:0;padding:10px 4px;min-height:50px;border:1px solid #9ab0cb;border-radius:3px;color:#29486b;font-size:13px;font-weight:700;line-height:1.6}
+.merit-mini-steps>span:nth-of-type(2){min-height:66px;background:#5577a8;color:#fff;border-color:#5577a8}
+.merit-mini-steps>span:nth-of-type(3){min-height:82px;background:#29486b;color:#fff;border-color:#29486b}
+.merit-mini-steps>b{align-self:center;color:#5577a8;font-size:20px}
+.merit-grid-clear .merit-terms-note{font-size:12px;line-height:1.8;margin:14px 0 0;color:#56636e}
+.merit-card-clear .merit-rate-inline{display:flex;align-items:baseline;justify-content:flex-end;gap:10px;font-size:12px;line-height:1.5;margin:12px 0 0;color:#36557f}
+.merit-rate-inline strong{font-size:26px}.merit-rate-inline strong>span{font-size:16px}
+@media(max-width:700px){.merit-grid-clear>.merit-card-clear{padding:22px}.merit-card-top{margin-bottom:12px;min-height:64px}.merit-card-top>img{width:90px;height:64px}.merit-category{font-size:14px;gap:9px}.merit-category>b{width:32px;height:32px;font-size:16px}.merit-grid-clear .merit-card-clear h3{font-size:22px}.merit-grid-clear .merit-body{font-size:15px;margin-bottom:20px}.merit-path{gap:4px;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr)}.merit-path>span{font-size:14px;padding:10px 4px}.merit-path small{font-size:11px}.merit-mini-steps{gap:3px}.merit-mini-steps>span{font-size:11px}.merit-mini-steps>b{font-size:16px}}
+
+/* 営業支援から活動開始の手続きへ、背景で切り替える */
+.section.flow{max-width:none;background:#f1f4f8;padding-left:max(40px,calc((100vw - 1120px)/2));padding-right:max(40px,calc((100vw - 1120px)/2));border-top:1px solid #d9e1e9;border-bottom:1px solid #d9e1e9}
+.flow .section-heading h2{color:#29486b}
+@media(max-width:1100px){.section.flow{padding-left:30px;padding-right:30px}}
+@media(max-width:700px){.section.flow{padding-left:20px;padding-right:20px}}
+
+/* ヒーローは説明図から、飲食店との営業接点を見せる写真へ */
+.hero{background:#fff;background-image:none}
+.hero-inner{max-width:1280px;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:54px;padding:48px 40px 56px}
+.hero-copy .hero-uber-eats-logo{width:130px;margin-bottom:20px}
+.hero-copy .tag{font-size:12px;padding:5px 9px;margin-bottom:20px}
+.hero h1{font-size:clamp(35px,3.7vw,50px);line-height:1.5;margin-bottom:20px;color:#29486b}
+.hero-lead{font-size:clamp(23px,2.4vw,30px);line-height:1.65;font-weight:800;margin-bottom:18px;color:#29486b}
+.hero-description{font-size:15px;line-height:1.9;max-width:540px;margin-bottom:24px}
+.hero-scene{position:relative;margin:0;align-self:stretch;min-width:0;min-height:540px;isolation:isolate;border-radius:80px 8px 8px 8px;overflow:hidden;background:#29486b}
+.hero-scene>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
+.hero-scene:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(24,48,76,.93));z-index:-1}
+.hero-scene figcaption{position:absolute;bottom:40px;left:32px;right:24px;color:#fff}
+.hero-scene figcaption>span{display:block;font-size:13px;letter-spacing:.04em;margin-bottom:12px;color:#fff}
+.hero-scene figcaption>strong{font-size:clamp(20px,2vw,26px);line-height:1.75;letter-spacing:.02em}
+.hero-photo-note{position:absolute;right:14px;top:14px;color:#fff;background:#29486bba;border-radius:2px;font-size:10px;padding:4px 8px}
+.pricing-hierarchy-heading{background:#fff;border-bottom:1px solid #d9e1e9;gap:32px;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);padding-top:36px;padding-bottom:36px}
+.pricing-hierarchy-heading .pricing-eyebrow{color:#5577a8;border-color:#5577a8}
+.partner-pricing .pricing-hierarchy-heading #partner-pricing-heading{color:#29486b;font-size:clamp(26px,2.6vw,34px);line-height:1.8}
+.partner-pricing .pricing-hierarchy-heading #partner-pricing-heading>.pricing-primary{background:none;border-radius:0;padding:0;margin-right:0;color:#29486b;border-bottom:3px solid #5577a8}
+.pricing-hierarchy-heading .pricing-direct-note{color:#56636e;font-size:15px;line-height:1.9;margin-top:20px}
+.pricing-hierarchy-message{font-weight:700;font-size:18px;line-height:1.8;color:#36557f;margin:20px 0 0}
+.agency-hierarchy{display:grid;grid-template-columns:minmax(0,1fr) 68px 120px;align-items:start;gap:0;margin:0;position:relative;min-width:0}
+.agency-pyramid{display:flex;flex-direction:column;align-items:center;gap:5px;width:100%;max-width:280px;justify-self:center}
+.agency-tier{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;font-weight:700;line-height:1.5;width:100%}
+.agency-tier-primary{width:58%;height:140px;background:#29486b;clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:60px;color:#fff}
+.agency-tier-primary>span{font-size:12px}.agency-tier-primary>strong{font-size:26px}
+.agency-tier-secondary{width:79%;height:52px;background:#d4dfec;color:#36557f;clip-path:polygon(13% 0,87% 0,100% 100%,0 100%);font-size:14px}
+.agency-tier-tertiary{height:58px;background:#edf1f6;color:#56636e;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);font-size:14px}
+.agency-direct-link{padding-top:94px;color:#36557f;font-size:10px;text-align:center;font-weight:700;white-space:nowrap;margin-left:-22px}
+.agency-direct-link>i{position:relative;display:block;background:#5577a8;height:2px;margin:8px 3px 0}
+.agency-direct-link>i:after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:2px solid #5577a8;border-right:2px solid #5577a8;transform:rotate(45deg)}
+.agency-partner{margin-top:68px;padding:18px 8px;border:1px solid #5577a8;border-radius:4px;text-align:center;color:#29486b;background:#fff;min-width:0}
+.agency-partner>span,.agency-partner>small{display:block;font-size:10px;line-height:1.7}.agency-partner>strong{display:block;font-size:24px;margin:6px 0}
+.agency-hierarchy>figcaption{grid-column:1/-1;text-align:left;margin:12px 0 0;font-size:10px;line-height:1.6;color:#788595}
+@media(max-width:1000px){.hero-inner{gap:32px;padding:36px 30px 44px}.hero h1{font-size:34px}.hero-lead{font-size:24px}.hero-scene{min-height:530px}.hero-scene figcaption{left:24px;bottom:28px}.hero-scene figcaption>strong{font-size:20px}.pricing-hierarchy-heading{grid-template-columns:1fr 1.1fr;gap:24px}.agency-hierarchy{grid-template-columns:minmax(0,1fr) 46px 94px}.agency-direct-link{font-size:9px;margin-left:-12px}.agency-tier-primary>strong{font-size:22px}.agency-tier-primary>span{font-size:10px}.agency-partner{padding:14px 5px}.agency-partner>span,.agency-partner>small{font-size:9px}.pricing-hierarchy-message{font-size:16px}}
+@media(max-width:700px){.hero-inner{display:grid;grid-template-columns:1fr;gap:28px;padding:28px 20px 36px}.hero-copy .hero-uber-eats-logo{width:112px;margin-bottom:16px}.hero-copy .tag{font-size:11px;margin-bottom:16px}.hero h1{font-size:clamp(29px,8vw,43px);line-height:1.5;margin-bottom:16px}.hero-lead{font-size:23px;margin-bottom:16px}.hero-description{font-size:15px;margin-bottom:20px}.hero-scene{min-height:0;aspect-ratio:1.2;border-radius:48px 5px 5px 5px}.hero-scene>img{object-position:center 42%}.hero-scene figcaption{bottom:22px;left:22px}.hero-scene figcaption>span{font-size:11px;margin-bottom:8px}.hero-scene figcaption>strong{font-size:20px}.pricing-hierarchy-heading{grid-template-columns:1fr;gap:28px;padding:28px 20px}.pricing-hierarchy-heading .pricing-direct-note{font-size:14px;margin-top:16px}.pricing-hierarchy-message{display:none}.agency-hierarchy{grid-template-columns:minmax(0,1fr) 52px 96px;max-width:400px;width:100%;margin:auto}.agency-pyramid{max-width:220px}.agency-tier-primary{width:64%;height:124px;padding-top:54px}.agency-tier-secondary{width:82%;height:46px}.agency-tier-tertiary{height:50px}.agency-tier-secondary,.agency-tier-tertiary{font-size:12px}.agency-tier-primary>strong{font-size:21px}.agency-direct-link{padding-top:88px;font-size:9px;margin-left:-8px}.agency-partner{margin-top:66px}.agency-hierarchy>figcaption{font-size:9px}}
+@media(max-width:360px){.agency-hierarchy{grid-template-columns:minmax(0,1fr) 34px 74px}.agency-tier-primary{width:84%;height:122px}.agency-tier-secondary{width:92%;clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}.agency-tier-tertiary{clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}.agency-direct-link{font-size:8px;margin-left:-6px}.agency-partner>span,.agency-partner>small{font-size:8px}.agency-partner>strong{font-size:21px}.hero-lead{font-size:21px}}
+
+.agency-direct-link>i:before{content:"";position:absolute;right:100%;top:0;width:80px;height:2px;background:#5577a8}
+@media(max-width:1000px){.agency-direct-link>i:before{width:28px}}
+@media(max-width:360px){.agency-direct-link>i:before{width:6px}}
+
+/* エリア拡大の補足情報は、活動開始フローと同じ背景で区切る */
+#area-expansion{background:#f1f4f8;padding:30px;border-left:0;border-radius:5px}
+@media(max-width:700px){#area-expansion{padding:24px 20px}}
+
+/* 未確認の階層は描かず、資料で確認できる協業関係を輪で表す */
+.pricing-hierarchy-heading{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+.pricing-hierarchy-heading .pricing-direct-note{font-size:15px;line-height:2;margin-top:22px;max-width:510px}
+.agency-partnership{margin:0;width:100%;min-width:0;text-align:center;padding:14px 0}
+.partnership-rings{display:flex;align-items:center;justify-content:center;width:100%;padding:8px 0}
+.partnership-ring{position:relative;width:190px;height:190px;border:9px solid #29486b;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;background:transparent;color:#29486b;line-height:1.7}
+.partnership-ring>span{display:block;font-size:12px;font-weight:700;white-space:nowrap}
+.partnership-ring>strong{display:block;font-size:32px;font-weight:800;margin-top:6px}
+.partnership-ring-flagk{padding-right:8px}
+.partnership-ring-company{margin-left:-24px;border-color:#7793b7;padding-left:8px}
+.agency-partnership>figcaption{font-size:13px;font-weight:700;line-height:1.8;color:#36557f;margin:20px 0 0}
+@media(max-width:1100px){.partnership-ring{width:160px;height:160px;border-width:7px}.partnership-ring>span{font-size:10px}.partnership-ring>strong{font-size:28px}.partnership-ring-company{margin-left:-20px}.pricing-hierarchy-heading{gap:24px}}
+@media(max-width:850px){.pricing-hierarchy-heading{grid-template-columns:1fr}.agency-partnership{max-width:440px;margin:0 auto}.pricing-hierarchy-heading .pricing-direct-note br{display:none}}
+@media(max-width:700px){.pricing-hierarchy-heading{gap:20px}.pricing-hierarchy-heading .pricing-direct-note{font-size:14px;line-height:1.95;margin-top:18px}.agency-partnership{padding:4px 0}.partnership-ring{width:158px;height:158px}.partnership-ring>strong{font-size:28px}.agency-partnership>figcaption{font-size:12px;margin-top:16px}}
+@media(max-width:400px){.partnership-ring{width:132px;height:132px;border-width:6px}.partnership-ring>span{font-size:9px}.partnership-ring>strong{font-size:25px}.partnership-ring-company{margin-left:-20px}.agency-partnership>figcaption{font-size:11px}}
+@media(max-width:340px){.partnership-ring{width:124px;height:124px}.partnership-ring>span{font-size:8px}.partnership-ring>strong{font-size:24px}.partnership-ring-company{margin-left:-18px}}
+
+/* ヒーロー背景を活動開始フローと統一 */
+#top.hero{background:#f1f4f8;background-image:none}
+
+/* 運営会社情報は固定の最大幅を設けず、画面幅に追従 */
+footer.site-footer{padding-left:clamp(20px,6vw,120px);padding-right:clamp(20px,6vw,120px)}
+.site-footer .footer-inner,.site-footer .footer-meta,.site-footer .footer-copy{width:100%;max-width:none;min-width:0}
+.site-footer .footer-meta>div{grid-template-columns:minmax(92px,12%) minmax(0,1fr);gap:clamp(16px,2vw,32px)}
+.site-footer .footer-meta dd{min-width:0;overflow-wrap:anywhere}
+@media(max-width:700px){footer.site-footer{padding-left:20px;padding-right:20px}.site-footer .footer-meta>div{grid-template-columns:minmax(0,1fr);gap:3px}}
+
+/* 営業支援は、何ができるかをアイコンと短い結論で見せる */
+.support-details>h3{margin-bottom:12px;color:#29486b}
+.support-tools-lead{font-size:16px;line-height:1.9;margin:0 0 28px;color:#56636e}
+.support-tools-visual{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.support-tools-visual>article{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;gap:18px 22px;padding:26px;border:1px solid #ccd8e7;border-left:4px solid #5577a8;border-radius:5px;background:#fff}
+.support-tool-icon{display:block;width:88px;height:88px;object-fit:contain}
+.support-tool-heading{min-width:0}
+.support-tools-visual .support-tool-name{font-size:13px;color:#5577a8;font-weight:700;line-height:1.7;margin:0 0 7px}
+.support-tools-visual h4{font-size:23px;line-height:1.6;color:#29486b;letter-spacing:-.02em;margin:0}
+.support-tools-visual .support-tool-description{grid-column:1/-1;font-size:15px;line-height:1.9;margin:0;color:#56636e}
+@media(max-width:850px){.support-tools-visual>article{padding:22px;grid-template-columns:64px minmax(0,1fr);gap:16px}.support-tool-icon{width:64px;height:64px}.support-tools-visual h4{font-size:20px}.support-tools-visual .support-tool-name{font-size:12px}}
+@media(max-width:700px){.support-tools-visual{grid-template-columns:1fr;gap:16px}.support-tools-lead{font-size:15px;margin-bottom:22px}.support-tools-visual>article{padding:22px 20px;gap:16px}.support-tools-visual h4{font-size:21px}.support-tools-visual .support-tool-description{font-size:15px}}
+@media(max-width:360px){.support-tools-visual>article{grid-template-columns:54px minmax(0,1fr);gap:14px;padding:20px 16px}.support-tool-icon{width:54px;height:54px}.support-tools-visual h4{font-size:19px}}
+
+/* 中間幅では写真を下へ落とさず、導入コピーと並べる */
+@media(min-width:600px) and (max-width:1000px){
+ .hero-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:26px;row-gap:18px;padding:32px 28px 40px;align-items:center}
+ .hero-copy{display:contents}
+ .hero-copy>.hero-uber-eats-logo{grid-column:1;grid-row:1;width:112px;margin:0}
+ .hero-copy>.tag{grid-column:1;grid-row:2;justify-self:start;max-width:100%;margin:0;font-size:11px;line-height:1.7}
+ .hero-copy>h1{grid-column:1;grid-row:3;font-size:clamp(25px,3.9vw,37px);line-height:1.55;margin:0}
+ .hero-copy>.hero-lead{grid-column:1;grid-row:4;font-size:clamp(21px,2.8vw,26px);line-height:1.7;margin:0}
+ .hero-copy>.hero-description{grid-column:1/-1;grid-row:5;max-width:none;margin:6px 0 0;font-size:15px;line-height:1.9}
+ .hero-copy>.hero-actions{grid-column:1/-1;grid-row:6;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:18px}
+ .hero-actions>.button{width:auto}
+ .hero-actions>.secondary-link{display:inline-flex}
+ .hero-scene{grid-column:2;grid-row:1/5;min-height:360px;height:100%;aspect-ratio:auto;align-self:stretch;border-radius:54px 6px 6px 6px}
+ .hero-scene>img{object-position:52% 40%}
+ .hero-scene figcaption{left:18px;right:16px;bottom:22px}
+ .hero-scene figcaption>span{font-size:10px;line-height:1.7;margin-bottom:8px}
+ .hero-scene figcaption>strong{font-size:clamp(16px,2.2vw,20px);line-height:1.8}
+}
+
+/* 架空のモデルケースとして、取り組み方を具体的に示す */
+.model-cases-heading{display:block;margin-bottom:18px}.model-cases-heading h2>span{display:inline-block}.model-cases-heading h2{color:#29486b}.model-cases-heading>p{max-width:860px;line-height:1.9}
+.model-cases-disclosure{font-size:13px;line-height:1.8;margin:0 0 28px;color:#56636e}
+.model-cases-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.agency-model-card{display:flex;flex-direction:column;min-width:0;border:1px solid #ccd8e7;border-top:4px solid #5577a8;border-radius:5px;padding:28px;background:#fff}
+.model-case-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.model-case-top>span{font-size:13px;font-weight:700;color:#36557f;line-height:1.8}.model-case-top>img{width:110px;height:76px;object-fit:contain;flex-shrink:0}
+.agency-model-card h3{font-size:24px;line-height:1.7;letter-spacing:-.02em;color:#29486b;margin:0 0 14px}.model-company-profile{font-size:13px;line-height:1.8;color:#56636e;margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid #d9e1e9}
+.model-case-story{margin:0 0 24px}.model-case-story>div+div{margin-top:20px}.model-case-story dt{font-size:13px;color:#5577a8;font-weight:700;margin:0 0 6px}.model-case-story dd{font-size:15px;line-height:1.95;color:#56636e;margin:0}
+.model-case-takeaway{margin-top:auto;background:#29486b;color:#fff;padding:20px;border-radius:4px}.model-case-takeaway>span{display:block;font-size:12px;margin-bottom:8px;color:#dbe6f3}.model-case-takeaway>strong{display:block;font-size:19px;line-height:1.8}.model-case-takeaway>p{font-size:13px;line-height:1.85;color:#e4edf7;margin:12px 0 0}
+@media(max-width:850px){.agency-model-card{padding:22px}.agency-model-card h3{font-size:22px}.model-case-top>img{width:84px;height:64px}.model-case-top>span{font-size:12px}.model-case-takeaway{padding:18px}.model-case-takeaway>strong{font-size:18px}}
+@media(max-width:700px){.model-cases-grid{grid-template-columns:1fr;gap:22px}.model-cases-heading h2{font-size:27px}.model-cases-disclosure{font-size:12px;margin-bottom:24px}.model-case-story dd{font-size:15px}.model-case-takeaway>strong{font-size:18px}.model-case-takeaway>strong br{display:none}}
+
+/* CTAとヒーロー下線を既存の青に統一 */
+:root{--cta-blue:#36557f;--cta-blue-hover:#29486b}
+.button,.button:visited{background:var(--cta-blue);border-color:var(--cta-blue);color:#fff}
+.callout .button{color:#fff}
+.button:hover{background:var(--cta-blue-hover);border-color:var(--cta-blue-hover);color:#fff}
+.button:focus-visible{outline:3px solid #5577a8;outline-offset:4px}
+.button .button-icon{color:inherit;border-color:currentColor}
+.hero h1 .marked{background:linear-gradient(transparent 89%,#36557f 89%,#36557f 96%,transparent 96%)}
+
+/* 青を主役に、Uber Eatsの緑をラベルとつながり図の差し色に */
+:root{--brand-accent-green:#06c167}
+.hero-copy .tag{border-left:4px solid var(--brand-accent-green)}
+.partnership-ring-flagk{border-top-color:var(--brand-accent-green)}
+
+.model-cases-heading>.model-cases-eyebrow{margin:0 0 14px;padding-left:12px;border-left:3px solid #06c167;font-size:14px;font-weight:700;line-height:1.7;color:#36557f}
+
+/* 装飾イラストを減らし、説明図と支援アイコンに役割を絞る */
+.merit-grid-clear .merit-card-top{min-height:40px;margin-bottom:20px;justify-content:flex-start}
+.model-case-top{margin-bottom:20px;min-height:24px;justify-content:flex-start}
+@media(max-width:700px){.merit-grid-clear .merit-card-top{min-height:32px;margin-bottom:18px}}
+
+/* 緑の使用量を増やし、番号・支援・到達点で共通のアクセントに */
+:root{--brand-accent-green:#06c167}
+.reasons>.merit-heading h2:after{background:var(--brand-accent-green)}
+.merit-grid-clear>.merit-card-clear,.agency-model-card{border-top-color:var(--brand-accent-green)}
+.merit-category>b{background:var(--brand-accent-green);color:#172a3b}
+.support-tools-visual>article{border-left-color:var(--brand-accent-green)}
+.pricing-hierarchy-heading .pricing-eyebrow,.company-capacity,.stepup-label,.model-eyebrow{border-left-color:var(--brand-accent-green)}
+.partnership-ring-flagk{border-color:var(--brand-accent-green)}
+.merit-mini-steps>span:nth-of-type(3){background:var(--brand-accent-green);border-color:var(--brand-accent-green);color:#172a3b}
+.partner-stepup .stepup-stairs>li:nth-child(3){background:var(--brand-accent-green);border-color:var(--brand-accent-green);box-shadow:0 5px 0 #12804b}
+.partner-stepup .stepup-stairs>li:nth-child(3) .stepup-number,.partner-stepup .stepup-stairs>li:nth-child(3) h4,.partner-stepup .stepup-stairs>li:nth-child(3) p{color:#172a3b}
+.flow .flow-list>li:last-child>span{background:var(--brand-accent-green);border-color:var(--brand-accent-green);color:#172a3b}
+.contact-heading>.tag{border-left:4px solid var(--brand-accent-green)}
+
+.case-review-status{margin:0 0 24px;padding:12px 16px;border:1px solid #9ab0cb;border-left:4px solid #5577a8;border-radius:3px;background:#f1f4f8;color:#29486b;font-size:14px;line-height:1.8;font-weight:700}
+
+/* 問い合わせCTAは緑の面で強調し、本文・見出しの青と区別する */
+:root{--cta-green:#06c167;--cta-green-hover:#05ab5b}
+.button,.button:visited{background:var(--cta-green);border-color:var(--cta-green);color:#172a3b}
+.callout .button{color:#172a3b}
+.button:hover{background:var(--cta-green-hover);border-color:var(--cta-green-hover);color:#172a3b}
+.button:focus-visible{outline:3px solid #29486b;outline-offset:4px}
+
+/* つながり図：FlagK側を青、貴社側を緑に入れ替え */
+.partnership-ring-flagk{border-color:#7793b7}
+.partnership-ring-company{border-color:#06c167}
+
+/* 加盟金・研修費の0円は見出しの濃い青に統一 */
+.pricing-zero{color:#29486b}
+
+/* CTAのホバーは緑の濃淡でなく、濃い青と白文字へ切り替える */
+.button:hover{background:#29486b;border-color:#29486b;color:#fff}
+
+/* 確認済み成功事例：報酬額と加盟店成約件数を分けて見せる */
+.confirmed-success-cases .model-cases-heading{margin-bottom:30px}
+.confirmed-case .model-case-top{margin-bottom:16px}
+.confirmed-case h3{font-size:23px;line-height:1.7;margin-bottom:24px}
+.case-headline-result{display:inline-block;margin-top:6px;font-size:44px;font-weight:900;line-height:1.35;letter-spacing:-.03em;color:#29486b}
+.case-headline-result>span{font-size:24px;letter-spacing:-.02em;margin-left:4px}
+.case-company-row{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:10px;color:#29486b}
+.case-company-row>strong{font-size:19px;line-height:1.6}.case-company-row>span{font-size:13px;line-height:1.7;font-weight:700;background:#29486b;color:#fff;padding:5px 12px;border-radius:3px}
+.case-industry{font-size:14px;font-weight:700;line-height:1.8;margin:0 0 12px;color:#36557f}
+.case-introduction{font-size:15px;line-height:1.9;margin:0 0 24px;padding-bottom:22px;border-bottom:1px solid #d9e1e9;color:#56636e}
+.confirmed-case .model-case-story{margin-bottom:26px}
+.confirmed-case-chart{margin:auto 0 20px;padding:22px 20px;background:#f1f4f8;border-radius:4px;min-width:0}
+.confirmed-case-chart>figcaption{font-size:16px;font-weight:800;color:#29486b;line-height:1.7;margin-bottom:20px}
+.confirmed-case-chart>ol{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.confirmed-case-chart li{display:grid;grid-template-columns:4.3em minmax(0,1fr) 5.5em;align-items:center;gap:10px;font-size:14px;line-height:1.6;min-width:0}
+.case-chart-month{font-weight:700;color:#36557f;white-space:nowrap}.case-chart-value{font-size:20px;text-align:right;color:#29486b;white-space:nowrap}.case-chart-value>span{font-size:13px;margin-left:2px}
+.case-chart-track{display:block;background:#dce5ef;height:24px;overflow:hidden;border-radius:3px}.case-chart-track>span{display:block;background:#5577a8;height:100%;border-radius:3px}
+.confirmed-case-chart li:last-child .case-chart-track>span{background:#06c167}
+.confirmed-case-outcome{background:#29486b;color:#fff;text-align:center;padding:24px 18px;border-radius:4px}
+.case-outcome-period{display:block;font-size:12px;color:#dbe6f3;margin-bottom:12px}.confirmed-case-outcome>p{font-size:16px;font-weight:700;line-height:1.7;margin:0}
+.confirmed-case-outcome>strong{display:block;font-size:62px;font-weight:900;line-height:1.3;letter-spacing:-.03em;margin:6px 0 12px;color:#fff}.confirmed-case-outcome>strong>span{font-size:28px;margin-left:4px}
+.confirmed-case-outcome>.case-outcome-summary{font-size:13px;line-height:1.8;font-weight:500;color:#e4edf7}
+.confirmed-case-point{margin-top:22px}.confirmed-case-point>h4{margin:0 0 8px;font-size:14px;font-weight:700;color:#36557f;border-left:3px solid #06c167;padding-left:10px}.confirmed-case-point>p{font-size:14px;line-height:1.9;color:#56636e;margin:0}
+.case-metric-note{font-size:13px;line-height:1.9;color:#56636e;margin:22px 0 0}
+@media(min-width:701px) and (max-width:900px){.confirmed-case h3{font-size:20px}.case-headline-result{font-size:38px}.case-headline-result>span{font-size:20px}.confirmed-case-chart{padding:20px 12px}.confirmed-case-chart li{font-size:12px;gap:6px}.case-chart-value{font-size:18px}.case-chart-value>span{font-size:11px}.confirmed-case-chart>figcaption{font-size:14px}}
+@media(max-width:700px){.confirmed-case h3{font-size:22px}.case-headline-result{font-size:42px}.case-headline-result>span{font-size:23px}.confirmed-case-chart{padding:20px 16px}.confirmed-case-chart li{font-size:13px;gap:7px}.case-chart-value{font-size:19px}.case-chart-value>span{font-size:12px}.case-chart-track{height:22px}.confirmed-case-outcome>strong{font-size:56px}.case-metric-note{font-size:12px}}
+@media(max-width:360px){.confirmed-case h3{font-size:20px}.case-headline-result{font-size:38px}.case-headline-result>span{font-size:20px}.confirmed-case-chart{padding:18px 12px}.confirmed-case-chart li{font-size:12px;gap:5px}.case-chart-value{font-size:17px}.case-chart-value>span{font-size:11px}.confirmed-case-chart>figcaption{font-size:14px}}
+
+@media(min-width:701px){.confirmed-success-cases .model-cases-grid{row-gap:0}.confirmed-case{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0}.confirmed-case-chart{margin-top:0}}
+
+/* 成功事例は数値の重複を減らし、全体をコンパクトに */
+.confirmed-success-cases{padding-top:56px;padding-bottom:56px}
+.confirmed-success-cases .model-cases-heading{margin-bottom:24px}
+.confirmed-case{padding:22px}
+.confirmed-case .model-case-top{margin-bottom:10px}
+.confirmed-case h3{font-size:20px;line-height:1.6;margin-bottom:16px}
+.confirmed-case .case-headline-result{font-size:36px;margin-top:4px}
+.confirmed-case .case-headline-result>span{font-size:21px}
+.confirmed-case .case-company-row{margin-bottom:6px;gap:10px}
+.confirmed-case .case-company-row>strong{font-size:17px}
+.confirmed-case .case-industry{font-size:13px;margin-bottom:8px}
+.confirmed-case .case-introduction{font-size:14px;line-height:1.8;margin-bottom:18px;padding-bottom:16px}
+.confirmed-case .model-case-story{margin-bottom:20px}
+.confirmed-case .model-case-story>div+div{margin-top:14px}
+.confirmed-case .model-case-story dd{font-size:14px;line-height:1.8}
+.confirmed-case .model-case-story dt{margin-bottom:4px}
+.confirmed-case .confirmed-case-chart{padding:16px;margin-bottom:12px}
+.confirmed-case-chart>figcaption{font-size:14px;margin-bottom:12px}
+.confirmed-case-chart>ol{gap:10px}
+.confirmed-case-chart li{font-size:13px;gap:8px}
+.case-chart-track{height:18px}
+.case-chart-value{font-size:18px}
+.case-outcome-inline{margin:0;font-size:13px;font-weight:700;line-height:1.8;color:#29486b}
+.confirmed-case .confirmed-case-point{margin-top:16px;padding-top:14px;border-top:1px solid #d9e1e9}
+.confirmed-case-point>h4{font-size:13px;margin-bottom:6px}
+.confirmed-case-point>p{font-size:13px;line-height:1.8}
+.case-metric-note{font-size:12px;margin-top:16px}
+/* 支援のブロックをフローと同じ背景色でまとめる */
+#sales-support{background:#f1f4f8;padding:30px;border-radius:5px}
+@media(max-width:700px){.confirmed-success-cases{padding-top:40px;padding-bottom:40px}.confirmed-case{padding:20px}.confirmed-case h3{font-size:20px}.confirmed-case .case-headline-result{font-size:36px}.confirmed-case .case-headline-result>span{font-size:21px}.confirmed-case-chart li{font-size:12px;gap:6px}.confirmed-case .confirmed-case-chart{padding:16px 12px}.case-chart-value{font-size:17px}.case-chart-value>span{font-size:11px}#sales-support{padding:24px 16px}.support-tools-visual>article{padding:20px 16px}}
+@media(max-width:400px){#sales-support .support-tools-visual>article{grid-template-columns:minmax(0,1fr);gap:12px}#sales-support .support-tool-icon{width:52px;height:52px}#sales-support .support-tool-heading h4{font-size:20px}#sales-support .support-tools-visual .support-tool-description{grid-column:1}}
+
+/* 上部の重複する成果見出しを削除し、8行で事例の位置を揃える */
+@media(min-width:701px){.confirmed-case{grid-row:span 8}}
+
+/* 成功のポイント欄を削除した事例カードの行数を調整 */
+@media(min-width:701px){.confirmed-case{grid-row:span 7}}
