@@ -976,3 +976,41 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
  .revenue-steps h3>span{display:inline-block;max-width:100%}
 }
 @media(min-width:600px) and (max-width:1000px){.hero-copy .hero-lead{font-size:24px!important}.hero-copy .tag{font-size:12px!important}}
+
+/* PCヒーローの上下余白を少し詰める */
+@media(min-width:1001px){.hero-inner{padding-top:28px;padding-bottom:36px}}
+
+/* 採用B案：左右分割をなくし、全面写真と中央のメッセージへ */
+#top.hero.hero-full-photo{position:relative;isolation:isolate;overflow:hidden;background:#172a3b;color:#fff}
+#top.hero-full-photo>.hero-background-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 43%;z-index:-2}
+#top.hero-full-photo:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,35,57,.83),rgba(15,35,57,.66) 50%,rgba(15,35,57,.83));pointer-events:none}
+#top.hero-full-photo .hero-inner{display:block;max-width:1160px;padding:52px 28px 44px;margin:auto}
+#top.hero-full-photo .hero-copy{display:block;max-width:100%;text-align:center;margin:0 auto}
+#top.hero-full-photo .hero-recruit-label{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;font-size:14px!important;line-height:1.7!important;font-weight:700;margin:0 0 24px;color:#e4edf7}
+.hero-recruit-label>span{display:inline-block;background:#06c167;color:#172a3b;padding:4px 12px;border-radius:3px;font-size:12px}
+#top.hero-full-photo h1{margin:0 0 18px;color:#fff;line-height:1.25;letter-spacing:-.045em;font-weight:800;text-wrap:balance}
+#top.hero-full-photo .hero-product{display:block;font-size:34px;line-height:1.3;letter-spacing:-.03em;margin-bottom:6px}
+#top.hero-full-photo .hero-main-title{display:block;font-size:clamp(46px,5.8vw,74px);line-height:1.25}
+#top.hero-full-photo .hero-lead{font-size:23px!important;line-height:1.7!important;font-weight:700;color:#fff;margin:22px auto 16px;max-width:100%;letter-spacing:.015em}
+#top.hero-full-photo .hero-description{color:#fff;max-width:780px;margin:0 auto 26px;text-align:center}
+#top.hero-full-photo .hero-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;grid-column:auto;grid-row:auto}
+#top.hero-full-photo .hero-actions>.button{min-width:348px;max-width:100%;gap:36px;padding:17px 24px}
+#top.hero-full-photo .hero-actions>.button:hover{border-color:#fff}
+#top.hero-full-photo .hero-actions>.secondary-link{display:inline-flex;color:#fff;font-size:14px;gap:12px}
+@media(max-width:1000px){#top.hero-full-photo .hero-inner{padding:42px 28px 38px}#top.hero-full-photo .hero-lead{font-size:21px!important}}
+@media(max-width:700px){
+ #top.hero-full-photo .hero-inner{padding:34px 20px}
+ #top.hero-full-photo>.hero-background-photo{object-position:48% center}
+ #top.hero-full-photo:before{background:rgba(15,35,57,.77)}
+ #top.hero-full-photo .hero-recruit-label{font-size:12px!important;gap:8px;margin-bottom:22px}
+ .hero-recruit-label>span{font-size:11px;padding:3px 8px}
+ #top.hero-full-photo .hero-product{font-size:26px;margin-bottom:10px}
+ #top.hero-full-photo .hero-main-title{font-size:clamp(32px,9vw,48px)}
+ #top.hero-full-photo .hero-lead{font-size:19px!important;line-height:1.8!important;max-width:340px;margin:22px auto 16px}
+ #top.hero-full-photo .hero-description{max-width:400px}
+ #top.hero-full-photo .hero-description br{display:none}
+ #top.hero-full-photo .hero-actions>.button{min-width:0;width:100%;padding:17px 18px;gap:14px}
+ #top.hero-full-photo .hero-actions>.secondary-link{font-size:13px}
+}
+
+#top.hero-full-photo .hero-lead>span{display:inline-block;white-space:nowrap}
