@@ -940,3 +940,39 @@ footer.site-footer{padding-left:clamp(20px,6vw,120px);padding-right:clamp(20px,6
 
 /* 成功のポイント欄を削除した事例カードの行数を調整 */
 @media(min-width:701px){.confirmed-case{grid-row:span 7}}
+
+/* 用途別の文字サイズをここに集約。既存の個別指定より優先する。 */
+:root{--text-section:34px;--text-card:22px;--text-subheading:20px;--text-body:16px;--text-label:14px;--text-note:13px;--text-action:16px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+main h2{font-size:var(--text-section)!important;line-height:1.6!important;text-wrap:balance}
+main h3{font-size:var(--text-card)!important;line-height:1.65!important;text-wrap:balance}
+main h4{font-size:var(--text-subheading)!important;line-height:1.6!important;text-wrap:balance}
+main p,main dd,main .role-card li,main .contact-points li,main .faq-list summary{font-size:var(--text-body)!important;line-height:1.85!important}
+main p,main dd{word-break:normal;line-break:strict;overflow-wrap:break-word;text-wrap:pretty}
+main .hero-lead{font-size:26px!important;line-height:1.7!important}
+main .tag,main .merit-eyebrow,main .model-eyebrow,main .pricing-eyebrow,main .model-cases-eyebrow,main .merit-category,main .support-tool-name,main .case-industry,main .model-case-top>span,main .stepup-label,main .company-capacity,main .pricing-feature-label,main .case-outcome-inline,main .model-owner,main .role-number>span,main .case-company-row>span{font-size:var(--text-label)!important;line-height:1.7!important}
+main .footnote,main .model-note,main .merit-terms-note,main .stepup-note,main .expansion-note,main .expansion-evidence>p,main .role-note,main .form-requirements,main .required,main .optional,main .checkbox,main .merit-rate-inline,main .merit-path small,main .case-chart-month,main .case-chart-value>span{font-size:var(--text-note)!important;line-height:1.8!important}
+main .role-number{font-size:28px!important;line-height:1.5!important}
+main .case-company-row>strong{font-size:var(--text-subheading)!important}
+main .confirmed-case-chart>figcaption,main .model-case-story dt{font-size:var(--text-label)!important;line-height:1.7!important}
+.button,.button.small,.site-header .header-nav>.button,.mobile-cta .button,.pricing-action>.button,.benefits-contact .button,#partner-form>.button{font-size:var(--text-action)!important;line-height:1.5!important}
+.site-header .header-label,.site-header .header-nav{font-size:var(--text-label)}
+main label,main input:not([type=checkbox]),main textarea{font-size:var(--text-body)!important}
+main .pricing-features h3{font-size:var(--text-subheading)!important}
+#benefits{padding-top:80px}
+.support-summary{max-width:900px;margin-left:auto;margin-right:auto;text-align:left}
+.support-summary .support-sentence{display:block}
+.support-summary .support-sentence+.support-sentence{margin-top:10px}
+.support-keep,.text-keep{display:inline;white-space:nowrap}
+@media(max-width:700px){
+ :root{--text-section:28px;--text-card:22px;--text-subheading:20px}
+ #benefits{padding-top:60px}
+ .hero-copy .hero-lead{font-size:22px!important}
+ .hero-copy .tag{font-size:12px!important;line-height:1.7!important}
+ main .hero-description br{display:initial}
+ .support-summary{max-width:none}
+ .partner-stepup .stepup-stairs p>span{display:inline}
+ .partner-stepup .stepup-stairs h4{font-size:var(--text-subheading)!important}
+ .revenue-steps h3>span{display:inline-block;max-width:100%}
+}
+@media(min-width:600px) and (max-width:1000px){.hero-copy .hero-lead{font-size:24px!important}.hero-copy .tag{font-size:12px!important}}

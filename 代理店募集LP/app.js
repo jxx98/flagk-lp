@@ -5,7 +5,6 @@
   const result = document.getElementById('form-result');
   const errorBox = document.getElementById('form-error');
   const confirmButton = form.querySelector('button[type="submit"]');
-  const mobileCta = document.querySelector('.mobile-cta');
   let sending = false;
   let submitted = false;
   let editing = true;
@@ -112,17 +111,7 @@
     syncButtons();
     track('partner_form_review', { form_type: 'partner_recruitment' }); result.focus();
   });
-  // Hide the mobile sticky CTA while the contact form is visible or focused.
-  if (mobileCta) {
-    let inContact = false;
-    const refresh = () => mobileCta.classList.toggle('suppressed', inContact || form.contains(document.activeElement));
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => { inContact = entries[0].isIntersecting; refresh(); });
-      observer.observe(document.getElementById('contact'));
-    }
-    form.addEventListener('focusin', refresh);
-    form.addEventListener('focusout', () => requestAnimationFrame(refresh));
-  }
+
 })();
 
 // Keep anchor destinations below the fixed header.
@@ -133,4 +122,45 @@
   syncHeaderHeight();
   if ('ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(header);
   else window.addEventListener('resize', syncHeaderHeight);
+})();
+
+// Keep a single inquiry action visible on mobile.
+(() => {
+  const sticky = document.querySelector('.mobile-cta');
+  if (!sticky) return;
+  const header = document.querySelector('.site-header');
+  const contact = document.getElementById('contact');
+  const form = document.getElementById('partner-form');
+  const inlineActions = [...document.querySelectorAll('main a.button[href="#contact"]')];
+  let frame = 0;
+  const refresh = () => {
+    frame = 0;
+    const viewportBottom = window.visualViewport
+      ? window.visualViewport.offsetTop + window.visualViewport.height
+      : window.innerHeight;
+    const viewportTop = header ? Math.max(0, header.getBoundingClientRect().bottom) : 0;
+    const visible = el => {
+      if (!el || el.hidden || !el.getClientRects().length) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.bottom > viewportTop && rect.top < viewportBottom && rect.right > 0 && rect.left < window.innerWidth;
+    };
+    const suppress = window.innerWidth > 700 || inlineActions.some(visible)
+      || visible(contact) || Boolean(form?.contains(document.activeElement));
+    sticky.classList.toggle('suppressed', suppress);
+    sticky.setAttribute('aria-hidden', String(suppress));
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(refresh); };
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  window.addEventListener('pageshow', schedule);
+  window.visualViewport?.addEventListener('resize', schedule);
+  window.visualViewport?.addEventListener('scroll', schedule);
+  document.addEventListener('focusin', schedule);
+  document.addEventListener('focusout', schedule);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(schedule, { threshold: [0, 0.01, 1] });
+    [...inlineActions, contact].filter(Boolean).forEach(el => observer.observe(el));
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(document.body);
+  refresh();
 })();
