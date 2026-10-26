@@ -1050,3 +1050,18 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
  .merit-grid-clear .merit-terms-note,.merit-grid-clear .merit-extra-note{grid-row:5;margin-top:14px;margin-bottom:0}
 }
 @media(min-width:1001px){#business-model-heading{white-space:nowrap}}
+
+/* PCの業務分担説明を1行で表示できる幅にする */
+@media(min-width:1100px){#partnership .support-summary{max-width:1120px}#partnership .support-summary>.support-sentence:first-child{white-space:nowrap}}
+
+/* PCの会社紹介見出しは、写真と本文の上で横幅を使って1行に */
+@media(min-width:1001px){
+ #company.company-about{column-gap:48px;row-gap:20px}
+ #company .company-intro{display:contents}
+ #company .company-intro>h2{grid-column:1/-1;grid-row:1;margin:0}
+ #company .company-capacity{grid-column:1/-1;grid-row:2;margin:0}
+ #company .company-intro>h3{grid-column:1/-1;grid-row:3;white-space:nowrap;margin:0}
+ #company .company-intro>h3 br{display:none}
+ #company .company-intro>p:last-of-type{grid-column:1;grid-row:4;margin:0}
+ #company .company-team{grid-column:2;grid-row:4}
+}
