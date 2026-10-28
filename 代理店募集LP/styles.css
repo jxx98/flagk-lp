@@ -1107,3 +1107,137 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
 @media(max-width:700px){#sales-support .support-tools-visual .support-tool-description{grid-column:1/-1}}
 
 @media(max-width:700px){#stepup .stepup-label{display:none}.mobile-heading-phrase{display:inline-block}}
+
+/* モバイルの横幅と本文の折り返しを統一 */
+.stepup-growth-cue{display:none}
+@media(max-width:700px){
+ main>.section{width:100%;max-width:none;padding-left:20px;padding-right:20px}
+ main .hero-description,main p,main dd{word-break:normal;line-break:strict;overflow-wrap:break-word;text-wrap:wrap}
+ main p br{display:none!important}
+ main p .text-keep,main p .support-keep{white-space:normal}
+ #sales-support{width:calc(100% + 40px);max-width:none;margin-left:-20px;margin-right:-20px;padding:24px 20px;border-radius:0}
+ #sales-support .support-tools-visual>article{padding:20px;grid-template-columns:48px minmax(0,1fr);gap:12px}
+ #sales-support .support-tools-visual .support-tool-description{grid-column:1/-1}
+ #stepup{width:100%;padding:0;margin:32px 0 0;border:0;border-radius:0;background:transparent}
+ #stepup>h3{margin-bottom:12px}
+ #stepup .stepup-growth-cue{display:block;width:100%;height:52px;margin:0}
+ .stepup-growth-cue svg{display:block;width:100%;height:100%;overflow:visible}
+ #stepup .stepup-stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:8px;margin:8px 0 0}
+ #stepup .stepup-stairs>li{padding:12px 8px;min-width:0;min-height:0!important;display:flex;flex-direction:column;justify-content:flex-start;border-radius:4px;box-shadow:none!important}
+ #stepup .stepup-stairs>li:nth-child(1){height:112px}
+ #stepup .stepup-stairs>li:nth-child(2){height:148px}
+ #stepup .stepup-stairs>li:nth-child(3){height:184px}
+ #stepup .stepup-stairs>li:after{display:none!important;content:none!important}
+ #stepup .stepup-stairs .stepup-number{font-size:10px;gap:4px;letter-spacing:0;line-height:1.3;white-space:nowrap}
+ #stepup .stepup-stairs .stepup-number>b{font-size:18px}
+ #stepup .stepup-stairs h4{font-size:14px!important;line-height:1.6!important;text-align:left;margin:12px 0 0;text-wrap:wrap;letter-spacing:-.03em}
+ #stepup .stepup-stairs h4>span{display:inline-block}
+ #stepup .stepup-note{margin-top:22px}
+ .merit-grid-clear>.merit-card-clear,.confirmed-case,.revenue-steps>li{padding:20px}
+ #partner-form{padding:24px 20px}
+ #area-expansion{padding:24px 20px}
+}
+
+@media(max-width:700px){main p,main dd{text-wrap:pretty}}
+
+/* 文章は増やさず、仕事の種類とメリットを視覚で区別する */
+.model-step-top>.work-step-icon{display:block;width:52px;height:52px;object-fit:contain;flex-shrink:0;margin-left:auto}
+.merit-grid-clear .merit-card-top{justify-content:space-between;gap:16px}
+.merit-card-top>.merit-heading-illustration{display:block;width:96px;height:64px;object-fit:contain;flex-shrink:0;margin:0}
+@media(max-width:700px){
+ .model-step-top>.work-step-icon{width:40px;height:40px}
+ .merit-grid-clear .merit-card-top{gap:12px;margin-bottom:12px}
+ .merit-card-top>.merit-heading-illustration{width:72px;height:48px}
+ .merit-card-top>.merit-category{min-width:0}
+}
+
+/* モバイルでは単価提供の後半を1行に収める */
+@media(max-width:700px){#partner-pricing-heading>span:last-child{display:block;white-space:nowrap;font-size:clamp(21px,6.3vw,28px);letter-spacing:-.035em}}
+
+/* モバイルでは悩みと解決を対応させ、報酬は末尾に要約 */
+.mobile-problem-solutions{display:none}
+@media(max-width:700px){
+ #business-model>.section-heading{display:block;margin-bottom:24px}
+ #business-model>.section-heading>.model-lead,#business-model>.revenue-steps,#business-model>.model-note{display:none}
+ #business-model .mobile-problem-solutions{display:grid;gap:16px}
+ #business-model .mobile-solution-card{background:#fff;color:#172a3b;border-radius:5px;overflow:hidden;border-top:3px solid #06c167}
+ #business-model .mobile-concern{margin:0;background:#e4edf7;padding:12px 18px;color:#36557f;font-size:14px!important;line-height:1.7!important;font-weight:700}
+ .mobile-solution-answer{padding:18px 20px}
+ #business-model .mobile-solution-answer h3{margin:0 0 10px;color:#29486b}
+ #business-model .mobile-solution-answer>p{margin:0;color:#56636e}
+ #business-model .mobile-reward-summary{margin-top:6px;padding:20px 0 0;border-top:1px solid #a8bfd8;color:#fff}
+ #business-model .mobile-reward-summary>h3{color:#fff;font-size:20px!important;margin:0 0 12px}
+ #business-model .mobile-reward-summary>p{color:#fff;margin:0}
+ #business-model .mobile-reward-summary>.mobile-reward-note{font-size:13px!important;line-height:1.8!important;color:#d2dfec;margin-top:10px}
+}
+
+/* 仕事内容などの語の途中で見出しが折り返されないように */
+#business-model-heading .model-heading-group{display:inline-block;white-space:nowrap}
+
+/* モバイルの単価アップを、下向きフローでなく右肩上がりに強調 */
+@media(max-width:700px){
+ #stepup .stepup-growth-cue{height:70px}
+ #stepup .stepup-stairs{grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:8px}
+ #stepup .stepup-stairs>li:nth-child(1){height:112px}
+ #stepup .stepup-stairs>li:nth-child(2){height:156px}
+ #stepup .stepup-stairs>li:nth-child(3){height:200px}
+ #stepup .stepup-stairs>li:after{display:none!important;content:none!important}
+}
+
+/* モバイルは本文14pxを基準に、用途別サイズを再調整 */
+@media(max-width:700px){
+ :root{--text-section:24px;--text-card:20px;--text-subheading:18px;--text-body:14px;--text-label:12px;--text-note:12px;--text-action:15px}
+ #top.hero-full-photo .hero-product{font-size:24px}
+ #top.hero-full-photo .hero-main-title{font-size:clamp(30px,8.2vw,40px)}
+ #top.hero-full-photo .hero-lead{font-size:18px!important}
+ #top.hero-full-photo .hero-recruit-label{font-size:12px!important}
+ #top.hero-full-photo .hero-actions>.secondary-link{font-size:12px}
+ #sales-support .support-tool-heading h4{font-size:var(--text-subheading)!important}
+ #business-model .mobile-concern{font-size:var(--text-label)!important}
+ #business-model .mobile-reward-summary>h3{font-size:var(--text-subheading)!important}
+ #business-model .mobile-reward-summary>.mobile-reward-note{font-size:var(--text-note)!important}
+ #partner-pricing-heading>span:last-child{font-size:clamp(18px,5.4vw,24px)}
+ #conditions .pricing-zero{font-size:48px}
+ #conditions .pricing-zero>span{font-size:24px}
+ .merit-category>b{font-size:16px;width:30px;height:30px}
+ #stepup .stepup-stairs .stepup-number{font-size:11px}
+ .site-footer .footer-meta dt,.site-footer .footer-meta dd{font-size:14px}
+ .site-footer .footer-meta dd>small,.site-footer .footer-status,.site-footer .footer-copy{font-size:12px}
+ /* 入力欄は操作時の読みやすさを保つサイズ */
+ #partner-form input:not([type=checkbox]),#partner-form textarea{font-size:16px!important}
+}
+
+/* Success cases: concise company summary and monthly results */
+@media (min-width:701px){
+  .confirmed-success-cases .confirmed-case{grid-row:span 5}
+}
+.confirmed-success-cases .case-introduction{margin-bottom:16px;padding-bottom:0;border-bottom:0}
+.confirmed-success-cases .confirmed-case-chart{margin-bottom:0}
+
+/* Shared pale blue background for the partner benefit area */
+#conditions .partner-pricing{background:#f1f4f8}
+
+/* Align the company description with the top edge of its photograph */
+@media(min-width:701px){
+ #company.company-about{align-items:start}
+ #company .company-team{align-self:start}
+}
+
+/* Keep case details and make the challenge-to-action progression visible. */
+@media(min-width:701px){
+ .confirmed-success-cases .confirmed-case{grid-row:span 7}
+}
+#model-cases .visual-case-story{display:grid;gap:12px;margin:4px 0 20px}
+#model-cases .visual-case-story>div{position:relative;padding:14px 16px;border:1px solid #d7e1ee;border-radius:6px;background:#f1f4f8}
+#model-cases .visual-case-story>.case-action{background:#fff;border-left:4px solid #06c167}
+#model-cases .visual-case-story dt{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:#29486b;font-size:var(--text-label);font-weight:700}
+#model-cases .case-story-symbol{display:inline-flex;align-items:center;justify-content:center;flex:0 0 26px;height:26px;border-radius:50%;background:#5577a8;color:#fff;font-size:16px;line-height:1}
+#model-cases .case-action .case-story-symbol{background:#008548}
+#model-cases .visual-case-story dd{margin:0;font-size:var(--text-body);line-height:1.85;color:#56636e}
+#model-cases .visual-case-story dd br{display:initial!important}
+#model-cases .case-outcome-inline{display:block;margin:12px 0 0;padding-left:12px;border-left:3px solid #06c167;font-size:var(--text-label);color:#29486b}
+@media(max-width:700px){
+ #model-cases .model-cases-heading>p:last-child{display:block}
+ #model-cases .visual-case-story{gap:10px;margin-bottom:16px}
+ #model-cases .visual-case-story>div{padding:12px}
+}
