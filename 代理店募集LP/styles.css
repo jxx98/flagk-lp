@@ -1241,3 +1241,35 @@ main .pricing-features h3{font-size:var(--text-subheading)!important}
  #model-cases .visual-case-story{gap:10px;margin-bottom:16px}
  #model-cases .visual-case-story>div{padding:12px}
 }
+
+/* Center the hero action and keep its supporting message in meaningful lines. */
+#top.hero-full-photo .hero-actions>.button{justify-content:center;text-align:center}
+#top.hero-full-photo .hero-actions>.button .button-icon{margin-left:0}
+@media(max-width:700px){
+ #top.hero-full-photo .hero-description{max-width:none}
+ #top.hero-full-photo .hero-description-line{display:block;white-space:nowrap;font-size:14px;line-height:1.9}
+}
+
+/* Mobile concern cards: separate the context and the emphasized need. */
+@media(max-width:700px){
+ #opportunity .problem-list p{min-width:0}
+ #opportunity .problem-prefix,#opportunity .problem-list strong{display:block;white-space:nowrap;word-break:normal}
+}
+
+/* Explicit mobile copy breaks supplied by the client; desktop copy stays intact. */
+br.mobile-break{display:none}
+@media(max-width:700px){
+ #main p br.mobile-break,#main dd br.mobile-break,
+ #main #model-cases .visual-case-story dd br.mobile-break{display:initial!important}
+}
+
+/* Compact, single-line mobile footer details. */
+@media(max-width:700px){
+ .site-footer .footer-company-identity{display:inline-flex;align-items:baseline;gap:8px;white-space:nowrap}
+ .site-footer .footer-company-identity .footer-status{display:inline;margin:0}
+ .site-footer .footer-meta>div:nth-child(2),
+ .site-footer .footer-meta>div:nth-child(4){grid-template-columns:52px minmax(0,1fr);align-items:baseline;gap:12px}
+ .site-footer .footer-meta>div:nth-child(2) a,
+ .site-footer .footer-meta>div:nth-child(4) a{white-space:nowrap}
+ #stepup .stepup-stairs{margin-top:20px}
+}
