@@ -1,0 +1,6 @@
+(() => {
+const routeForm=(e)=>{e.preventDefault();const form=document.getElementById(innerWidth<900?'mobile-cf-form':'hero-cf-form');const r=form.querySelector('input[value="yes"]');r.checked=true;r.dispatchEvent(new Event('change',{bubbles:true}));const panel=form.closest('.hv2-form-panel');panel.scrollIntoView({behavior:'smooth',block:'center'});const scroll=panel.querySelector('.old-hero-form-scroll');if(scroll)scroll.scrollTop=0};
+document.querySelectorAll('a').forEach(a=>{const h=a.getAttribute('href')||'';if(a.matches('[data-new-store-entry],[data-name-change-entry]'))return;if(a.hasAttribute('data-fast-entry')||h.includes('tel-reservation')||h==='#mobile-form'||h==='#hero-cf-form')a.addEventListener('click',routeForm);else if(/^(https?:|tel:|mailto:)/.test(h)||(!h.startsWith('#')&&h))a.addEventListener('click',e=>{e.preventDefault();window.testNotify('テスト環境：外部ページ・電話・LINEへの移動を停止しています。')})});
+const float=document.getElementById('cp-float');if(float)float.classList.add('cp-float-show');document.querySelectorAll('#cp-float-close-btn,#cp-mfloat-close-btn').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.hidden=true));
+document.querySelectorAll('img[loading="lazy"]').forEach(i=>i.loading='eager');
+})();
