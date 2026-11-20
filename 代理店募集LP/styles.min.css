@@ -40,7 +40,7 @@
 .conversion-flagk dt,.conversion-comparison .conversion-flagk dd{color:#008548}
 
 
-.conversion-source{margin:18px 0 0;color:#56636e;font-size:12px;line-height:1.7}
+
 #benefits.conversion-benefit>.benefits-contact{grid-column:1/-1;margin-top:0}
 @media(max-width:700px){
 .reward-overview.section{grid-template-columns:1fr;gap:22px;padding-block:32px}
@@ -57,7 +57,7 @@
 .conversion-comparison strong{font-size:58px}
 .conversion-comparison dd>span{font-size:20px}
 .conversion-comparison dt{font-size:13px}
-.conversion-source{font-size:11px}
+
 #business-model .mobile-problem-solutions{display:none}
 #business-model>.section-heading>.model-lead,#business-model>.model-note{display:block}
 #business-model>.revenue-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
@@ -109,7 +109,7 @@
 .mobile-role-summary dl>div:last-child dd{color:#008548}
 }
 
-/* Shared-scale columns with visible top and side faces */
+
 .conversion-comparison{box-shadow:0 12px 30px rgba(35,78,133,.08)}
 .conversion-comparison dl{gap:24px}
 .conversion-comparison dd{margin-top:8px}
@@ -117,17 +117,17 @@
 .conversion-value>strong{font-family:Arial,Helvetica,sans-serif;font-size:62px;line-height:1.1;font-weight:800;letter-spacing:-.04em;font-variant-numeric:lining-nums tabular-nums}
 .conversion-value>span{font-size:22px;font-weight:700;line-height:1}
 .conversion-comparison dt{text-align:center}
-.conversion-stage{display:flex;align-items:flex-end;justify-content:center;height:210px;padding-top:16px;border-bottom:1px solid #d6e1e8}
-.conversion-column{--column-front:#4c78b6;--column-top:#84a9da;--column-side:#315e95;position:relative;width:76px;height:calc(var(--rate)*2px);background:linear-gradient(90deg,var(--column-front),var(--column-top));box-shadow:9px 10px 14px rgba(35,78,133,.13);flex-shrink:0}
-.conversion-column::before{content:"";position:absolute;inset-inline:0;top:-10px;height:10px;background:var(--column-top);transform:skewX(-40deg);transform-origin:bottom left}
-.conversion-column::after{content:"";position:absolute;right:-12px;top:-5px;width:12px;height:100%;background:var(--column-side);transform:skewY(-40deg);transform-origin:top left}
-.conversion-flagk .conversion-column{--column-front:#06b965;--column-top:#61dda0;--column-side:#008548}
+
+
+
+
+
 .case-illustration{display:none}
 @media(max-width:700px){
 .conversion-value>strong{font-size:48px}
 .conversion-value>span{font-size:19px}
-.conversion-stage{height:170px;padding-top:16px}
-.conversion-column{width:60px;height:calc(var(--rate)*1.6px)}
+
+
 .mobile-role-summary img{display:block;width:100%;height:96px;object-fit:cover;border-radius:4px;margin-bottom:10px}
 .mobile-role-summary dl>div:first-child::after{top:128px}
 #model-cases .case-header{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:8px 12px;align-items:center}
@@ -150,4 +150,34 @@
 #business-model .mobile-role-summary dl>div:last-child dd{color:#6de2ab}
 #business-model .mobile-role-summary dl>div:first-child::after{color:#d2dfec}
 #business-model .mobile-role-reward{margin:20px 0 0;padding-top:16px;border-top:1px solid #829fc2;color:#fff}
+}
+
+/* A single prominent result, with the average as supporting context */
+.conversion-comparison{position:relative;padding:28px 32px;background:#fff;border:1px solid #cfe2db;border-radius:10px;box-shadow:0 10px 24px rgba(35,78,133,.07)}
+.conversion-comparison>figcaption{margin:0 0 20px;color:#234e85;font-size:18px}
+.conversion-comparison dl{display:flex;flex-direction:column;gap:0;margin:0}
+.conversion-comparison .conversion-flagk{padding:24px;background:#eaf8f1;border-radius:6px;text-align:center}
+.conversion-comparison .conversion-flagk dt{color:#008548;font-size:20px;font-weight:800}
+.conversion-comparison .conversion-flagk dd{margin:6px 0 0}
+.conversion-value{display:flex;align-items:baseline;justify-content:center;gap:5px}
+.conversion-value>strong{font-size:108px;color:#008548;line-height:1;font-weight:800}
+.conversion-value>span{font-size:32px;color:#008548}
+.conversion-comparison .conversion-average{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #d6e1e8}
+.conversion-comparison .conversion-average dt{font-size:15px;text-align:left}
+.conversion-comparison .conversion-average dd{display:flex;align-items:baseline;gap:3px;margin:0}
+.conversion-comparison .conversion-average strong{font-family:Arial,Helvetica,sans-serif;font-size:32px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:0}
+.conversion-comparison .conversion-average dd>span{font-size:17px}
+.conversion-difference{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:6px;margin:18px 0 0;color:#234e85;font-size:15px;font-weight:700;line-height:1.7}
+.conversion-difference>span{color:#008548}
+.conversion-difference strong{font-family:Arial,Helvetica,sans-serif;font-size:26px;letter-spacing:0}
+@media(max-width:700px){
+.conversion-comparison{padding:20px}
+.conversion-comparison>figcaption{font-size:16px;margin-bottom:14px}
+.conversion-comparison .conversion-flagk{padding:18px}
+.conversion-comparison .conversion-flagk dt{font-size:17px}
+.conversion-value>strong{font-size:92px}
+.conversion-value>span{font-size:27px}
+.conversion-comparison .conversion-average{padding:14px 0}
+.conversion-comparison .conversion-average dt{font-size:14px}
+.conversion-difference{font-size:14px;margin-top:14px}
 }
