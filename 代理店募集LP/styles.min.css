@@ -181,3 +181,51 @@
 .conversion-comparison .conversion-average dt{font-size:14px}
 .conversion-difference{font-size:14px;margin-top:14px}
 }
+
+/* Separate reward details from the main call to action */
+#rewards .reward-points{padding:4px 22px;background:#eef4fb;border:1px solid #cad9e9;border-top:3px solid #4c78b6;border-radius:6px}
+#rewards .reward-points>div:last-child{border-bottom:0}
+@media(max-width:700px){
+#rewards .reward-points{padding:4px 18px;margin-top:4px}
+footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
+.site-footer .footer-meta>div,.site-footer .footer-meta>div:nth-child(2),.site-footer .footer-meta>div:nth-child(4){grid-template-columns:58px minmax(0,1fr);gap:10px;padding:7px 0;align-items:baseline}
+.site-footer .footer-meta dt{font-size:10px;line-height:1.6}
+.site-footer .footer-meta dd{font-size:11px;line-height:1.6}
+.site-footer .footer-meta dd>small{font-size:10px;line-height:1.5;margin-top:5px}
+.site-footer .footer-company-identity{flex-wrap:wrap;gap:2px 6px;white-space:normal}
+.site-footer .footer-company-identity .footer-status{font-size:10px;line-height:1.5}
+.site-footer .footer-copy{font-size:10px;line-height:1.5;margin-top:14px}
+}
+
+/* Read the average first, then compare the FlagK result */
+.conversion-comparison dl{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px 12px;border:1px solid #d2deed;border-radius:6px;background:#f3f6fb}
+.conversion-comparison .conversion-flagk{background:#eaf8f1;border-color:#9ddbbd}
+.conversion-comparison .conversion-average dt,.conversion-comparison .conversion-flagk dt{font-size:16px;font-weight:800;text-align:center}
+.conversion-comparison .conversion-average dd,.conversion-comparison .conversion-flagk dd{display:block;margin:12px 0 0}
+.conversion-comparison .conversion-value>strong{font-family:Arial,Helvetica,sans-serif;font-size:76px;line-height:1;letter-spacing:-.04em}
+.conversion-comparison .conversion-value>span{font-size:24px;line-height:1}
+.conversion-comparison .conversion-average .conversion-value>strong,.conversion-comparison .conversion-average .conversion-value>span{color:#315e95}
+.conversion-comparison .conversion-average::after{content:"→";position:absolute;right:-25px;top:calc(50% - 15px);width:24px;font-size:24px;line-height:30px;color:#315e95}
+.handoff-courier{display:none}
+@media(max-width:700px){
+.conversion-comparison dl{gap:24px}
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{padding:18px 8px}
+.conversion-comparison .conversion-average dt,.conversion-comparison .conversion-flagk dt{font-size:13px}
+.conversion-comparison .conversion-value>strong{font-size:clamp(48px,14vw,64px)}
+.conversion-comparison .conversion-value>span{font-size:19px}
+.conversion-difference{font-size:12px;gap:4px}
+.mobile-role-summary .mobile-handoff{gap:44px}
+.mobile-role-summary .mobile-handoff>div:first-child::after{content:none}
+.mobile-role-summary .handoff-courier{display:block;position:absolute;right:-44px;top:124px;width:44px;height:38px}
+.mobile-role-summary .handoff-courier>img{display:block;width:44px;height:33px;object-fit:contain;margin:0;border-radius:0;animation:handoff-cycle 2.8s ease-in-out infinite}
+.mobile-role-summary .handoff-courier::after{content:"";display:block;height:1px;background:repeating-linear-gradient(90deg,#a8bfd8 0 5px,transparent 5px 9px)}
+}
+@keyframes handoff-cycle{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.mobile-role-summary .handoff-courier>img{animation:none}}
+
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{display:grid;grid-template-rows:26px auto;gap:12px;align-content:center;justify-items:center}
+.conversion-comparison .conversion-average dt,.conversion-comparison .conversion-flagk dt{line-height:26px}
+.conversion-comparison .conversion-average dd,.conversion-comparison .conversion-flagk dd{margin:0;align-self:start}
+.conversion-comparison .conversion-value{height:76px;align-items:baseline}
+@media(max-width:700px){.conversion-comparison .conversion-value{height:64px}}
