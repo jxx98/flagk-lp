@@ -298,3 +298,5 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 
 footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:700px){footer.site-footer{padding-top:20px;padding-bottom:8px}}
+
+#conditions #partner-pricing-heading{max-width:24em;line-height:1.6}
