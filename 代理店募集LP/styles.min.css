@@ -241,3 +241,7 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 #rewards>.reward-points>div+div{border-top:1px solid #d6e1e8}
 #rewards>.benefits-contact{grid-column:1;grid-row:4}
 }
+
+/* Light partnership hands and neutral onboarding bags. */
+#conditions .partnership-bond{width:42px;height:42px}
+#flow .flow-list>li:not(:last-child)>span{background:#fff;border-color:#9bb7da;color:#234e85}
