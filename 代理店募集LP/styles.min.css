@@ -249,3 +249,6 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 /* Keep the mobile hero promise on one line; soften supporting headings. */
 #rewards .reward-points dt{font-weight:400}
 @media(max-width:700px){#top.hero-full-photo .hero-mobile-copy{white-space:nowrap;font-size:clamp(16px,4.6vw,19px)!important;letter-spacing:0;max-width:none}}
+
+#partnership .partnership-single-line{white-space:nowrap}
+@media(max-width:700px){#partnership .partnership-single-line{font-size:clamp(16px,4.5vw,24px)!important;letter-spacing:0}}
