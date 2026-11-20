@@ -256,3 +256,5 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 @media(min-width:701px){#flow .flow-list>li{padding-inline:20px}#flow .flow-list>li+li::after{content:"";position:absolute;left:0;top:78px;bottom:0;width:1px;background:#b9cbe0}}
 
 #main .button,#partner-form>.button,.site-header .header-nav>.button,.mobile-cta .button{font-size:16px!important}
+
+@media(min-width:701px){#rewards>.reward-points{grid-template-columns:1fr;gap:0;max-width:880px;width:100%;justify-self:center}#rewards>.reward-points>div+div{border-top:1px solid #cad9e9}}
