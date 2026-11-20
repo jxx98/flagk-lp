@@ -252,3 +252,7 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 
 #partnership .partnership-single-line{white-space:nowrap}
 @media(max-width:700px){#partnership .partnership-single-line{font-size:clamp(16px,4.5vw,24px)!important;letter-spacing:0}}
+
+@media(min-width:701px){#flow .flow-list>li{padding-inline:20px}#flow .flow-list>li+li::after{content:"";position:absolute;left:0;top:78px;bottom:0;width:1px;background:#b9cbe0}}
+
+#main .button,#partner-form>.button,.site-header .header-nav>.button,.mobile-cta .button{font-size:16px!important}
