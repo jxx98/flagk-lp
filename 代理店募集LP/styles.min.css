@@ -341,3 +341,7 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #model-cases .case-image-note{font-size:11px!important}
 @media(min-width:701px){#model-cases .confirmed-case .case-header{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:10px 16px;align-items:center}#model-cases .confirmed-case .case-photo{display:block;grid-column:2;grid-row:1;width:88px;height:76px;object-fit:cover}#model-cases .confirmed-case .case-header>h3{grid-column:1;grid-row:1;margin:0}#model-cases .confirmed-case .case-meta{grid-column:1/-1;grid-row:2;margin:0}}
 @media(max-width:700px){#model-cases .case-image-note{font-size:10px!important}}
+
+@media(max-width:700px){#main #stepup>h3{font-size:17px!important;line-height:1.6!important;text-align:center}#main #stepup>h3 .stepup-cheer{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;font-size:15px;line-height:1.6;margin-bottom:4px}#main #stepup>h3 .stepup-cheer>span{display:inline-block}}
+
+#sales-support{background:#fff}
