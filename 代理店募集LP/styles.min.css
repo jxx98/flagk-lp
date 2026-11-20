@@ -245,3 +245,7 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 /* Light partnership hands and neutral onboarding bags. */
 #conditions .partnership-bond{width:42px;height:42px}
 #flow .flow-list>li:not(:last-child)>span{background:#fff;border-color:#9bb7da;color:#234e85}
+
+/* Keep the mobile hero promise on one line; soften supporting headings. */
+#rewards .reward-points dt{font-weight:400}
+@media(max-width:700px){#top.hero-full-photo .hero-mobile-copy{white-space:nowrap;font-size:clamp(16px,4.6vw,19px)!important;letter-spacing:0;max-width:none}}
