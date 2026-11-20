@@ -301,27 +301,13 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 
 #conditions #partner-pricing-heading{max-width:24em;line-height:1.6}
 
-/* Lead with revenue, explain the work, then show conversion evidence. */
-#reward-intro.reward-lead{padding-block:40px 30px}
-#reward-intro .reward-copy{max-width:900px}
-#reward-intro .reward-eyebrow{padding-left:12px;border-left:4px solid #f7d844;color:#234e85}
-#reward-intro .reward-intro{margin-bottom:0}
-#business-model{padding-block:44px}
-#rewards.reward-overview{padding-block:36px 44px;gap:24px 40px}
-#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:1}
-#rewards>.reward-points{grid-column:2;grid-row:1;align-self:center}
-#rewards>.benefits-contact{grid-column:1/-1;grid-row:2}
-#partnership .support-followup{font-size:14px;line-height:1.8;color:#34444f;margin:16px 0 0}
-@media(max-width:700px){#reward-intro.reward-lead{padding-block:28px 24px}#business-model{padding-block:30px}#rewards.reward-overview{padding-block:28px 32px;gap:18px}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:1}#rewards>.reward-points{grid-column:1;grid-row:2}#rewards>.benefits-contact{grid-column:1;grid-row:3}#partnership .support-followup{font-size:13px}}
 
-#rewards>#benefits.conversion-benefit{grid-column:1/-1;grid-row:1;max-width:800px;width:100%;justify-self:start}
+/* Revenue and conversion evidence form one introduction. */
+#rewards.reward-overview{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 40px;padding-block:40px}
+#rewards>.reward-copy{grid-column:1;grid-row:1;min-width:0}
+#rewards>#benefits.conversion-benefit{grid-column:2;grid-row:1;max-width:none;width:100%}
 #rewards>.reward-points{grid-column:1/-1;grid-row:2}
 #rewards>.benefits-contact{grid-column:1/-1;grid-row:3}
-
-/* Give the desktop comparison a balanced two-column introduction. */
-#rewards>.conversion-context{grid-column:1;grid-row:1;min-width:0}
-#rewards .conversion-context h2{font-size:clamp(24px,2.2vw,30px);line-height:1.65;margin:0 0 18px;color:#234e85}
-#rewards .conversion-context p{font-size:16px;line-height:1.85;margin:0;color:#34444f}
-#rewards>#benefits.conversion-benefit{grid-column:2;grid-row:1;max-width:none}
-@media(min-width:701px) and (max-width:1000px){#rewards.reward-overview{grid-template-columns:1fr}#rewards>.conversion-context{grid-column:1;grid-row:1}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:2}#rewards>.reward-points{grid-column:1;grid-row:3}#rewards>.benefits-contact{grid-column:1;grid-row:4}}
-@media(max-width:700px){#rewards>.conversion-context{display:none}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:1}}
+#business-model{padding-block:44px}
+#partnership .support-followup{font-size:14px;line-height:1.8;color:#34444f;margin:16px 0 0}
+@media(max-width:700px){#rewards.reward-overview{grid-template-columns:1fr;gap:18px;padding-block:28px 32px}#rewards>.reward-copy{grid-column:1;grid-row:1}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:2}#rewards>.reward-points{grid-column:1;grid-row:3}#rewards>.benefits-contact{grid-column:1;grid-row:4}#business-model{padding-block:30px}#partnership .support-followup{font-size:13px}}
