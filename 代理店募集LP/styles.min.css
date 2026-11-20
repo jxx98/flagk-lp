@@ -317,3 +317,11 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #rewards>#benefits.conversion-benefit{grid-column:1/-1;grid-row:1;max-width:800px;width:100%;justify-self:start}
 #rewards>.reward-points{grid-column:1/-1;grid-row:2}
 #rewards>.benefits-contact{grid-column:1/-1;grid-row:3}
+
+/* Give the desktop comparison a balanced two-column introduction. */
+#rewards>.conversion-context{grid-column:1;grid-row:1;min-width:0}
+#rewards .conversion-context h2{font-size:clamp(24px,2.2vw,30px);line-height:1.65;margin:0 0 18px;color:#234e85}
+#rewards .conversion-context p{font-size:16px;line-height:1.85;margin:0;color:#34444f}
+#rewards>#benefits.conversion-benefit{grid-column:2;grid-row:1;max-width:none}
+@media(min-width:701px) and (max-width:1000px){#rewards.reward-overview{grid-template-columns:1fr}#rewards>.conversion-context{grid-column:1;grid-row:1}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:2}#rewards>.reward-points{grid-column:1;grid-row:3}#rewards>.benefits-contact{grid-column:1;grid-row:4}}
+@media(max-width:700px){#rewards>.conversion-context{display:none}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:1}}
