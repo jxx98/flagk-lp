@@ -229,3 +229,69 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 .conversion-comparison .conversion-average dd,.conversion-comparison .conversion-flagk dd{margin:0;align-self:start}
 .conversion-comparison .conversion-value{height:76px;align-items:baseline}
 @media(max-width:700px){.conversion-comparison .conversion-value{height:64px}}
+
+/* Compare equal units of five percentage points */
+.conversion-comparison dl{display:block}
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{display:block;position:static;padding:20px;border:0;border-radius:6px}
+.conversion-comparison .conversion-average{background:#f3f6fb;margin-bottom:16px}
+.conversion-comparison .conversion-flagk{background:#eaf8f1;border-left:4px solid #06c167}
+.conversion-comparison .conversion-average::after{content:none}
+.conversion-comparison .conversion-average dt,.conversion-comparison .conversion-flagk dt{text-align:left;line-height:1.5}
+.conversion-comparison .conversion-average dt{font-size:14px}
+.conversion-comparison .conversion-flagk dt{font-size:22px}
+.conversion-comparison .conversion-average dd,.conversion-comparison .conversion-flagk dd{margin:0}
+.conversion-comparison .conversion-value{height:auto;justify-content:flex-end;margin-top:-26px}
+.conversion-comparison .conversion-average .conversion-value>strong{font-size:42px}
+.conversion-comparison .conversion-flagk .conversion-value>strong{font-size:76px}
+.conversion-comparison .conversion-value>span{font-size:22px}
+.conversion-bags{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;margin-top:18px}
+.conversion-bags>svg{display:block;width:100%;height:auto;aspect-ratio:40/48;color:#dbe4ed}
+.conversion-average .conversion-bags>.bag-filled{color:#4c78b6}
+.conversion-flagk .conversion-bags>svg{display:block;width:100%;height:auto;aspect-ratio:40/48;color:#dbe4ed}
+.conversion-flagk .conversion-bags>.bag-filled{color:#06b965}
+.conversion-bag-scale{margin:10px 0 0;text-align:right;font-size:11px;color:#56636e;line-height:1.6}
+.button,.button:visited{background:#f7d844;border-color:#e5c62d;color:#172a3b;box-shadow:0 3px 0 #c7a91d}
+.button:hover{background:#ebcb30;border-color:#d2b31e;color:#172a3b}
+.button:active{box-shadow:0 1px 0 #c7a91d;transform:translateY(2px)}
+#top.hero-full-photo .hero-actions>.button{border-color:#f7d844}
+#top.hero-full-photo .hero-actions>.button:hover{border-color:#ebcb30}
+@media(max-width:700px){
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{padding:16px}
+.conversion-comparison .conversion-flagk dt{font-size:19px}
+.conversion-comparison .conversion-average .conversion-value>strong{font-size:36px}
+.conversion-comparison .conversion-flagk .conversion-value>strong{font-size:64px}
+.conversion-bags{gap:5px;margin-top:16px}
+.conversion-comparison .conversion-value>span{font-size:19px}
+}
+
+/* The stepped silhouette conveys progression */
+#stepup .stepup-stairs{gap:0}
+#stepup .stepup-stairs>li{border-radius:0}
+#stepup .stepup-stairs>li::after{content:none!important;display:none!important}
+.partnership-rings{position:relative}
+.partnership-ring-flagk{background:rgba(119,147,183,.04)}
+.partnership-ring-company{background:rgba(6,193,103,.04)}
+.partnership-bond{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;padding:7px;border-radius:50%;background:#fff;box-shadow:0 1px 8px rgba(35,78,133,.1)}
+@media(max-width:700px){
+#stepup .stepup-stairs{gap:0}
+#conditions .agency-partnership{display:block;padding:8px 0}
+#conditions .partnership-rings{padding:8px 0}
+#conditions .partnership-ring{width:124px;height:124px;border-width:6px}
+#conditions .partnership-ring-company{margin-left:-18px}
+#conditions .partnership-bond{width:34px;height:34px;padding:5px}
+}
+
+.conversion-bag-symbol{position:absolute;width:0;height:0;overflow:hidden}
+.conversion-comparison .conversion-average,.conversion-comparison .conversion-flagk{position:relative}
+.conversion-comparison .conversion-average dt,.conversion-comparison .conversion-flagk dt{line-height:1.5;text-align:left}
+.conversion-comparison .conversion-average dt{padding-top:10px}
+.conversion-comparison .conversion-flagk dt{padding-top:20px}
+.conversion-comparison .conversion-average .conversion-value,.conversion-comparison .conversion-flagk .conversion-value{position:absolute;right:20px;top:20px;height:auto;margin:0}
+.conversion-comparison .conversion-average .conversion-bags{margin-top:26px}
+.conversion-comparison .conversion-flagk .conversion-bags{margin-top:34px}
+@media(max-width:700px){
+.conversion-comparison .conversion-average .conversion-value,.conversion-comparison .conversion-flagk .conversion-value{right:16px;top:16px}
+.conversion-comparison .conversion-flagk dt{padding-top:16px}
+}
+
+@media(max-width:360px){.conversion-comparison .conversion-flagk dt{font-size:16px}.conversion-comparison .conversion-flagk .conversion-value>strong{font-size:56px}}
