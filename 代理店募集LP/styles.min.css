@@ -258,3 +258,29 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 #main .button,#partner-form>.button,.site-header .header-nav>.button,.mobile-cta .button{font-size:16px!important}
 
 @media(min-width:701px){#rewards>.reward-points{grid-template-columns:1fr;gap:0;max-width:880px;width:100%;justify-self:center}#rewards>.reward-points>div+div{border-top:1px solid #cad9e9}}
+
+/* Match the lighter support-card treatment used by the application LPs. */
+#rewards>.reward-points{background:transparent;border:0;padding:0;gap:12px}
+#rewards>.reward-points>div{background:#fff;border:1px solid #dce6e0;border-left:3px solid #06c167;border-radius:5px;padding:18px 22px}
+#rewards>.reward-points>div+div{border-top:1px solid #dce6e0}
+#rewards .reward-points dt{color:#172a3b}
+#business-model .model-step-illustration{display:block;width:88px;height:88px;object-fit:contain;align-self:center;margin:14px auto 0}
+#business-model .revenue-steps>li::after{display:none}
+#company .company-intro{display:block;min-width:0}
+#company .company-intro>h2{margin-bottom:22px}
+#company .company-capacity{margin-bottom:18px}
+#company .company-intro>h3{white-space:normal;margin-bottom:18px}
+#company .company-team{margin:0}
+@media(min-width:701px){#company.company-about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}#company .company-intro{grid-column:1;grid-row:1}#company .company-team{grid-column:2;grid-row:1}#company .company-intro>h3{font-size:24px!important;line-height:1.7!important}#business-model .revenue-steps h3{font-size:18px!important}}
+@media(max-width:700px){#company .company-team{margin-top:24px}#rewards>.reward-points>div{padding:15px 18px}}
+#contact .contact-invitation,#contact .contact-invitation-detail{display:block}
+#contact .contact-invitation{color:#234e85;font-size:20px;line-height:1.7;margin-bottom:10px;font-weight:500}
+.site-footer{padding-top:26px;padding-bottom:20px}
+.site-footer .footer-inner{max-width:960px;margin-inline:auto}
+.site-footer .footer-meta>div{padding-block:9px;grid-template-columns:100px minmax(0,1fr)}
+.site-footer .footer-meta dt,.site-footer .footer-meta dd{font-size:12px!important;line-height:1.65}
+.site-footer .footer-meta dd>small,.site-footer .footer-status,.site-footer .footer-copy{font-size:10px!important;line-height:1.6}
+.site-footer .footer-copy{margin:18px 0 0}
+@media(max-width:700px){#contact .contact-invitation{font-size:17px}.site-footer{padding-top:20px;padding-bottom:16px}.site-footer .footer-meta>div{grid-template-columns:58px minmax(0,1fr);padding-block:6px;gap:10px}.site-footer .footer-meta dt,.site-footer .footer-meta dd{font-size:10px!important}.site-footer .footer-meta dd>small,.site-footer .footer-status,.site-footer .footer-copy{font-size:9px!important}.site-footer .footer-copy{margin-top:12px}}
+
+#company .company-phrase{display:inline-block}
