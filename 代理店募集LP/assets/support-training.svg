@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none" stroke="#29486b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="12" width="70" height="49" rx="4" fill="#e4edf7"/><path d="M24 45l13-12 12 7 20-17" stroke="#06a65a"/><path d="M60 23h9v9" stroke="#06a65a"/><circle cx="36" cy="66" r="10" fill="#fff"/><path d="M18 86v-3c0-8 8-12 18-12s18 4 18 12v3M58 61v14l13 11"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+<defs><linearGradient id="screen" x2="1" y2="1"><stop stop-color="#eef7ff"/><stop offset="1" stop-color="#abc9ed"/></linearGradient><linearGradient id="body" x2="0" y2="1"><stop stop-color="#6c99d0"/><stop offset="1" stop-color="#315e95"/></linearGradient></defs>
+<ellipse cx="49" cy="88" rx="35" ry="5" fill="#234e85" opacity=".12"/>
+<rect x="17" y="15" width="69" height="46" rx="5" fill="#315e95"/>
+<rect x="11" y="9" width="69" height="46" rx="5" fill="url(#screen)" stroke="#315e95" stroke-width="2"/>
+<path d="m23 42 12-11 12 6 21-17" fill="none" stroke="#06b965" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M59 55v17l15 11" fill="none" stroke="#315e95" stroke-width="4" stroke-linecap="round"/>
+<circle cx="35" cy="63" r="11" fill="#234e85"/><circle cx="32" cy="60" r="10" fill="#f8d883" stroke="#315e95" stroke-width="2"/>
+<path d="M12 87v-3c0-10 8-15 20-15s21 5 21 15v3Z" fill="url(#body)" stroke="#234e85" stroke-width="2"/>
+<path d="m27 70 5 10 5-10" fill="#fff"/></svg>

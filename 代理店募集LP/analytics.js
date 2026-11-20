@@ -56,7 +56,7 @@
         observer.unobserve(entry.target);
       }
     }, { threshold: .15 });
-    for (const section of document.querySelectorAll('section[id]')) observer.observe(section);
+    for (const section of document.querySelectorAll('section[id], #benefits')) observer.observe(section);
   }
   const sectionIds = ['top', 'opportunity', 'business-model', 'benefits', 'model-cases',
     'partnership', 'conditions', 'company', 'flow', 'faq', 'contact'];
