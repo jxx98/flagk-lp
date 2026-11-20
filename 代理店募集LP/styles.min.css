@@ -311,3 +311,8 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #business-model{padding-block:44px}
 #partnership .support-followup{font-size:14px;line-height:1.8;color:#34444f;margin:16px 0 0}
 @media(max-width:700px){#rewards.reward-overview{grid-template-columns:1fr;gap:18px;padding-block:28px 32px}#rewards>.reward-copy{grid-column:1;grid-row:1}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:2}#rewards>.reward-points{grid-column:1;grid-row:3}#rewards>.benefits-contact{grid-column:1;grid-row:4}#business-model{padding-block:30px}#partnership .support-followup{font-size:13px}}
+
+/* Keep a clear rhythm between top-level sections without enlarging cards. */
+#main>section.section{padding-top:88px;padding-bottom:88px}
+@media(min-width:701px) and (max-width:1000px){#main>section.section{padding-top:72px;padding-bottom:72px}}
+@media(max-width:700px){#main>section.section{padding-top:60px;padding-bottom:60px}#main>#rewards{padding-top:44px}}
