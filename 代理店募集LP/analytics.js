@@ -58,7 +58,7 @@
     }, { threshold: .15 });
     for (const section of document.querySelectorAll('section[id], #benefits')) observer.observe(section);
   }
-  const sectionIds = ['top', 'opportunity', 'business-model', 'benefits', 'model-cases',
+  const sectionIds = ['top', 'reward-intro', 'opportunity', 'business-model', 'benefits', 'model-cases',
     'partnership', 'conditions', 'company', 'flow', 'faq', 'contact'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
   if (sections.length && 'IntersectionObserver' in window) {
