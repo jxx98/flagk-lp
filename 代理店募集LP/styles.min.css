@@ -295,3 +295,6 @@ footer.site-footer{padding:20px 20px calc(88px + env(safe-area-inset-bottom))}
 @media(min-width:701px){#business-model .revenue-steps{margin-top:44px;row-gap:40px}#business-model .revenue-steps>li{padding-top:24px;min-height:160px}#business-model .model-step-illustration{position:absolute;right:-10px;top:-22px;width:64px;height:64px;margin:0}#business-model .revenue-steps h3{margin-bottom:0}}
 
 #flow .flow-list p{text-align:left}
+
+footer.site-footer{padding-top:26px;padding-bottom:12px}
+@media(max-width:700px){footer.site-footer{padding-top:20px;padding-bottom:8px}}

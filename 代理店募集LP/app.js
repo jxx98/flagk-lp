@@ -106,6 +106,7 @@
   if (!sticky) return;
   const header = document.querySelector('.site-header');
   const contact = document.getElementById('contact');
+  const footer = document.getElementById('company-info');
   const form = document.getElementById('partner-form');
   const inlineActions = [...document.querySelectorAll('main a.button[href="#contact"]')];
   let frame = 0;
@@ -121,7 +122,7 @@
       return rect.bottom > viewportTop && rect.top < viewportBottom && rect.right > 0 && rect.left < window.innerWidth;
     };
     const suppress = window.innerWidth > 700 || inlineActions.some(visible)
-      || visible(contact) || Boolean(form?.contains(document.activeElement));
+      || visible(contact) || visible(footer) || Boolean(form?.contains(document.activeElement));
     sticky.classList.toggle('suppressed', suppress);
     sticky.setAttribute('aria-hidden', String(suppress));
   };
@@ -135,7 +136,7 @@
   document.addEventListener('focusout', schedule);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(schedule, { threshold: [0, 0.01, 1] });
-    [...inlineActions, contact].filter(Boolean).forEach(el => observer.observe(el));
+    [...inlineActions, contact, footer].filter(Boolean).forEach(el => observer.observe(el));
   }
   if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(document.body);
   refresh();
