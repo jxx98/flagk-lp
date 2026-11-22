@@ -409,3 +409,9 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #main #sales-support .support-tools-title{display:block;font-size:20px!important;line-height:1.6!important;margin:0 0 18px;color:#234e85;text-align:left}
 #company .company-capacity{color:#008548;font-size:12px;font-weight:500;margin:0 0 8px}
 @media(max-width:700px){#main #sales-support .support-tools-title{font-size:17px!important;margin-bottom:16px}}
+
+/* A compact bicycle marks the persistent remuneration inquiry. */
+.mobile-cta .button{position:relative;justify-content:center;text-align:center;padding-inline:52px;gap:0}
+.mobile-cta .sticky-cta-label{display:block;white-space:nowrap}
+.mobile-cta .sticky-bicycle{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:32px;height:28px;object-fit:contain}
+.mobile-cta .button>.button-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);margin:0}
