@@ -384,3 +384,6 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 /* Balance the desktop consultation invitation and quiet company attribution. */
 #company .company-capacity{border:0;background:transparent;border-radius:0;padding:0;color:#56636e;font-size:12px;font-weight:400;letter-spacing:0}
 @media(min-width:701px){.site-footer .footer-inner{max-width:none;margin-inline:0;text-align:left}.site-footer .footer-copy{text-align:left}#rewards>.reward-points{max-width:none;margin-top:4px}#rewards .reward-points dt{font-size:16px;line-height:1.8}#rewards .consultation-break{display:none}#rewards .consultation-break::after{content:" "}}
+
+#top .hero-product-logo{display:block;width:230px;height:auto;margin-inline:auto}
+@media(max-width:700px){#top .hero-product-logo{width:144px}}
