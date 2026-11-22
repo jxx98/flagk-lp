@@ -387,3 +387,9 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 
 #top .hero-product-logo{display:block;width:180px;height:auto;margin-inline:auto}
 @media(max-width:700px){#top .hero-product-logo{width:104px}}
+
+#rewards .reward-stepup-intro{margin:12px 0 0;color:#17633e;font-size:14px;font-weight:600;line-height:1.8}
+@media(max-width:700px){#rewards .reward-stepup-intro{font-size:13px;margin-top:10px}}
+
+#top.hero-full-photo .hero-copy>.hero-product{margin:0 0 18px}
+@media(max-width:700px){#top.hero-full-photo .hero-copy>.hero-product{margin-bottom:14px}}
