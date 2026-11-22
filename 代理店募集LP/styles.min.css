@@ -345,3 +345,11 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:700px){#main #stepup>h3{font-size:17px!important;line-height:1.6!important;text-align:center}#main #stepup>h3 .stepup-cheer{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;font-size:15px;line-height:1.6;margin-bottom:4px}#main #stepup>h3 .stepup-cheer>span{display:inline-block}}
 
 #sales-support{background:#fff}
+
+/* Center the consultation invitation over its call to action. */
+#rewards>.reward-points{justify-self:center;width:100%;max-width:800px;text-align:center;margin:8px auto 0}
+#rewards>.reward-points>div{padding:0;border:0;border-radius:0;background:transparent}
+#rewards .reward-points dt{font-size:18px;line-height:1.7;font-weight:400}
+#rewards .reward-points dd{max-width:48em;margin:8px auto 0;font-size:14px;line-height:1.8}
+#rewards>.benefits-contact{margin-top:0}
+@media(max-width:700px){#rewards>.reward-points{margin-top:8px}#rewards .reward-points dt{font-size:16px}#rewards .reward-points dd{font-size:13px;margin-top:8px}}
