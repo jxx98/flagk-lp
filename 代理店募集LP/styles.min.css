@@ -375,3 +375,8 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #conditions .partnership-ring>strong{margin-top:6px}
 @media(min-width:701px){#flow .flow-list>li::before{top:21px}}
 @media(max-width:700px){#flow .flow-list>li>span{width:36px;height:36px;font-size:15px}#flow .flow-list>li::before{left:17px;top:36px;height:calc(100% - 36px)}#flow .flow-list>li{padding-left:56px}#flow .flow-list>li>span::before{width:17px;height:7px;top:-7px}#conditions .partnership-ring>span{font-size:9px}#conditions .partnership-ring>strong{font-size:25px;margin-top:5px}#conditions .partnership-bond{width:36px;height:36px}}
+
+/* Make the consultation form approachable and its submit label centered. */
+#partner-form>button.button{position:relative;justify-content:center;text-align:center;padding-inline:52px}
+#partner-form>button.button>.button-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);margin:0}
+#company .company-capacity{display:inline-block;width:auto;border:1px solid #c6dbd2;border-left:1px solid #c6dbd2;background:#edf8f2;border-radius:4px;padding:6px 12px;color:#17633e;font-size:13px;line-height:1.6;letter-spacing:.03em}
