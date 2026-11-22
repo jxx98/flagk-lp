@@ -358,3 +358,5 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:1000px){.site-header .header-label{font-size:18px}}
 @media(max-width:700px){.site-header .header-label{font-size:14px}}
 @media(max-width:360px){.site-header .header-label{font-size:13px}}
+
+@media(max-width:700px){#main #stepup>h3 .stepup-cheer>span[aria-hidden="true"]{display:block;font-size:0;width:2px;height:18px;background:currentColor;transform:rotate(-35deg);flex:none}#main #stepup>h3 .stepup-cheer>span[aria-hidden="true"]:last-child{transform:rotate(35deg)}}
