@@ -353,3 +353,8 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #rewards .reward-points dd{max-width:48em;margin:8px auto 0;font-size:14px;line-height:1.8}
 #rewards>.benefits-contact{margin-top:0}
 @media(max-width:700px){#rewards>.reward-points{margin-top:8px}#rewards .reward-points dt{font-size:16px}#rewards .reward-points dd{font-size:13px;margin-top:8px}}
+
+.site-header .header-label{font-size:20px}
+@media(max-width:1000px){.site-header .header-label{font-size:18px}}
+@media(max-width:700px){.site-header .header-label{font-size:14px}}
+@media(max-width:360px){.site-header .header-label{font-size:13px}}
