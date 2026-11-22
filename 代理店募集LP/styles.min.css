@@ -360,3 +360,18 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){.site-header .header-label{font-size:13px}}
 
 @media(max-width:700px){#main #stepup>h3 .stepup-cheer>span[aria-hidden="true"]{display:block;font-size:0;width:2px;height:18px;background:currentColor;transform:rotate(-35deg);flex:none}#main #stepup>h3 .stepup-cheer>span[aria-hidden="true"]:last-child{transform:rotate(35deg)}}
+
+/* Refine hero label, centered CTA, onboarding steps and partnership labels. */
+#top.hero-full-photo .hero-recruit-label>span:first-child{background:transparent;color:#fff;border-block:1px solid rgba(255,255,255,.8);border-radius:0;padding:5px 12px;letter-spacing:.12em}
+#rewards>.benefits-contact>.button{position:relative;justify-content:center;text-align:center;padding-inline:52px}
+#rewards>.benefits-contact>.button>.button-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);margin:0}
+#flow .flow-list>li>span{width:42px;height:42px;font-size:17px;box-shadow:none;color:#234e85}
+#flow .flow-list>li:nth-child(1)>span{background:#eef4ff;border-color:#9bb7da}
+#flow .flow-list>li:nth-child(2)>span{background:#e0f1f0;border-color:#8abfb8}
+#flow .flow-list>li:nth-child(3)>span{background:#bfead7;border-color:#6dbf99}
+#flow .flow-list>li:nth-child(4)>span{background:#79d9a9;border-color:#38ae76}
+#flow .flow-list>li:nth-child(5)>span{background:#06c167;border-color:#06a65a;color:#172a3b}
+#conditions .partnership-ring>span{white-space:normal;text-align:center;line-height:1.4;max-width:80%}
+#conditions .partnership-ring>strong{margin-top:6px}
+@media(min-width:701px){#flow .flow-list>li::before{top:21px}}
+@media(max-width:700px){#flow .flow-list>li>span{width:36px;height:36px;font-size:15px}#flow .flow-list>li::before{left:17px;top:36px;height:calc(100% - 36px)}#flow .flow-list>li{padding-left:56px}#flow .flow-list>li>span::before{width:17px;height:7px;top:-7px}#conditions .partnership-ring>span{font-size:9px}#conditions .partnership-ring>strong{font-size:25px;margin-top:5px}#conditions .partnership-bond{width:36px;height:36px}}
