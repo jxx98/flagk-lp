@@ -380,3 +380,7 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #partner-form>button.button{position:relative;justify-content:center;text-align:center;padding-inline:52px}
 #partner-form>button.button>.button-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);margin:0}
 #company .company-capacity{display:inline-block;width:auto;border:1px solid #c6dbd2;border-left:1px solid #c6dbd2;background:#edf8f2;border-radius:4px;padding:6px 12px;color:#17633e;font-size:13px;line-height:1.6;letter-spacing:.03em}
+
+/* Balance the desktop consultation invitation and quiet company attribution. */
+#company .company-capacity{border:0;background:transparent;border-radius:0;padding:0;color:#56636e;font-size:12px;font-weight:400;letter-spacing:0}
+@media(min-width:701px){.site-footer .footer-inner{max-width:none;margin-inline:0;text-align:left}.site-footer .footer-copy{text-align:left}#rewards>.reward-points{max-width:none;margin-top:4px}#rewards .reward-points dt{font-size:16px;line-height:1.8}#rewards .consultation-break{display:none}#rewards .consultation-break::after{content:" "}}
