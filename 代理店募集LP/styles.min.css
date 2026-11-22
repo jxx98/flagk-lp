@@ -393,3 +393,5 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 
 #top.hero-full-photo .hero-copy>.hero-product{margin:0 0 18px}
 @media(max-width:700px){#top.hero-full-photo .hero-copy>.hero-product{margin-bottom:14px}}
+
+@media(min-width:701px){#top .hero-product-logo{width:140px}#top.hero-full-photo .hero-copy>.hero-product{margin-bottom:12px}}
