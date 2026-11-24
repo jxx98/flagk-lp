@@ -432,3 +432,15 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#rewards .product-explainer{grid-template-columns:110px minmax(0,1fr);gap:10px}#rewards .product-scene{height:124px}#rewards .product-store{width:106px;height:71px}#rewards .product-courier{width:42px;height:31px}#rewards .product-scene-caption{font-size:9px}}
 
 #rewards .product-model{position:absolute;left:3px;bottom:3px;width:calc(100% - 6px);height:calc(100% - 34px);object-fit:contain}
+
+/* Give the product introduction and proof a shared heading and aligned panels. */
+#rewards>.reward-heading-group{grid-column:1/-1;grid-row:1;min-width:0}
+#rewards>.reward-copy{grid-column:1;grid-row:2}
+#rewards>#benefits.conversion-benefit{grid-column:2;grid-row:2}
+#rewards>.reward-points{grid-column:1/-1;grid-row:3}
+#rewards>.benefits-contact{grid-column:1/-1;grid-row:4}
+@media(min-width:1001px){#rewards.reward-overview{gap:28px 32px;align-items:start}#rewards .reward-heading-group{text-align:center;margin-bottom:4px}#rewards .reward-eyebrow{display:inline-block;margin:0 0 14px}#main #rewards #reward-heading{margin:0;font-size:34px!important;line-height:1.5!important}#rewards #reward-heading>span{display:inline}#rewards #reward-heading>span+span{margin-left:.35em}#rewards .product-explainer{grid-template-columns:clamp(150px,16vw,220px) minmax(0,1fr);min-height:300px;padding:22px;gap:18px;margin-top:0;border:1px solid #d5e2df;border-radius:6px;background:#f6f9fd}#rewards .product-scene{height:210px;background:transparent}#rewards .product-model{left:0;bottom:0;width:100%;height:calc(100% - 30px)}#rewards .product-description p{font-size:15px;line-height:1.9}#rewards .product-desktop-break{display:none}#rewards .product-sales-options{margin-top:16px;justify-content:center}#rewards .conversion-comparison{min-height:300px}#rewards .reward-proof-note{margin-top:16px}}
+@media(min-width:701px) and (max-width:1000px){#rewards .product-explainer{margin-top:0}#rewards .reward-heading-group{text-align:left}#main #rewards #reward-heading{font-size:30px!important}#rewards #reward-heading>span{display:inline}#rewards #reward-heading>span+span{margin-left:.35em}}
+@media(max-width:700px){#rewards>.reward-heading-group{grid-column:1;grid-row:1}#rewards>.reward-copy{grid-column:1;grid-row:2}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:3}#rewards>.reward-points{grid-column:1;grid-row:4}#rewards>.benefits-contact{grid-column:1;grid-row:5}#rewards .product-explainer{margin-top:0}}
+
+#rewards .product-name{white-space:nowrap}
