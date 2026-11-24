@@ -444,3 +444,30 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:700px){#rewards>.reward-heading-group{grid-column:1;grid-row:1}#rewards>.reward-copy{grid-column:1;grid-row:2}#rewards>#benefits.conversion-benefit{grid-column:1;grid-row:3}#rewards>.reward-points{grid-column:1;grid-row:4}#rewards>.benefits-contact{grid-column:1;grid-row:5}#rewards .product-explainer{margin-top:0}}
 
 #rewards .product-name{white-space:nowrap}
+
+/* Lead with the prospective partner's work, return and reasons to choose FlagK. */
+#rewards.audience-rewards{gap:24px 32px;align-items:start}
+#rewards.audience-rewards .reward-copy{padding:24px;border:1px solid #d5e2df;border-radius:6px;background:#f6f9fd}
+#rewards.audience-rewards .audience-job{display:grid;grid-template-columns:minmax(0,1fr) 168px;gap:16px;align-items:center}
+#rewards.audience-rewards .audience-question{margin:0 0 10px;color:#17633e;font-size:12px;font-weight:600;line-height:1.6}
+#main #rewards.audience-rewards .audience-job h3{font-size:22px!important;line-height:1.6!important;margin:0 0 12px;text-wrap:wrap;color:#234e85}
+#rewards.audience-rewards .audience-job-copy>p:last-child{font-size:13px;line-height:1.85;color:#34444f;margin:0}
+#rewards.audience-rewards .product-scene{height:150px;width:100%;background:transparent}
+#rewards.audience-rewards .product-model{height:100%;width:100%;left:0;bottom:0}
+#rewards.audience-rewards .product-sales-options{justify-content:flex-start;margin:16px 0 20px}
+#rewards.audience-rewards .earning-model{scroll-margin-top:110px;padding-top:20px;border-top:1px solid #cbdbe8}
+#rewards.audience-rewards .earning-route{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:0;gap:0}
+#rewards.audience-rewards .earning-route li{position:relative;text-align:center;padding:0 8px;min-width:0}
+#rewards.audience-rewards .earning-route li+li{border-left:1px solid #cbdbe8}
+#rewards.audience-rewards .earning-owner{display:block;color:#17633e;font-size:11px;line-height:1.5;margin-bottom:8px}
+#rewards.audience-rewards .earning-route strong{display:block;font-size:13px;font-weight:600;line-height:1.7;color:#172a3b}
+#rewards.audience-rewards .earning-condition{font-size:11px;line-height:1.7;color:#56636e;margin:16px 0 0;text-align:center}
+#rewards.audience-rewards .conversion-comparison{min-height:0}
+#rewards.audience-rewards .conversion-metric-name{display:block;margin-top:12px;font-size:12px;color:#56636e;font-weight:400}
+#rewards.audience-rewards .reward-proof-note{margin-top:14px;font-size:13px;line-height:1.8}
+#rewards.audience-rewards .reward-points{margin-top:0}
+@media(min-width:701px) and (max-width:1100px){#rewards.audience-rewards .audience-job{grid-template-columns:minmax(0,1fr) 110px;gap:10px}#main #rewards.audience-rewards .audience-job h3{font-size:19px!important}#rewards.audience-rewards .reward-copy{padding:18px}#rewards.audience-rewards .earning-route li{padding-inline:4px}#rewards.audience-rewards .earning-route strong{font-size:12px}}
+@media(max-width:700px){#rewards.audience-rewards{gap:20px}#rewards.audience-rewards .reward-copy{padding:18px 14px}#rewards.audience-rewards .audience-job{grid-template-columns:minmax(0,1fr) 112px;gap:10px}#main #rewards.audience-rewards .audience-job h3{font-size:18px!important;line-height:1.65!important;margin-bottom:10px}#rewards.audience-rewards .product-scene{height:120px}#rewards.audience-rewards .audience-job-copy>p:last-child{font-size:12px;line-height:1.8}#rewards.audience-rewards .product-sales-options{margin:14px 0 16px;gap:5px}#rewards.audience-rewards .product-sales-options li{font-size:10px;padding:4px 6px}#rewards.audience-rewards .earning-model{padding-top:16px}#rewards.audience-rewards .earning-route li{padding-inline:4px}#rewards.audience-rewards .earning-route strong{font-size:12px}#rewards.audience-rewards .earning-condition{font-size:10px;margin-top:14px}#rewards.audience-rewards .conversion-benefit>.audience-question{margin-bottom:10px}#rewards.audience-rewards .conversion-metric-name{margin-top:8px}#rewards.audience-rewards .reward-proof-note{font-size:12px;line-height:1.8}}
+@media(max-width:360px){#rewards.audience-rewards .audience-job{grid-template-columns:minmax(0,1fr) 90px;gap:8px}#main #rewards.audience-rewards .audience-job h3{font-size:16px!important}#rewards.audience-rewards .earning-route strong{font-size:11px}#rewards.audience-rewards .product-sales-options li{font-size:9px;padding:4px 5px}}
+
+#rewards.audience-rewards .audience-job-description{grid-column:1/-1;font-size:14px;line-height:1.85;margin:0;color:#34444f}#rewards.audience-rewards .reward-copy{min-height:0}#main #rewards.audience-rewards .earning-condition{font-size:11px;margin-bottom:0}@media(max-width:700px){#rewards.audience-rewards .product-scene{height:90px}#rewards.audience-rewards .audience-job-description{font-size:14px}#rewards.audience-rewards .reward-copy{padding:18px 14px}#main #rewards.audience-rewards .earning-condition{font-size:11px}}
