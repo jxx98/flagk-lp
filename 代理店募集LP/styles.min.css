@@ -415,3 +415,18 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 .mobile-cta .sticky-cta-label{display:block;white-space:nowrap}
 .mobile-cta .sticky-bicycle{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:32px;height:28px;object-fit:contain}
 .mobile-cta .button>.button-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);margin:0}
+
+/* Introduce the sales offering visually beside the conversion evidence. */
+#rewards .product-explainer{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:16px;margin-top:24px}
+#rewards .product-scene{position:relative;margin:0;min-width:0;height:152px;background:#eef5fc;border-radius:12px;overflow:hidden}
+#rewards .product-scene-caption{position:absolute;left:0;right:0;top:12px;text-align:center;font-size:11px;font-weight:600;color:#234e85;line-height:1.5}
+#rewards .product-store{position:absolute;left:1px;bottom:4px;width:150px;height:100px;object-fit:contain}
+#rewards .product-courier{position:absolute;right:3px;bottom:8px;width:58px;height:43px;object-fit:contain;background:#eef5fc;border-radius:4px}
+#rewards .product-description p{margin:0;color:#34444f;font-size:14px;line-height:1.9}
+#rewards .product-sales-options{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0}
+#rewards .product-sales-options li{font-size:12px;line-height:1.6;font-weight:600;color:#17633e;background:#edf8f2;padding:6px 10px;border-radius:3px}
+#rewards .product-sales-options li::before{content:"✓";margin-right:5px;color:#008548}
+#rewards .reward-proof-note{margin:16px 0 0;font-size:13px;line-height:1.85;color:#34444f}
+@media(max-width:1100px){#rewards .product-explainer{grid-template-columns:140px minmax(0,1fr);gap:12px}#rewards .product-scene{height:128px}#rewards .product-store{width:122px;height:81px}#rewards .product-courier{width:48px;height:36px}.product-desktop-break{display:none}}
+@media(max-width:700px){#rewards .product-explainer{grid-template-columns:128px minmax(0,1fr);gap:14px;margin-top:18px}#rewards .product-description p{font-size:13px;line-height:1.85}#rewards .product-scene{height:128px}#rewards .product-scene-caption{font-size:10px;top:12px}#rewards .product-sales-options{gap:6px;margin-top:12px}#rewards .product-sales-options li{font-size:11px;padding:5px 8px}#rewards .reward-proof-note{margin-top:12px;font-size:13px;line-height:1.8}}
+@media(max-width:360px){#rewards .product-explainer{grid-template-columns:110px minmax(0,1fr);gap:10px}#rewards .product-scene{height:124px}#rewards .product-store{width:106px;height:71px}#rewards .product-courier{width:42px;height:31px}#rewards .product-scene-caption{font-size:9px}}
