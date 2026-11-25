@@ -528,3 +528,100 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#rewards.product-revenue-overview>.product-opportunity{grid-template-columns:minmax(0,1fr) 56px;gap:10px}#main #rewards.product-revenue-overview .product-opportunity h3{font-size:16px!important}#rewards.product-revenue-overview .product-sales-options li{font-size:10px;padding-inline:5px}#rewards.product-revenue-overview .revenue-heading em{font-size:14px}#rewards.product-revenue-overview .earning-route strong{font-size:11px}}
 
 #rewards.product-revenue-overview .revenue-expansion{background:#f4f9f6;border-left:3px solid #00b96b;padding:14px 16px;margin:24px 0 0;font-size:14px;line-height:1.85;color:#34444f}@media(max-width:700px){#rewards.product-revenue-overview .revenue-expansion{font-size:14px;padding:12px;margin-top:20px}}
+
+/* 説明のカードを減らし、役割・数字・写真で読み進める */
+#rewards.visual-first{gap:24px 32px}
+#rewards.visual-first>.product-opportunity{padding:16px 24px;grid-template-columns:140px minmax(0,1fr);gap:24px}
+#main #rewards.visual-first .product-opportunity h3{font-size:22px!important;margin:0 0 12px}
+#rewards.visual-first .product-sales-options{margin:0}
+#rewards.visual-first>.reward-copy{padding:0;border:0;border-radius:0;background:transparent}
+#main #rewards.visual-first .visual-block-heading{font-size:19px!important;line-height:1.6!important;color:#234e85;margin:0 0 16px}
+#rewards.visual-first .visual-handoff{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#rewards.visual-first .visual-handoff>li{padding:0;border:0}
+#rewards.visual-first .visual-handoff img{display:block;width:100%;height:130px;object-fit:cover;border-radius:6px;margin-bottom:10px}
+#rewards.visual-first .visual-handoff .earning-owner{font-size:13px;margin-bottom:6px}
+#rewards.visual-first .visual-handoff strong{font-size:17px;line-height:1.6}
+#rewards.visual-first .earning-return{background:#eaf6ef;border-top:3px solid #00b96b;text-align:center;padding:12px;margin:18px 0 0}
+#rewards.visual-first .earning-return>span{display:block;font-size:11px;color:#34444f;line-height:1.6}
+#rewards.visual-first .earning-return>strong{display:block;font-size:18px;color:#008548;line-height:1.7}
+#rewards.visual-first .proof-keywords{display:flex;gap:8px;justify-content:center;list-style:none;padding:0;margin:12px 0 0}
+#rewards.visual-first .proof-keywords li{font-size:12px;color:#17633e;border-bottom:2px solid #a4d6bc;line-height:1.6;padding-bottom:3px}
+#rewards.visual-first>.reward-expansion-brief{grid-column:1/-1;grid-row:4;text-align:center;border-top:1px solid #d7e3f0;padding-top:20px}
+#rewards.visual-first .reward-expansion-brief>span{display:block;font-size:13px;line-height:1.7;color:#34444f}
+#rewards.visual-first .reward-expansion-brief>strong{font-size:20px;line-height:1.7;color:#008548}
+#rewards.visual-first>.benefits-contact{grid-column:1/-1;grid-row:5;margin:0}
+#rewards.visual-first .consultation-caption{font-size:12px;line-height:1.7;color:#34444f;margin:10px 0 0;text-align:center}
+#model-cases .case-story{border-block:1px solid #d7e3f0;margin:18px 0;padding:10px 0}
+#model-cases .case-story summary{cursor:pointer;color:#234e85;font-size:14px;font-weight:500}
+#model-cases .case-story>p{font-size:14px;line-height:1.9;margin:10px 0 0;color:#34444f}
+#model-cases .case-result{margin-top:16px}
+#flow .flow-list p{font-size:13px;line-height:1.7}
+@media(max-width:700px){
+#rewards.visual-first{gap:22px}
+#rewards.visual-first>.product-opportunity{padding:14px;grid-template-columns:76px minmax(0,1fr);gap:12px;align-items:center}
+#rewards.visual-first .product-opportunity-visual{grid-column:1;grid-row:1/4}
+#rewards.visual-first .product-opportunity-copy>.audience-question{grid-column:2;grid-row:1;font-size:10px;margin:0}
+#main #rewards.visual-first .product-opportunity h3{grid-column:2;grid-row:2;font-size:17px!important;line-height:1.6!important;margin:0}
+#rewards.visual-first .product-sales-options{grid-column:1/-1;grid-row:4;gap:6px;margin-top:2px;justify-content:center}
+#rewards.visual-first .product-sales-options li{font-size:10px;padding:4px 6px}
+#rewards.visual-first>.reward-copy{grid-row:3}
+#main #rewards.visual-first .visual-block-heading{font-size:18px!important;text-align:center;margin:0 0 14px}
+#rewards.visual-first .visual-handoff{gap:16px}
+#rewards.visual-first .visual-handoff img{height:92px;margin-bottom:8px}
+#rewards.visual-first .visual-handoff .earning-owner{font-size:12px}
+#rewards.visual-first .visual-handoff strong{font-size:15px}
+#rewards.visual-first .earning-return{margin-top:14px;padding:10px}
+#rewards.visual-first .earning-return>strong{font-size:17px}
+#rewards.visual-first>#benefits{grid-row:4}
+#rewards.visual-first .conversion-comparison{padding:18px}
+#rewards.visual-first .conversion-comparison figcaption{font-size:17px;line-height:1.5}
+#rewards.visual-first .conversion-comparison dl{margin-top:18px}
+#rewards.visual-first .conversion-comparison dl>div+div{margin-top:18px}
+#rewards.visual-first .conversion-difference{padding-top:14px;margin-top:16px;font-size:13px;line-height:1.8}
+#rewards.visual-first .proof-keywords{gap:8px}
+#rewards.visual-first .proof-keywords li{font-size:11px}
+#rewards.visual-first>.reward-expansion-brief{grid-row:5;padding-top:18px}
+#rewards.visual-first .reward-expansion-brief>span{font-size:12px}
+#rewards.visual-first .reward-expansion-brief>strong{font-size:16px}
+#rewards.visual-first>.benefits-contact{grid-row:6}
+#rewards.visual-first .consultation-caption{font-size:11px}
+#model-cases .agency-model-card{padding:18px}
+#model-cases .confirmed-case .case-header{display:grid;grid-template-columns:minmax(0,1fr) 74px;gap:10px 12px;align-items:center}
+#model-cases .confirmed-case .case-photo{grid-column:2;grid-row:1;position:static;width:74px;height:74px;margin:0;object-fit:cover}
+#main #model-cases .confirmed-case .case-header h3{grid-column:1;grid-row:1;font-size:19px!important;line-height:1.6!important;margin:0;padding:0}
+#model-cases .confirmed-case .case-meta{grid-column:1/-1;grid-row:2;margin:0;font-size:12px;line-height:1.7}
+#model-cases .confirmed-case .case-result{padding:14px}
+#main #model-cases .confirmed-case .case-result h4{font-size:15px!important;margin:0 0 8px}
+#model-cases .confirmed-case .case-result p{font-size:14px;line-height:1.8}
+#model-cases .confirmed-case-chart{padding:14px;margin-top:14px}
+#model-cases .confirmed-case-chart figcaption{font-size:12px;margin-bottom:12px}
+#model-cases .case-chart-month{font-size:12px}
+#model-cases .case-chart-value{font-size:23px}
+#model-cases .case-story{margin:14px 0;padding:10px 0}
+#model-cases .model-cases-grid{gap:20px}
+#sales-support .stepup-stairs{margin-top:22px}
+#sales-support .stepup-stairs>li{min-height:0!important;padding:14px 10px!important}
+#sales-support .stepup-stairs>li:nth-child(1){height:126px!important}
+#sales-support .stepup-stairs>li:nth-child(2){height:166px!important}
+#sales-support .stepup-stairs>li:nth-child(3){height:206px!important}
+#sales-support .stepup-stairs h4{font-size:16px!important;line-height:1.6!important}
+#sales-support .stepup-number{font-size:12px!important}
+#sales-support .stepup-number b{font-size:23px!important}
+#sales-support .stepup-note{font-size:11px!important;line-height:1.8;margin-top:14px}
+#sales-support .support-tools-title{font-size:18px!important;margin:30px 0 16px}
+#sales-support .support-tools-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#sales-support .support-tools-visual article{display:flex;flex-direction:column;align-items:flex-start;padding:14px 12px!important;gap:8px;min-width:0}
+#sales-support .support-tool-icon{position:static;width:40px;height:40px;margin:0}
+#main #sales-support .support-tool-heading h3{font-size:16px!important;line-height:1.6!important;margin:0}
+#sales-support .support-tool-description{font-size:12px!important;line-height:1.8!important;margin:0}
+#sales-support .support-followup{font-size:13px;line-height:1.8;margin-top:16px}
+#flow .flow-list>li{min-height:0;margin:0;padding:0 0 26px 54px;text-align:left}
+#flow .flow-list>li:last-child{padding-bottom:0}
+#flow .flow-list>li>span{position:absolute;left:0;top:0}
+#flow .flow-list h3{font-size:18px!important;line-height:1.6!important;margin:0 0 6px}
+#flow .flow-list p{font-size:13px;line-height:1.7;margin:0}
+#flow .flow-list>li::before{top:36px;height:calc(100% - 36px)}
+}
+@media(max-width:360px){#rewards.visual-first>.product-opportunity{grid-template-columns:60px minmax(0,1fr);gap:10px}#main #rewards.visual-first .product-opportunity h3{font-size:16px!important}#main #rewards.visual-first .visual-block-heading{font-size:16px!important}#rewards.visual-first .visual-handoff strong{font-size:14px}#rewards.visual-first .proof-keywords{gap:5px}#rewards.visual-first .proof-keywords li{font-size:10px}#rewards.visual-first .reward-expansion-brief>strong{font-size:14px}#main #sales-support .support-tool-heading h3{font-size:14px!important}}
+
+#rewards.visual-first>.benefits-contact{display:flex;flex-direction:column;align-items:center;gap:0}#rewards.visual-first>.benefits-contact .button{flex:none}#model-cases .case-story summary{padding:6px 28px 6px 0;line-height:1.7}#model-cases .case-story summary::after{top:0;font-size:22px}#model-cases .case-story{margin:14px 0 0;padding:8px 0;border-bottom:0}@media(max-width:700px){#rewards.visual-first>.benefits-contact{display:block}#rewards.visual-first>.benefits-contact .button{width:100%}}
