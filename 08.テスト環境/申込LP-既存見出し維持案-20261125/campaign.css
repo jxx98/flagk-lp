@@ -1,0 +1,111 @@
+/* Offer-led campaign v2: fee waiver first, bonus second, details on demand. */
+#hero.hv2{height:auto;min-height:calc(100svh - 79px);background:#082c20}
+#hero .hv2-overlay{background:linear-gradient(105deg,rgba(2,31,21,.96),rgba(5,32,21,.83) 45%,rgba(3,23,16,.57))}
+#hero .hv2-inner{width:min(1180px,calc(100% - 64px));max-width:1180px;grid-template-columns:minmax(0,1fr) 390px;gap:64px;padding:30px 0 42px;align-items:start}
+#hero .hv2-left{align-self:start;min-width:0}
+.campaign-brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.campaign-brand img{width:106px;height:auto;max-height:32px;object-fit:contain}
+.campaign-brand p{font-size:12px;font-weight:500;line-height:1.5;color:#d7e8dd}
+#hero .hv2-h1{font-size:27px;font-weight:700;line-height:1.35;letter-spacing:.025em;margin:0 0 20px;text-shadow:none}
+#hero .hv2-h1 span{font-size:1.35em;color:#ffe26c;letter-spacing:.04em}
+.campaign-offer{position:relative;border-radius:18px;background:#fffcf2;box-shadow:0 18px 45px #0005;overflow:hidden;text-shadow:none;color:#153c29}
+.deal-ribbon{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 22px;background:#ffe369;color:#173d29;font-size:12px;font-weight:700;line-height:1.4}
+.deal-ribbon span:last-child{padding:3px 9px;border-radius:4px;background:#a93616;color:#fff;font-size:11px}
+.deal-main{position:relative;padding:12px 24px 18px;text-align:center;background:radial-gradient(ellipse at 50% 90%,#ffedb075,transparent 65%)}
+.campaign-total{display:inline-flex;align-items:baseline;gap:3px;padding:4px 14px;margin:0 0 8px;border:1px solid #b78a30;border-radius:100px;background:#fff4cb;color:#71521a;font-size:12px;font-weight:700;line-height:1.5}
+.campaign-total strong{font-family:Arial,"Noto Sans JP",sans-serif;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums;color:#5e4214}
+.deal-label{font-size:18px;font-weight:700;line-height:1.45;margin:0}
+.deal-price{display:flex;justify-content:center;align-items:center;gap:25px;min-height:130px;margin:-5px 0 0}
+.deal-was{display:flex;flex-direction:column;align-items:flex-start;gap:2px;color:#6c7068;font-size:12px;line-height:1.3;text-align:left}
+.deal-was s{font-family:Arial,"Noto Sans JP",sans-serif;font-size:26px;font-weight:700;text-decoration-color:#a95027;text-decoration-thickness:2px}
+.deal-was s span{font-size:15px;margin-left:2px}
+.deal-arrow{display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:#ffdf6b;border-radius:50%;font-size:22px;line-height:1;color:#795827}
+.deal-price>strong{display:flex;align-items:baseline;gap:3px;font-family:Arial,"Noto Sans JP",sans-serif;font-size:130px;font-weight:900;line-height:1.05;letter-spacing:-.055em;color:#075b37;text-shadow:0 3px 0 #cfe6d1}
+.deal-price>strong>span{font-family:"Noto Sans JP",sans-serif;font-size:39px;font-weight:700;letter-spacing:0}
+.deal-free-items{display:flex;justify-content:center;gap:18px;list-style:none;padding:0;margin:0;font-size:13px;font-weight:700;line-height:1.6;color:#225338}
+.deal-free-items li::before{content:'✓';margin-right:5px;color:#07854c;font-weight:700}
+.deal-bonus{position:relative;display:flex;justify-content:center;align-items:center;gap:14px;padding:15px 22px;background:#ffdf62;border-top:1px dashed #c49931;border-bottom:1px dashed #c49931;text-align:center}
+.deal-bonus::before,.deal-bonus::after{content:'';position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#0d3424;translate:0 -50%}
+.deal-bonus::before{left:-10px}.deal-bonus::after{right:-10px}
+.deal-plus{display:flex;justify-content:center;align-items:center;width:31px;height:31px;border:1px solid #a5812d;border-radius:50%;font-size:22px;line-height:1;color:#745c22;flex-shrink:0}
+.deal-bonus p{margin:0;font-size:13px;font-weight:700;line-height:1.3;color:#4d3c16;white-space:nowrap}
+.deal-bonus p strong{font-family:Arial,"Noto Sans JP",sans-serif;font-size:32px;font-weight:800;letter-spacing:-.035em;color:#163e27;margin:0 5px}
+.deal-bonus p strong span{font-family:"Noto Sans JP",sans-serif;font-size:16px;letter-spacing:0;margin-left:2px}
+.deal-bonus small{display:block;margin-top:4px;font-size:11px;line-height:1.5;color:#604c24}
+.deal-action{padding:17px 24px 8px;text-align:center}
+.campaign-apply{display:flex;justify-content:center;align-items:center;gap:18px;min-height:51px;padding:10px 15px;border-radius:8px;background:#c94015;color:#fff;font-size:19px;font-weight:700;line-height:1.4;text-decoration:none;box-shadow:0 4px 0 #8e2b0b;transition:background .15s}
+.campaign-apply:hover{background:#b93710}.campaign-apply:focus-visible{outline:3px solid #17492e;outline-offset:4px}
+.campaign-apply span:last-child{font-family:Arial,sans-serif;font-size:25px;line-height:1}
+.deal-action p{margin:9px 0 0;font-size:12px;font-weight:700;line-height:1.5;color:#62705f}
+.deal-details{margin:0 24px;border-bottom:1px solid #e4dfcf}
+.deal-details summary{padding:8px 0;cursor:pointer;font-size:11px;font-weight:500;color:#62705f;text-align:center;line-height:1.5;list-style:none}
+.deal-details summary::-webkit-details-marker{display:none}.deal-details summary::after{content:'＋';margin-left:8px}.deal-details[open] summary::after{content:'−'}
+.deal-details-inner{padding:3px 0 10px}
+.campaign-fees{width:100%;border-collapse:collapse;font-size:12px;line-height:1.5;table-layout:fixed}
+.campaign-fees th,.campaign-fees td{padding:6px 0;border-bottom:1px solid #e3e2d6}
+.campaign-fees th:first-child{width:44%;text-align:left;font-weight:700}.campaign-fees th:nth-child(2),.campaign-fees td:nth-child(2){width:26%;text-align:right;padding-right:10px}.campaign-fees th:last-child,.campaign-fees td:last-child{width:30%;text-align:right}
+.campaign-fees thead th{font-size:10px;color:#667460}.campaign-fees td strong{font-size:12px;color:#006b3c}.campaign-fees s{color:#687367}
+.deal-details-inner p{font-size:11px;line-height:1.75;color:#687367;margin:8px 0 0}
+.deal-footnote{padding:9px 18px 12px;margin:0;font-size:9px;line-height:1.5;text-align:center;color:#6a7163}
+.campaign-support{font-size:13px;font-weight:500;line-height:1.6;margin:13px 0 0;color:#d9e7dc;text-align:center}
+#hero .hv2-right{padding-top:0}#hero .hv2-form-panel{max-height:calc(100dvh - 135px)}#hero .old-hero-form-intro{padding:24px 24px 8px}#hero .old-hero-form-intro h2{font-size:22px}
+.f-submit:not(:disabled){background:#c94015;color:#fff}
+.campaign-float{display:block!important;aspect-ratio:auto!important;min-height:0!important;padding:0;background:#ffde65;color:#153d29;line-height:1.4!important;text-align:center}
+.float-deadline{display:block;padding:6px 8px;background:#17462f;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
+.float-body{display:block;padding:13px 12px 12px}.float-label{display:block;font-size:12px;font-weight:700}
+.float-price{display:flex;justify-content:center;align-items:baseline;gap:8px;line-height:1.2}.float-price s{font-size:15px;color:#6e5d32}.float-price b{font-size:14px;font-weight:500}.float-price strong{font-family:Arial,"Noto Sans JP",sans-serif;font-size:43px;font-weight:800;letter-spacing:-.04em}.float-price strong small{font-size:19px;margin-left:2px}
+.float-bonus{display:block;margin:5px 0 10px;font-size:12px;font-weight:700}.float-bonus b{font-size:17px}
+.float-cta{display:block;padding:9px 10px;border-radius:5px;background:#c94015;color:#fff;font-size:14px;font-weight:700}
+.campaign-hero-visible #cp-float{visibility:hidden!important;pointer-events:none!important;opacity:0!important}
+#cp-mfloat{display:none!important}
+.mb-bar.deal-mobile-bar{display:none}
+.preview-toast{position:fixed;z-index:200000;left:50%;bottom:110px;transform:translateX(-50%);width:min(460px,calc(100% - 32px));padding:16px 20px;background:#193b2b;color:#fff;border-radius:10px;font-size:14px;line-height:1.7;box-shadow:0 4px 20px #0003}
+@media(min-width:900px) and (max-width:1099px){#hero .hv2-inner{width:calc(100% - 40px);grid-template-columns:minmax(0,1fr) 350px;gap:28px}.deal-price{gap:15px}.deal-price>strong{font-size:112px}.deal-was s{font-size:22px}.deal-free-items{gap:10px;font-size:12px}.deal-bonus{padding-inline:14px;gap:10px}.deal-bonus p strong{font-size:29px}}
+@media(max-width:899px){#hero .hv2-inner{display:block;width:100%;padding:23px 18px 28px}#hero .hv2-right{display:none}.campaign-offer{max-width:570px;margin-inline:auto}.campaign-brand,#hero .hv2-h1,.campaign-support{max-width:570px;margin-left:auto;margin-right:auto}}
+@media(max-width:768px){
+ :root{--consultation-header-height:63px;--mobile-action-bar-height:76px}
+ body{padding-top:63px;padding-bottom:100px}
+ .hd-inner{height:60px;padding-inline:12px;gap:8px}.hd-logo img{height:42px}.hd-divider{height:32px}.hd-brand-main{font-size:14px}.hd-spacer{min-width:0}
+ #hero.hv2{min-height:0}#hero .hv2-inner{padding:15px 16px 22px}
+ .campaign-brand{gap:9px;margin-bottom:9px}.campaign-brand img{width:86px;max-height:27px}.campaign-brand p{font-size:10px}
+ #hero .hv2-h1{font-size:17px;line-height:1.25;margin-bottom:12px}#hero .hv2-h1 span{font-size:27px;letter-spacing:.025em}
+ .campaign-offer{border-radius:12px}
+ .deal-ribbon{padding:7px 12px;font-size:10px}.deal-ribbon span:last-child{font-size:10px;padding:2px 6px}
+ .deal-main{padding:8px 13px 12px}.campaign-total{font-size:10px;padding:2px 11px;margin-bottom:5px}.campaign-total strong{font-size:15px}
+ .deal-label{font-size:14px}.deal-price{gap:20px;min-height:108px;margin-top:-4px}.deal-was{font-size:10px}.deal-was s{font-size:23px}.deal-was s span{font-size:13px}.deal-arrow{height:25px;width:25px;font-size:18px}.deal-price>strong{font-size:111px;line-height:.98}.deal-price>strong>span{font-size:29px}
+ .deal-free-items{gap:13px;font-size:11px}.deal-free-items li::before{margin-right:3px}
+ .deal-bonus{gap:9px;padding:10px 12px}.deal-plus{width:24px;height:24px;font-size:18px}.deal-bonus p{font-size:11px}.deal-bonus p strong{font-size:28px;margin:0 3px}.deal-bonus p strong span{font-size:13px}.deal-bonus small{font-size:9px;margin-top:2px}
+ .deal-action{padding:12px 15px 5px}.campaign-apply{min-height:44px;font-size:16px;padding:9px 12px;gap:20px}.campaign-apply span:last-child{font-size:22px}.deal-action p{font-size:10px;margin-top:7px}
+ .deal-details{margin:0 15px}.deal-details summary{font-size:10px;padding:6px 0}.deal-footnote{font-size:9px;padding:7px 10px 9px}
+ .campaign-support{font-size:11px;margin-top:11px}
+ .cookie-banner{padding:9px 12px;gap:10px;align-items:center}.cookie-banner-text{font-size:10px;min-width:0;line-height:1.6}.cookie-banner-btn{padding:8px 12px;font-size:11px}.cookie-banner-text a{color:#83dda9}
+ .mb-bar.deal-mobile-bar{display:block!important;position:fixed;bottom:10px;left:10px;right:10px;translate:none;width:auto!important;height:76px;min-height:0;padding:0;border-radius:10px;border:1px solid #f0cc56;background:#123d29;box-shadow:0 3px 20px #0005;overflow:visible;z-index:99992}
+ .mobile-deal-link{display:grid!important;grid-template-columns:minmax(0,1fr) 91px;align-items:center;gap:8px;height:100%;padding:7px 10px 7px 13px;color:#fff;text-decoration:none}
+ .mobile-deal-copy{display:block;min-width:0;text-align:left}.mobile-deal-top{display:flex;align-items:center;gap:7px;font-size:9px;line-height:1.3;color:#e3ecdf}.mobile-deal-top b{font-size:9px;color:#ffdf66;font-weight:700}
+ .mobile-deal-price{display:flex;align-items:baseline;gap:5px;line-height:1.12;white-space:nowrap}.mobile-deal-price s{font-size:12px;color:#d5dcc9}.mobile-deal-price>span{font-size:12px}.mobile-deal-price strong{font-family:Arial,"Noto Sans JP",sans-serif;font-size:29px;font-weight:800;color:#ffe16a;letter-spacing:-.035em}.mobile-deal-price strong small{font-family:"Noto Sans JP",sans-serif;font-size:15px;margin-left:2px}
+ .mobile-deal-bonus{display:block;font-size:10px;line-height:1.4;color:#e7efdf}.mobile-deal-bonus b{color:#ffe16a}
+ .mobile-deal-cta{display:flex;justify-content:center;align-items:center;gap:4px;min-height:43px;padding:8px 6px;background:#ffe16a;color:#173e29;border-radius:6px;font-size:14px;font-weight:700;line-height:1.3}
+ .preview-toast{bottom:160px}
+}
+@media(max-width:359px){.campaign-brand p{font-size:9px}#hero .hv2-h1{font-size:16px}#hero .hv2-h1 span{font-size:25px}.deal-price{gap:14px}.deal-price>strong{font-size:100px}.deal-free-items{gap:8px;font-size:10px}.deal-bonus p strong{font-size:24px}.deal-bonus small{font-size:8px}.mobile-deal-link{grid-template-columns:minmax(0,1fr) 78px;padding-inline:10px;gap:5px}.mobile-deal-cta{font-size:12px}.mobile-deal-price strong{font-size:26px}.mobile-deal-bonus{font-size:9px}}
+@media(max-width:768px) and (max-height:740px){#hero .hv2-inner{padding-top:12px}.campaign-brand{margin-bottom:7px}#hero .hv2-h1{margin-bottom:10px}.deal-ribbon{padding-block:6px}.deal-main{padding-bottom:9px}.deal-price{min-height:96px}.deal-price>strong{font-size:100px}.deal-bonus{padding-block:8px}}
+body:has(.cookie-banner.cookie-show) #cp-float{bottom:100px}
+
+/* B: preserve the original service headline and explanation. */
+#hero .hv2-tag{margin-bottom:12px}#hero .hv2-tag-text{font-size:13px}
+#hero .hv2-ue-logo{height:34px;width:auto;margin-bottom:16px}
+#hero .hv2-h1{font-size:42px;line-height:1.15;margin-bottom:16px;letter-spacing:.01em}
+#hero .hv2-h1 .hv2-h1-keyword{display:block;font-size:21px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:5px;letter-spacing:.03em}
+#hero .hv2-callout{font-size:13px;font-weight:700;line-height:1.8;margin:0 0 20px;color:#fff}
+#hero .hv2-callout em{font-size:15px;color:#ffe16a;border-color:#ffe16a}
+#hero .hv2-sub{margin:17px 0 0}#hero .hv2-sub-main{font-size:13px;line-height:1.8}#hero .hv2-sub-note{font-size:12px;line-height:1.8}#hero .hv2-name-change-note{font-size:12px;line-height:1.8;margin-top:8px}
+.deal-bonus-clear{display:block;padding:13px 24px 15px}
+.deal-bonus-clear .bonus-clear-heading{display:flex;justify-content:center;align-items:baseline;gap:9px;font-size:13px;line-height:1.2}
+.deal-bonus-clear .bonus-clear-heading strong{font-size:32px;margin:0;line-height:1.1}
+.bonus-clear-items{display:grid;grid-template-columns:minmax(0,1fr) 15px minmax(0,1fr);align-items:center;gap:6px;max-width:490px;margin:9px auto 0}
+.bonus-clear-items>div{display:flex;align-items:baseline;justify-content:center;gap:9px;padding:7px 8px;border:1px solid #c49c36;border-radius:5px;background:#fff9e8;white-space:nowrap;line-height:1.5}
+.bonus-clear-items>div>span{font-size:12px;font-weight:700;color:#51451e}
+.bonus-clear-items>div>strong{font-size:18px;font-weight:700;color:#145334}
+.bonus-clear-plus{font-size:17px;line-height:1;color:#7d6225}
+@media(max-width:768px){#hero .hv2-inner{padding-top:18px}#hero .hv2-tag{margin-bottom:9px}#hero .hv2-tag-text{font-size:11px}#hero .hv2-ue-logo{height:28px;margin-bottom:12px}#hero .hv2-h1{font-size:32px;line-height:1.16;margin-bottom:12px}#hero .hv2-h1 .hv2-h1-keyword{font-size:17px;margin-bottom:3px}#hero .hv2-callout{font-size:11px;line-height:1.8;margin-bottom:16px}#hero .hv2-callout em{font-size:13px}#hero .hv2-sub-main,#hero .hv2-sub-note,#hero .hv2-name-change-note{font-size:11px;line-height:1.8}.deal-bonus-clear{padding:10px 12px 12px}.deal-bonus-clear .bonus-clear-heading{font-size:11px;gap:7px}.deal-bonus-clear .bonus-clear-heading strong{font-size:28px}.bonus-clear-items{gap:4px;margin-top:7px;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr)}.bonus-clear-items>div{gap:5px;padding:6px 5px}.bonus-clear-items>div>span{font-size:10px}.bonus-clear-items>div>strong{font-size:14px}.bonus-clear-plus{font-size:14px}}
+@media(max-width:359px){#hero .hv2-h1{font-size:29px}.bonus-clear-items>div{gap:3px;padding-inline:3px}.bonus-clear-items>div>span{font-size:9px}.bonus-clear-items>div>strong{font-size:13px}}
