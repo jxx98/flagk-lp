@@ -700,3 +700,44 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #rewards.visual-first .visual-handoff>li:nth-child(2) strong{color:#17633e}
 #rewards.visual-first .consultation-caption{margin:0 0 14px}
 @media(max-width:700px){#rewards.visual-first .visual-handoff>li{padding:14px 8px}#rewards.visual-first .visual-handoff img{width:56px;height:56px;margin-bottom:8px}#rewards.visual-first .visual-handoff .earning-owner{font-size:13px}#rewards.visual-first .consultation-caption{margin:0 0 12px}}
+
+/* 営業活動・FlagKへの連携・報酬を一続きに見せる */
+#rewards.revenue-story{display:block}
+#rewards.revenue-story .reward-heading-group{text-align:left;margin:0 0 28px}
+#rewards.revenue-story #reward-heading{margin:0 0 16px}
+#rewards.revenue-story .revenue-story-lead{font-size:15px!important;line-height:1.9!important;color:#34444f;margin:0;max-width:none}
+.story-mobile-break{display:none}
+#rewards.revenue-story .revenue-story-panel{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:28px;background:#f2f7fc;border:1px solid #d5e2ef;border-radius:8px;padding:28px}
+#rewards.revenue-story #reward-intro{min-width:0}
+#main #rewards.revenue-story .visual-block-heading{font-size:21px!important;line-height:1.6!important;margin:0 0 22px;color:#234e85}
+#rewards.revenue-story .revenue-journey{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0}
+#rewards.revenue-story .revenue-journey>li{position:relative;min-width:0;border-top:3px solid #7b9fc8;background:#fff;padding:14px 10px;text-align:left;border-radius:3px}
+#rewards.revenue-story .revenue-journey>li:nth-child(2){border-color:#36ad78}
+#rewards.revenue-story .revenue-journey>li:nth-child(3){border-color:#e6ce32;background:#fffdf1}
+#rewards.revenue-story .journey-number{position:absolute;top:12px;right:10px;font:600 13px/1.5 Arial,sans-serif;color:#71869f}
+#rewards.revenue-story .revenue-journey img{display:block;width:56px;height:56px;object-fit:contain;margin:0 0 12px}
+#rewards.revenue-story .earning-owner{display:block;font-size:12px;color:#315e95;margin-bottom:8px}
+#rewards.revenue-story .revenue-journey strong{display:block;font-size:15px;line-height:1.7;color:#172a3b}
+#rewards.revenue-story .revenue-journey p{font-size:11px!important;line-height:1.8!important;color:#56636e;margin:10px 0 0}
+#rewards.revenue-story #benefits.conversion-benefit{display:block;background:transparent;padding:0;min-width:0;width:auto;max-width:none}
+#rewards.revenue-story .conversion-comparison{padding:20px;margin:0;min-height:0;background:#fff;border:1px solid #d5e2df;border-radius:6px}
+#rewards.revenue-story .conversion-comparison figcaption{font-size:16px;color:#234e85;line-height:1.6;margin:0 0 20px}
+#rewards.revenue-story .conversion-comparison dl{margin:0}
+#rewards.revenue-story .conversion-comparison dl>div+div{margin-top:22px}
+#rewards.revenue-story .conversion-average dt{font-size:12px!important;color:#65717e;font-weight:400}
+#rewards.revenue-story .conversion-average .conversion-value>strong{font-size:25px!important;color:#65717e;font-weight:500}
+#rewards.revenue-story .conversion-average .conversion-value>span{font-size:13px!important;color:#65717e}
+#rewards.revenue-story .conversion-average .conversion-bar,#rewards.revenue-story .conversion-average .conversion-bar>span{height:6px!important}
+#rewards.revenue-story .conversion-average .conversion-bar>span{background:#a4b3c5}
+#rewards.revenue-story .conversion-flagk .conversion-value>strong{font-size:48px!important}
+#rewards.revenue-story .conversion-difference{margin:18px 0 0;padding-top:14px;font-size:12px!important;line-height:1.9!important;text-align:center}
+#rewards.revenue-story .reward-expansion-brief{text-align:center;padding-top:22px;margin-top:22px;border-top:1px solid #d7e3f0}
+#rewards.revenue-story .reward-expansion-brief>span{display:block;color:#34444f;font-size:13px;line-height:1.7}
+#rewards.revenue-story .reward-expansion-brief>strong{display:block;color:#008548;font-size:19px;line-height:1.7}
+#rewards.revenue-story .benefits-contact{display:flex;flex-direction:column;align-items:center;margin-top:24px}
+#rewards.revenue-story .consultation-caption{text-align:center;font-size:13px!important;line-height:1.8!important;color:#34444f;margin:0 0 14px}
+@media(min-width:701px) and (max-width:1100px){#rewards.revenue-story .revenue-story-panel{grid-template-columns:1fr;gap:22px;padding:22px}#rewards.revenue-story .conversion-comparison{max-width:none}#rewards.revenue-story .conversion-comparison dl{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end}#rewards.revenue-story .conversion-comparison dl>div+div{margin-top:0}}
+@media(max-width:700px){#rewards.revenue-story .reward-heading-group{margin-bottom:22px}#rewards.revenue-story .revenue-story-lead{font-size:14px!important}.story-mobile-break{display:initial}#rewards.revenue-story .revenue-story-panel{grid-template-columns:1fr;gap:20px;padding:16px 14px}#main #rewards.revenue-story .visual-block-heading{font-size:18px!important;margin-bottom:16px}#rewards.revenue-story .revenue-journey{grid-template-columns:1fr;gap:12px}#rewards.revenue-story .revenue-journey>li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:14px 12px;border-top:0;border-left:3px solid #7b9fc8}#rewards.revenue-story .revenue-journey img{width:52px;height:52px;margin:0;align-self:center}#rewards.revenue-story .journey-number{font-size:11px;top:10px;right:10px}#rewards.revenue-story .earning-owner{font-size:11px;margin-bottom:5px}#rewards.revenue-story .revenue-journey strong{font-size:15px;line-height:1.7}#rewards.revenue-story .revenue-journey p{font-size:11px!important;margin-top:6px}#rewards.revenue-story .conversion-comparison{padding:16px}#rewards.revenue-story .conversion-comparison figcaption{margin-bottom:14px}#rewards.revenue-story .conversion-comparison dl>div+div{margin-top:16px}#rewards.revenue-story .conversion-difference{margin-top:14px;padding-top:12px}#rewards.revenue-story .reward-expansion-brief{margin-top:20px;padding-top:18px}#rewards.revenue-story .reward-expansion-brief>span{font-size:12px}#rewards.revenue-story .reward-expansion-brief>strong{font-size:16px}#rewards.revenue-story .benefits-contact{display:block;margin-top:20px}#rewards.revenue-story .consultation-caption{font-size:12px!important;margin-bottom:12px}#rewards.revenue-story .benefits-contact .button{width:100%}}
+@media(max-width:360px){#main #rewards.revenue-story .visual-block-heading{font-size:16px!important}#rewards.revenue-story .revenue-journey>li{grid-template-columns:42px minmax(0,1fr);padding:12px 10px;gap:10px}#rewards.revenue-story .revenue-journey img{width:42px;height:42px}#rewards.revenue-story .revenue-journey strong{font-size:14px}#rewards.revenue-story .reward-expansion-brief>strong{font-size:14px}}
+
+#rewards.revenue-story #business-model{padding:0;margin:0;min-height:0;background:transparent;border:0;display:block}
