@@ -756,3 +756,65 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 
 #partner-form>button.button>.button-icon,#partner-form>button.button:disabled>.button-icon,#partner-form>button.button:not(:disabled):hover>.button-icon{top:50%;transform:translateY(-50%)}
 .site-footer .footer-copy{text-align:center}
+
+/* 実績・営業体制・支援・開始手順をつなぐ */
+#model-cases .case-result-visual h4{font-size:17px;line-height:1.7;margin:0 0 16px}
+#model-cases .case-income-path{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0}
+#model-cases .case-income-path>li{min-width:0;padding-top:10px;border-top:3px solid #9cb7d8}
+#model-cases .case-income-path>li:last-child{border-color:#06b868}
+#model-cases .case-income-path span{display:block;font-size:11px;line-height:1.6;color:#56636e;margin-bottom:8px}
+#model-cases .case-income-path strong{display:block;font-size:14px;line-height:1.8;color:#234e85}
+#model-cases .case-income-path>li:last-child strong{color:#008548}
+#company.company-proof{display:block}
+#company.company-proof .company-proof-heading{margin-bottom:28px}
+#company.company-proof .company-proof-heading h2{margin:0}
+#company.company-proof .company-proof-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center}
+#company.company-proof .company-team{margin:0}
+#company.company-proof .company-team img{display:block;width:100%;height:300px;object-fit:cover;border-radius:6px;filter:brightness(.94)}
+#main #company.company-proof .company-evidence h3{font-size:24px!important;line-height:1.7!important;color:#234e85;margin:0 0 20px}
+#company.company-proof .company-evidence dl{margin:0}
+#company.company-proof .company-evidence dl>div{border-top:1px solid #d7e3f0;padding:14px 0}
+#company.company-proof .company-evidence dt{font-size:16px;font-weight:600;line-height:1.7;color:#17633e}
+#company.company-proof .company-evidence dd{font-size:14px!important;line-height:1.8!important;margin:4px 0 0;color:#34444f}
+#sales-support .stepup-clear{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+#sales-support .stepup-clear>li{padding:20px!important;min-height:0!important}
+#sales-support .stepup-clear>li:nth-child(1){height:200px!important}
+#sales-support .stepup-clear>li:nth-child(2){height:235px!important}
+#sales-support .stepup-clear>li:nth-child(3){height:270px!important}
+#sales-support .stepup-clear h4{font-size:20px!important;line-height:1.6!important;margin:14px 0 10px}
+#sales-support .stepup-clear>li>p{display:block!important;font-size:14px!important;line-height:1.8!important;margin:0;color:#172a3b!important}
+#sales-support .stepup-clear>li::after{display:none}
+#flow .flow-consult-summary{scroll-margin-top:calc(var(--header-height) + 24px);border-left:4px solid #06b868;background:#fff;padding:20px 24px;margin:0 0 32px}
+#main #flow .flow-consult-summary h3{font-size:20px!important;line-height:1.6!important;margin:0 0 8px;color:#234e85}
+#flow .flow-consult-summary p{font-size:14px!important;line-height:1.8!important;margin:0 0 14px;color:#34444f}
+#flow .flow-consult-summary ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+#flow .flow-consult-summary li{font-size:13px;line-height:1.6;padding:5px 10px;background:#eaf6ef;color:#17633e}
+@media(max-width:700px){
+#model-cases .case-result-visual h4{font-size:15px!important}
+#model-cases .case-income-path{gap:6px}
+#model-cases .case-income-path span{font-size:10px;margin-bottom:6px}
+#model-cases .case-income-path strong{font-size:12px}
+#company.company-proof .company-proof-heading{margin-bottom:20px}
+#company.company-proof .company-proof-grid{grid-template-columns:1fr;gap:20px}
+#company.company-proof .company-team{margin-top:0}
+#company.company-proof .company-team img{height:180px;object-position:center 36%}
+#main #company.company-proof .company-evidence h3{font-size:18px!important;line-height:1.7!important;margin-bottom:14px}
+#company.company-proof .company-evidence dl>div{padding:12px 0}
+#company.company-proof .company-evidence dt{font-size:15px}
+#company.company-proof .company-evidence dd{font-size:13px!important}
+#sales-support .stepup-clear{gap:6px}
+#sales-support .stepup-clear>li{padding:12px 8px!important}
+#sales-support .stepup-clear>li:nth-child(1){height:180px!important}
+#sales-support .stepup-clear>li:nth-child(2){height:215px!important}
+#sales-support .stepup-clear>li:nth-child(3){height:250px!important}
+#sales-support .stepup-clear h4{font-size:15px!important;margin:12px 0 8px}
+#sales-support .stepup-clear>li>p{font-size:12px!important;line-height:1.7!important}
+#flow .flow-consult-summary{padding:16px 14px;margin-bottom:28px}
+#main #flow .flow-consult-summary h3{font-size:17px!important}
+#flow .flow-consult-summary p{font-size:13px!important;margin-bottom:12px}
+#flow .flow-consult-summary ul{gap:6px}
+#flow .flow-consult-summary li{font-size:11px;padding:4px 7px}
+}
+@media(max-width:360px){#sales-support .stepup-clear h4{font-size:13px!important}#sales-support .stepup-clear>li>p{font-size:11px!important}#model-cases .case-income-path strong{font-size:11px}#company.company-proof .company-evidence dt{font-size:14px}}
+
+#main #flow .flow-consult-summary h3{width:auto;max-width:none;text-wrap:wrap}
