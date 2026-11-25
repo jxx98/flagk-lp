@@ -92,13 +92,13 @@
 body:has(.cookie-banner.cookie-show) #cp-float{bottom:100px}
 
 /* B: preserve the original service headline and explanation. */
-#hero .hv2-tag{margin-bottom:12px}#hero .hv2-tag-text{font-size:13px}
-#hero .hv2-ue-logo{height:34px;width:auto;margin-bottom:16px}
-#hero .hv2-h1{font-size:42px;line-height:1.15;margin-bottom:16px;letter-spacing:.01em}
-#hero .hv2-h1 .hv2-h1-keyword{display:block;font-size:21px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:5px;letter-spacing:.03em}
-#hero .hv2-callout{font-size:13px;font-weight:700;line-height:1.8;margin:0 0 20px;color:#fff}
-#hero .hv2-callout em{font-size:15px;color:#ffe16a;border-color:#ffe16a}
-#hero .hv2-sub{margin:17px 0 0}#hero .hv2-sub-main{font-size:13px;line-height:1.8}#hero .hv2-sub-note{font-size:12px;line-height:1.8}#hero .hv2-name-change-note{font-size:12px;line-height:1.8;margin-top:8px}
+body.preserve-service-header #hero .hv2-tag{margin-bottom:12px}body.preserve-service-header #hero .hv2-tag-text{font-size:13px}
+body.preserve-service-header #hero .hv2-ue-logo{height:34px;width:auto;margin-bottom:16px}
+body.preserve-service-header #hero .hv2-h1{font-size:42px;line-height:1.15;margin-bottom:16px;letter-spacing:.01em}
+body.preserve-service-header #hero .hv2-h1 .hv2-h1-keyword{display:block;font-size:21px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:5px;letter-spacing:.03em}
+body.preserve-service-header #hero .hv2-callout{font-size:13px;font-weight:700;line-height:1.8;margin:0 0 20px;color:#fff}
+body.preserve-service-header #hero .hv2-callout em{font-size:15px;color:#ffe16a;border-color:#ffe16a}
+body.preserve-service-header #hero .hv2-sub{margin:17px 0 0}body.preserve-service-header #hero .hv2-sub-main{font-size:13px;line-height:1.8}body.preserve-service-header #hero .hv2-sub-note{font-size:12px;line-height:1.8}body.preserve-service-header #hero .hv2-name-change-note{font-size:12px;line-height:1.8;margin-top:8px}
 .deal-bonus-clear{display:block;padding:13px 24px 15px}
 .deal-bonus-clear .bonus-clear-heading{display:flex;justify-content:center;align-items:baseline;gap:9px;font-size:13px;line-height:1.2}
 .deal-bonus-clear .bonus-clear-heading strong{font-size:32px;margin:0;line-height:1.1}
@@ -107,5 +107,8 @@ body:has(.cookie-banner.cookie-show) #cp-float{bottom:100px}
 .bonus-clear-items>div>span{font-size:12px;font-weight:700;color:#51451e}
 .bonus-clear-items>div>strong{font-size:18px;font-weight:700;color:#145334}
 .bonus-clear-plus{font-size:17px;line-height:1;color:#7d6225}
-@media(max-width:768px){#hero .hv2-inner{padding-top:18px}#hero .hv2-tag{margin-bottom:9px}#hero .hv2-tag-text{font-size:11px}#hero .hv2-ue-logo{height:28px;margin-bottom:12px}#hero .hv2-h1{font-size:32px;line-height:1.16;margin-bottom:12px}#hero .hv2-h1 .hv2-h1-keyword{font-size:17px;margin-bottom:3px}#hero .hv2-callout{font-size:11px;line-height:1.8;margin-bottom:16px}#hero .hv2-callout em{font-size:13px}#hero .hv2-sub-main,#hero .hv2-sub-note,#hero .hv2-name-change-note{font-size:11px;line-height:1.8}.deal-bonus-clear{padding:10px 12px 12px}.deal-bonus-clear .bonus-clear-heading{font-size:11px;gap:7px}.deal-bonus-clear .bonus-clear-heading strong{font-size:28px}.bonus-clear-items{gap:4px;margin-top:7px;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr)}.bonus-clear-items>div{gap:5px;padding:6px 5px}.bonus-clear-items>div>span{font-size:10px}.bonus-clear-items>div>strong{font-size:14px}.bonus-clear-plus{font-size:14px}}
-@media(max-width:359px){#hero .hv2-h1{font-size:29px}.bonus-clear-items>div{gap:3px;padding-inline:3px}.bonus-clear-items>div>span{font-size:9px}.bonus-clear-items>div>strong{font-size:13px}}
+@media(max-width:768px){body.preserve-service-header #hero .hv2-inner{padding-top:18px}body.preserve-service-header #hero .hv2-tag{margin-bottom:9px}body.preserve-service-header #hero .hv2-tag-text{font-size:11px}body.preserve-service-header #hero .hv2-ue-logo{height:28px;margin-bottom:12px}body.preserve-service-header #hero .hv2-h1{font-size:32px;line-height:1.16;margin-bottom:12px}body.preserve-service-header #hero .hv2-h1 .hv2-h1-keyword{font-size:17px;margin-bottom:3px}body.preserve-service-header #hero .hv2-callout{font-size:11px;line-height:1.8;margin-bottom:16px}body.preserve-service-header #hero .hv2-callout em{font-size:13px}body.preserve-service-header #hero .hv2-sub-main,body.preserve-service-header #hero .hv2-sub-note,body.preserve-service-header #hero .hv2-name-change-note{font-size:11px;line-height:1.8}.deal-bonus-clear{padding:10px 12px 12px}.deal-bonus-clear .bonus-clear-heading{font-size:11px;gap:7px}.deal-bonus-clear .bonus-clear-heading strong{font-size:28px}.bonus-clear-items{gap:4px;margin-top:7px;grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr)}.bonus-clear-items>div{gap:5px;padding:6px 5px}.bonus-clear-items>div>span{font-size:10px}.bonus-clear-items>div>strong{font-size:14px}.bonus-clear-plus{font-size:14px}}
+@media(max-width:359px){body.preserve-service-header #hero .hv2-h1{font-size:29px}.bonus-clear-items>div{gap:3px;padding-inline:3px}.bonus-clear-items>div>span{font-size:9px}.bonus-clear-items>div>strong{font-size:13px}}
+
+@media(max-width:768px) and (max-height:740px){.deal-bonus-clear{padding-block:8px}.bonus-clear-items{margin-top:5px}.deal-bonus-clear .bonus-clear-heading strong{font-size:26px}}
+@media(max-width:768px) and (max-height:740px){.deal-action{padding-top:8px}}
