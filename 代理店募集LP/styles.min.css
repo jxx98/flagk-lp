@@ -753,3 +753,6 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 }
 
 @media(min-width:1001px){#rewards.revenue-story .reward-expansion-brief,#rewards.revenue-story .benefits-contact{background:transparent;border-radius:0}}
+
+#partner-form>button.button>.button-icon,#partner-form>button.button:disabled>.button-icon,#partner-form>button.button:not(:disabled):hover>.button-icon{top:50%;transform:translateY(-50%)}
+.site-footer .footer-copy{text-align:center}

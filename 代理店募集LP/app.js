@@ -60,7 +60,8 @@
     errorBox.hidden = true;
     form.setAttribute('aria-busy', 'true');
     syncButtons();
-    sendButton.textContent = '送信しています…';
+    sendButton.setAttribute('aria-busy', 'true');
+    sendButton.textContent = '送信中…';
     for (const field of form.querySelectorAll('input:not([type="hidden"]),textarea')) field.disabled = true;
     try {
       if (!/^https?:$/.test(location.protocol)) throw new Error('local_file');
@@ -81,6 +82,7 @@
       if (!submitted) {
         sending = false;
         sendButton.innerHTML = idleButtonContent;
+        sendButton.removeAttribute('aria-busy');
         for (const field of form.querySelectorAll('input,textarea')) field.disabled = false;
         form.removeAttribute('aria-busy');
         syncButtons();
