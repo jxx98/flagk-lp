@@ -625,3 +625,35 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#rewards.visual-first>.product-opportunity{grid-template-columns:60px minmax(0,1fr);gap:10px}#main #rewards.visual-first .product-opportunity h3{font-size:16px!important}#main #rewards.visual-first .visual-block-heading{font-size:16px!important}#rewards.visual-first .visual-handoff strong{font-size:14px}#rewards.visual-first .proof-keywords{gap:5px}#rewards.visual-first .proof-keywords li{font-size:10px}#rewards.visual-first .reward-expansion-brief>strong{font-size:14px}#main #sales-support .support-tool-heading h3{font-size:14px!important}}
 
 #rewards.visual-first>.benefits-contact{display:flex;flex-direction:column;align-items:center;gap:0}#rewards.visual-first>.benefits-contact .button{flex:none}#model-cases .case-story summary{padding:6px 28px 6px 0;line-height:1.7}#model-cases .case-story summary::after{top:0;font-size:22px}#model-cases .case-story{margin:14px 0 0;padding:8px 0;border-bottom:0}@media(max-width:700px){#rewards.visual-first>.benefits-contact{display:block}#rewards.visual-first>.benefits-contact .button{width:100%}}
+
+/* 商材の価値と代理店の仕事を一つのビジュアルに */
+#rewards.visual-first>.product-service-scene{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 32px;padding:22px 28px;align-items:center}
+#rewards.visual-first .product-service-scene>.audience-question{grid-column:1;grid-row:1;margin:0;font-size:12px}
+#main #rewards.visual-first .product-service-scene>h3{grid-column:1;grid-row:2;font-size:22px!important;margin:0;line-height:1.6!important}
+#rewards.visual-first .product-service-visual{grid-column:2;grid-row:1/5;display:flex;align-items:center;justify-content:center;gap:14px;margin:0}
+#rewards.visual-first .product-service-visual img{display:block;width:170px;height:auto}
+#rewards.visual-first .product-service-visual figcaption{color:#234e85;line-height:1.7;white-space:nowrap}
+#rewards.visual-first .product-service-visual figcaption>span{display:block;font-size:14px}
+#rewards.visual-first .product-service-visual figcaption>strong{display:block;font-size:22px;font-weight:700;color:#008548}
+#rewards.visual-first .product-service-job{grid-column:1;grid-row:3;font-size:14px!important;line-height:1.8!important;color:#34444f;margin:4px 0 6px}
+#rewards.visual-first .product-service-scene .product-sales-options{grid-column:1;grid-row:4;justify-content:flex-start;margin:0}
+#rewards.visual-first .conversion-average dt{font-size:13px!important;font-weight:400!important;color:#65717e}
+#rewards.visual-first .conversion-average .conversion-value>strong{font-size:28px!important;line-height:1!important;font-weight:500!important;color:#65717e}
+#rewards.visual-first .conversion-average .conversion-value>span{font-size:15px!important;color:#65717e}
+#rewards.visual-first .conversion-average .conversion-bar,#rewards.visual-first .conversion-average .conversion-bar>span{height:6px!important}
+#rewards.visual-first .conversion-average .conversion-bar{background:#edf0f4}
+#rewards.visual-first .conversion-average .conversion-bar>span{background:#a4b3c5}
+@media(max-width:700px){
+#rewards.visual-first>.product-service-scene{grid-template-columns:minmax(0,1fr);gap:10px;padding:18px 14px}
+#rewards.visual-first .product-service-scene>.audience-question{grid-column:1;grid-row:1;font-size:11px}
+#main #rewards.visual-first .product-service-scene>h3{grid-column:1;grid-row:2;font-size:18px!important;line-height:1.6!important}
+#rewards.visual-first .product-service-visual{grid-column:1;grid-row:3;gap:14px;justify-content:center;margin:0}
+#rewards.visual-first .product-service-visual img{width:124px}
+#rewards.visual-first .product-service-visual figcaption>span{font-size:12px}
+#rewards.visual-first .product-service-visual figcaption>strong{font-size:19px}
+#rewards.visual-first .product-service-job{grid-column:1;grid-row:4;text-align:center;font-size:13px!important;margin:0}
+#rewards.visual-first .product-service-scene .product-sales-options{grid-column:1;grid-row:5;justify-content:center;margin-top:2px;gap:6px}
+#rewards.visual-first .conversion-average .conversion-value>strong{font-size:25px!important}
+#rewards.visual-first .conversion-average .conversion-value>span{font-size:13px!important}
+}
+@media(max-width:360px){#main #rewards.visual-first .product-service-scene>h3{font-size:16px!important}#rewards.visual-first .product-service-visual img{width:105px}#rewards.visual-first .product-service-visual figcaption>strong{font-size:17px}#rewards.visual-first .product-service-job{font-size:12px!important}}
