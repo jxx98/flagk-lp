@@ -741,3 +741,13 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#main #rewards.revenue-story .visual-block-heading{font-size:16px!important}#rewards.revenue-story .revenue-journey>li{grid-template-columns:42px minmax(0,1fr);padding:12px 10px;gap:10px}#rewards.revenue-story .revenue-journey img{width:42px;height:42px}#rewards.revenue-story .revenue-journey strong{font-size:14px}#rewards.revenue-story .reward-expansion-brief>strong{font-size:14px}}
 
 #rewards.revenue-story #business-model{padding:0;margin:0;min-height:0;background:transparent;border:0;display:block}
+
+@media(min-width:1001px){
+#rewards.revenue-story .reward-expansion-brief{max-width:960px;box-sizing:border-box;margin:28px auto 0;padding:28px 28px 0;border:0;border-radius:10px 10px 0 0;background:#eff5fc}
+#rewards.revenue-story .reward-expansion-brief>span{font-size:15px;line-height:1.7;margin-bottom:8px}
+#rewards.revenue-story .reward-expansion-brief>strong{font-size:clamp(24px,2.2vw,30px);line-height:1.7;color:#234e85}
+#rewards.revenue-story .reward-unit-emphasis{display:inline-block;color:#008548;margin-left:.2em;background:linear-gradient(transparent 72%,#f7df46 72%,#f7df46 94%,transparent 94%)}
+#rewards.revenue-story .benefits-contact{max-width:960px;box-sizing:border-box;margin:0 auto;padding:22px 28px 32px;border-radius:0 0 10px 10px;background:#eff5fc}
+#rewards.revenue-story .consultation-caption{font-size:15px!important;margin-bottom:16px}
+#rewards.revenue-story .benefits-contact .button{min-width:390px;min-height:66px;box-sizing:border-box;padding:20px 28px;font-size:16px!important}
+}
