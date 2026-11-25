@@ -471,3 +471,60 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#rewards.audience-rewards .audience-job{grid-template-columns:minmax(0,1fr) 90px;gap:8px}#main #rewards.audience-rewards .audience-job h3{font-size:16px!important}#rewards.audience-rewards .earning-route strong{font-size:11px}#rewards.audience-rewards .product-sales-options li{font-size:9px;padding:4px 5px}}
 
 #rewards.audience-rewards .audience-job-description{grid-column:1/-1;font-size:14px;line-height:1.85;margin:0;color:#34444f}#rewards.audience-rewards .reward-copy{min-height:0}#main #rewards.audience-rewards .earning-condition{font-size:11px;margin-bottom:0}@media(max-width:700px){#rewards.audience-rewards .product-scene{height:90px}#rewards.audience-rewards .audience-job-description{font-size:14px}#rewards.audience-rewards .reward-copy{padding:18px 14px}#main #rewards.audience-rewards .earning-condition{font-size:11px}}
+
+/* 商材の用途・報酬・選ぶ理由を順に伝える */
+#rewards.product-revenue-overview{gap:28px 32px}
+#rewards.product-revenue-overview>.reward-heading-group{grid-column:1/-1;grid-row:1}
+#rewards.product-revenue-overview>.product-opportunity{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:center;background:#f0f6fc;border:1px solid #d7e3f0;border-radius:8px;padding:22px 32px}
+#rewards.product-revenue-overview .product-opportunity-visual img{display:block;width:100%;height:auto}
+#main #rewards.product-revenue-overview .product-opportunity h3{font-size:24px!important;line-height:1.5!important;margin:0 0 10px;color:#234e85}
+#rewards.product-revenue-overview .product-opportunity-copy>p:not(.audience-question){font-size:15px;line-height:1.85;margin:0;max-width:48em;color:#34444f}
+#rewards.product-revenue-overview .product-sales-options{margin:14px 0 0;gap:8px;justify-content:flex-start}
+#rewards.product-revenue-overview .product-sales-options li{font-size:12px;padding:5px 9px;background:#fff;color:#17633e}
+.product-mobile-break{display:none}
+#rewards.product-revenue-overview>.reward-copy{grid-column:1;grid-row:3;background:#fff;padding:24px;align-self:stretch}
+#rewards.product-revenue-overview>#benefits{grid-column:2;grid-row:3}
+#rewards.product-revenue-overview>.reward-points{grid-column:1/-1;grid-row:4}
+#rewards.product-revenue-overview>.benefits-contact{grid-column:1/-1;grid-row:5}
+#main #rewards.product-revenue-overview .revenue-heading{font-size:24px!important;line-height:1.65!important;margin:0 0 22px;color:#234e85}
+#rewards.product-revenue-overview .revenue-heading em{font-style:normal;color:#008749;font-size:19px;border-bottom:3px solid #f6df46;padding-bottom:2px}
+#rewards.product-revenue-overview .earning-model{padding:0;border:0}
+#rewards.product-revenue-overview .earning-owner{font-size:12px}
+#rewards.product-revenue-overview .earning-route strong{font-size:13px}
+#rewards.product-revenue-overview .revenue-stepup{background:#f4f9f6;padding:16px;margin-top:22px;border-radius:5px}
+#rewards.product-revenue-overview .revenue-stepup-label{font-size:12px;line-height:1.6;color:#17633e;margin:0 0 10px}
+#rewards.product-revenue-overview .revenue-stepup ul{display:flex;gap:6px;list-style:none;margin:0 0 10px;padding:0;align-items:center}
+#rewards.product-revenue-overview .revenue-stepup li{flex:1;border-bottom:3px solid #88b8a2;text-align:center;font-size:12px;line-height:1.6;padding:4px 0 6px;color:#17633e;font-weight:600}
+#rewards.product-revenue-overview .revenue-stepup li:nth-child(2){border-color:#42a979}#rewards.product-revenue-overview .revenue-stepup li:nth-child(3){border-color:#008749}
+#rewards.product-revenue-overview .revenue-stepup>p:last-child{font-size:13px;line-height:1.8;margin:0;color:#34444f}
+#rewards.product-revenue-overview .revenue-condition{font-size:11px;line-height:1.8;color:#56636e;margin:14px 0 0}
+#rewards.product-revenue-overview .conversion-benefit>.audience-question{margin-bottom:10px}
+#rewards.product-revenue-overview .reward-proof-note{font-size:14px;line-height:1.8}
+@media(max-width:1000px) and (min-width:701px){#rewards.product-revenue-overview>.product-opportunity{grid-template-columns:180px minmax(0,1fr);padding:20px;gap:20px}#main #rewards.product-revenue-overview .revenue-heading{font-size:20px!important}#rewards.product-revenue-overview .revenue-heading em{font-size:16px}}
+@media(max-width:700px){
+#rewards.product-revenue-overview{gap:22px}
+#rewards.product-revenue-overview>.product-opportunity{grid-column:1;grid-row:2;grid-template-columns:86px minmax(0,1fr);gap:12px;padding:16px 14px;align-items:start}
+#rewards.product-revenue-overview .product-opportunity-visual{grid-column:1;grid-row:1;align-self:center}
+#rewards.product-revenue-overview .product-opportunity-copy{display:contents}
+#rewards.product-revenue-overview .product-opportunity-copy>.audience-question{grid-column:2;margin:0;align-self:end;font-size:11px}
+#main #rewards.product-revenue-overview .product-opportunity h3{grid-column:2;font-size:18px!important;line-height:1.6!important;margin:0}
+#rewards.product-revenue-overview .product-opportunity-visual{grid-row:1/3}
+#rewards.product-revenue-overview .product-opportunity-copy>p:not(.audience-question){grid-column:1/-1;font-size:14px}
+#rewards.product-revenue-overview .product-sales-options{grid-column:1/-1;margin:0;gap:6px}
+#rewards.product-revenue-overview .product-sales-options li{font-size:11px;padding:5px 7px}
+.product-mobile-break{display:initial}
+#rewards.product-revenue-overview>.reward-copy{grid-column:1;grid-row:3;padding:18px 14px}
+#rewards.product-revenue-overview>#benefits{grid-column:1;grid-row:4}
+#rewards.product-revenue-overview>.reward-points{grid-column:1;grid-row:5}
+#rewards.product-revenue-overview>.benefits-contact{grid-column:1;grid-row:6}
+#main #rewards.product-revenue-overview .revenue-heading{font-size:21px!important;line-height:1.65!important;margin-bottom:20px}
+#rewards.product-revenue-overview .revenue-heading em{font-size:16px}
+#rewards.product-revenue-overview .earning-route strong{font-size:12px}
+#rewards.product-revenue-overview .revenue-stepup{padding:12px;margin-top:18px}
+#rewards.product-revenue-overview .revenue-stepup li{font-size:11px}
+#rewards.product-revenue-overview .revenue-stepup>p:last-child{font-size:13px}
+#rewards.product-revenue-overview .reward-proof-note{font-size:14px}
+}
+@media(max-width:360px){#rewards.product-revenue-overview>.product-opportunity{grid-template-columns:70px minmax(0,1fr);gap:10px}#main #rewards.product-revenue-overview .product-opportunity h3{font-size:16px!important}#rewards.product-revenue-overview .product-sales-options li{font-size:10px;padding-inline:5px}#rewards.product-revenue-overview .revenue-heading em{font-size:14px}#rewards.product-revenue-overview .earning-route strong{font-size:11px}}
+
+#rewards.product-revenue-overview .revenue-expansion{background:#f4f9f6;border-left:3px solid #00b96b;padding:14px 16px;margin:24px 0 0;font-size:14px;line-height:1.85;color:#34444f}@media(max-width:700px){#rewards.product-revenue-overview .revenue-expansion{font-size:14px;padding:12px;margin-top:20px}}
