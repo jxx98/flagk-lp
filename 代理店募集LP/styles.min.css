@@ -818,3 +818,28 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 @media(max-width:360px){#sales-support .stepup-clear h4{font-size:13px!important}#sales-support .stepup-clear>li>p{font-size:11px!important}#model-cases .case-income-path strong{font-size:11px}#company.company-proof .company-evidence dt{font-size:14px}}
 
 #main #flow .flow-consult-summary h3{width:auto;max-width:none;text-wrap:wrap}
+
+/* 営業商材と紹介からの始め方をひと続きに伝える */
+#rewards .agency-offer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px;margin:28px 0 0;border-top:1px solid #d5e2ef;border-bottom:1px solid #d5e2ef;text-align:left}
+#rewards .agency-offer-product{display:flex;align-items:center;gap:24px;min-width:0}
+#rewards .agency-offer-product>img{display:block;width:120px;height:auto;flex-shrink:0}
+#rewards .agency-offer-product span{font-size:13px;line-height:1.7;color:#17633e}
+#main #rewards .agency-offer h3{font-size:23px!important;line-height:1.5!important;margin:4px 0 6px;color:#234e85}
+#rewards .agency-offer p{font-size:15px!important;line-height:1.8!important;margin:0;color:#34444f}
+#rewards .agency-offer-uses{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+#rewards .agency-offer-uses li{font-size:13px;line-height:1.6;color:#17633e;background:#eaf6ef;padding:8px 12px}
+#rewards .conversion-metric-label{display:block;font-size:13px;line-height:1.6;font-weight:500;color:#56636e;margin-top:10px}
+#sales-support .stepup-choice{font-size:14px!important;line-height:1.8!important;text-align:left;width:auto;max-width:none;margin:0 0 24px;color:#34444f}
+@media(max-width:1000px){#rewards .agency-offer{align-items:flex-start;flex-direction:column;gap:16px}}
+@media(max-width:700px){
+#rewards .agency-offer{padding:20px 0;gap:16px;margin-top:24px}
+#rewards .agency-offer-product{gap:14px;align-items:center}
+#rewards .agency-offer-product>img{width:80px}
+#rewards .agency-offer-product span{font-size:11px}
+#main #rewards .agency-offer h3{font-size:17px!important;line-height:1.6!important;margin:3px 0 5px}
+#rewards .agency-offer p{font-size:13px!important}
+#rewards .agency-offer-uses{gap:6px}
+#rewards .agency-offer-uses li{font-size:12px;padding:7px 9px}
+#sales-support .stepup-choice{font-size:13px!important;margin-bottom:24px}
+}
+@media(max-width:360px){#rewards .agency-offer-product{gap:10px}#rewards .agency-offer-product>img{width:65px}#main #rewards .agency-offer h3{font-size:15px!important}#rewards .agency-offer p{font-size:12px!important}}
