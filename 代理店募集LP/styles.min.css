@@ -853,3 +853,5 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #model-cases .case-sales-chart .case-chart-value>span{font-size:14px!important}
 @media(max-width:700px){#model-cases .case-sales-chart .case-chart-value{font-size:22px}#model-cases .case-sales-chart>ol{gap:16px}#model-cases .case-sales-chart .case-chart-track{height:10px}}
 @media(max-width:360px){#model-cases .case-sales-chart .case-chart-value{font-size:20px}}
+
+#model-cases .case-sales-note{font-size:12px!important;line-height:1.8!important;color:#34444f;margin:16px 0 0;text-align:left}
