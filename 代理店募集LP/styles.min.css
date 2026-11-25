@@ -843,3 +843,13 @@ footer.site-footer{padding-top:26px;padding-bottom:12px}
 #sales-support .stepup-choice{font-size:13px!important;margin-bottom:24px}
 }
 @media(max-width:360px){#rewards .agency-offer-product{gap:10px}#rewards .agency-offer-product>img{width:65px}#main #rewards .agency-offer h3{font-size:15px!important}#rewards .agency-offer p{font-size:12px!important}}
+
+/* 売上額は省略せず表示し、比率を下段のバーで示す */
+#model-cases .case-sales-chart>ol{gap:18px}
+#model-cases .case-sales-chart li{grid-template-columns:auto minmax(0,1fr);gap:8px 12px}
+#model-cases .case-sales-chart .case-chart-month{grid-area:1/1}
+#model-cases .case-sales-chart .case-chart-value{grid-area:1/2;font-size:26px;line-height:1.4;font-variant-numeric:tabular-nums}
+#model-cases .case-sales-chart .case-chart-track{grid-row:2;grid-column:1/-1;height:12px}
+#model-cases .case-sales-chart .case-chart-value>span{font-size:14px!important}
+@media(max-width:700px){#model-cases .case-sales-chart .case-chart-value{font-size:22px}#model-cases .case-sales-chart>ol{gap:16px}#model-cases .case-sales-chart .case-chart-track{height:10px}}
+@media(max-width:360px){#model-cases .case-sales-chart .case-chart-value{font-size:20px}}
